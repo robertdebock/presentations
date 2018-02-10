@@ -7,7 +7,7 @@ install:
 
 script:
   - cd content ; for file in *.md ; do reveal-md "${file}" --static ../output/"${file%.*}" ; done
-  - cp index.html output/index.html
+  - cd ; cp index.html output/index.html
   
 deploy:
   provider: pages
