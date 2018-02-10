@@ -15,7 +15,7 @@ Note: Veel plezier!
 
 Sensitivity of the sensor/film.
 
-<img height="70%" width="70%" src="/images/iso.png"/>
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/iso.png"/>
 
 ----
 
@@ -37,7 +37,7 @@ Sensitivity of the sensor/film.
 
 Controls the time light exposes the sensor/film.
 
-<img height="70%" width="70%" src="/images/shutter.png"/>
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/shutter.png"/>
 
 ----
 
@@ -60,7 +60,7 @@ Controls the time light exposes the sensor/film.
 
 The size of the opening in the lens.
 
-<img height="70%" width="70%" src="/images/aperture.png"/>
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/aperture.png"/>
 
 ----
 
