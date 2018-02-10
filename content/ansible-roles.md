@@ -89,7 +89,7 @@ ansible-role-httpd/tasks/main.yml
 - files
 - distributions
 
-* Only Linux OS's please: alpine, fedora, ubuntu, etc.
+### Only Linux OS's please: alpine, fedora, ubuntu, etc.
 
 ---
 
