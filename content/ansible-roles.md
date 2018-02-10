@@ -38,7 +38,6 @@ ansible-role-httpd/tasks/main.yml
 # Playbook
 
 ```yaml
----
 - hosts: all
   become: yes
 
