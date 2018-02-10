@@ -199,6 +199,14 @@ Aperture: f/2.0
 
 ---
 
+# Others
+
+- Whitebalance
+- RAW/jpeg
+- Focus settings
+
+---
+
 # Final hint
 
 Understand the settings, but above all:
