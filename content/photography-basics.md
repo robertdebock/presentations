@@ -147,7 +147,7 @@ When you have sufficient light, you can choose. When it's too dark, you're out o
 - Shutter handheld: 1/60 - 1/125
 - Shutter tripod: As slow as necessary
 - Aperture flatlay: f/5.6 - f/8
-- Aperture 45 degrees: as open as possible (f/1.4)
+- Aperture 45 degrees: quite open (f/1.4)
 
 ----
 
