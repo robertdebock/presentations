@@ -7,8 +7,6 @@ title: photography basics
 
 A little technical, buy hopefully barely sufficient.
 
-Note: Veel plezier!
-
 ---
 
 # ISO
@@ -30,6 +28,12 @@ Sensitivity of the sensor/film.
 
 - ISO 3200, ISO 6400.
 - Useful in "dark" situations.
+
+----
+
+# ISO examples
+
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/iso.gif"/>
 
 ---
 
@@ -54,6 +58,12 @@ Controls the time light exposes the sensor/film.
 - Lets in loads of photons.
 - Displays motion as blur.
 
+----
+
+# Shutter examples
+
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/shutter.gif"/>
+
 ---
 
 # Aperture 
@@ -77,6 +87,10 @@ The size of the opening in the lens.
 - f/1.4, f/2.8
 - Narrow depth of field.
 - Lets in loads of photons.
+
+----
+
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/aperture.gif"/>
 
 ---
 
@@ -143,13 +157,21 @@ When you have sufficient light, you can choose. When it's too dark, you're out o
 
 There is no need for a high ISO, so as low as possible.
 
+```
+ISO: 200
+```
+
 ----
 
 # Food: shutter
 
 ## As fast as required.
 
-Food photography is a very controlled type of environment. Choose a speeds that reduces camera/shutter shake. For example 1/125.
+Food photography is a very controlled type of environment. Choose a speeds that reduces camera/shutter shake.
+
+```
+Shutter: 1/60
+```
 
 ----
 
@@ -159,6 +181,10 @@ Food photography is a very controlled type of environment. Choose a speeds that 
 
 There is no reason for a shallow depth of field on a flatlay. [Choose](http://www.dofmaster.com/dofjs.html) an aperture that gets everything in focus. (f/8)
 
+```
+Aperture: f/5.6
+```
+
 ----
 
 # Food: aperture
@@ -166,6 +192,10 @@ There is no reason for a shallow depth of field on a flatlay. [Choose](http://ww
 ## Aperture 45 degrees: open so the background blurs.
 
 To get an atmosphere, an open aperture (f/1.4, f/2.8) can help. You may need to line up your subjects into the focus area.
+
+```
+Aperture: f/2.0
+```
 
 ---
 
