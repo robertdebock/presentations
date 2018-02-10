@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "6.1"
+
+install:
+  - npm install -g reveal-md
+
+script:
+  - cd content ; for file in *.md ; do reveal-md "${file}" --static ../output/"${file%.*}" ; done
+  
+deploy:
+  provider: pages
+  local-dir: output
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
+
