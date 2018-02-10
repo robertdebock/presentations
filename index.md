@@ -1,3 +1,3 @@
 ## Overview of presentations
 
-- [Photography basics](photography-basics.md)
+- [Photography basics](photography-basics)
