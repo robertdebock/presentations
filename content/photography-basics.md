@@ -3,7 +3,7 @@ title: photography basics
 
 ---
 
-# Photography basics
+# Photography
 
 follow along: http://robertdebock/presentations/
 
