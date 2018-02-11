@@ -5,6 +5,8 @@ title: photography basics
 
 # Photography basics
 
+follow along: http://robertdebock/presentations/
+
 A little technical, buy hopefully barely sufficient.
 
 ---
