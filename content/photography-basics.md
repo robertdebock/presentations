@@ -49,6 +49,7 @@ Controls the time light exposes the sensor/film.
 
 - 1/500, 1/1000.
 - Freezes the image.
+- Limits the amount of light.
 
 ----
 
@@ -57,6 +58,7 @@ Controls the time light exposes the sensor/film.
 - 1/1, 1/2.
 - Lets in loads of photons.
 - Displays motion as blur.
+- More light to the sensor.
 
 ----
 
@@ -78,7 +80,7 @@ The size of the opening in the lens.
 
 - f/22, f/16
 - Large depth of field.
-- Reduce the amount of photons.
+- Reduce the amount of light.
 
 ----
 
@@ -86,7 +88,7 @@ The size of the opening in the lens.
 
 - f/1.4, f/2.8
 - Narrow depth of field.
-- Lets in loads of photons.
+- Lets in loads of light.
 
 ----
 
@@ -94,22 +96,13 @@ The size of the opening in the lens.
 
 ---
 
-# Same exposure
-
-- ISO: 400, 1/125, f/8
-- ISO: 400, 1/60, f/11
-- ISO: 200, 1/60, f/8
-- ISO: 100, 1/30, f/8
-
-----
-
 # Question
 
 My image is not sharp with these settings, what to do?
 
 - ISO: 200
 - f/11
-- 1/15
+- 1/16
 
 ----
 
@@ -119,19 +112,9 @@ My image is not sharp with these settings, what to do?
 
 - ISO: 6400
 - f/2.0
-- 1/15
+- 1/16
 
 ---
-
-# Choose
-
-When you have sufficient light, you can choose. When it's too dark, you're out of options.
-
----
-
-# Preferences
-
-----
 
 ## Scenarios
 - Portraits: Wide aperature (f/1.4)
@@ -151,59 +134,12 @@ When you have sufficient light, you can choose. When it's too dark, you're out o
 
 ----
 
-# Food: ISO
-
-## As low as possible
-
-There is no need for a high ISO, so as low as possible.
-
-```
-ISO: 200
-```
-
-----
-
-# Food: shutter
-
-## As fast as required.
-
-Food photography is a very controlled type of environment. Choose a speeds that reduces camera/shutter shake.
-
-```
-Shutter: 1/60
-```
-
-----
-
-# Food: aperture
-
-## Aperture flatlay: enough to get everything in focus.
-
-There is no reason for a shallow depth of field on a flatlay. [Choose](http://www.dofmaster.com/dofjs.html) an aperture that gets everything in focus. (f/8)
-
-```
-Aperture: f/5.6
-```
-
-----
-
-# Food: aperture
-
-## Aperture 45 degrees: open so the background blurs.
-
-To get an atmosphere, an open aperture (f/1.4, f/2.8) can help. You may need to line up your subjects into the focus area.
-
-```
-Aperture: f/2.0
-```
-
----
-
 # Others
 
 - Whitebalance
 - RAW/jpeg
 - Focus settings
+- Lenses
 
 ---
 
