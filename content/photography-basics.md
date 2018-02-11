@@ -7,8 +7,6 @@ title: photography basics
 
 follow along: http://robertdebock/presentations/
 
-A little technical, buy hopefully barely sufficient.
-
 ---
 
 # ISO
