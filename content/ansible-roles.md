@@ -13,62 +13,8 @@ In 15 minutes
 
 # Goals
 
-- You focus on hard stuff.
+- You focus on "hard" stuff.
 - Consumers simply pickup your role.
-
----
-
-# Role
-
-ansible-role-httpd/tasks/main.yml
-```yaml
-- name: install httpd software
-  yum:
-    name: httpd
-
-- name: start and enable software
-  service:
-    name: httpd
-    state: started
-    enabled: yes
-```
-
-----
-
-# Playbook
-
-```yaml
-- hosts: all
-  become: yes
-
-  roles:
-    - httpd
-
-  tasks:
-    - name: Place content
-      copy:
-        src: files/index.html
-        dest: /var/www/html/index.html
-```
-
-----
-
-# Dependencies
-
-```text
-    +- Reversed proxy to Tomcat.
-    |
-    V
-+-------+ +-------------+
-| httpd | | tomcat      | <- Installs Tomcat.
-+-------+ +-------------+
-+-----------------------+
-| java                  | <- Installs OpenJDK.
-+-----------------------+
-+-----------------------+
-| bootstrap             | <- Ensures python, sudo is installed.
-+-----------------------+
-```
 
 ---
 
@@ -80,30 +26,9 @@ ansible-role-httpd/tasks/main.yml
 - ansible-role-devtools
 - ansible-role-opstools
 
-Note:
-```
-- name: install apache
-  package:
-    name: httpd
-
-- name: start apache
-  service:
-    name: httpd
-    state: started
-    enabled: true
-```
-
 ---
 
-# Analyse
-
-- packages
-- services
-- files
-
----
-
-# Code!
+# ansible-role-httpd
 
 ----
 
@@ -151,7 +76,7 @@ Note:
 ---
 - name: Converge
   hosts: all
-  become: yes
+  become: true
 
   roles:
     - role: ansible-role-MYROLE
@@ -162,7 +87,7 @@ Note:
         port: 80
 ```
 
----
+----
 
 # Write goss tests
 
@@ -175,11 +100,6 @@ Note:
 package:
   httpd:
     installed: true
-port:
-  tcp:80:
-    listening: true
-    ip:
-      - 0.0.0.0
 service:
   httpd:
     enabled: true
@@ -187,6 +107,11 @@ service:
 process:
   httpd:
     running: true
+port:
+  tcp6:80
+    listening: true
+    ip:
+      - '::'
 ```
 
 ----
@@ -194,31 +119,31 @@ process:
 # Write the role
 
 ```
-
 vi ansible-role-MYROLE/tasks/main.yml
 ```
 
 Note:
 ```
-- name: Converge
-  hosts: all
-  become: yes
+---
+# tasks file for ansible-role-MYROLE
+- name: install apache
+  package:
+    name: httpd
 
-  roles:
-    - role: ansible-role-MYROLE
-
-  tasks:
-    - name: test connection
-      wait_for:
-        port: "80"
+- name: start apache
+  service:
+    name: httpd
+    state: started
+    enabled: true
 ```
 
-----
+---
 
 # Ready? Test!
 
 ```
-cd ansible-role-MYROLE/molecule test
+cd ansible-role-MYROLE/
+molecule test
 ```
 
 ---
