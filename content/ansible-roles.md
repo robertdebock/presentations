@@ -38,7 +38,7 @@ In 15 minutes
 molecule init role \
   --driver-name docker \
   --verifier-name goss \
-  --role-name ansible-role-MYROLE 
+  --role-name ansible-role-MYROLE
 ```
 
 - * = No reboot or systemctl, but fast.
@@ -51,7 +51,7 @@ molecule init role \
 molecule init role \
   --driver-name vagrant \
   --verifier-name goss \
-  --role-name ansible-role-MYROLE 
+  --role-name ansible-role-MYROLE
 ```
 
 ```
@@ -73,7 +73,6 @@ vi ansible-role-MYROLE/molecule/default/playbook.yml
 
 Note:
 ```
----
 - name: Converge
   hosts: all
   become: true
@@ -124,7 +123,6 @@ vi ansible-role-MYROLE/tasks/main.yml
 
 Note:
 ```
----
 # tasks file for ansible-role-MYROLE
 - name: install apache
   package:
@@ -159,4 +157,3 @@ Go to [Galaxy](https://galaxy.ansible.com/) add your role.
 # World domination
 
 <img height="40%" width="40%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/evil.png"/>
-
