@@ -80,6 +80,19 @@ ansible-role-httpd/tasks/main.yml
 - ansible-role-devtools
 - ansible-role-opstools
 
+Note:
+```
+- name: install apache
+  package:
+    name: httpd
+
+- name: start apache
+  service:
+    name: httpd
+    state: started
+    enabled: true
+```
+
 ---
 
 # Analyse
@@ -87,38 +100,125 @@ ansible-role-httpd/tasks/main.yml
 - packages
 - services
 - files
-- distributions
-
-### Only Linux OS's please: alpine, fedora, ubuntu, etc.
 
 ---
 
 # Code!
 
+----
+
+# Docker *
+
 ```
 molecule init role \
   --driver-name docker \
+  --verifier-name goss \
   --role-name ansible-role-MYROLE 
+```
 
-cd ansible-role-MYROLE
+- * = No reboot or systemctl, but fast.
 
-vi tasks/main.yml
-vi meta/main.yml
+----
+
+# Vagrant
+
+```
+molecule init role \
+  --driver-name vagrant \
+  --verifier-name goss \
+  --role-name ansible-role-MYROLE 
+```
+
+```
+vi ansible-role-MYROLE/molecule/default/molecule.yml
+```
+
+Note:
+```
+    box: centos/7
 ```
 
 ----
 
-# Molecule
+# Write ansible tests
 
-- Environment: molecule/default/molecule.yml
-- Playbooks: molecule/default/playbook.yml
+```
+vi ansible-role-MYROLE/molecule/default/playbook.yml
+```
+
+Note:
+```
+---
+- name: Converge
+  hosts: all
+  become: yes
+
+  roles:
+    - role: ansible-role-MYROLE
+
+  tasks:
+    - name: test connection
+      wait_for:
+        port: 80
+```
+
+---
+
+# Write goss tests
+
+```
+vi ansible-role-MYROLE/molecule/default/tests/test_default.yml
+```
+
+Note:
+```
+package:
+  httpd:
+    installed: true
+port:
+  tcp:80:
+    listening: true
+    ip:
+      - 0.0.0.0
+service:
+  httpd:
+    enabled: true
+    running: true
+process:
+  httpd:
+    running: true
+```
+
+----
+
+# Write the role
+
+```
+
+vi ansible-role-MYROLE/tasks/main.yml
+```
+
+Note:
+```
+- name: Converge
+  hosts: all
+  become: yes
+
+  roles:
+    - role: ansible-role-MYROLE
+
+  tasks:
+    - name: test connection
+      wait_for:
+        port: "80"
+```
 
 ----
 
 # Ready? Test!
 
 ```
-molecule test
+cd ansible-role-MYROLE/molecule test
 ```
 
 ---
