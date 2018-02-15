@@ -28,7 +28,7 @@ In 15 minutes
 
 ---
 
-# ansible-role-httpd
+# httpd
 
 ----
 
@@ -63,7 +63,7 @@ Note:
 
 ----
 
-# Write ansible tests
+# Ansible tests
 
 ```
 vi ansible-role-httpd/molecule/default/playbook.yml
@@ -86,7 +86,7 @@ Note:
 
 ----
 
-# Write goss tests
+# Goss tests
 
 ```
 vi ansible-role-httpd/molecule/default/tests/test_default.yml
@@ -135,7 +135,7 @@ Note:
 
 ---
 
-# ansible-role-browsers
+# browsers
 
 ----
 
@@ -170,7 +170,7 @@ Note:
 
 ----
 
-# Write ansible tests
+# Ansible tests
 
 ```
 vi ansible-role-browsers/molecule/default/playbook.yml
@@ -198,7 +198,7 @@ Note:
 
 ----
 
-# Write goss tests
+# Goss tests
 
 ```
 vi ansible-role-browsers/molecule/default/tests/test_default.yml
@@ -235,7 +235,7 @@ Note:
 
 ---
 
-# ansible-role-devtools
+# devtools
 
 ----
 
@@ -270,7 +270,7 @@ Note:
 
 ----
 
-# Write ansible tests
+# Ansible tests
 
 ```
 vi ansible-role-devtools/molecule/default/playbook.yml
@@ -296,7 +296,7 @@ Note:
 
 ----
 
-# Write goss tests
+# Goss tests
 
 ```
 vi ansible-role-devtools/molecule/default/tests/test_default.yml
@@ -329,7 +329,7 @@ Note:
 
 ---
 
-# ansible-role-opstools
+# opstools
 
 ----
 
@@ -364,7 +364,7 @@ Note:
 
 ----
 
-# Write ansible tests
+# Ansible tests
 
 ```
 vi ansible-role-opstools/molecule/default/playbook.yml
@@ -392,7 +392,7 @@ Note:
 
 ----
 
-# Write goss tests
+# Goss tests
 
 ```
 vi ansible-role-opstools/molecule/default/tests/test_default.yml
@@ -422,9 +422,21 @@ Note:
 - name: install opstool
   package:
     name: "{{ item }}"
-  with_items:
-    - tcpdump
-    - strace
+  with_items: "{{ opstools_packages }}"
+```
+
+----
+
+# Variables
+
+```
+vi ansible-role-opstools/vars/main.yml
+```
+
+```
+opstools_packages:
+  - tcpdump
+  - strace
 ```
 
 ---
