@@ -32,16 +32,16 @@ In 15 minutes
 
 ----
 
-# Docker *
+# Docker
 
 ```
 molecule init role \
   --driver-name docker \
   --verifier-name goss \
-  --role-name ansible-role-MYROLE
+  --role-name ansible-role-httpd
 ```
 
-- * = No reboot or systemctl, but fast.
+- No reboot or systemctl, but fast.
 
 ----
 
@@ -51,11 +51,9 @@ molecule init role \
 molecule init role \
   --driver-name vagrant \
   --verifier-name goss \
-  --role-name ansible-role-MYROLE
-```
+  --role-name ansible-role-httpd
 
-```
-vi ansible-role-MYROLE/molecule/default/molecule.yml
+vi ansible-role-httpd/molecule/default/molecule.yml
 ```
 
 Note:
@@ -68,7 +66,7 @@ Note:
 # Write ansible tests
 
 ```
-vi ansible-role-MYROLE/molecule/default/playbook.yml
+vi ansible-role-httpd/molecule/default/playbook.yml
 ```
 
 Note:
@@ -78,7 +76,7 @@ Note:
   become: true
 
   roles:
-    - role: ansible-role-MYROLE
+    - role: ansible-role-httpd
 
   tasks:
     - name: test connection
@@ -91,7 +89,7 @@ Note:
 # Write goss tests
 
 ```
-vi ansible-role-MYROLE/molecule/default/tests/test_default.yml
+vi ansible-role-httpd/molecule/default/tests/test_default.yml
 ```
 
 Note:
@@ -118,12 +116,12 @@ port:
 # Write the role
 
 ```
-vi ansible-role-MYROLE/tasks/main.yml
+vi ansible-role-httpd/tasks/main.yml
 ```
 
 Note:
 ```
-# tasks file for ansible-role-MYROLE
+# tasks file for ansible-role-httpd
 - name: install apache
   package:
     name: httpd
@@ -133,6 +131,300 @@ Note:
     name: httpd
     state: started
     enabled: true
+```
+
+---
+
+# ansible-role-browsers
+
+----
+
+# Docker
+
+```
+molecule init role \
+  --driver-name docker \
+  --verifier-name goss \
+  --role-name ansible-role-browsers
+```
+
+- No reboot or systemctl, but fast.
+
+----
+
+# Vagrant
+
+```
+molecule init role \
+  --driver-name vagrant \
+  --verifier-name goss \
+  --role-name ansible-role-browsers
+
+vi ansible-role-browsers/molecule/default/molecule.yml
+```
+
+Note:
+```
+    box: centos/7
+```
+
+----
+
+# Write ansible tests
+
+```
+vi ansible-role-browsers/molecule/default/playbook.yml
+```
+
+Note:
+```
+- name: Converge
+  hosts: all
+  become: true
+
+  roles:
+    - role: ansible-role-browsers
+
+  tasks:
+    - name: test browsers
+      command: "{{ item.name }} {{ item.argument }}"
+      changed_when: no
+      with_items:
+        - name: firefox
+          argument: -version
+        - name: chrome
+          argument: --version
+```
+
+----
+
+# Write goss tests
+
+```
+vi ansible-role-browsers/molecule/default/tests/test_default.yml
+```
+
+Note:
+```
+package:
+  firefox:
+    installed: true
+package:
+  chrome:
+    installed: true
+```
+
+----
+
+# Write the role
+
+```
+vi ansible-role-browsers/tasks/main.yml
+```
+
+Note:
+```
+# tasks file for ansible-role-browsers
+- name: install browser
+  package:
+    name: firefox
+  with_items:
+    - firefox
+    - chrome
+```
+
+---
+
+# ansible-role-devtools
+
+----
+
+# Docker
+
+```
+molecule init role \
+  --driver-name docker \
+  --verifier-name goss \
+  --role-name ansible-role-devtools
+```
+
+- No reboot or systemctl, but fast.
+
+----
+
+# Vagrant
+
+```
+molecule init role \
+  --driver-name vagrant \
+  --verifier-name goss \
+  --role-name ansible-role-devtools
+
+vi ansible-role-devtools/molecule/default/molecule.yml
+```
+
+Note:
+```
+    box: centos/7
+```
+
+----
+
+# Write ansible tests
+
+```
+vi ansible-role-devtools/molecule/default/playbook.yml
+```
+
+Note:
+```
+- name: Converge
+  hosts: all
+  become: true
+
+  roles:
+    - role: ansible-role-devtools
+
+  tasks:
+    - name: test software
+    command: "{{ item.name }} {{ item.argument }}"
+    changed_when: no
+      with_items:
+        - name: vim
+          argument: --version
+```
+
+----
+
+# Write goss tests
+
+```
+vi ansible-role-devtools/molecule/default/tests/test_default.yml
+```
+
+Note:
+```
+package:
+  vim:
+    installed: true
+```
+
+----
+
+# Write the role
+
+```
+vi ansible-role-devtools/tasks/main.yml
+```
+
+Note:
+```
+# tasks file for ansible-role-devtools
+- name: install devtool
+  package:
+    name: "{{ item }}"
+  with_items:
+     - vim
+```
+
+---
+
+# ansible-role-opstools
+
+----
+
+# Docker
+
+```
+molecule init role \
+  --driver-name docker \
+  --verifier-name goss \
+  --role-name ansible-role-opstools
+```
+
+- No reboot or systemctl, but fast.
+
+----
+
+# Vagrant
+
+```
+molecule init role \
+  --driver-name vagrant \
+  --verifier-name goss \
+  --role-name ansible-role-opstools
+
+vi ansible-role-opstools/molecule/default/molecule.yml
+```
+
+Note:
+```
+    box: centos/7
+```
+
+----
+
+# Write ansible tests
+
+```
+vi ansible-role-opstools/molecule/default/playbook.yml
+```
+
+Note:
+```
+- name: Converge
+  hosts: all
+  become: true
+
+  roles:
+    - role: ansible-role-opstools
+
+  tasks:
+    - name: test opstool
+      command: "{{ item.name }} {{ item.argument }}"
+      changed_when: no
+      with_items:
+        - name: tcpdump
+          argument: --version
+        - name: strace
+          argument: -V
+```
+
+----
+
+# Write goss tests
+
+```
+vi ansible-role-opstools/molecule/default/tests/test_default.yml
+```
+
+Note:
+```
+package:
+  tcpdump:
+    installed: true
+package:
+  strace:
+    installed: true
+```
+
+----
+
+# Write the role
+
+```
+vi ansible-role-opstools/tasks/main.yml
+```
+
+Note:
+```
+# tasks file for ansible-role-opstools
+- name: install opstool
+  package:
+    name: "{{ item }}"
+  with_items:
+    - tcpdump
+    - strace
 ```
 
 ---
