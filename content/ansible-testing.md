@@ -5,8 +5,9 @@ title: Ansible testing
 
 # Ansible testing
 
-Follow along: http://robertdebock.nl/presentations/
-Nerdier: https://github.com/robertdebock/presentations/
+Follow along: http://robertdebock.nl/
+
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/robertdebock-nl.jpg"/>
 
 ---
 
