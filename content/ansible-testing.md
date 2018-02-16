@@ -35,7 +35,6 @@ Note: kickstart, scripts, clusterssh, cfengine, puppet.
 # Ansible role
 
 ```
----
 - name: install software
   package:
     name: software
@@ -52,7 +51,6 @@ Note: kickstart, scripts, clusterssh, cfengine, puppet.
 # Ansible playbook
 
 ```
----
 - hosts: webservers
   become: yes
 
