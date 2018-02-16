@@ -101,16 +101,20 @@ The `artifact` is published to Galaxy
 
 # Unit tests
 
+Warning: I love [ASCII art](https://groups.google.com/forum/#!forum/alt.ascii-art)
+
 ```text
-+---- GitHub ----+    +-- Travis --+
-| - .travis.yml  |    | - playbook |
-| - playbook.yml | -> | - tests    |
-| - molecule.yml |    +------------+
-+----------------+          |
-                            V
-                      +-- Galaxy --+
-                      | - roles    |
-                      +------------+
++---- GitHub ----+    +-- Travis --+    +----- Playbook ----+
+| - .travis.yml  |    | - playbook |    |  - hosts: all     |
+| - playbook.yml | -> | - tests    |    |    become: yes    |
+| - molecule.yml |    +------------+    |                   |
++----------------+          |           |    roles:         |
+                            V           |      - httpd      |
+                      +-- Galaxy --+    |                   |
+                      | - roles    | <- |    tasks:         |
+                      +------------+    |      - name: test |
+                                        |        ping:      |
+                                        +-------------------+
 ```
 
 ---
