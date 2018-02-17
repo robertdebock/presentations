@@ -22,6 +22,8 @@ Follow along: http://robertdebock.nl/
 
 Another new technology?
 
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/popularity.png"/>
+
 Note: kickstart, scripts, clusterssh, cfengine, puppet.
 
 ---
