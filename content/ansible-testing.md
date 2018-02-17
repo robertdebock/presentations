@@ -22,7 +22,7 @@ Follow along: http://robertdebock.nl/
 
 Another new technology?
 
-<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/popularity.png"/>
+<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1308_RC02/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"/m/03d3cjz","geo":"","time":"today 5-y"},{"keyword":"/m/05zxlz3","geo":"","time":"today 5-y"},{"keyword":"/m/0k0vzjb","geo":"","time":"today 5-y"},{"keyword":"/m/0hn8c6s","geo":"","time":"today 5-y"}],"category":0,"property":""}, {"exploreQuery":"date=today%205-y&q=%2Fm%2F03d3cjz,%2Fm%2F05zxlz3,%2Fm%2F0k0vzjb,%2Fm%2F0hn8c6s","guestPath":"https://trends.google.com:443/trends/embed/"}); </script> 
 
 Note: kickstart, scripts, clusterssh, cfengine, puppet.
 
