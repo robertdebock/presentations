@@ -119,6 +119,38 @@ Warning: I love [ASCII art](https://groups.google.com/forum/#!forum/alt.ascii-ar
 
 ---
 
-# Integration tests
+# Lets Go!
 
-Write a play that incorporates roles
+```
+molecule init role \
+  --driver-name docker \
+  --verifier-anme goss \
+  ansible-role-MYROLE
+```
+----
+
+# Write tests
+
+```
+```
+
+----
+
+# Write the role
+
+```
+```
+
+----
+
+# Test it
+
+```
+```
+
+---
+
+# Limitations
+
+- This just tests the role
+- De developer determines the tests
