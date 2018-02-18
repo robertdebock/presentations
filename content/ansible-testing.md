@@ -139,6 +139,8 @@ file:
     group: root
 ```
 
+See [GOSS documentation](https://github.com/aelsabbahy/goss/blob/master/docs/manual.md) for more information.
+
 ----
 
 # Write the role
@@ -148,6 +150,8 @@ file:
   package:
     - name: java-1.8.0-openjdk
 ```
+
+There are [many variations](https://github.com/robertdebock/ansible-role-java) of java.
 
 ----
 
