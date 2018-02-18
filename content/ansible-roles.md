@@ -9,6 +9,7 @@ Follow along: http://robertdebock.nl/
 
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/ansible-roles/"/>
 
+---
 
 # In 15 minutes
 
