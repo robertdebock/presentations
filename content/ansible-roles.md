@@ -3,9 +3,14 @@ title: Ansible Roles
 
 ---
 
-# Ansible Role
+# Ansible Roles
 
-In 15 minutes
+Follow along: http://robertdebock.nl/
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/ansible-roles/"/>
+
+
+# In 15 minutes
 
 <img height="28%" width="28%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/dave.png"/>
 
