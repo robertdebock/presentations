@@ -7,7 +7,7 @@ title: Ansible testing
 
 Follow along: http://robertdebock.nl/
 
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://robertdebock.nl/presentations/ansible-testing/"/>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=http://robertdebock.nl/presentations/ansible-testing/"/>
 
 ---
 
