@@ -101,8 +101,6 @@ The `artifact` is published to Galaxy
 
 # Unit tests
 
-Warning: I love [ASCII art](https://groups.google.com/forum/#!forum/alt.ascii-art)
-
 ```text
 +---- GitHub ----+    +-- Travis --+    +----- Playbook ----+
 | - .travis.yml  |    | - playbook |    |  - hosts: all     |
@@ -117,6 +115,8 @@ Warning: I love [ASCII art](https://groups.google.com/forum/#!forum/alt.ascii-ar
                                         +-------------------+
 ```
 
+Warning: I love [ASCII art](https://groups.google.com/forum/#!forum/alt.ascii-art)
+
 ---
 
 # Lets Go!
@@ -125,13 +125,18 @@ Warning: I love [ASCII art](https://groups.google.com/forum/#!forum/alt.ascii-ar
 molecule init role \
   --driver-name docker \
   --verifier-anme goss \
-  ansible-role-MYROLE
+  ansible-role-java
 ```
 ----
 
 # Write tests
 
 ```
+file:
+  /usr/bin/java:
+    exists: true
+    owner: root
+    group: root
 ```
 
 ----
@@ -139,6 +144,9 @@ molecule init role \
 # Write the role
 
 ```
+- name: install java (openjdk)
+  package:
+    - name: java-1.8.0-openjdk
 ```
 
 ----
@@ -146,6 +154,7 @@ molecule init role \
 # Test it
 
 ```
+molecule test
 ```
 
 ---
