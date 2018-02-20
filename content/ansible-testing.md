@@ -128,7 +128,7 @@ Warning: I love [ASCII art](https://groups.google.com/forum/#!forum/alt.ascii-ar
 ```
 molecule init role \
   --driver-name docker \
-  --verifier-anme goss \
+  --verifier-name goss \
   ansible-role-java
 ```
 ----
