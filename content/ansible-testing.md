@@ -17,8 +17,8 @@ Follow along: http://robertdebock.nl/
 
 # Context
 
-- About me
-- About work
+- About [me](https://tookapic.com/robertdb)
+- About [work](https://github.com/robertdebock)
 
 ---
 
