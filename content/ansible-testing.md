@@ -165,6 +165,10 @@ There are [many variations](https://github.com/robertdebock/ansible-role-java) o
 molecule test
 ```
 
+----
+
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/molecule.gif"/>
+
 ---
 
 # Limitations
