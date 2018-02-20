@@ -167,6 +167,14 @@ molecule test
 
 ----
 
+# Test it deluxe
+
+```
+vi molecule/default/molecule.yml
+```
+
+----
+
 <img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/molecule.gif"/>
 
 ---
@@ -175,3 +183,11 @@ molecule test
 
 - This just tests the role
 - De developer determines the tests
+
+---
+
+# Conclusion
+
+- It's easy to test roles.
+- Testing roles on multiple platforms is simple.
+- Integration tests not covered.
