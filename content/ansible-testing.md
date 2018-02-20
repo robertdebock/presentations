@@ -11,7 +11,7 @@ Follow along: http://robertdebock.nl/
 
 ---
 
-<img height="80%" width="80%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/containers.jpg"/>
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/containers.jpg"/>
 
 ---
 
