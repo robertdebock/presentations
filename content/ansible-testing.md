@@ -5,9 +5,9 @@ title: Ansible testing
 
 # Ansible testing
 
-Follow along: http://robertdebock.nl/
+Follow along: https://robertdebock.nl/
 
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/ansible-testing/"/>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=https://robertdebock.nl/presentations/ansible-testing/"/>
 
 ---
 
