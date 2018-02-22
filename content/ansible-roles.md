@@ -5,9 +5,9 @@ title: Ansible Roles
 
 # Ansible Roles
 
-Follow along: https://robertdebock.nl/
+Follow along: http://robertdebock.nl/
 
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=https://robertdebock.nl/presentations/ansible-roles/"/>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/ansible-roles/"/>
 
 ---
 
