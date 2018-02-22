@@ -11,16 +11,18 @@ Follow along: http://robertdebock.nl/
 
 ---
 
-# In 15 minutes
+# Ansible?
 
-<img height="28%" width="28%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/dave.png"/>
+- Server provisioning tool
+- Ansible Roles are sharable
 
 ---
 
-# Goals
+# Testing? Why?
 
-- You focus on "hard" stuff.
-- Consumers simply pickup your role.
+- High quality roles are great
+- Easier to write roles
+- Easier to consume roles
 
 ---
 
