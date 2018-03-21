@@ -3,6 +3,7 @@ title: Perfect Ansible
 
 ---
 
+<!-- .slide: data-background="images/creation.jpg" -->
 # Perfect Ansible
 
 Follow along: http://robertdebock.nl/
