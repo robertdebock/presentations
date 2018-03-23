@@ -6,7 +6,7 @@ install:
   - npm install -g reveal-md
 
 script:
-  - cd content ; for file in *.md ; do reveal-md "${file}" --static ../output/"${file%.*}" ; done
+  - for file in *.md ; do reveal-md "${file}" --static output/"${file%.*}" ; done
   
 deploy:
   provider: pages
