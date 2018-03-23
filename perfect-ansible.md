@@ -46,6 +46,7 @@ Follow along: http://robertdebock.nl/
 5. Was `shell` or `command` used often?
 6. Is there repetition of same `when`?
 7. Is ansible-lint happy?
+8. Do you know why you did not use defaults?
 
 ----
 
