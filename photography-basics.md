@@ -15,7 +15,7 @@ Follow along: https://robertdebock.nl/
 
 Sensitivity of the sensor/film.
 
-<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/iso.png"/>
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/iso.png"/>
 
 ----
 
@@ -35,7 +35,7 @@ Sensitivity of the sensor/film.
 
 # ISO examples
 
-<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/iso.gif"/>
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/iso.gif"/>
 
 ---
 
@@ -43,7 +43,7 @@ Sensitivity of the sensor/film.
 
 Controls the time light exposes the sensor/film.
 
-<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/shutter.png"/>
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/shutter.png"/>
 
 ----
 
@@ -66,7 +66,7 @@ Controls the time light exposes the sensor/film.
 
 # Shutter examples
 
-<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/shutter.gif"/>
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/shutter.gif"/>
 
 ---
 
@@ -74,7 +74,7 @@ Controls the time light exposes the sensor/film.
 
 The size of the opening in the lens.
 
-<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/aperture.png"/>
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/aperture.png"/>
 
 ----
 
@@ -94,7 +94,7 @@ The size of the opening in the lens.
 
 ----
 
-<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/aperture.gif"/>
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/aperture.gif"/>
 
 ---
 

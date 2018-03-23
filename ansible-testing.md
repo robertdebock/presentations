@@ -11,7 +11,7 @@ Follow along: http://robertdebock.nl/
 
 ---
 
-<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/containers.jpg"/>
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/containers.jpg"/>
 
 ---
 
@@ -175,7 +175,7 @@ vi molecule/default/molecule.yml
 
 ----
 
-<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/molecule.gif"/>
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/molecule.gif"/>
 
 ---
 

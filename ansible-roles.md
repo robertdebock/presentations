@@ -468,4 +468,4 @@ Go to [Galaxy](https://galaxy.ansible.com/) add your role.
 
 # World domination
 
-<img height="40%" width="40%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/content/images/evil.png"/>
+<img height="40%" width="40%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/evil.png"/>
