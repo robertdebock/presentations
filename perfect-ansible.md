@@ -129,7 +129,6 @@ java_jre_name: openjdk
 java_jdk_name: openjdk-devel
 ```
 
-```
 defaults/main.yml:
 ```
 java_version: 1.8.0
