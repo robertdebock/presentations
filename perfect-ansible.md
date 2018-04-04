@@ -12,6 +12,7 @@ Follow along: http://robertdebock.nl/
 
 ---
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Princicpals
 
 1. Simpler is better
@@ -19,10 +20,12 @@ Follow along: http://robertdebock.nl/
 
 ---
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Simpler is better
 
 ----
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Question: More readable?
 
 ```
@@ -37,6 +40,7 @@ Follow along: http://robertdebock.nl/
 
 ----
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Reflection
 
 1. Does the code fit in 1 screen?
@@ -50,6 +54,7 @@ Follow along: http://robertdebock.nl/
 
 ----
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Style
 
 1. Name every task.
@@ -63,6 +68,7 @@ Note: 1. Easier debugging 5. Are there modules, are you describing state?
 
 ----
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Question: good enough?
 
 ```
@@ -82,14 +88,17 @@ Note: `name:` it's not always going to install, `yum` is not only for RHEL, `apt
 
 ---
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Focus on the user
 
 ----
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Variables
 
 ----
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Attempt 1
 
 tasks/main.yml:
@@ -103,6 +112,7 @@ What can we make variable?
 
 ----
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Attempt 2
 
 defaults/main.yml
@@ -121,6 +131,7 @@ What more can we make variable?
 
 ----
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Attempt 3
 
 vars/main.yml:
@@ -150,4 +161,11 @@ tasks/main.yml:
     - java_type == jdk
 ```
 
-----
+---
+
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
+# Conclusion
+
+- Simplicity wins
+- Compatibility wins
+- Easier variables win
