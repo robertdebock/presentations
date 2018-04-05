@@ -140,12 +140,19 @@ java_jre_name: openjdk
 java_jdk_name: openjdk-devel
 ```
 
+(continued)
+
+----
+
 defaults/main.yml:
 ```
 java_version: 1.8.0
 java_type: jre
 ```
 
+(continued)
+
+----
 tasks/main.yml:
 ```
 - name: ensure java jre is installed
