@@ -151,4 +151,16 @@ tasks/main.yml:
     - java_type == jdk
 ```
 
-----
+---
+
+# Problems
+
+### Solve problems at the appropriate location.
+
+```
+- name: ensure my-software is installed
+  package:
+    name: my-software
+
+- name: ensure my-software is registered to systemctl
+  
