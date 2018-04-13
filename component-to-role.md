@@ -3,15 +3,17 @@ title: Component to Ansible role
 
 ---
 
-# Component -> Role
-
-### How to:
-- Deploy your component
-- Manage your component
+# Components
 
 Follow along: http://robertdebock.nl/
 
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/component-to-role/"/>
+
+---
+
+# How to:
+- Deploy your component
+- Manage your component
 
 ---
 
@@ -32,7 +34,11 @@ Maybe you have these types of code:
 
 ---
 
-# Deployment 1/4
+# How your role will integrate
+
+----
+
+# Integrate 1/4
 
 Your role will be included from a playbook that includes many roles. For example:
 
@@ -48,7 +54,7 @@ Your role will be included from a playbook that includes many roles. For example
 
 ----
 
-# Deployment 2/4
+# Integrate 2/4
 
 ```
   pre_tasks:
@@ -69,7 +75,7 @@ Your role will be included from a playbook that includes many roles. For example
 
 ----
 
-# Deployment 3/4
+# Integrate 3/4
 
 ```
   tasks:
@@ -88,17 +94,41 @@ Your role will be included from a playbook that includes many roles. For example
 
 ----
 
-# Deployment 4/4
+# Integrate 4/4
 
 requirements.yml
 ```
-- src: https://github.com/username/ansible-role-backup.git
+- src: https://github.com/username/backup.git
   version: 1.3.0
   name: backup
 
-- src: https://github.com/username/ansible-role-monitoring.git
+- src: https://github.com/username/monitoring.git
   version: 2.0.1
   name: monitoring
 ```
 
-- With a [pull](https://help.github.com/articles/creating-a-pull-request/) or [merge](https://docs.gitlab.com/ee/user/project/merge_requests/) request you can add your component.
+- With a [pull](https://help.github.com/articles/creating-a-pull-request/) (GitHub) or [merge](https://docs.gitlab.com/ee/user/project/merge_requests/) (GitLab) request you can add your component.
+
+---
+
+# Your component
+
+----
+
+Write your role to be version specific:
+
+```
+- name: install my-software
+  package:
+    name: my-software-1.2.3
+```
+
+----
+
+Once (unit) tested, `release` (GitHub) or `tag` (GitLab) your repository.
+
+----
+
+Create a [pull](https://help.github.com/articles/creating-a-pull-request/) (GitHub) or [merge](https://docs.gitlab.com/ee/user/project/merge_requests/) (GitLab) request for the playbook that defines the release.
+- my-offering.yml
+- requirements.yml
