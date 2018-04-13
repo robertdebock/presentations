@@ -64,7 +64,7 @@ Follow along: http://robertdebock.nl/
 5. Use `package` over [specific package manger](http://docs.ansible.com/ansible/latest/list_of_packaging_modules.html).
 6. Use `service` over [specific service manger](http://docs.ansible.com/ansible/latest/list_of_system_modules.html).
 
-Note: 1. Easier debugging 5. Are there modules, are you describing state?
+Note: 1. Easier debugging, 4. `file: backup: no` 5. Are there modules, are you describing state?
 
 ----
 
