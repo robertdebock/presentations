@@ -43,12 +43,12 @@ Maybe you have these types of code:
 Your role will be included from a playbook that includes many roles. For example:
 
 ```
-- name: my-offering
+- name: stack
   hosts: all
   become: yes
 ```
 
-- There can be multiple offerings.
+- There can be multiple stack.
 - A `limit` can be used.
 - This playbook uses `become`.
 
@@ -118,25 +118,25 @@ requirements.yml
 Before
 
 ```
-+=== Repository "stack" ==========================================+
-|                           +--- Requirements ------------------+ |
-|                           | - src: https://.../backup.git     | |
-| +--- Stack ----------+    |   version: 1.3.0                  | |
-| | - role: backup     | <- |   name: backup                    | |
-| | - role: monitoring |    | - src: https://.../monitoring.git | |
-| +--------------------+    |   version: 2.0.1                  | |
-|                           |   name: monitoring                | |
-|                           +-----------------------------------+ |
-+=================================================================+
++=== Repository "stack" ====================================+
+|                        +--- Requirements ---------------+ |
+|                        | - src: https://.../backup.git  | |
+| +--- Stack -------+    |   version: 1.3.0               | |
+| | - role: backup  | <- |   name: backup                 | |
+| | - role: monitor |    | - src: https://.../monitor.git | |
+| +-----------------+    |   version: 2.0.1               | |
+|                        |   name: monitoring             | |
+|                        +--------------------------------+ |
++===========================================================+
 
-+=== Repository "backup" ====+   +=== Repository "monitoring" ====+
-| - defaults/main.yml        |   | - defaults/main.yml            |
-| - files/                   |   | - files/                       |
-| - handlers/main.yml        |   | - handlers/main.yml            |
-| - tasks/main.yml           |   | - tasks/main.yml               |
-| - templates/               |   | - templates/                   |
-| - vars/main.yml            |   | - vars/main.yml                |
-+============================+   +================================+
++=== Repository "backup" ===+   +=== Repository "monitor" ==+
+| - defaults/main.yml       |   | - defaults/main.yml       |
+| - files/                  |   | - files/                  |
+| - handlers/main.yml       |   | - handlers/main.yml       |
+| - tasks/main.yml          |   | - tasks/main.yml          |
+| - templates/              |   | - templates/              |
+| - vars/main.yml           |   | - vars/main.yml           |
++===========================+   +===========================+
 ```
 
 ----
@@ -144,29 +144,36 @@ Before
 After
 
 ```
-+=== Repository "stack" ==========================================+
-|                           +--- Requirements ------------------+ |
-|                           | - src: https://.../backup.git     | |
-| +--- Stack ----------+    |   version: 1.3.0                  | |
-| | - role: backup     | <- |   name: backup                    | |
-| | - role: monitoring |    | - src: https://.../monitoring.git | |
-| | - role: yours      |    |   version: 2.0.1                  | |
-| +--------------------+    |   name: monitoring                | |
-|                           | - src: https://.../yours.git      | |
-|                           |   version: 1.0.0                  | |
-|                           |   name: yours                     | |
-|                           +-----------------------------------+ |
-+=================================================================+
++=== Repository "stack" ====================================+
+|                        +--- Requirements ---------------+ |
+|                        | - src: https://.../backup.git  | |
+| +--- Stack -------+    |   version: 1.3.0               | |
+| | - role: backup  | <- |   name: backup                 | |
+| | - role: monitor |    | - src: https://.../monitor.git | |
+| | - role: yours   |    |   version: 2.0.1               | |
+| +-----------------+    |   name: monitoring             | |
+|                        | - src: https://.../yours.git   | |
+|                        |   version: 1.0.0               | |
+|                        |   name: yours                  | |
+|                        +--------------------------------+ |
++===========================================================+
 
-+=== Repository "backup" ====+   +=== Repository "monitoring" ====+   +=== Repository "yours" ===+
-| - defaults/main.yml        |   | - defaults/main.yml            |   | - defaults/main.yml      |
-| - files/                   |   | - files/                       |   | - files/                 |
-| - handlers/main.yml        |   | - handlers/main.yml            |   | - handlers/main.yml      |
-| - tasks/main.yml           |   | - tasks/main.yml               |   | - tasks/main.yml         |
-| - templates/               |   | - templates/                   |   | - templates/             |
-| - vars/main.yml            |   | - vars/main.yml                |   | - vars/main.yml          |
-+============================+   +================================+   +==========================+
++=== Repository "backup" ===+   +=== Repository "monitor" ==+   +=== Repository "yours" ===+
+| - defaults/main.yml       |   | - defaults/main.yml       |   | - defaults/main.yml      |
+| - files/                  |   | - files/                  |   | - files/                 |
+| - handlers/main.yml       |   | - handlers/main.yml       |   | - handlers/main.yml      |
+| - tasks/main.yml          |   | - tasks/main.yml          |   | - tasks/main.yml         |
+| - templates/              |   | - templates/              |   | - templates/             |
+| - vars/main.yml           |   | - vars/main.yml           |   | - vars/main.yml          |
++===========================+   +===========================+   +==========================+
 ```
+
+----
+
+So;
+1. Make your role.
+2. Add the referen to requirements.yml.
+3. Add your role to the stack.
 
 ---
 
@@ -182,6 +189,8 @@ Write your role to be version specific:
     name: my-software-1.2.3
 ```
 
+(Now it can be used for deployment and 2nd-day operations (update)).
+
 ----
 
 Once (unit) tested, `release` (GitHub) or `tag` (GitLab) your repository.
@@ -189,5 +198,5 @@ Once (unit) tested, `release` (GitHub) or `tag` (GitLab) your repository.
 ----
 
 Create a [pull](https://help.github.com/articles/creating-a-pull-request/) (GitHub) or [merge](https://docs.gitlab.com/ee/user/project/merge_requests/) (GitLab) request for the playbook that defines the release.
-- my-offering.yml
+- stack.yml
 - requirements.yml
