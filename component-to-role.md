@@ -115,7 +115,7 @@ requirements.yml
 
 ----
 
-Before
+Before (1/2)
 
 ```
 +=== Repository "stack" ===================================+
@@ -128,7 +128,13 @@ Before
 |                        |   name: monitoring            | |
 |                        +-------------------------------+ |
 +==========================================================+
+```
 
+----
+
+Before (2/2)
+
+```
 +=== Repository "backup" ==+   +=== Repository "monitor" ==+
 | - defaults/main.yml      |   | - defaults/main.yml       |
 | - files/                 |   | - files/                  |
@@ -141,7 +147,7 @@ Before
 
 ----
 
-After
+After (1/2)
 
 ```
 +=== Repository "stack" ===================================+
@@ -157,6 +163,10 @@ After
 |                        |   name: yours                 | |
 |                        +-------------------------------+ |
 +==========================================================+
+
+----
+
+After (2/2)
 
 +=== Repository "backup" ==+   +=== Repository "monitor" ==+   +=== Repository "yours" ===+
 | - defaults/main.yml      |   | - defaults/main.yml       |   | - defaults/main.yml      |
