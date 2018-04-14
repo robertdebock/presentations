@@ -120,7 +120,7 @@ Before (1/2)
 
 ```
 +=== Repository "stack" ===================================+
-|                        +--- Requirements --------------+ |
+|                        +--- requirements.yml ----------+ |
 |                        | - src: https://../backup.git  | |
 | +--- stack.yml ---+    |   version: 1.3.0              | |
 | | - role: backup  | <- |   name: backup                | |
@@ -152,7 +152,7 @@ After (1/2)
 
 ```
 +=== Repository "stack" ===================================+
-|                        +--- Requirements --------------+ |
+|                        +--- requirements.yml ----------+ |
 |                        | - src: https://../backup.git  | |
 | +--- stack.yml ---+    |   version: 1.3.0              | |
 | | - role: backup  | <- |   name: backup                | |
@@ -208,6 +208,12 @@ tasks/main.yml
 ```
 
 (Now it can be used for deployment and 2nd-day operations (update)).
+
+----
+
+Include only software from your component.
+
+For example if you need Java, include another role that provides this dependency.
 
 ----
 
