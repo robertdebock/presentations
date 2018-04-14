@@ -42,6 +42,7 @@ Maybe you have these types of code:
 
 Your role will be included from a playbook that includes many roles. For example:
 
+stack.yml:
 ```
 - name: stack
   hosts: all
@@ -121,7 +122,7 @@ Before (1/2)
 +=== Repository "stack" ===================================+
 |                        +--- Requirements --------------+ |
 |                        | - src: https://../backup.git  | |
-| +--- Stack -------+    |   version: 1.3.0              | |
+| +--- stack.yml ---+    |   version: 1.3.0              | |
 | | - role: backup  | <- |   name: backup                | |
 | | - role: monitor |    | - src: https://../monitor.git | |
 | +-----------------+    |   version: 2.0.1              | |
@@ -153,7 +154,7 @@ After (1/2)
 +=== Repository "stack" ===================================+
 |                        +--- Requirements --------------+ |
 |                        | - src: https://../backup.git  | |
-| +--- Stack -------+    |   version: 1.3.0              | |
+| +--- stack.yml ---+    |   version: 1.3.0              | |
 | | - role: backup  | <- |   name: backup                | |
 | | - role: monitor |    | - src: https://../monitor.git | |
 | | - role: yours   |    |   version: 2.0.1              | |
@@ -181,8 +182,8 @@ After (2/2)
 ----
 
 So;
-1. Make your role.
-2. Add the referen to requirements.yml.
+1. Make your role in your own repository.
+2. Add a reference to your role in requirements.yml.
 3. Add your role to the stack.
 
 ---
@@ -193,10 +194,17 @@ So;
 
 Write your role to be version specific:
 
+vars/main.yml:
 ```
-- name: install my-software
+---
+yours_version: 1.2.3
+```
+
+tasks/main.yml
+```
+- name: install yours
   package:
-    name: my-software-1.2.3
+    name: yours-{{ yours_version }}
 ```
 
 (Now it can be used for deployment and 2nd-day operations (update)).
