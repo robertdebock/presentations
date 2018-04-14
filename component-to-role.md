@@ -118,25 +118,25 @@ requirements.yml
 Before
 
 ```
-+=== Repository "stack" ====================================+
-|                        +--- Requirements ---------------+ |
-|                        | - src: https://.../backup.git  | |
-| +--- Stack -------+    |   version: 1.3.0               | |
-| | - role: backup  | <- |   name: backup                 | |
-| | - role: monitor |    | - src: https://.../monitor.git | |
-| +-----------------+    |   version: 2.0.1               | |
-|                        |   name: monitoring             | |
-|                        +--------------------------------+ |
-+===========================================================+
++=== Repository "stack" ===================================+
+|                        +--- Requirements --------------+ |
+|                        | - src: https://../backup.git  | |
+| +--- Stack -------+    |   version: 1.3.0              | |
+| | - role: backup  | <- |   name: backup                | |
+| | - role: monitor |    | - src: https://../monitor.git | |
+| +-----------------+    |   version: 2.0.1              | |
+|                        |   name: monitoring            | |
+|                        +-------------------------------+ |
++==========================================================+
 
-+=== Repository "backup" ===+   +=== Repository "monitor" ==+
-| - defaults/main.yml       |   | - defaults/main.yml       |
-| - files/                  |   | - files/                  |
-| - handlers/main.yml       |   | - handlers/main.yml       |
-| - tasks/main.yml          |   | - tasks/main.yml          |
-| - templates/              |   | - templates/              |
-| - vars/main.yml           |   | - vars/main.yml           |
-+===========================+   +===========================+
++=== Repository "backup" ==+   +=== Repository "monitor" ==+
+| - defaults/main.yml      |   | - defaults/main.yml       |
+| - files/                 |   | - files/                  |
+| - handlers/main.yml      |   | - handlers/main.yml       |
+| - tasks/main.yml         |   | - tasks/main.yml          |
+| - templates/             |   | - templates/              |
+| - vars/main.yml          |   | - vars/main.yml           |
++==========================+   +===========================+
 ```
 
 ----
@@ -144,28 +144,28 @@ Before
 After
 
 ```
-+=== Repository "stack" ====================================+
-|                        +--- Requirements ---------------+ |
-|                        | - src: https://.../backup.git  | |
-| +--- Stack -------+    |   version: 1.3.0               | |
-| | - role: backup  | <- |   name: backup                 | |
-| | - role: monitor |    | - src: https://.../monitor.git | |
-| | - role: yours   |    |   version: 2.0.1               | |
-| +-----------------+    |   name: monitoring             | |
-|                        | - src: https://.../yours.git   | |
-|                        |   version: 1.0.0               | |
-|                        |   name: yours                  | |
-|                        +--------------------------------+ |
-+===========================================================+
++=== Repository "stack" ===================================+
+|                        +--- Requirements --------------+ |
+|                        | - src: https://../backup.git  | |
+| +--- Stack -------+    |   version: 1.3.0              | |
+| | - role: backup  | <- |   name: backup                | |
+| | - role: monitor |    | - src: https://../monitor.git | |
+| | - role: yours   |    |   version: 2.0.1              | |
+| +-----------------+    |   name: monitoring            | |
+|                        | - src: https://../yours.git   | |
+|                        |   version: 1.0.0              | |
+|                        |   name: yours                 | |
+|                        +-------------------------------+ |
++==========================================================+
 
-+=== Repository "backup" ===+   +=== Repository "monitor" ==+   +=== Repository "yours" ===+
-| - defaults/main.yml       |   | - defaults/main.yml       |   | - defaults/main.yml      |
-| - files/                  |   | - files/                  |   | - files/                 |
-| - handlers/main.yml       |   | - handlers/main.yml       |   | - handlers/main.yml      |
-| - tasks/main.yml          |   | - tasks/main.yml          |   | - tasks/main.yml         |
-| - templates/              |   | - templates/              |   | - templates/             |
-| - vars/main.yml           |   | - vars/main.yml           |   | - vars/main.yml          |
-+===========================+   +===========================+   +==========================+
++=== Repository "backup" ==+   +=== Repository "monitor" ==+   +=== Repository "yours" ===+
+| - defaults/main.yml      |   | - defaults/main.yml       |   | - defaults/main.yml      |
+| - files/                 |   | - files/                  |   | - files/                 |
+| - handlers/main.yml      |   | - handlers/main.yml       |   | - handlers/main.yml      |
+| - tasks/main.yml         |   | - tasks/main.yml          |   | - tasks/main.yml         |
+| - templates/             |   | - templates/              |   | - templates/             |
+| - vars/main.yml          |   | - vars/main.yml           |   | - vars/main.yml          |
++==========================+   +===========================+   +==========================+
 ```
 
 ----
