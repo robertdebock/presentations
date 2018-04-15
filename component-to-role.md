@@ -23,6 +23,7 @@ Maybe you have these types of code:
 1. Puppet
 2. BigFix
 3. Perl, Bash, Bourne shell, etc
+4. component-do.sh
 
 ----
 
@@ -40,11 +41,12 @@ Maybe you have these types of code:
 
 # Integrate 1/4
 
-Your role will be included from a playbook that includes many roles. For example:
+Your role will be included from a playbook that includes many roles.
 
 stack.yml:
-```txt
-- name: stack
+```yaml
+---
+- name: create stack
   hosts: all
   become: yes
 ```
@@ -57,7 +59,7 @@ stack.yml:
 
 # Integrate 2/4
 
-```txt
+```yaml
   pre_tasks:
   - name: install other ansible requirements
     package:
@@ -78,7 +80,7 @@ stack.yml:
 
 # Integrate 3/4
 
-```txt
+```yaml
   tasks:
     - name: run backup role
       include_role:
@@ -98,7 +100,7 @@ stack.yml:
 # Integrate 4/4
 
 requirements.yml
-```txt
+```yaml
 - src: https://github.com/username/backup.git
   version: 1.3.0
   name: backup
@@ -197,13 +199,13 @@ So;
 Write your role to be version specific:
 
 vars/main.yml:
-```txt
+```yaml
 ---
 yours_version: 1.2.3
 ```
 
 tasks/main.yml
-```txt
+```yaml
 - name: install yours
   package:
     name: yours-{{ yours_version }}
