@@ -43,7 +43,7 @@ Maybe you have these types of code:
 
 Your role will be included from a playbook that includes many roles.
 
-stack.yml:
+stack.yml
 ```yaml
 ---
 - name: create stack
@@ -121,7 +121,7 @@ requirements.yml
 Before (1/2)
 
 ```txt
-+=== Repository "stack" ===================================+
++=== Repository "stacks" ==================================+
 |                        +--- requirements.yml ----------+ |
 |                        | - src: https://../backup.git  | |
 | +--- stack.yml ---+    |   version: 1.3.0              | |
@@ -153,7 +153,7 @@ Before (2/2)
 After (1/2)
 
 ```txt
-+=== Repository "stack" ===================================+
++=== Repository "stacks" ==================================+
 |                        +--- requirements.yml ----------+ |
 |                        | - src: https://../backup.git  | |
 | +--- stack.yml ---+    |   version: 1.3.0              | |
@@ -181,6 +181,15 @@ After (2/2)
 | - templates/             |   | - templates/              |   | - templates/             |
 | - vars/main.yml          |   | - vars/main.yml           |   | - vars/main.yml          |
 +==========================+   +===========================+   +==========================+
+
++=== Repository "yours" ===+
+| - defaults/main.yml      |
+| - files/                 |
+| - handlers/main.yml      |
+| - tasks/main.yml         |
+| - templates/             |
+| - vars/main.yml          |
++==========================+
 ```
 
 ----
