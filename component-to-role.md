@@ -43,7 +43,7 @@ Maybe you have these types of code:
 Your role will be included from a playbook that includes many roles. For example:
 
 stack.yml:
-```
+```txt
 - name: stack
   hosts: all
   become: yes
@@ -57,7 +57,7 @@ stack.yml:
 
 # Integrate 2/4
 
-```
+```txt
   pre_tasks:
   - name: install other ansible requirements
     package:
@@ -78,7 +78,7 @@ stack.yml:
 
 # Integrate 3/4
 
-```
+```txt
   tasks:
     - name: run backup role
       include_role:
@@ -98,7 +98,7 @@ stack.yml:
 # Integrate 4/4
 
 requirements.yml
-```
+```txt
 - src: https://github.com/username/backup.git
   version: 1.3.0
   name: backup
@@ -118,7 +118,7 @@ requirements.yml
 
 Before (1/2)
 
-```
+```txt
 +=== Repository "stack" ===================================+
 |                        +--- requirements.yml ----------+ |
 |                        | - src: https://../backup.git  | |
@@ -135,7 +135,7 @@ Before (1/2)
 
 Before (2/2)
 
-```
+```txt
 +=== Repository "backup" ==+   +=== Repository "monitor" ==+
 | - defaults/main.yml      |   | - defaults/main.yml       |
 | - files/                 |   | - files/                  |
@@ -150,7 +150,7 @@ Before (2/2)
 
 After (1/2)
 
-```
+```txt
 +=== Repository "stack" ===================================+
 |                        +--- requirements.yml ----------+ |
 |                        | - src: https://../backup.git  | |
@@ -164,11 +164,13 @@ After (1/2)
 |                        |   name: yours                 | |
 |                        +-------------------------------+ |
 +==========================================================+
+```
 
 ----
 
 After (2/2)
 
+```txt
 +=== Repository "backup" ==+   +=== Repository "monitor" ==+   +=== Repository "yours" ===+
 | - defaults/main.yml      |   | - defaults/main.yml       |   | - defaults/main.yml      |
 | - files/                 |   | - files/                  |   | - files/                 |
@@ -195,13 +197,13 @@ So;
 Write your role to be version specific:
 
 vars/main.yml:
-```
+```txt
 ---
 yours_version: 1.2.3
 ```
 
 tasks/main.yml
-```
+```txt
 - name: install yours
   package:
     name: yours-{{ yours_version }}
