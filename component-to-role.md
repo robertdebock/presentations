@@ -45,7 +45,6 @@ Your role will be included from a playbook that includes many roles.
 
 stack.yml
 ```yaml
----
 - name: create stack
   hosts: all
   become: yes
@@ -200,7 +199,6 @@ Write your role to be version specific:
 
 vars/main.yml:
 ```yaml
----
 yours_version: 1.2.3
 ```
 
