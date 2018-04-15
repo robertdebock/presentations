@@ -181,15 +181,6 @@ After (2/2)
 | - templates/             |   | - templates/              |   | - templates/             |
 | - vars/main.yml          |   | - vars/main.yml           |   | - vars/main.yml          |
 +==========================+   +===========================+   +==========================+
-
-+=== Repository "yours" ===+
-| - defaults/main.yml      |
-| - files/                 |
-| - handlers/main.yml      |
-| - tasks/main.yml         |
-| - templates/             |
-| - vars/main.yml          |
-+==========================+
 ```
 
 ----
