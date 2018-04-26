@@ -187,6 +187,34 @@ tasks/main.yml:
 ```
 
 ---
+
+# Bit-rot
+
+Wikipedia: (so scientifically true)
+
+```
+A deterioration of software performance over time or its diminishing responsiveness because of the changing environment in which it resides.
+```
+
+----
+
+# Successful software
+
+
+<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~robertdebock/1.embed"></iframe>
+
+Graph-inspiration: [Sam Doran](https://github.com/samdoran) ([Youtube](https://www.youtube.com/watch?v=7gEKmsuJr7s))
+
+----
+
+# Prevent bit-rot
+
+- Make small "units" (Ansible roles)
+- Build often (Molecule)
+- Integrate (DigitalOcean)
+- Periodic rebuilds (Travis)
+
+---
   
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Conclusion
