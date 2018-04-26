@@ -57,19 +57,18 @@ Follow along: http://robertdebock.nl/
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Style
 
-1. Name every task.
-2. Carefully select a name for tasks.
-3. Use YAML.
-4. Omit default values.
-5. Use `package` over [specific package manger](http://docs.ansible.com/ansible/latest/list_of_packaging_modules.html).
-6. Use `service` over [specific service manger](http://docs.ansible.com/ansible/latest/list_of_system_modules.html).
+1. Name every task carefully.
+2. Use YAML.
+3. Omit default values.
+4. Use `package` over [specific package manger](http://docs.ansible.com/ansible/latest/list_of_packaging_modules.html).
+5. Use `service` over [specific service manger](http://docs.ansible.com/ansible/latest/list_of_system_modules.html).
 
 Note: 1. Easier debugging, 4. `file: backup: no` 5. Are there modules, are you describing state?
 
 ----
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
-# Question: good enough?
+# Question: good?
 
 ```
 - name: Install screen on Red Hat
@@ -172,7 +171,7 @@ tasks/main.yml:
 
 # Problems
 
-### Solve problems at the appropriate location.
+### Solve problems at the right place.
 
 ```
 - name: ensure my-software is installed

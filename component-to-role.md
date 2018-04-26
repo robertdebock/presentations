@@ -209,7 +209,7 @@ tasks/main.yml
     name: yours-{{ yours_version }}
 ```
 
-(Now it can be used for deployment and 2nd-day operations (update)).
+Now it can be used for deployment and 2nd-day operations (update).
 
 ----
 
