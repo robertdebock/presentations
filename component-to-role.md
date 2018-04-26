@@ -81,17 +81,18 @@ stack.yml
 
 ```yaml
   tasks:
-    - name: run backup role
+    - name: run java role
       include_role:
-        name: backup
-      vars:
-        backup_server: backupserver1.example.com
+        name: java
 
-    - name: run monitoring role
+    - name: run tomcat role
       include_role:
-        name: monitoring
+        name: tomcat
       vars:
-        monitoring_server: monitoringserver1.example.com
+        tomcat_layout:
+          - name: my-application
+            wars:
+              url: https:/artifactory/my-application.war
 ```
 
 ----
@@ -100,13 +101,13 @@ stack.yml
 
 requirements.yml
 ```yaml
-- src: https://github.com/username/backup.git
+- src: https://github.com/username/java.git
   version: 1.3.0
-  name: backup
+  name: java
 
-- src: https://github.com/username/monitoring.git
+- src: https://github.com/username/tomcat.git
   version: 2.0.1
-  name: monitoring
+  name: tomcat
 ```
 
 - With a [pull](https://help.github.com/articles/creating-a-pull-request/) (GitHub) or [merge](https://docs.gitlab.com/ee/user/project/merge_requests/) (GitLab) request you can add your component.
@@ -120,16 +121,16 @@ requirements.yml
 Before (1/2)
 
 ```txt
-+=== Repository "stacks" ==================================+
-|                        +--- requirements.yml ----------+ |
-|                        | - src: https://../backup.git  | |
-| +--- stack.yml ---+    |   version: 1.3.0              | |
-| | - role: backup  | <- |   name: backup                | |
-| | - role: monitor |    | - src: https://../monitor.git | |
-| +-----------------+    |   version: 2.0.1              | |
-|                        |   name: monitoring            | |
-|                        +-------------------------------+ |
-+==========================================================+
++=== Repository "stacks" ================================+
+|                       +--- requirements.yml ---------+ |
+|                       | - src: https://../java.git   | |
+| +--- stack.yml --+    |   version: 1.3.0             | |
+| | - role: java   | <- |   name: java                 | |
+| | - role: tomcat |    | - src: https://../tomcat.git | |
+| +----------------+    |   version: 2.0.1             | |
+|                       |   name: tomcat               | |
+|                       +------------------------------+ |
++========================================================+
 ```
 
 ----
@@ -137,14 +138,14 @@ Before (1/2)
 Before (2/2)
 
 ```txt
-+=== Repository "backup" ==+   +=== Repository "monitor" ==+
-| - defaults/main.yml      |   | - defaults/main.yml       |
-| - files/                 |   | - files/                  |
-| - handlers/main.yml      |   | - handlers/main.yml       |
-| - tasks/main.yml         |   | - tasks/main.yml          |
-| - templates/             |   | - templates/              |
-| - vars/main.yml          |   | - vars/main.yml           |
-+==========================+   +===========================+
++=== Repository "java" ==+   +=== Repository "tomcat" ===+
+| - defaults/main.yml    |   | - defaults/main.yml       |
+| - files/               |   | - files/                  |
+| - handlers/main.yml    |   | - handlers/main.yml       |
+| - tasks/main.yml       |   | - tasks/main.yml          |
+| - templates/           |   | - templates/              |
+| - vars/main.yml        |   | - vars/main.yml           |
++========================+   +===========================+
 ```
 
 ----
@@ -152,19 +153,19 @@ Before (2/2)
 After (1/2)
 
 ```txt
-+=== Repository "stacks" ==================================+
-|                        +--- requirements.yml ----------+ |
-|                        | - src: https://../backup.git  | |
-| +--- stack.yml ---+    |   version: 1.3.0              | |
-| | - role: backup  | <- |   name: backup                | |
-| | - role: monitor |    | - src: https://../monitor.git | |
-| | - role: yours   |    |   version: 2.0.1              | |
-| +-----------------+    |   name: monitoring            | |
-|                        | - src: https://../yours.git   | |
-|                        |   version: 1.0.0              | |
-|                        |   name: yours                 | |
-|                        +-------------------------------+ |
-+==========================================================+
++=== Repository "stacks" ================================+
+|                       +--- requirements.yml ---------+ |
+|                       | - src: https://../java.git   | |
+| +--- stack.yml --+    |   version: 1.3.0             | |
+| | - role: java   | <- |   name: java                 | |
+| | - role: tomcat |    | - src: https://../tomcat.git | |
+| | - role: yours  |    |   version: 2.0.1             | |
+| +----------------+    |   name: tomcat               | |
+|                       | - src: https://../yours.git  | |
+|                       |   version: 1.0.0             | |
+|                       |   name: yours                | |
+|                       +------------------------------+ |
++========================================================+
 ```
 
 ----
@@ -172,14 +173,14 @@ After (1/2)
 After (2/2)
 
 ```txt
-+=== Repository "backup" ==+   +=== Repository "monitor" ==+   +=== Repository "yours" ===+
-| - defaults/main.yml      |   | - defaults/main.yml       |   | - defaults/main.yml      |
-| - files/                 |   | - files/                  |   | - files/                 |
-| - handlers/main.yml      |   | - handlers/main.yml       |   | - handlers/main.yml      |
-| - tasks/main.yml         |   | - tasks/main.yml          |   | - tasks/main.yml         |
-| - templates/             |   | - templates/              |   | - templates/             |
-| - vars/main.yml          |   | - vars/main.yml           |   | - vars/main.yml          |
-+==========================+   +===========================+   +==========================+
++=== Repository "java" ==+   +=== Repository "tomcat" ==+   +=== Repository "yours" ==+
+| - defaults/main.yml    |   | - defaults/main.yml      |   | - defaults/main.yml     |
+| - files/               |   | - files/                 |   | - files/                |
+| - handlers/main.yml    |   | - handlers/main.yml      |   | - handlers/main.yml     |
+| - tasks/main.yml       |   | - tasks/main.yml         |   | - tasks/main.yml        |
+| - templates/           |   | - templates/             |   | - templates/            |
+| - vars/main.yml        |   | - vars/main.yml          |   | - vars/main.yml         |
++========================+   +==========================+   +=========================+
 ```
 
 ----
