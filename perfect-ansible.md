@@ -26,7 +26,7 @@ Follow along: http://robertdebock.nl/
 ----
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
-# Question: More readable?
+# Q: More readable?
 
 ```
 - name: ensure package screen is installed
@@ -68,7 +68,7 @@ Note: 1. Easier debugging, 4. `file: backup: no` 5. Are there modules, are you d
 ----
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
-# Question: good?
+# Q: good enough?
 
 ```
 - name: Install screen on Red Hat
@@ -193,7 +193,9 @@ tasks/main.yml:
 Wikipedia: (so scientifically true)
 
 ```txt
-A deterioration of software performance over time or its diminishing responsiveness because of the changing environment in which it resides.
+A deterioration of software performance over time or its
+diminishing responsiveness because of the changing
+environment in which it resides.
 ```
 
 ----
