@@ -192,7 +192,7 @@ tasks/main.yml:
 
 Wikipedia: (so scientifically true)
 
-```
+```txt
 A deterioration of software performance over time or its diminishing responsiveness because of the changing environment in which it resides.
 ```
 
