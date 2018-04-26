@@ -198,10 +198,10 @@ A deterioration of software performance over time or its diminishing responsiven
 
 ----
 
-# Successful software
+# software
 
 
-<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~robertdebock/1.embed"></iframe>
+<iframe width="600" height="400" frameborder="0" scrolling="no" src="//plot.ly/~robertdebock/1.embed"></iframe>
 
 Graph-inspiration: [Sam Doran](https://github.com/samdoran) ([Youtube](https://www.youtube.com/watch?v=7gEKmsuJr7s))
 
