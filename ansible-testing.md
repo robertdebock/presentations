@@ -22,14 +22,6 @@ Follow along: http://robertdebock.nl/
 
 ---
 
-# Ansible
-
-Another [new technology](https://trends.google.com/trends/explore?date=today%205-y&q=%2Fm%2F03d3cjz,%2Fm%2F05zxlz3,%2Fm%2F0k0vzjb,Saltstack)?
-
-Note: kickstart, scripts, clusterssh, cfengine, puppet.
-
----
-
 # Playbooks vs Roles
 
 - Roles are sharable
@@ -103,7 +95,7 @@ Note: tests are optional, but really help.
 
 The `artifact` is published to Galaxy
 
-----
+---
 
 # Unit tests
 
@@ -173,7 +165,6 @@ $ molecule test
 
 molecule/default/molecule.yml
 ```
----
 dependency:
   name: galaxy
   options:
@@ -218,7 +209,7 @@ Unit tests only test per Ansible role. Integration with other roles is typically
 
 ----
 
-# Example (simplified)
+# Example 1/2
 
 ```
 - name: configure items for application servers.
@@ -244,7 +235,7 @@ Unit tests only test per Ansible role. Integration with other roles is typically
 
 ----
 
-# Example (continued)
+# Example 2/2
 
 ```
 - name: configure items for web servers.
@@ -263,7 +254,7 @@ Unit tests only test per Ansible role. Integration with other roles is typically
           backend_url: http://localhost:8080/sample
 ```
 
-----
+---
 
 # Setup
 
@@ -286,7 +277,7 @@ before_install:
 
 ----
 
-# Create infrastructure
+# Create infra
 
 ```
 install:
@@ -302,7 +293,7 @@ install:
 
 ----
 
-# Run the integration
+# Integration
 
 ```
   - ansible-playbook mail.yml
@@ -338,12 +329,9 @@ deploy:
 
 ----
 
-- [Goss](https://github.com/aelsabbahy/goss) is great, but it's not easy to use variables.
+# Goss
 
-For example the package Apache HTTPD is named different per distribution.
-- Alpine/Debian/Ubuntu: apache2
-- Archlinux: apache
-- CentOS/Fedora/OpenSUSE: httpd
+[Goss](https://github.com/aelsabbahy/goss) is great, but it's not easy to use variables.
 
 molecule/default/tests/test_default.yml
 ```
@@ -352,13 +340,21 @@ package:
     installed: true
 ```
 
+- Alpine/Debian/Ubuntu: apache2
+- Archlinux: apache
+- CentOS/Fedora/OpenSUSE: httpd
+
 ----
 
-- Integration tests don't use the [Travis build matrix](https://docs.travis-ci.com/user/customizing-the-build#Build-Matrix)
+# Travis
+
+Integration tests don't use the [Travis build matrix](https://docs.travis-ci.com/user/customizing-the-build#Build-Matrix)
 
 I could not figure out how to collect all artifacts (reports) and deploy them to GitHub Pages.
 
 ----
+
+# Complexity
 
 It's difficult to draw a line with the integration tests.
 
@@ -370,6 +366,8 @@ For example: A mail integration test can includes:
 - roundcubemail
 
 ----
+
+# When?
 
 I'm not sure if the integration test should run after each unit test.
 
