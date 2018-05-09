@@ -39,6 +39,7 @@ Note: kickstart, scripts, clusterssh, cfengine, puppet.
 
 # Ansible role
 
+tasks/main.yml
 ```
 - name: install software
   package:
@@ -55,6 +56,7 @@ Note: kickstart, scripts, clusterssh, cfengine, puppet.
 
 # Ansible playbook
 
+mywebserver.yml
 ```
 - hosts: webservers
   become: yes
@@ -119,14 +121,14 @@ The `artifact` is published to Galaxy
                                         +-------------------+
 ```
 
-Warning: I love [ASCII art](https://groups.google.com/forum/#!forum/alt.ascii-art)
+I love [ASCII art](https://groups.google.com/forum/#!forum/alt.ascii-art)
 
 ---
 
 # Lets Go!
 
 ```
-molecule init role \
+$ molecule init role \
   --driver-name docker \
   --verifier-name goss \
   --role-name ansible-role-java
@@ -135,12 +137,11 @@ molecule init role \
 
 # Write tests
 
+molecule/default/test_default.yml
 ```
 file:
   /usr/bin/java:
     exists: true
-    owner: root
-    group: root
 ```
 
 See [GOSS documentation](https://github.com/aelsabbahy/goss/blob/master/docs/manual.md) for more information.
@@ -149,6 +150,7 @@ See [GOSS documentation](https://github.com/aelsabbahy/goss/blob/master/docs/man
 
 # Write the role
 
+tasks/main.yml
 ```
 - name: install java (openjdk)
   package:
@@ -162,15 +164,39 @@ There are [many variations](https://github.com/robertdebock/ansible-role-java) o
 # Test it
 
 ```
-molecule test
+$ molecule test
 ```
 
 ----
 
 # Test it deluxe
 
+molecule/default/molecule.yml
 ```
-vi molecule/default/molecule.yml
+---
+dependency:
+  name: galaxy
+  options:
+    role-file: requirements.yml
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: java-centos-6
+    image: centos:6
+  - name: java-centos-7
+    image: centos:7
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+scenario:
+  name: centos
+verifier:
+  name: goss
+  lint:
+    name: 'flake8'
 ```
 
 ----
@@ -181,8 +207,173 @@ vi molecule/default/molecule.yml
 
 # Limitations
 
-- This just tests the role
-- De developer determines the tests
+- This just tests the role.
+- The developer determines the tests.
+
+---
+
+# Integration tests
+
+Unit tests only test per Ansible role. Integration with other roles is typically not covered.
+
+----
+
+# Example (simplified)
+
+```
+- name: configure items for application servers.
+  hosts: application-server
+  become: yes
+  gather_facts: yes
+
+  tasks:
+    - name: tomcat
+      include_role:
+        name: robertdebock.tomcat
+      vars:
+        tomcat_layout:
+          - name: sample
+            directory: /opt/sample
+            non_ssl_connector_port: 8080
+            ssl_connector_port: 8443
+            shutdown_port: 8005
+            ajp_port: 8009
+            wars:
+              - url: https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war
+```
+
+----
+
+# Example (continued)
+
+```
+- name: configure items for web servers.
+  hosts: web-server
+  become: yes
+  gather_facts: yes
+
+  tasks:
+    - name: httpd
+      include_role:
+        name: robertdebock.httpd
+      vars:
+        httpd_applications:
+        - name: sample
+          location: /sample
+          backend_url: http://localhost:8080/sample
+```
+
+----
+
+# Setup
+
+Quite complex, but broken down into steps it's easier to understand
+
+----
+
+# Preparation
+
+```
+before_install:
+  - pip install --upgrade pip
+  - pip install ansible
+  - pip install ara
+  - wget https://releases.hashicorp.com/terraform/"${terraform_version}"/terraform_"${terraform_version}"_linux_amd64.zip
+  - mkdir bin
+  - unzip terraform_"${terraform_version}"_linux_amd64.zip -d bin
+  - chmod 750 bin/terraform
+```
+
+----
+
+# Create infrastructure
+
+```
+install:
+  - cd terraform ; ssh-keygen -f id_rsa -N ""
+  - ../bin/terraform init
+  - ../bin/terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
+  - cd ../ansible
+  - ansible-galaxy install -r mail-requirements.yml
+  - ansible-galaxy install -r infrastructure-requirements.yml
+  - ansible-galaxy install -r webapp-requirements.yml
+  - ansible-playbook wait.yml
+```
+
+----
+
+# Run the integration
+
+```
+  - ansible-playbook mail.yml
+  - ansible-playbook infrastructure.yml
+  - ansible-playbook webapp.yml
+  - cd ../terraform
+  - ../bin/terraform destroy -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
+  - cd ../ansible
+  - ara generate html ../report
+  - cd ../
+```
+
+----
+
+# Save a report
+
+```
+deploy:
+  - provider: pages
+    repo: robertdebock/ansible-integration
+    target-branch: gh-pages
+    local-dir: "report"
+    skip-cleanup: true
+    github-token: "${github_token}"
+    keep-history: false
+    on:
+      branch: master
+```
+
+---
+
+# Loose ends
+
+----
+
+- [Goss](https://github.com/aelsabbahy/goss) is great, but it's not easy to use variables.
+
+For example the package Apache HTTPD is named different per distribution.
+- Alpine/Debian/Ubuntu: apache2
+- Archlinux: apache
+- CentOS/Fedora/OpenSUSE: httpd
+
+molecule/default/tests/test_default.yml
+```
+package:
+  httpd:
+    installed: true
+```
+
+----
+
+- Integration tests don't use the [Travis build matrix](https://docs.travis-ci.com/user/customizing-the-build#Build-Matrix)
+
+I could not figure out how to collect all artifacts (reports) and deploy them to GitHub Pages.
+
+----
+
+It's difficult to draw a line with the integration tests.
+
+For example: A mail integration test can includes:
+- postfix
+- dovecot
+- spamassassin
+- clamav
+- roundcubemail
+
+----
+
+I'm not sure if the integration test should run after each unit test.
+
+The unit tests take about 30 minutes, integration about 15 minutes and cost some $0.10.
 
 ---
 
@@ -190,4 +381,4 @@ vi molecule/default/molecule.yml
 
 - It's easy to test roles.
 - Testing roles on multiple platforms is simple.
-- Integration tests not covered.
+- Integration tests help to run the roles against a more realistic environment.
