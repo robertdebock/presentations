@@ -202,18 +202,16 @@ verifier:
 # Integration tests
 
 ```text
-+--- GitHub --------------+    +--- Travis ---+        +--- Digitalocean ---+
-| - .travis.yml           | -> | - terraform  | -----> | droplets:          |
-|   /ansible/             |    | - ansible    | -----> |   - machine1       |
-|     - function1.yml     |    +--------------+        |   - machine2       |
-|     - inventory1        |          |                 |   - machine3       |
-|     - requirements1.yml |          V                 |   - machine4       |
-|   /terraform/           |    +--- GitHub Pages ---+  |   - machine5       |
-|     - function1.tf      |    | Report (Ara)       |  |   - machine5       |
-+-------------------------+    +--------------------+  +--------------------+
++--- GitHub ---------+    +--- Travis ---+    +--- Dgtlcn  ---+
+| - .travis.yml      | -> | - terraform  | -> | droplets:     |
+|   /ansible/        |    | - ansible    | -> |   - machine1  |
+|     - func1.yml    |    +--------------+    |   - machine2  |
+|     - inventory1   |          |             |   - machine3  |
+|     - require1.yml |          V             |   - machine4  |
+|   /terraform/      |    +--- GitHub ---+    |   - machine5  |
+|     - function1.tf |    | Report       |    |   - machine5  |
++--------------------+    +--------------+    +---------------+
 ```
-
-Unit tests only test per Ansible role. Integration with other roles is typically not covered.
 
 ----
 
