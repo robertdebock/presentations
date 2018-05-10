@@ -202,15 +202,15 @@ verifier:
 # Integration tests
 
 ```text
-+--- GitHub ---------+    +--- Travis ---+    +--- Dgtlcn  ---+
-| - .travis.yml      | -> | - terraform  | -> | droplets:     |
-|   /ansible/        |    | - ansible    | -> |   - machine1  |
-|     - func1.yml    |    +--------------+    |   - machine2  |
-|     - inventory1   |          |             |   - machine3  |
-|     - require1.yml |          V             |   - machine4  |
-|   /terraform/      |    +--- GitHub ---+    |   - machine5  |
-|     - function1.tf |    | Report       |    |   - machine5  |
-+--------------------+    +--------------+    +---------------+
++--- GitHub --------+    +--- Travis ---+    +--- Dgtlcn  --+
+| - .travis.yml     | -> | - terraform  | -> | droplets:    |
+|   /ansible/       |    | - ansible    | -> |   - machine1 |
+|     - fnctn1.yml  |    +--------------+    |   - machine2 |
+|     - nvntr1      |          |             |   - machine3 |
+|     - rqrmnts.yml |          V             |   - machine4 |
+|   /terraform/     |    +--- GitHub ---+    |   - machine5 |
+|     - fnctn1.tf   |    | Report       |    |   - machine5 |
++-------------------+    +--------------+    +--------------+
 ```
 
 ----
