@@ -11,6 +11,13 @@ Follow along: http://robertdebock.nl/
 
 ---
 
+# Immortalize thyself
+
+- See an error, make a [pull request](https://github.com/robertdebock/presentations).
+- I'm collecting stars on GitHub.
+
+---
+
 <img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/containers.jpg"/>
 
 ---
@@ -21,13 +28,6 @@ Follow along: http://robertdebock.nl/
 - About [work](https://github.com/robertdebock)
 
 ---
-
-# Playbooks vs Roles
-
-- Roles are sharable
-- Playbooks refer to roles
-
-----
 
 # Ansible role
 
@@ -66,13 +66,9 @@ mywebserver.yml
 
 ---
 
-# Roles, where?
+# Galaxy criteria
 
 https://galaxy.ansible.com/
-
-----
-
-# Galaxy criteria
 
 - Downloads
 - Stars
@@ -93,7 +89,7 @@ Note: tests are optional, but really help.
 
 # Not really a build
 
-The `artifact` is published to Galaxy
+The `artifact` (tested code) is published to Galaxy
 
 ---
 
@@ -205,11 +201,23 @@ verifier:
 
 # Integration tests
 
+```text
++--- GitHub --------------+    +--- Travis ---+        +--- Digitalocean ---+
+| - .travis.yml           | -> | - terraform  | -----> | droplets:          |
+|   /ansible/             |    | - ansible    | -----> |   - machine1       |
+|     - function1.yml     |    +--------------+        |   - machine2       |
+|     - inventory1        |          |                 |   - machine3       |
+|     - requirements1.yml |          V                 |   - machine4       |
+|   /terraform/           |    +--- GitHub Pages ---+  |   - machine5       |
+|     - function1.tf      |    | Report (Ara)       |  |   - machine5       |
++-------------------------+    +--------------------+  +--------------------+
+```
+
 Unit tests only test per Ansible role. Integration with other roles is typically not covered.
 
 ----
 
-# Example 1/2
+# Ansible 1/2
 
 ```
 - name: configure items for application servers.
@@ -235,7 +243,7 @@ Unit tests only test per Ansible role. Integration with other roles is typically
 
 ----
 
-# Example 2/2
+# Ansible 2/2
 
 ```
 - name: configure items for web servers.
@@ -264,6 +272,7 @@ Quite complex, but broken down into steps it's easier to understand
 
 # Preparation
 
+.travis.yml
 ```
 before_install:
   - pip install --upgrade pip
@@ -279,6 +288,7 @@ before_install:
 
 # Create infra
 
+.travis.yml
 ```
 install:
   - cd terraform ; ssh-keygen -f id_rsa -N ""
@@ -295,6 +305,7 @@ install:
 
 # Integration
 
+.travis.yml
 ```
   - ansible-playbook mail.yml
   - ansible-playbook infrastructure.yml
@@ -310,6 +321,7 @@ install:
 
 # Save a report
 
+.travis.yml
 ```
 deploy:
   - provider: pages
@@ -322,6 +334,14 @@ deploy:
     on:
       branch: master
 ```
+
+---
+
+# ARA
+
+[Ansible Runtime Analysis](https://github.com/openstack/ara) or [ARA Records Ansible](https://github.com/openstack/ara).
+
+Used to save a report, useful to see [what happened](https://robertdebock.nl/ansible-integration/).
 
 ---
 
@@ -371,7 +391,7 @@ For example: A mail integration test can includes:
 
 I'm not sure if the integration test should run after each unit test.
 
-The unit tests take about 30 minutes, integration about 15 minutes and cost some $0.10.
+The unit tests take about 30 minutes, integration about 15 minutes and cost some $0.07.
 
 ---
 
