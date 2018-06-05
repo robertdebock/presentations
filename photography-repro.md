@@ -1,5 +1,5 @@
 ---
-title: photography basics
+title: photography reporduction
 
 ---
 
