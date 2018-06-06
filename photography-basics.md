@@ -131,8 +131,8 @@ My image is not sharp with these settings, what to do?
 - ISO: as low as possible (ISO 200)
 - Shutter handheld: 1/60 - 1/125
 - Shutter tripod: As slow as necessary
-- Aperture flatlay: f/5.6 - f/8
-- Aperture 45 degrees: quite open (f/1.4)
+- Aperture flatlay: Around f/8
+- Aperture 45 degrees: quite open (f/2)
 
 ----
 
