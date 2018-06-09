@@ -113,7 +113,7 @@ My image is not sharp with these settings, what to do?
 
 - ISO: 6400
 - f/2.0
-- 1/16
+- 1/15
 
 ---
 
