@@ -103,7 +103,7 @@ My image is not sharp with these settings, what to do?
 
 - ISO: 200
 - f/11
-- 1/16
+- 1/15
 
 ----
 
