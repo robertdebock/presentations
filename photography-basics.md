@@ -58,7 +58,6 @@ Controls the time light exposes the sensor/film.
 # Slow shutter
 
 - 1/1, 1/2.
-- Lets in loads of photons.
 - Displays motion as blur.
 - More light to the sensor.
 
