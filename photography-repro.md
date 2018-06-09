@@ -1,9 +1,9 @@
 ---
-title: photography reporduction
+title: photography reproduction
 
 ---
 
-# Photography
+#  Reproduction
 
 Follow along: https://robertdebock.nl/
 
