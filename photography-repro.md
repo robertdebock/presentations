@@ -25,6 +25,14 @@ A process to master photography
 
 ---
 
+# Why?
+
+- Learn to see composition.
+- Learn to see light.
+- Work outside of your comfort zone.
+
+---
+
 # Impermanence
 
 ----
@@ -38,7 +46,3 @@ A process to master photography
 ----
 
 <img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/repro3.gif"/>
-
-----
-
-<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/repro4.jpg"/>
