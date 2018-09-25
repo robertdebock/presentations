@@ -17,14 +17,6 @@ A process to master photography
 
 ---
 
-# How?
-
-1. Choose an image you'd like to reproduce.
-2. Setup the studio similar to photo.
-3. Shoot and correct.
-
----
-
 # Why?
 
 - Learn to see composition.
@@ -33,7 +25,15 @@ A process to master photography
 
 ---
 
-# Impermanence
+# How?
+
+1. Choose an image you'd like to reproduce.
+2. Setup the studio similar to photo.
+3. Shoot and correct.
+
+---
+
+# Topics
 
 ----
 
@@ -45,4 +45,4 @@ A process to master photography
 
 ----
 
-<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/repro3.gif"/>
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/repro3.jpg"/>
