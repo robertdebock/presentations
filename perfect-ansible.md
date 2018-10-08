@@ -29,13 +29,16 @@ Follow along: http://robertdebock.nl/
 # Q: More readable?
 
 ```
-- name: ensure package screen is installed
+- name: install screen
   package:
     name: screen
+    state: present
 ```
 
 ```
-- yum: name=screen state=present update_cache=no
+- yum: name="{{ item }}" state=present update_cache=no
+  with_items:
+    - screen
 ```
 
 ----
@@ -44,14 +47,15 @@ Follow along: http://robertdebock.nl/
 # Reflection
 
 1. Does the code fit in 1 screen?
-2. Could you explain it to your parents?
-3. Would your parents understand?
+2. Could you explain it to your partner?
+3. Would your partner understand?
 4. Do you feel an urge to refactor it?
 5. Was `shell` or `command` used often?
 6. Is there repetition of same `when`?
 7. Is ansible-lint happy?
 8. Do you know why you did not use defaults?
 
+Note: 5. Are there modules, are you describing state?
 ----
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
@@ -63,8 +67,7 @@ Follow along: http://robertdebock.nl/
 4. Use `package` over [specific package manger](http://docs.ansible.com/ansible/latest/list_of_packaging_modules.html).
 5. Use `service` over [specific service manger](http://docs.ansible.com/ansible/latest/list_of_system_modules.html).
 
-Note: 1. Easier debugging, 4. `file: backup: no` 5. Are there modules, are you describing state?
-
+Note: 1. Easier debugging, 3. `file: backup: no`.
 ----
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->

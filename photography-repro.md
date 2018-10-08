@@ -46,3 +46,5 @@ A process to master photography
 ----
 
 <img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/repro3.jpg"/>
+
+[Rene Joosten](https://renejoosten.com/)
