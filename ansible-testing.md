@@ -223,20 +223,17 @@ verifier:
   become: yes
   gather_facts: yes
 
-  tasks:
-    - name: tomcat
-      include_role:
-        name: robertdebock.tomcat
-      vars:
-        tomcat_layout:
-          - name: sample
-            directory: /opt/sample
-            non_ssl_connector_port: 8080
-            ssl_connector_port: 8443
-            shutdown_port: 8005
-            ajp_port: 8009
-            wars:
-              - url: https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war
+  roles:
+    - role: robertdebock.tomcat
+      tomcat_layout:
+        - name: sample
+          directory: /opt/sample
+          non_ssl_connector_port: 8080
+          ssl_connector_port: 8443
+          shutdown_port: 8005
+          ajp_port: 8009
+          wars:
+            - url: https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war
 ```
 
 ----
@@ -249,15 +246,12 @@ verifier:
   become: yes
   gather_facts: yes
 
-  tasks:
-    - name: httpd
-      include_role:
-        name: robertdebock.httpd
-      vars:
-        httpd_applications:
-        - name: sample
-          location: /sample
-          backend_url: http://localhost:8080/sample
+  roles:
+    - role: robertdebock.httpd
+      httpd_applications:
+      - name: sample
+        location: /sample
+        backend_url: http://localhost:8080/sample
 ```
 
 ---
