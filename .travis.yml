@@ -3,7 +3,7 @@ node_js:
   - "6.1"
 
 install:
-  - apt-cache update && apt-get upgrade
+  - apt-get -y upgrade
   - npm install -g reveal-md
 
 script:
