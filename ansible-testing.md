@@ -392,3 +392,9 @@ The unit tests take about 30 minutes, integration about 15 minutes and cost some
 - It's easy to test roles.
 - Testing roles on multiple platforms is simple.
 - Integration tests help to run the roles against a more realistic environment.
+
+---
+
+# Bonus
+
+A quick start: [Ansible Development Environment](https://github.com/robertdebock/ansible-development-environment)
