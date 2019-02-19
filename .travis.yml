@@ -1,11 +1,16 @@
-language: node_js
+---
+language: ruby
 
-install:
-  - npm install -g reveal-md
+services:
+  - docker
+
+before_install:
+  - docker pull robertdebock/docker-revealmd
 
 script:
+  - bundle exec rake test
   - for file in *.md ; do reveal-md "${file}" --static output/"${file%.*}" ; done
-  
+
 deploy:
   provider: pages
   local-dir: output
