@@ -8,8 +8,7 @@ before_install:
   - docker pull robertdebock/docker-revealmd
 
 script:
-  - bundle exec rake test
-  - for file in *.md ; do reveal-md "${file}" --static output/"${file%.*}" ; done
+  - for file in *.md ; do docker run -v $(pwd):/usr/src/app:Z robertdebock/docker-revealmd reveal-md "${file}" --static output/"${file%.*}" ; done
 
 deploy:
   provider: pages
