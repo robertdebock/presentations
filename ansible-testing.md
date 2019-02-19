@@ -395,6 +395,37 @@ The unit tests take about 30 minutes, integration about 15 minutes and cost some
 
 ---
 
-# Bonus
+# Bonus 1/3
 
 A quick start: [Ansible Development Environment](https://github.com/robertdebock/ansible-development-environment)
+
+----
+
+# Bonus 2/3
+
+Start with a [skeleton role](https://github.com/robertdebock/ansible-role-skeleton).
+
+```
+git clone https://github.com/robertdebock/ansible-role-skeleton
+ansible-galaxy init --role-skeleton=ansible-role-skeleton my_role
+```
+
+Edit:
+- tasks/main.yml
+- vars/main.yml
+- default/main.tml
+- meta/main.yml 
+
+----
+
+# Bonus 3/3
+
+Generate README.md.
+
+```
+git clone https://github.com/robertdebock/ansible-tools
+cd my_role
+../ansible-tools/generate_readme.yml -e "pwd=$(pwd)"
+```
+
+[Example](https://galaxy.ansible.com/robertdebock/bootstrap)
