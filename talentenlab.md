@@ -24,6 +24,8 @@ https://scratch.mit.edu/
 
 <img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/les1.png"/>
 
+http://bit.ly/wllbrrds1
+
 ----
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/talentenlab.jpg" -->
@@ -31,19 +33,16 @@ https://scratch.mit.edu/
 
 <img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/les2.png"/>
 
-----
-
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/talentenlab.jpg" -->
-# Les 3: Doe 2 dingen
-
-<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/les3.png"/>
+http://bit.ly/wllbrrds2
 
 ----
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/talentenlab.jpg" -->
-# Les 4: De vulkaan
+# Les 3: De vulkaan
 
 <img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/les4.png"/>
+
+http://bit.ly/wllbrrds3
 
 ---
 
