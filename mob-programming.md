@@ -59,8 +59,7 @@ Note: No phones or extra laptops.
 
 - Have fun.
 - Respect each other.
-- It's not about who's smartest.
-
+- More [growth than fixed mindset](https://www.mindsetworks.com/science/).
 
 ----
 
