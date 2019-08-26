@@ -3,6 +3,10 @@ title: Mob programming
 
 ---
 
+<img height="100%" width="100%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-title.png"/>
+
+---
+
 # Mob programming
 
 Follow along: http://robertdebock.nl/
