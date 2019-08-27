@@ -12,10 +12,12 @@ Follow along: http://robertdebock.nl/
 
 ---
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # How are we?
 
 ---
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # What?
 
 Mob programming is a software development approach where the whole team works on the same thing, at the same time, in the same space, and at the same computer.
@@ -24,10 +26,12 @@ Written on [wikipedia](https://en.wikipedia.org/wiki/Mob_programming), so it mus
 
 ---
 
-# Start
+<!--.slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+# Let's go!
 
 ---
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Why?
 
 1. Team spirit.
@@ -38,16 +42,19 @@ Note: Learn for beginners and experts.
 
 ---
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Rules
 
 ----
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Only one screen
 
 Note: No phones or extra laptops.
 
 ----
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Three roles
 
 - One driver.
@@ -56,14 +63,17 @@ Note: No phones or extra laptops.
 
 ----
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Driver changes every 5 minutes
 
 ----
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Observers can become navigators
 
 ----
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Behaviour
 
 - Have fun.
@@ -72,6 +82,7 @@ Note: No phones or extra laptops.
 
 ----
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Types of work
 
 1. Coding.
@@ -80,6 +91,7 @@ Note: No phones or extra laptops.
 
 ----
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Hints
 
 1. Trust the process
@@ -90,9 +102,3 @@ Note: No phones or extra laptops.
 
 ---
 
-# Let's go!
-
-Who wants to:
-
-- Drive (1 person)
-- Navigate (2 persons to start)
