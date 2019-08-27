@@ -3,7 +3,7 @@ title: Mob programming
 
 ---
 
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.pn g" -->
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Mob programming
 
 Follow along: http://robertdebock.nl/
