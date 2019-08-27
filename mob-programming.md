@@ -7,6 +7,8 @@ title: Mob programming
 
 ---
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+
 Follow along: http://robertdebock.nl/
 
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/mob-programming/"/>
