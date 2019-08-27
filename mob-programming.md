@@ -3,8 +3,9 @@ title: Mob programming
 
 ---
 
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
-# Mob programming
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-title.png" -->
+
+---
 
 Follow along: http://robertdebock.nl/
 
@@ -12,8 +13,7 @@ Follow along: http://robertdebock.nl/
 
 ---
 
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
-# How are we?
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-share.png" -->
 
 ---
 
@@ -102,3 +102,4 @@ Note: No phones or extra laptops.
 
 ---
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-thanks.png" -->
