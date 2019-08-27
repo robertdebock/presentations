@@ -4,7 +4,6 @@ title: Mob programming
 ---
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.pn g" -->
-
 # Mob programming
 
 Follow along: http://robertdebock.nl/
@@ -13,11 +12,19 @@ Follow along: http://robertdebock.nl/
 
 ---
 
+# How are we?
+
+---
+
 # What?
 
 Mob programming is a software development approach where the whole team works on the same thing, at the same time, in the same space, and at the same computer.
 
 Written on [wikipedia](https://en.wikipedia.org/wiki/Mob_programming), so it must be true.
+
+---
+
+# Start
 
 ---
 
