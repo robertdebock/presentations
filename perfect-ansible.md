@@ -88,6 +88,45 @@ Note: 1. Easier debugging, 3. `file: backup: no`.
 
 Note: `name:` it's not always going to install, `yum` is not only for RHEL, `apt` is also for debian, when is inconsitent.
 
+----
+
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
+# I love this
+
+```
+- name: install apache httpd
+  package:
+    name: "{{ apache_httpd_package }}"
+    state: present
+```
+
+```
+_apache_httpd_package:
+  Debian: apache2
+  RedHat: httpd
+
+apache_httpd_package: "{{ _apache_httpd_package[ansible_os_family] }}"
+```
+
+---
+
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
+# Complexity levels
+
+- `defaults/main.yml` - Super simple
+- `tasks/main.yml` - Simple
+- `vars/main.yml` - Not so simple
+
+---
+
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
+# Good examples of bad
+
+[Difficult interface](https://github.com/geerlingguy/ansible-role-nginx)
+[Linting issues](https://galaxy.ansible.com/dev-sec/os-hardening)
+[More linting issues](https://galaxy.ansible.com/juniper/junos)
+[`state: latest`](https://github.com/DavidWittman/ansible-redis/blob/59f05097f828fff9c613f31072031e798c8b10f4/tasks/dependencies.yml#L29)
+
 ---
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
@@ -203,8 +242,7 @@ environment in which it resides.
 
 ----
 
-# software
-
+# Software
 
 <iframe width="600" height="400" frameborder="0" scrolling="no" src="//plot.ly/~robertdebock/1.embed"></iframe>
 
