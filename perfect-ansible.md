@@ -69,10 +69,16 @@ httpd_ssl_enabled: yes
 4. Do you feel an urge to refactor it?
 5. Was `shell` or `command` used often?
 6. Is there repetition of same `when`?
-7. Is ansible-lint happy?
-8. Do you know why you did not use defaults?
+7. Do you know why you did not use defaults?
 
 Note: 5. Are there modules, are you describing state?
+----
+
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
+# Ansible lint
+
+is always right
+
 ----
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
@@ -271,7 +277,7 @@ environment in which it resides.
 
 <iframe width="600" height="400" frameborder="0" scrolling="no" src="//plot.ly/~robertdebock/1.embed"></iframe>
 
-Graph-inspiration: [Sam Doran](https://github.com/samdoran) ([Youtube](https://www.youtube.com/watch?v=7gEKmsuJr7s))
+Graph-inspiration: [Sam Doran](https://github.com/samdoran)
 
 ----
 
@@ -280,7 +286,7 @@ Graph-inspiration: [Sam Doran](https://github.com/samdoran) ([Youtube](https://w
 - Make small "units" (Ansible roles)
 - Build often (Molecule)
 - Integrate (DigitalOcean)
-- Periodic rebuilds (Travis)
+- Periodic retests (Travis)
 
 ---
   
