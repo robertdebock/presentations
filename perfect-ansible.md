@@ -43,6 +43,23 @@ Follow along: http://robertdebock.nl/
 
 ----
 
+
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
+# Q: Ease of use?
+
+```
+httpd_configuration:
+  port: 80
+  ssl_enabled: yes
+```
+
+```
+httpd_port: 80
+httpd_ssl_enabled: yes
+```
+
+----
+
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Reflection
 
@@ -122,11 +139,11 @@ apache_httpd_package: "{{ _apache_httpd_package[ansible_os_family] }}"
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Good examples of bad
 
-[Incorrect role name](https://galaxy.ansible.com/robertdebock/dns)
-[Difficult interface](https://github.com/geerlingguy/ansible-role-nginx)
-[Linting issues](https://galaxy.ansible.com/dev-sec/os-hardening)
-[More linting issues](https://galaxy.ansible.com/juniper/junos)
-[`state: latest`](https://github.com/DavidWittman/ansible-redis/blob/59f05097f828fff9c613f31072031e798c8b10f4/tasks/dependencies.yml#L29)
+- [Incorrect role name](https://galaxy.ansible.com/robertdebock/dns)
+- [Difficult interface](https://github.com/geerlingguy/ansible-role-nginx)
+- [Linting issues](https://galaxy.ansible.com/dev-sec/os-hardening)
+- [More linting issues](https://galaxy.ansible.com/juniper/junos)
+- [`state: latest`](https://github.com/DavidWittman/ansible-redis/blob/59f05097f828fff9c613f31072031e798c8b10f4/tasks/dependencies.yml#L29)
 
 ---
 
