@@ -88,18 +88,18 @@ Note: 1. Easier debugging, 3. `file: backup: no`.
 ----
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
-# Q: good enough?
+# Q: Good enough?
 
 ```
-- name: Install screen on Red Hat
+- name: Install httpd on Red Hat
   yum:
-    name: screen
+    name: httpd
   when:
     - ansible_distribution == "Red Hat Enterprise Linux"
 
-- name: Install screen on Debian
+- name: Install apache2 on Debian
   apt:
-    name: screen
+    name: apache2
   when: ansible_pkg_mgr == "apt"
 ```
 
@@ -137,7 +137,7 @@ apache_httpd_package: "{{ _apache_httpd_package[ansible_os_family] }}"
 ---
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
-# Good examples of bad
+# Good bad examples
 
 - [Incorrect role name](https://galaxy.ansible.com/robertdebock/dns)
 - [Difficult interface](https://github.com/geerlingguy/ansible-role-nginx)
@@ -146,16 +146,6 @@ apache_httpd_package: "{{ _apache_httpd_package[ansible_os_family] }}"
 - [`state: latest`](https://github.com/DavidWittman/ansible-redis/blob/59f05097f828fff9c613f31072031e798c8b10f4/tasks/dependencies.yml#L29)
 
 ---
-
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
-# Focus on the user
-
-----
-
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
-# Variables
-
-----
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Attempt 1
@@ -225,6 +215,23 @@ tasks/main.yml:
     name: java-{{ java_version }}-{{ java_jdk_name }}
   when:
     - java_type == jdk
+```
+
+----
+
+```
+_java_package:
+  jre: java-{{ java_version }}-openjdk
+  jdk: java-{{ java_version }}-openjdk-devel
+
+java_package: "{{ _java_package[java_type] }}
+```
+
+```
+- name: install java
+  package:
+    name: "{{ java_package }}"
+    state: present
 ```
 
 ---
