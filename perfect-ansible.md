@@ -199,6 +199,8 @@ java_jdk_name: openjdk-devel
 
 ----
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
+
 defaults/main.yml:
 ```
 java_version: 1.8.0
@@ -208,6 +210,9 @@ java_type: jre
 (continued)
 
 ----
+
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
+
 tasks/main.yml:
 ```
 - name: ensure java jre is installed
@@ -224,6 +229,10 @@ tasks/main.yml:
 ```
 
 ----
+
+
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
+# Attempt 3
 
 ```
 _java_package:
@@ -242,6 +251,7 @@ java_package: "{{ _java_package[java_type] }}
 
 ---
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Problems
 
 ### Solve problems at the right place.
@@ -261,6 +271,7 @@ java_package: "{{ _java_package[java_type] }}
 
 ---
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Bit-rot
 
 Wikipedia: (so scientifically true)
@@ -273,6 +284,7 @@ environment in which it resides.
 
 ----
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Software
 
 <iframe width="600" height="400" frameborder="0" scrolling="no" src="//plot.ly/~robertdebock/1.embed"></iframe>
@@ -281,6 +293,7 @@ Graph-inspiration: [Sam Doran](https://github.com/samdoran)
 
 ----
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Prevent bit-rot
 
 - Make small "units" (Ansible roles)
