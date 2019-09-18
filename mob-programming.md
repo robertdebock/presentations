@@ -28,11 +28,6 @@ Written on [wikipedia](https://en.wikipedia.org/wiki/Mob_programming), so it mus
 
 ---
 
-<!--.slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
-# Let's go!
-
----
-
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Why?
 
@@ -60,18 +55,13 @@ Note: No phones or extra laptops.
 # Three roles
 
 - One driver.
-- Five navigators.
+- Multiple navigators.
 - Many observers.
 
 ----
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
-# Driver changes every 5 minutes
-
-----
-
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
-# Observers can become navigators
+# Driver changes every 3 minutes
 
 ----
 
@@ -82,7 +72,12 @@ Note: No phones or extra laptops.
 - Respect each other.
 - More [growth than fixed mindset](https://www.mindsetworks.com/science/).
 
-----
+---
+
+<!--.slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+# Let's go!
+
+---
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Types of work
@@ -90,6 +85,11 @@ Note: No phones or extra laptops.
 1. Coding.
 2. Deciding.
 3. Reading.
+
+----
+
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+# Observers can become navigators
 
 ----
 
