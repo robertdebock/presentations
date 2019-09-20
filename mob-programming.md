@@ -94,6 +94,16 @@ Note: No phones or extra laptops.
 ----
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+# Pitfalls
+
+- Requires respect from all.
+- Difficult for some cultural backgrounds.
+- Seems "expensive".
+- Not for well known tasks
+
+----
+
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Hints
 
 1. Trust the process
