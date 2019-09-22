@@ -132,7 +132,7 @@ Note: Learn for beginners and experts.
 # Contact
 
 - Dennis van Velzen [@velzend](https://github.com/velzend)
-- Robert de Bock [@robertdebock](https://github.com/robertdebock]
+- Robert de Bock [@robertdebock](https://github.com/robertdebock)
 
 ---
 
