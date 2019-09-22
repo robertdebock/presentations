@@ -66,6 +66,20 @@ Note: No phones or extra laptops.
 <!--.slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Let's go!
 
+----
+
+```
+
++--------+      +--------------+      +--------+
+| Input  |      | Convert      |      | Output |
+| folder | ---> | - monochrome | ---> | folder |
++--------+      | - brightness |      +--------+
+                | - contrast   |
+                | - vignette   |
+                | - watermarks |
+                +--------------+
+```
+
 ---
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
