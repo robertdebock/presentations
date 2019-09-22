@@ -128,4 +128,12 @@ Note: Learn for beginners and experts.
 
 ---
 
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+# Contact
+
+- Dennis van Velzen [@velzend](https://github.com/velzend)
+- Robert de Bock [@robertdebock](https://github.com/robertdebock]
+
+---
+
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-thanks.png" -->
