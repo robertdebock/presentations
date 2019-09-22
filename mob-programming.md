@@ -29,17 +29,6 @@ Written on [wikipedia](https://en.wikipedia.org/wiki/Mob_programming), so it mus
 ---
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
-# Why?
-
-1. Team spirit.
-2. [Getting things done](https://en.wikipedia.org/wiki/Getting_Things_Done).
-3. Learn.
-
-Note: Learn for beginners and experts.
-
----
-
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Rules
 
 ----
@@ -76,6 +65,17 @@ Note: No phones or extra laptops.
 
 <!--.slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Let's go!
+
+---
+
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+# Why?
+
+1. Team spirit.
+2. [Getting things done](https://en.wikipedia.org/wiki/Getting_Things_Done).
+3. Learn.
+
+Note: Learn for beginners and experts.
 
 ---
 
