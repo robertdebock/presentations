@@ -76,7 +76,7 @@ httpd_ssl_enabled: yes
 4. Do you feel an urge to [refactor it](https://www.google.com/search?q=unfinished+painting)?
 5. Was `shell` or `command` [used often](https://robertdebock.nl/2019/09/26/how-many-modules-do-you-need.html)?
 6. Is there repetition of [same `when`](https://github.com/dj-wasabi/ansible-zabbix-agent/blob/master/tasks/main.yml#L92)? ([Use blocks](https://github.com/robertdebock/ansible-role-postgres/blob/master/tasks/main.yml#L48).)
-7. Do you know why you did not use defaults?
+7. Do you know why you did not use [defaults](https://docs.ansible.com/ansible/latest/modules/service_module.html)?
 
 Note: 5. Are there modules, are you describing state?
 ----
@@ -84,7 +84,9 @@ Note: 5. Are there modules, are you describing state?
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Ansible lint
 
-is always right
+## [is always right](https://docs.ansible.com/ansible-lint/rules/default_rules.html)
+
+[some](https://github.com/ansible/ansible-lint/blob/master/lib/ansiblelint/rules/CommandHasChangesCheckRule.py) are [difficult](https://github.com/ansible/ansible-lint/blob/master/lib/ansiblelint/rules/LineTooLongRule.py)
 
 ----
 
@@ -316,3 +318,11 @@ Graph-inspiration: [Sam Doran](https://github.com/samdoran)
 - Simplicity wins
 - Compatibility wins
 - Easier variables win
+
+---
+
+
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
+# Thanks!
+
+[GitHub: robertdebock](https://github.com/robertdebock)
