@@ -13,6 +13,13 @@ Follow along: http://robertdebock.nl/
 ---
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
+# An example of normal
+
+[Ansible Docker role by Jeff Geerling](https://galaxy.ansible.com/geerlingguy/docker)
+
+---
+
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Princicpals
 
 1. Simpler is better
@@ -66,9 +73,9 @@ httpd_ssl_enabled: yes
 1. Does the code fit in 1 screen?
 2. Could you explain it to your partner?
 3. Would your partner understand?
-4. Do you feel an urge to refactor it?
-5. Was `shell` or `command` used often?
-6. Is there repetition of same `when`?
+4. Do you feel an urge to [refactor it](https://www.google.com/search?q=unfinished+painting)?
+5. Was `shell` or `command` [used often](https://robertdebock.nl/2019/09/26/how-many-modules-do-you-need.html)?
+6. Is there repetition of [same `when`](https://github.com/dj-wasabi/ansible-zabbix-agent/blob/master/tasks/main.yml#L92)? ([Use blocks](https://github.com/robertdebock/ansible-role-postgres/blob/master/tasks/main.yml#L48).)
 7. Do you know why you did not use defaults?
 
 Note: 5. Are there modules, are you describing state?
