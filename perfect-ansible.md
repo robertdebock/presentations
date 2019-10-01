@@ -13,7 +13,7 @@ Follow along: http://robertdebock.nl/
 ---
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
-# An example of normal
+# The norm
 
 [Ansible Docker role by Jeff Geerling](https://galaxy.ansible.com/geerlingguy/docker)
 
