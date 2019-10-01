@@ -72,7 +72,7 @@ httpd_ssl_enabled: yes
 
 1. Does the code fit in 1 screen?
 2. Could you explain it to your partner?
-3. Would your partner understand?
+3. Does it fit on a screen?
 4. Do you feel an urge to [refactor it](https://www.google.com/search?q=unfinished+painting)?
 5. Was `shell` or `command` [used often](https://robertdebock.nl/2019/09/26/how-many-modules-do-you-need.html)?
 6. Is there repetition of [same `when`](https://github.com/dj-wasabi/ansible-zabbix-agent/blob/master/tasks/main.yml#L92)? ([Use blocks](https://github.com/robertdebock/ansible-role-postgres/blob/master/tasks/main.yml#L48).)
@@ -96,8 +96,8 @@ Note: 5. Are there modules, are you describing state?
 1. Name every task carefully.
 2. Use YAML.
 3. Omit default values.
-4. Use `package` over [specific package manger](http://docs.ansible.com/ansible/latest/list_of_packaging_modules.html).
-5. Use `service` over [specific service manger](http://docs.ansible.com/ansible/latest/list_of_system_modules.html).
+4. Use `package` over [specific package manager](http://docs.ansible.com/ansible/latest/list_of_packaging_modules.html).
+5. Use `service` over [specific service manager](http://docs.ansible.com/ansible/latest/list_of_system_modules.html).
 
 Note: 1. Easier debugging, 3. `file: backup: no`.
 ----
