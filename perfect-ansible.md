@@ -145,9 +145,9 @@ apache_httpd_package: "{{ _apache_httpd_package[ansible_os_family] }}"
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Complexity levels
 
-- `defaults/main.yml` - Super simple
-- `tasks/main.yml` - Simple
-- `vars/main.yml` - Not so simple
+- `defaults/main.yml` - [Super simple](https://www.volkskrant.nl/cultuur-media/reconstructie-het-bizarre-verhaal-van-who-s-afraid-of-red-yellow-and-blue-iii~b2bb8df2/)
+- `tasks/main.yml` - [Simple](https://en.wikipedia.org/wiki/De_Stijl)
+- `vars/main.yml` - [Not so simple](https://www.jackson-pollock.org/)
 
 ---
 
@@ -325,4 +325,4 @@ Graph-inspiration: [Sam Doran](https://github.com/samdoran)
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Thanks!
 
-[GitHub: robertdebock](https://github.com/robertdebock)
+GitHub: [robertdebock](https://github.com/robertdebock)
