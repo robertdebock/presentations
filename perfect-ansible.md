@@ -21,7 +21,7 @@ title: Perfect Ansible
 ---
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
-# Princicpals
+# Principles
 
 1. Simpler is better
 2. Focus on the user
