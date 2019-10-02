@@ -71,13 +71,12 @@ httpd_ssl_enabled: yes
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Reflection
 
-1. Does the code fit in 1 screen?
+1. Does the code fit on a screen?
 2. Could you explain it to your partner?
-3. Does it fit on a screen?
-4. Do you feel an urge to [refactor it](https://www.google.com/search?q=unfinished+painting)?
-5. Was `shell` or `command` [used often](https://robertdebock.nl/2019/09/26/how-many-modules-do-you-need.html)?
-6. Is there repetition of [same `when`](https://github.com/dj-wasabi/ansible-zabbix-agent/blob/master/tasks/main.yml#L92)? ([Use blocks](https://github.com/robertdebock/ansible-role-postgres/blob/master/tasks/main.yml#L48).)
-7. Do you know why you did not use [defaults](https://docs.ansible.com/ansible/latest/modules/service_module.html)?
+3. Do you feel an urge to [refactor it](https://www.google.com/search?q=unfinished+painting)?
+4. Was `shell` or `command` [used often](https://robertdebock.nl/2019/09/26/how-many-modules-do-you-need.html)?
+5. Is there repetition of [same `when`](https://github.com/dj-wasabi/ansible-zabbix-agent/blob/master/tasks/main.yml#L92)? ([Use blocks](https://github.com/robertdebock/ansible-role-postgres/blob/master/tasks/main.yml#L48).)
+6. Do you know why you did not use [defaults](https://docs.ansible.com/ansible/latest/modules/service_module.html)?
 
 Note: 5. Are there modules, are you describing state?
 ----
