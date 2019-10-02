@@ -6,7 +6,8 @@ title: Perfect Ansible
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Perfect Ansible
 
-Follow along: http://robertdebock.nl/
+- Follow along: http://robertdebock.nl/
+- Contribute: https://github.com/robertdebock/presentations
 
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/perfect-ansible/"/>
 
