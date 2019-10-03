@@ -94,7 +94,7 @@ Note: 5. Are there modules, are you describing state?
 # Style
 
 1. Name every task carefully.
-2. Use YAML.
+2. Use YAML, and yamllint.
 3. Omit default values.
 4. Use `package` over [specific package manager](http://docs.ansible.com/ansible/latest/list_of_packaging_modules.html).
 5. Use `service` over [specific service manager](http://docs.ansible.com/ansible/latest/list_of_system_modules.html).
@@ -311,7 +311,7 @@ Graph-inspiration: [Sam Doran](https://github.com/samdoran)
 - Periodic retests (Travis)
 
 ---
-  
+
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Conclusion
 
