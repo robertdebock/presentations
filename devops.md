@@ -2,6 +2,12 @@
 title: DevOps
 ---
 
+# DevOps
+
+A view on many variations.
+
+---
+
 # Many variations
 
 ----
