@@ -77,6 +77,7 @@ httpd_ssl_enabled: yes
 4. Was `shell` or `command` [used often](https://robertdebock.nl/2019/09/26/how-many-modules-do-you-need.html)?
 5. Is there repetition of [same `when`](https://github.com/dj-wasabi/ansible-zabbix-agent/blob/master/tasks/main.yml#L92)? ([Use blocks](https://github.com/robertdebock/ansible-role-postgres/blob/master/tasks/main.yml#L48).)
 6. Do you know why you did not use [defaults](https://docs.ansible.com/ansible/latest/modules/service_module.html)?
+7. Did you need `ignore_errors` or `failed_when: false`?
 
 Note: 5. Are there modules, are you describing state?
 ----

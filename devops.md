@@ -41,6 +41,12 @@ We use Terraform & Ansible so we are DevOps.
 
 A team can work on d, t, a & p.
 
+----
+
+# "No Ops please"
+
+I don't feel like operations, let's DevOps and never pickup the phone anymore.
+
 ---
 
 # Agile VS DevOps
