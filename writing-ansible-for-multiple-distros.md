@@ -40,7 +40,7 @@ A (slightly rewritten) version from Mathieu:
 [`tasks/main.yml`](https://gitlab.com/MathieuMD/ansible-role-ntp/blob/master/tasks/main.yml)
 
 ```yaml
-- name: Install required packages for SELinux in Redhat derivatives
+- name: Install required packages for SELinux
   yum:
     name: libselinux-python
     state: present
@@ -53,6 +53,8 @@ A (slightly rewritten) version from Mathieu:
 # Benefits
 
 - Understandable for anybody.
+
+----
 
 # Drawbacks
 
@@ -102,6 +104,8 @@ ntp_driftfile: /var/lib/ntp/drift
 - Easy to understand and maintain.
 - Separated file per distribution.
 
+----
+
 # Drawbacks
 
 - Multiple files to maintain.
@@ -128,12 +132,12 @@ A pattern that [I](https://robertdebock.nl/) use a lot:
 
 ```yaml
 _ntp_packages:
-  default:
+  '8':
     - chrony
-  RedHat-7:
-    - chrony
+  '7':
+    - nptd
 
-ntp_packages: "{{ _ntp_packages[ansible_os_family ~ '-' ~ ansible_distribution_marjor_version] | default(_ntp_packages['default']) }}"
+ntp_packages: "{{ _ntp_packages[ansible_distribution_marjor_version] }}"
 ```
 
 ----
@@ -142,6 +146,8 @@ ntp_packages: "{{ _ntp_packages[ansible_os_family ~ '-' ~ ansible_distribution_m
 
 - One file (`vars/main.yml`) contains all differences.
 - The `tasks/main.yml` is easy to read.
+
+----
 
 # Drawbacks
 
