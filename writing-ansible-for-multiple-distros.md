@@ -3,7 +3,7 @@ title: Writing Ansible roles for multiple distribution
 
 ---
 
-# Writing Ansible roles for multiple distribution
+# Ansible for multiple distribution
 
 Follow along: http://robertdebock.nl/
 
