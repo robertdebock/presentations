@@ -3,23 +3,11 @@ title: Mob programming
 
 ---
 
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-title.png" -->
-
----
-
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
-
 Follow along: http://robertdebock.nl/
 
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/mob-programming/"/>
 
 ---
 
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-share.png" -->
-
----
-
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # What?
 
 Mob programming is a software development approach where the whole team works on the same thing, at the same time, in the same space, and at the same computer.
@@ -28,19 +16,16 @@ Written on [wikipedia](https://en.wikipedia.org/wiki/Mob_programming), so it mus
 
 ---
 
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Rules
 
 ----
 
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Only one screen
 
 Note: No phones or extra laptops.
 
 ----
 
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Three roles
 
 - One driver.
@@ -49,12 +34,10 @@ Note: No phones or extra laptops.
 
 ----
 
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Driver changes every 3 minutes
 
 ----
 
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Behaviour
 
 - Have fun.
@@ -63,26 +46,29 @@ Note: No phones or extra laptops.
 
 ---
 
-<!--.slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Let's go!
 
 ----
 
-```
+# The story
 
-+--------+      +--------------+      +--------+
-| Input  |      | Convert      |      | Output |
-| folder | ---> | - monochrome | ---> | folder |
-+--------+      | - brightness |      +--------+
-                | - contrast   |
-                | - vignette   |
-                | - watermarks |
-                +--------------+
-```
+As a publisher I want typical Dutch recipes in order to sell books.
+
+----
+
+# Ideas?
+
+----
+
+# Ideas!
+
+- Pancakes
+- Hutspot
+- Zurekool met worst
+- Poffertjes
 
 ---
 
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Why?
 
 1. Team spirit.
@@ -93,7 +79,6 @@ Note: Learn for beginners and experts.
 
 ---
 
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Types of work
 
 1. Coding.
@@ -102,7 +87,6 @@ Note: Learn for beginners and experts.
 
 ----
 
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Pitfalls
 
 - Requires respect from all.
@@ -112,12 +96,10 @@ Note: Learn for beginners and experts.
 
 ----
 
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Observers can become navigators
 
 ---
 
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Hints
 
 1. Trust the process
@@ -128,12 +110,6 @@ Note: Learn for beginners and experts.
 
 ---
 
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
 # Contact
 
-- Dennis van Velzen [@velzend](https://github.com/velzend)
 - Robert de Bock [@robertdebock](https://github.com/robertdebock)
-
----
-
-<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-thanks.png" -->
