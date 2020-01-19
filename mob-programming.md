@@ -67,7 +67,7 @@ As a publisher I want typical Dutch recipes in order to sell books.
 
 - Pancakes
 - Hutspot
-- Zurekool met worst
+- Zuurkool
 - Poffertjes
 
 ---
