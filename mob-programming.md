@@ -3,9 +3,11 @@ title: Mob programming
 
 ---
 
-Follow along: http://robertdebock.nl/
+# Mob Programming
 
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/mob-programming/"/>
+
+Follow along: http://robertdebock.nl/
 
 ---
 
