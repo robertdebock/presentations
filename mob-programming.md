@@ -11,6 +11,10 @@ Follow along: http://robertdebock.nl/
 
 ---
 
+# Who am I
+
+---
+
 # What?
 
 Mob programming is a software development approach where the whole team works on the same thing, at the same time, in the same space, and at the same computer.
@@ -65,10 +69,10 @@ As a publisher I want typical Dutch recipes in order to sell books.
 
 # Ideas!
 
-- Pancakes
-- Hutspot
-- Zuurkool
-- Poffertjes
+- Pancakes.
+- Hutspot.
+- Zuurkool.
+- Poffertjes.
 
 ---
 
@@ -95,7 +99,7 @@ Note: Learn for beginners and experts.
 - Requires respect from all.
 - Difficult for some cultural backgrounds.
 - Seems "expensive".
-- Not for well known tasks
+- Not for well known tasks.
 
 ----
 
@@ -105,11 +109,11 @@ Note: Learn for beginners and experts.
 
 # Hints
 
-1. Trust the process
-2. Find an isolated place
-3. Write down the end-goal
-4. Start with tests
-5. Being stuck is okay
+1. Trust the process.
+2. Find an isolated place.
+3. Write down the end-goal.
+4. Start with tests.
+5. Being stuck is okay.
 
 ---
 
