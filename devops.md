@@ -53,6 +53,13 @@ A team can work on d, t, a & p.
 
 I don't feel like operations, let's DevOps and never pickup the phone anymore.
 
+----
+
+# "Dev" role and "Ops" role
+
+- Dev can create builds
+- Ops can release
+
 ---
 
 # Agile VS DevOps
