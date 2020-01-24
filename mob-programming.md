@@ -43,6 +43,8 @@ Note: No phones or extra laptops.
 
 # Driver changes every 3 minutes
 
+Note: Change to at most 5 minutes.
+
 ----
 
 # Behaviour
@@ -52,10 +54,6 @@ Note: No phones or extra laptops.
 - More [growth than fixed mindset](https://www.mindsetworks.com/science/).
 
 ---
-
-# Let's go!
-
-----
 
 # The story
 
@@ -75,6 +73,11 @@ As a publisher I want typical Dutch recipes in order to sell books.
 - Poffertjes.
 
 ---
+
+# Let's go!
+
+---
+
 
 # Why?
 
