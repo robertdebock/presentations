@@ -16,11 +16,25 @@ A view on many variations.
 
 Developers and operators are in one team.
 
+```
++----------+
+| :-)  :-) |
+| DEV  OPS |
++----------+
+```
+
 ----
 
 # "Scrummaster"
 
 Teams have a scrummaster.
+
+```
++----------------------+
+| :-|  :-|     :-)     |
+| ???  ??? SCRUMMASTER |
++----------------------+
+```
 
 ----
 
@@ -29,17 +43,42 @@ Teams have a scrummaster.
 - Developers mananage "dev", "tst" & "acc".
 - Operators manage "prd".
 
+```
+  +-----+    +-----+
+  | :-| |    | :-| |
+  | DEV |    | OPS |
+  +-----+    +-----+
+     |         |
+dev,tst,acc   prod
+```
+
 ----
 
 # "Completely split"
 
 There are teams called "Dev" and other teams called "Ops".
 
+```
+  +-DEV-+    +-OPS-+
+  | :-| |    | :-| |
+  | ??? |    | ??? |
+  +-----+    +-----+
+```
+
 ----
 
 # "Modern tooling"
 
 We use Terraform & Ansible so we are DevOps.
+
+```
++-----------+
+| :-|  :-|  |
+| ???  ???  |
+| ANSIBLE   |
+| TERRAFORM |
++-----------+
+```
 
 ----
 
@@ -53,12 +92,25 @@ A team can work on d, t, a & p.
 
 I don't feel like operations, let's DevOps and never pickup the phone anymore.
 
+```
+         +-OPS-+   +-DEV-+
+WORK ->  | :-| |   | :-) |
+         +-----+   +-----+
+```
+
 ----
 
 # "Dev" role and "Ops" role
 
 - Dev can create builds
 - Ops can release
+
+```
++-DEV-+   +-OPS-+
+| :-| |   | :-| |
++-----+   +-----+
+
+BUILD  ->  RELEASE
 
 ---
 
@@ -69,6 +121,14 @@ I don't feel like operations, let's DevOps and never pickup the phone anymore.
 # Agile
 
 We don't plan, it's Agile.
+
+```
++-----+ +-----+
+| MON | | TUE |
+|-----| |-----|
+| ??? | | ??? |
++-----+ +-----+
+```
 
 ---
 
@@ -103,8 +163,8 @@ What is the role of an Architect in DevOps?
 
 # Dev VS Ops
 
-1. Developers are better
-2. Operators are inferiour
+1. Developers are nobel
+2. Operators clean up
 
 ---
 
@@ -115,3 +175,14 @@ Is that even possible?
 - The hardware/datacenter department
 - The infra department
 
+---
+
+# My conclusion
+
+In a true devops organization, everybody can contribute to all* code.
+
+## ALL
+- application
+- ci
+- deployment
+- maintenance
