@@ -104,10 +104,6 @@ Note: Learn for beginners and experts.
 - Seems "expensive".
 - Not for well known tasks.
 
-----
-
-# Observers can become navigators
-
 ---
 
 # Hints
