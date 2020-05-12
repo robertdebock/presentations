@@ -40,7 +40,6 @@ Above 10 can already be a pain to maintain.
 1. Over [100 Ansible roles](https://github.com/robertdebock?tab=repositories&q=ansible-role-&type=&language=).
 2. Some [14 Docker containers](https://github.com/robertdebock?tab=repositories&q=docker).
 3. [Three GitHub actions](https://github.com/robertdebock?tab=repositories&q=action).
-4. Some scripts to [facilitate development]
 4. Script to [generate](https://github.com/robertdebock/ansible-generator), [probe](https://github.com/robertdebock/ansible-probe) and [test](https://github.com/robertdebock/ansible-tester) Ansible content.
 
 ---
@@ -71,6 +70,8 @@ Files that every repository has, and does not need any changes.
 - [feature_request.md](https://github.com/robertdebock/ansible-generator/blob/master/files/feature_request.md)
 - [gitignore](https://github.com/robertdebock/ansible-generator/blob/master/files/gitignore)
 - [yamllint](https://github.com/robertdebock/ansible-generator/blob/master/files/yamllint)
+
+----
 
 # Unique per role
 
@@ -143,6 +144,3 @@ digraph PhiloDilemma {
 ----
 
 ![dependency image of ansible role dns](https://raw.githubusercontent.com/robertdebock/drawings/artifacts/dns.png)
-
-For example:
-
