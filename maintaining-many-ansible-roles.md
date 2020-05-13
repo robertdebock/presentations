@@ -115,6 +115,15 @@ Using [ansible-probe](https://github.com/robertdebock/ansible-generator) all sta
 
 ---
 
+# Conclusion
+
+1. Start small/manual.
+2. Try to see "labor-patterns".
+3. (Ab)Use test-on-commit.
+4. Have an occasional "retro".
+
+---
+
 # Ideas
 
 Save them [somewhere](https://trello.com/b/K9EUrZL2/refactoring), treat them like user stories.
