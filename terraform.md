@@ -34,7 +34,7 @@ Mostly stolen from the [Terraform documentation](https://www.terraform.io/docs/p
 
 # Define
 
-```hsl
+```hcl
 resource "digitalocean_droplet" "web-1" {
   image  = "ubuntu-18-04-x64"
   name   = "web-1"
@@ -47,7 +47,7 @@ resource "digitalocean_droplet" "web-1" {
 
 # Pass data
 
-```hsl
+```hcl
 resource "digitalocean_loadbalancer" "public" {
   name   = "loadbalancer-1"
   region = "ams3"
@@ -103,3 +103,11 @@ terraform apply
 ```bash
 terraform destroy
 ```
+
+---
+
+# Terraform & Ansible
+
+[Better together](https://www.hashicorp.com/resources/ansible-terraform-better-together/).
+
+
