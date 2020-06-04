@@ -71,6 +71,17 @@ resource "digitalocean_loadbalancer" "public" {
 
 ---
 
+# State
+
+Terraform keeps state, which allows:
+
+- Multiple repositories.
+- Determine differences.
+
+Nota bene; Don't loose the state...
+
+---
+
 # Dry-run
 
 ```bash
