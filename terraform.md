@@ -19,10 +19,10 @@ Infrastructure as code
 
 # Why
 
-- Much quicker
-- Repeatable
-- Versionable & history
-- Easy collaboration
+- Much quicker.
+- Repeatable.
+- Versionable & history.
+- Easy collaboration.
 
 ---
 
@@ -30,7 +30,7 @@ Infrastructure as code
 
 Mostly stolen from the [Terraform documentation](https://www.terraform.io/docs/providers/do/).
 
----
+----
 
 # Define
 
@@ -110,4 +110,13 @@ terraform destroy
 
 [Better together](https://www.hashicorp.com/resources/ansible-terraform-better-together/).
 
+----
 
+# Demo time
+
+[https://github.com/robertdebock/terraform-demo](https://github.com/robertdebock/terraform-demo)
+
+Three branches:
+- [master](https://github.com/robertdebock/terraform-demo): Start with this one.
+- [two](https://github.com/robertdebock/terraform-demo/two/three): A little more complex.
+- [three](https://github.com/robertdebock/terraform-demo/tree/three): Provisioning with Ansible.
