@@ -35,9 +35,9 @@ Mostly stolen from the [Terraform documentation](https://www.terraform.io/docs/p
 # Define
 
 ```hsl
-resource "digitalocean_droplet" "web_1" {
+resource "digitalocean_droplet" "web-1" {
   image  = "ubuntu-18-04-x64"
-  name   = "web_1"
+  name   = "web-1"
   region = "ams3"
   size   = "s-1vcpu-1gb"
 }
@@ -65,7 +65,7 @@ resource "digitalocean_loadbalancer" "public" {
     protocol = "tcp"
   }
 
-  droplet_ids = [digitalocean_droplet.web_1.id]
+  droplet_ids = [digitalocean_droplet.web-1.id]
 }
 ```
 
