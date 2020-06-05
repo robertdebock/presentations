@@ -23,6 +23,7 @@ Infrastructure as code
 - Repeatable.
 - Versionable & history.
 - Easy collaboration.
+- Teams can own their infra.
 
 ---
 
