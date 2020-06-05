@@ -46,25 +46,14 @@ resource "digitalocean_droplet" "web-1" {
 
 ----
 
-# Pass data
+# Passing data
 
 ```hcl
 resource "digitalocean_loadbalancer" "public" {
   name   = "loadbalancer-1"
   region = "ams3"
 
-  forwarding_rule {
-    entry_port     = 80
-    entry_protocol = "http"
-
-    target_port     = 80
-    target_protocol = "http"
-  }
-
-  healthcheck {
-    port     = 22
-    protocol = "tcp"
-  }
+  # (Non-relevant lines removed.)
 
   droplet_ids = [digitalocean_droplet.web-1.id]
 }
@@ -89,6 +78,22 @@ Nota bene; Don't loose the state...
 terraform plan
 ```
 
+----
+
+The most relevant lines:
+
+```
+  # digitalocean_droplet.web-1 will be created
+  + resource "digitalocean_droplet" "web-1" {
+      + ipv4_address         = (known after apply)
+      + name                 = "web-1"
+      + region               = "ams3"
+      + size                 = "s-1vcpu-1gb"
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+```
+
 ---
 
 # Apply!
@@ -96,6 +101,10 @@ terraform plan
 ```bash
 terraform apply
 ```
+
+----
+
+![terraform apply output](../terraform.gif)
 
 ---
 
