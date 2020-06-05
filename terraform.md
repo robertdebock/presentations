@@ -130,3 +130,11 @@ Three branches:
 - [master](https://github.com/robertdebock/terraform-demo): Start with this one.
 - [two](https://github.com/robertdebock/terraform-demo/two/three): A little more complex.
 - [three](https://github.com/robertdebock/terraform-demo/tree/three): Provisioning with Ansible.
+
+---
+
+# Conclusion
+
+- Infrastructure components are just "resources".
+- Easy to read, learn and contribute.
+- Ansible is great. ;-)
