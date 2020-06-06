@@ -104,7 +104,7 @@ terraform apply
 
 ----
 
-![terraform apply output](../images/terraform.gif)
+![terraform apply output](images/terraform.gif)
 
 ---
 
