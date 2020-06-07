@@ -17,6 +17,15 @@ Infrastructure as code
 
 ---
 
+# Alternatives
+
+- CloudFormation (AWS)
+- Google Cloud Deployment Manager
+
+None can manage resources on *any* provider.
+
+---
+
 # Why
 
 - Much quicker.
