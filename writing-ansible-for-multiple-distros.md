@@ -148,7 +148,7 @@ ntp_packages: "{{ _ntp_packages[ansible_distribution_marjor_version] }}"
 
 # Benefits
 
-- One file (`vars/main.yml`) contains all differences.
+- One file (`vars/main.yml`) contains all.
 - The `tasks/main.yml` is easy to read.
 
 ----
@@ -196,7 +196,6 @@ script:
 [molecule/defaults/molecule.yml](https://github.com/robertdebock/ansible-role-bootstrap/blob/master/molecule/default/molecule.yml): (pseudo code)
 
 ```yaml
----
 platforms:
   - name: "bootstrap-${image:-fedora}-${tag:-latest}"
     image: "${namespace:-robertdebock}/${image:-fedora}:${tag:-latest}"
@@ -235,7 +234,11 @@ on:
   pull_request:
   schedule:
     - cron: '2 2 2 * *'
+```
 
+----
+
+```
   test:
     runs-on: ubuntu-latest
     strategy:
@@ -254,6 +257,11 @@ on:
             tag: "bionic"
           - image: "ubuntu"
             tag: "xenial"
+```
+
+----
+
+```
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -268,3 +276,12 @@ on:
         env:
           TOX_PARALLEL_NO_SPINNER: 1
 ```
+
+----
+
+# Experience
+
+- 20 runners!
+- A little faster than Travis.
+- Runners are ["tainted"](https://github.com/actions/virtual-environments/tree/master/images/linux).
+- [Actions on Marketplace are cool](https://github.com/marketplace).
