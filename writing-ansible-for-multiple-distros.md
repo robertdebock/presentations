@@ -35,7 +35,7 @@ The same functionality is implemented differently per distribution.
 
 # Solution 1
 
-A (slightly rewritten) version from Mathieu:
+A (slightly rewritten) version from [MathieuMD](https://gitlab.com/MathieuMD):
 
 [`tasks/main.yml`](https://gitlab.com/MathieuMD/ansible-role-ntp/blob/master/tasks/main.yml)
 
@@ -58,23 +58,24 @@ A (slightly rewritten) version from Mathieu:
 
 # Drawbacks
 
-- My need very similar tasks for every distribution.
+- May need very similar tasks for every distribution.
 
 ---
 
-# Solution 2
+# Solution 2 (1/3)
 
 A pattern that Ansible God [Jeff Geerling](https://www.jeffgeerling.com/) uses:
 
 [`tasks/main.yml`](https://github.com/geerlingguy/ansible-role-ntp/blob/master/tasks/main.yml)
 
 ```yaml
----
 - name: Include OS-specific variables.
   include_vars: "{{ ansible_os_family }}.yml"
 ```
 
 ----
+
+# Solution 2 (2/3)
 
 [`vars/RedHat.yml`](https://github.com/geerlingguy/ansible-role-ntp/blob/master/vars/RedHat.yml)
 
@@ -85,6 +86,8 @@ ntp_driftfile: /var/lib/ntp/drift
 ```
 
 ----
+
+# Solution 2 (3/3)
 
 [`tasks/main.yml`](https://github.com/geerlingguy/ansible-role-ntp/blob/master/tasks/main.yml)
 
@@ -110,10 +113,9 @@ ntp_driftfile: /var/lib/ntp/drift
 
 - Multiple files to maintain.
 
-
 ---
 
-# Solution 3
+# Solution 3 (1/2)
 
 A pattern that [I](https://robertdebock.nl/) use a lot:
 
@@ -127,6 +129,8 @@ A pattern that [I](https://robertdebock.nl/) use a lot:
 ```
 
 ----
+
+# Solution 3 (2/2)
 
 [`vars/main.yml`](https://github.com/robertdebock/ansible-role-ntp/blob/master/vars/main.yml)
 
