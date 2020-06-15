@@ -156,3 +156,115 @@ ntp_packages: "{{ _ntp_packages[ansible_distribution_marjor_version] }}"
 # Drawbacks
 
 - The `vars/main.yml` is more difficult to understand.
+
+---
+
+# Testing
+
+How do you test multiple distributions?
+
+---
+
+# Travis
+
+### "The simplest way to test and deploy your projects."
+
+#### Travis about Travis.
+
+----
+
+[.travis.yml](https://github.com/robertdebock/ansible-role-bootstrap/blob/master/.travis.yml): (pseudo code)
+
+```yaml
+env:
+  global:
+    namespace="robertdebock"
+  matrix:
+    - image="fedora" tag="31"
+    - image="fedora" tag="latest"
+    - image="fedora" tag="rawhide"
+    - image="ubuntu" tag="latest"
+    - image="ubuntu" tag="bionic"
+    - image="ubuntu" tag="xenial"
+
+script:
+  - molecule test
+```
+
+----
+
+[molecule/defaults/molecule.yml](https://github.com/robertdebock/ansible-role-bootstrap/blob/master/molecule/default/molecule.yml): (pseudo code)
+
+```yaml
+---
+platforms:
+  - name: "bootstrap-${image:-fedora}-${tag:-latest}"
+    image: "${namespace:-robertdebock}/${image:-fedora}:${tag:-latest}"
+    command: /sbin/init
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: yes
+    pre_build_image: yes
+```
+
+----
+
+# Experience
+
+- Travis is stable.
+- 5 runners for [free](https://www.travis-ci.com/plans).
+- Scheduling in web-interface.
+
+---
+
+# GitLab Actions
+
+### "Automate your workflow from idea to production"
+
+#### GitHub about Actions
+
+----
+
+```yaml
+name: Ansible Molecule
+
+on:
+  push:
+    tags_ignore:
+      - '*'
+  pull_request:
+  schedule:
+    - cron: '2 2 2 * *'
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - image: "fedora"
+            tag: "31"
+          - image: "fedora"
+            tag: "latest"
+          - image: "fedora"
+            tag: "rawhide"
+          - image: "ubuntu"
+            tag: "latest"
+          - image: "ubuntu"
+            tag: "bionic"
+          - image: "ubuntu"
+            tag: "xenial"
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          path: "${{ github.repository }}"
+      - name: molecule
+        uses: robertdebock/molecule-action@2.3.4
+        with:
+          image: ${{ matrix.config.image }}
+          tag: ${{ matrix.config.tag }}
+          options: "--parallel all"
+        env:
+          TOX_PARALLEL_NO_SPINNER: 1
+```
