@@ -153,3 +153,13 @@ digraph PhiloDilemma {
 ----
 
 ![dependency image of ansible role dns](https://raw.githubusercontent.com/robertdebock/drawings/artifacts/dns.png)
+
+---
+
+# Keep you shop clean
+
+Once you see one mistake, find all similar.
+
+- Empty directory
+- capitalization (custom lint rules)
+- Consistent name of variables
