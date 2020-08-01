@@ -133,9 +133,15 @@ Automation has saved you time, cool!
 
 # By scheduling automation
 
+Sure, `cron` or [awx](https://github.com/ansible/awx/)
+
+- Limitations?
+
 ----
 
 # Let your collegue do it. (&trade;)
+
+Much better, but what if she/he is on a holiday?
 
 ----
 
