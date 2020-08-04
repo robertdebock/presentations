@@ -13,7 +13,7 @@ Follow along: http://robertdebock.nl/
 
 # Who am I
 
-[![Octocat](images/octocat.png)](https://github.com/robertdebock)
+[![Octocat](images/octocat.png)](https://github.com/robertdebock =100x)
 
 ---
 
