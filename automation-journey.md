@@ -13,11 +13,11 @@ Follow along: http://robertdebock.nl/
 
 # Who am I
 
-[![Octocat](images/octocat.png)](https://github.com/robertdebock)
+[![Octocat](images/octocat.png)](https://github.com/robertdebock) - Robert de Bock
 
 ---
 
-# An automation tale
+## An automation tale
 
 ---
 
@@ -36,7 +36,7 @@ Think of a few jobs that you'd like to automate.
 
 ----
 
-# Suggestion of jobs
+## Suggestion of jobs
 
 - Applying patches
 - Disk expansions
@@ -79,11 +79,22 @@ This heavily depends on the tooling available.
 
 ----
 
+# CRUD
+
+Almost all "jobs" should have:
+
+1. Create
+2. Read
+3. Update
+4. Delete
+
+----
+
 # Ansible
 
 ----
 
-# See if you can reuse code
+# Reuse code
 
 [https://galaxy.ansible.com/](https://galaxy.ansible.com/search?keywords=update%20&order_by=-relevance&page=1&deprecated=false&type=role)
 
@@ -92,7 +103,6 @@ This heavily depends on the tooling available.
 # Make a playbook
 
 ```yaml
----
 - name: Prepare
   hosts: all
   become: yes
@@ -133,11 +143,11 @@ Automation has saved you time, cool!
 
 ----
 
-# How can you do even less?
+### How can you do even less?
 
 ----
 
-# By scheduling automation
+## Scheduling automation
 
 Sure, `cron` or [awx](https://github.com/ansible/awx/)
 
@@ -145,16 +155,49 @@ Sure, `cron` or [awx](https://github.com/ansible/awx/)
 
 ----
 
-# Let your collegue do it. (&trade;)
+## Let others do it. (&trade;)
 
 Much better, but what if she/he is on a holiday?
 
 ----
 
-# Let the owner do it.
+## Let the owner do it.
 
 ---
 
-How to organize
+# How to organize
 
-How to develop
+----
+
+# By product and service
+
+For example:
+
+- Operating system team
+- Backup & Restore team
+- Monitoring team
+- Compliance team
+- Orchestration
+
+---
+
+# How to develop
+
+- Choose a language
+- Train people
+- Organize learning sessions
+- Invite people from another team
+
+----
+
+# Mindset
+
+All teams must offer an API to allow self-service capabilities for their product or service.
+
+---
+
+# Conclusion
+
+1. Automation allows scaling
+2. Automation brings predictability
+3. May require re-organizing teams
