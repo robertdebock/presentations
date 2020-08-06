@@ -141,7 +141,7 @@ _ntp_packages:
   '7':
     - nptd
 
-ntp_packages: "{{ _ntp_packages[ansible_distribution_marjor_version] }}"
+ntp_packages: "{{ _ntp_packages[ansible_distribution_major_version] }}"
 ```
 
 ----
