@@ -13,7 +13,7 @@ Follow along: http://robertdebock.nl/
 
 # Who am I
 
-[![Octocat](images/octocat.png)](https://github.com/robertdebock) - Robert de Bock
+Robert de Bock
 
 ---
 
@@ -39,7 +39,7 @@ Think of a few jobs that you'd like to automate.
 ## Suggestion of jobs
 
 - Applying patches
-- Disk expansions
+- Adding disks
 - Install component x
 - Update component x
 
@@ -47,8 +47,8 @@ Think of a few jobs that you'd like to automate.
 
 # Rate jobs
 
-1: not frequent, low effort
-10: super frequent, high effort
+- 1: not frequent, low effort
+- 10: super frequent, high effort
 
 ----
 
@@ -65,9 +65,9 @@ Think of a few jobs that you'd like to automate.
 
 # Decide
 
-OS patching: is occurs all the time and seems easy to automate.
+OS patching: occurs all the time and seems easy to automate.
 
-In other words, if you don't need to do this anymore, you can focus on [better things](https://www.google.com/search?q=how+to+contribute+to+open+source).
+When automated, you can focus on [better things](https://www.google.com/search?q=how+to+contribute+to+open+source).
 
 ----
 
@@ -81,7 +81,7 @@ This heavily depends on the tooling available.
 
 # CRUD
 
-Almost all "jobs" should have:
+Almost all "jobs" should expose:
 
 1. Create
 2. Read
@@ -103,7 +103,7 @@ Almost all "jobs" should have:
 # Make a playbook
 
 ```yaml
-- name: Prepare
+- name: apply patches
   hosts: all
   become: yes
   gather_facts: no
@@ -115,7 +115,7 @@ Almost all "jobs" should have:
 
 ----
 
-# Try it
+# Dry run
 
 ```shell
 ansible-playbook update.yml \
@@ -123,6 +123,9 @@ ansible-playbook update.yml \
   --check
 ```
 
+----
+
+# Try it
 ```shell
 ansible-playbook update.yml \
    --inventory my_test_host,
@@ -137,6 +140,7 @@ ansible-playbook update.yml
 ```
 
 ---
+
 # Almost there
 
 Automation has saved you time, cool!
@@ -149,7 +153,7 @@ Automation has saved you time, cool!
 
 ## Scheduling automation
 
-Sure, `cron` or [awx](https://github.com/ansible/awx/)
+For example `cron` or [awx](https://github.com/ansible/awx/).
 
 - Limitations?
 
@@ -161,7 +165,7 @@ Much better, but what if she/he is on a holiday?
 
 ----
 
-## Let the owner do it.
+## Let the user do it.
 
 ---
 
@@ -169,7 +173,7 @@ Much better, but what if she/he is on a holiday?
 
 ----
 
-# By product and service
+## By product and service
 
 For example:
 
