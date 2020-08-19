@@ -189,6 +189,10 @@ A webui and API that can run playbooks on hosts.
 
 ----
 
+![awx](images/awxapi.gif)
+
+----
+
 - URL: http://142.93.238.130/
 
 ----
