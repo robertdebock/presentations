@@ -131,6 +131,7 @@ ansible-playbook update.yml \
 ----
 
 # Try it
+
 ```shell
 ansible-playbook update.yml \
    --inventory 134.209.84.15,
@@ -181,6 +182,12 @@ Much better, but what if your collegue is on a holiday?
 # AWX
 
 A webui and API that can run playbooks on hosts.
+
+----
+
+![awx](images/awx.gif)
+
+----
 
 - URL: http://142.93.238.130/
 
