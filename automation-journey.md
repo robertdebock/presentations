@@ -119,7 +119,8 @@ Almost all "jobs" should facilitate:
 
 ```shell
 ansible-playbook update.yml \
-  --inventory my_test_host, \
+  --inventory 134.209.84.15, \
+  --user root \
   --check
 ```
 
@@ -128,12 +129,14 @@ ansible-playbook update.yml \
 # Try it
 ```shell
 ansible-playbook update.yml \
-   --inventory my_test_host,
+   --inventory 134.209.84.15,
 ```
 
 ----
 
 # Run it
+
+Fill the file `inventory` with all hosts.
 
 ```shell
 ansible-playbook update.yml
@@ -144,6 +147,8 @@ ansible-playbook update.yml
 # Almost there
 
 Automation has saved you time, cool!
+
+PS: Not everybody loves the command line.
 
 ----
 
@@ -173,11 +178,12 @@ Much better, but what if your collegue is on a holiday?
 
 A webinterface and API that can run playbooks on hosts.
 
+- URL: http://142.93.238.130/
+
 ----
 
 # Have fun!
 
-- URL: http://142.93.238.130/
 - username: admin
 - password: robertdebock
 
