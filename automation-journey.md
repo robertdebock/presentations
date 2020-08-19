@@ -126,6 +126,10 @@ ansible-playbook update.yml \
 
 ----
 
+![dry run](images/dryrun.gif)
+
+----
+
 # Try it
 ```shell
 ansible-playbook update.yml \
@@ -170,13 +174,13 @@ Much better, but what if your collegue is on a holiday?
 
 ----
 
-# Let the user \* do it.
+# Do it yourself!
 
 ----
 
 # AWX
 
-A webinterface and API that can run playbooks on hosts.
+A webui and API that can run playbooks on hosts.
 
 - URL: http://142.93.238.130/
 
