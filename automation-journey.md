@@ -165,7 +165,27 @@ Much better, but what if your collegue is on a holiday?
 
 ----
 
-## Let the user \* do it.
+# Let the user \* do it.
+
+----
+
+# AWX
+
+A webinterface and API that can run playbooks on hosts.
+
+----
+
+# Have fun!
+
+- URL: http://142.93.238.130/
+- username: admin
+- password: robertdebock
+
+----
+
+# Ping and Update
+
+https://github.com/robertdebock/ansible
 
 ---
 
