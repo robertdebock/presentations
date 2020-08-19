@@ -24,7 +24,7 @@ Robert de Bock
 # What to automate
 
 1. Make a list of job.
-2. Rate job for "frequent" and "automation effort".
+2. Rate job for "frequency" and "automation effort".
 3. Decide.
 4. CODE!
 
@@ -38,17 +38,17 @@ Think of a few jobs that you'd like to automate.
 
 ## Suggestion of jobs
 
-- Applying patches
-- Adding disks
-- Install component x
-- Update component x
+- Applying patches.
+- Adding disks.
+- Install component x.
+- Update component x.
 
 ----
 
 # Rate jobs
 
-- 1: not frequent, low effort
-- 10: super frequent, high effort
+- 1: not frequent, low effort.
+- 10: super frequent, high effort.
 
 ----
 
@@ -81,12 +81,12 @@ This heavily depends on the tooling available.
 
 # CRUD
 
-Almost all "jobs" should expose:
+Almost all "jobs" should facilitate:
 
-1. Create
-2. Read
-3. Update
-4. Delete
+1. Create.
+2. Read.
+3. Update.
+4. Delete.
 
 ----
 
@@ -153,7 +153,7 @@ Automation has saved you time, cool!
 
 ## Scheduling automation
 
-For example `cron` or [awx](https://github.com/ansible/awx/).
+For example `cron`, [awx](https://github.com/ansible/awx/) or [rundeck](https://www.rundeck.com/open-source).
 
 - Limitations?
 
@@ -161,11 +161,11 @@ For example `cron` or [awx](https://github.com/ansible/awx/).
 
 ## Let others do it. (&trade;)
 
-Much better, but what if she/he is on a holiday?
+Much better, but what if your collegue is on a holiday?
 
 ----
 
-## Let the user do it.
+## Let the user \* do it.
 
 ---
 
@@ -200,8 +200,16 @@ All teams must offer an API to allow self-service capabilities for their product
 
 ---
 
+# Caveats
+
+- Not "free".
+- Teams may isolate.
+- Dependency management.
+
+---
+
 # Conclusion
 
-1. Automation allows scaling
-2. Automation brings predictability
-3. May require re-organizing teams
+1. Automation allows scaling.
+2. Automation brings predictability.
+3. May require re-organizing teams.
