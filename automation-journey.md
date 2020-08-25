@@ -88,7 +88,7 @@ Almost all "jobs" should facilitate:
 3. Update.
 4. Delete.
 
-----
+---
 
 # Ansible
 
