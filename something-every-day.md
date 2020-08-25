@@ -1,13 +1,13 @@
 ---
-title: Something every day
+title: Something dailyy
 
 ---
 
-# Something every day
+# Something daily
 
 Follow along: http://robertdebock.nl/
 
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/something-every-day/"/>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/something-daily/"/>
 
 ---
 
