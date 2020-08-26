@@ -1,5 +1,5 @@
 ---
-title: Something dailyy
+title: Something daily
 
 ---
 
