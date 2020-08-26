@@ -26,19 +26,19 @@ Follow along: http://robertdebock.nl/
 
 ---
 
-# What will happen 1
+# What will happen
 
 You'll **master** whatever you do daily.
 
 ----
 
-# What will happen 2
+# What will happen
 
 You'll hit into **motivation** walls.
 
 ----
 
-# What will happen 3
+# What will happen
 
 People will **see** what you do.
 
@@ -51,9 +51,11 @@ People will **see** what you do.
 - Coding
 - Take a photo (365)
 
+Something needs to be left to see progress, the `present` or `artifact`.
+
 ---
 
-# What happened to me
+# My results
 
 1. I [won a price in 2017](https://www.urbanphotorace.com/upr-ams-17).
 2. I have a [toolbox of `Ansible roles`](https://robertdebock.nl/).
