@@ -36,14 +36,14 @@ title: Perfect Ansible
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Q: More readable?
 
-```
+```yaml
 - name: install screen
   package:
     name: screen
     state: present
 ```
 
-```
+```yaml
 - yum: name="{{ item }}" state=present update_cache=no
   with_items:
     - screen
@@ -55,13 +55,13 @@ title: Perfect Ansible
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Q: Ease of use?
 
-```
+```yaml
 httpd_configuration:
   port: 80
   ssl_enabled: yes
 ```
 
-```
+```yaml
 httpd_port: 80
 httpd_ssl_enabled: yes
 ```
@@ -106,7 +106,7 @@ Note: 1. Easier debugging, 3. `file: backup: no`.
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Q: Good enough?
 
-```
+```yaml
 - name: Install httpd on Red Hat
   yum:
     name: httpd
@@ -126,14 +126,14 @@ Note: `name:` it's not always going to install, `yum` is not only for RHEL, `apt
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # I love this
 
-```
+```yaml
 - name: install apache httpd
   package:
     name: "{{ apache_httpd_package }}"
     state: present
 ```
 
-```
+```yaml
 _apache_httpd_package:
   Debian: apache2
   RedHat: httpd
@@ -167,7 +167,7 @@ apache_httpd_package: "{{ _apache_httpd_package[ansible_os_family] }}"
 # Attempt 1
 
 tasks/main.yml:
-```
+```yaml
 - name: ensure java is installed
   package:
     name: java-1.8.0-openjdk
@@ -181,12 +181,12 @@ What can we make variable?
 # Attempt 2
 
 defaults/main.yml
-```
+```yaml
 java_version: 1.8.0
 ```
 
 tasks/main.yml:
-```
+```yaml
 - name: ensure java is installed
   package:
     name: java-{{ java_version }}-openjdk
@@ -200,7 +200,7 @@ What more can we make variable?
 # Attempt 3
 
 vars/main.yml:
-```
+```yaml
 java_jre_name: openjdk
 java_jdk_name: openjdk-devel
 ```
@@ -212,7 +212,7 @@ java_jdk_name: openjdk-devel
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 
 defaults/main.yml:
-```
+```yaml
 java_version: 1.8.0
 java_type: jre
 ```
@@ -224,7 +224,7 @@ java_type: jre
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 
 tasks/main.yml:
-```
+```yaml
 - name: ensure java jre is installed
   package:
     name: java-{{ java_version }}-{{ java_jre_name }}
@@ -244,7 +244,7 @@ tasks/main.yml:
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Attempt 3
 
-```
+```yaml
 _java_package:
   jre: java-{{ java_version }}-openjdk
   jdk: java-{{ java_version }}-openjdk-devel
@@ -252,7 +252,7 @@ _java_package:
 java_package: "{{ _java_package[java_type] }}
 ```
 
-```
+```yaml
 - name: install java
   package:
     name: "{{ java_package }}"
@@ -300,7 +300,7 @@ These are called [YAML anchors and aliases](https://yaml.org/spec/1.2/spec.html#
 
 ### Solve problems at the right place.
 
-```
+```yaml
 - name: ensure my-software is installed
   package:
     name: my-software
@@ -355,7 +355,6 @@ Graph-inspiration: [Sam Doran](https://github.com/samdoran)
 - Easier variables win
 
 ---
-
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Thanks!
