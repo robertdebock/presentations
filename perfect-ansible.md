@@ -262,6 +262,25 @@ java_package: "{{ _java_package[java_type] }}
 ---
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
+# Duplicate data
+
+```yaml
+_my_role_requirements:
+  RedHat: &rhel
+    - some_package
+  Amazon: *rhel7
+  Suse: *rhel7
+  Debian:
+    - some_other_package
+
+my_role_requirements: "{{ _selinux_requirements[ansible_of_family] }}"
+```
+
+These are called [YAML anchors and aliases](https://yaml.org/spec/1.2/spec.html#id2765878).
+
+---
+
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Problems
 
 ### Solve problems at the right place.
