@@ -157,7 +157,7 @@ apache_httpd_package: "{{ _apache_httpd_package[ansible_os_family] }}"
 
 - [Incorrect role name](https://galaxy.ansible.com/robertdebock/dns)
 - [Difficult interface](https://github.com/geerlingguy/ansible-role-nginx)
-- [Linting issues](https://galaxy.ansible.com/dev-sec/os-hardening)
+- [Linting issues](https://galaxy.ansible.com/ansiblebit/oracle-java)
 - [More linting issues](https://galaxy.ansible.com/juniper/junos)
 - [`state: latest`](https://github.com/DavidWittman/ansible-redis/blob/59f05097f828fff9c613f31072031e798c8b10f4/tasks/dependencies.yml#L29)
 
