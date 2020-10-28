@@ -257,7 +257,7 @@ _java_package:
   jre: java-{{ java_version }}-openjdk
   jdk: java-{{ java_version }}-openjdk-devel
 
-java_package: "{{ _java_package[java_type] }}
+java_package: "{{ _java_package[java_type] }}"
 ```
 
 ```yaml
@@ -293,8 +293,8 @@ _my_role_requirements:
 _my_role_requirements:
   RedHat: &rhel
     - some_package
-  Amazon: *rhel7
-  Suse: *rhel7
+  Amazon: *rhel
+  Suse: *rhel
   Debian:
     - some_other_package
 ```
@@ -312,7 +312,7 @@ These are called [YAML anchors and aliases](https://yaml.org/spec/1.2/spec.html#
     that:
       - variable is defined
       - variable_list is iterable
-      - variable_string in ["one", "two"
+      - variable_string in ["one", "two"]
       - variable_boolean | type_debug == "bool"
       - variable_integer | int
 ```
