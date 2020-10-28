@@ -296,6 +296,38 @@ These are called [YAML anchors and aliases](https://yaml.org/spec/1.2/spec.html#
 ---
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
+# Assert
+
+```yaml
+- name: test some variable
+  assert:
+    that:
+      - variable is defined
+      - variable_list is iterable
+      - variable_string in ["one", "two"
+      - variable_boolean | type_debug == "bool"
+      - variable_integer | int
+```
+
+Should [become standard soon](https://github.com/ansible/proposals/issues/39)
+
+---
+
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
+# Verify
+
+```
+- name: see if the sample index.html returns 200
+  uri:
+    url: "https://127.0.0.1:8443/"
+    validate_certs: no
+```
+
+It's just a [part of Molecule](https://molecule.readthedocs.io/en/latest/configuration.html#verifier).
+
+---
+
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Problems
 
 ### Solve problems at the right place.
