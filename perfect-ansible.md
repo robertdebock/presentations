@@ -14,6 +14,14 @@ title: Perfect Ansible
 ---
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
+
+# Robert
+
+Introduce yourself!
+
+---
+
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # The norm
 
 [Ansible Docker role by Jeff Geerling](https://galaxy.ansible.com/geerlingguy/docker)
