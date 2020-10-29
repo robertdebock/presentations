@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Understaning Ansible</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+# Understanding Ansible
+
+Follow along: http://robertdebock.nl/
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/understanding-ansible/"/>
+</script></section><section  data-markdown><script type="text/template">
+# Simple?
+
+Although ansible is [simple](https://www.ansible.com/blog/simplicity-the-art-of-automation) to learn, it can be [difficult to master](https://en.wikipedia.org/wiki/Bushnell%27s_Law).
+</script></section><section ><section data-markdown><script type="text/template">
+# Bread
+
+[INSERT IMAGE]
+</script></section><section data-markdown><script type="text/template">
+# modules - tools
+
+- `package` - kneading machine
+- `service` - oven
+- `template` - baking mold
+</script></section><section data-markdown><script type="text/template">
+# roles - baking methods
+
+- `httpd` - in an oven
+- `nginx` - in a [pan](https://www.petromax.de/en)
+- `lighttpd` - on the [kamado](https://www.kamadojoe.com/grills/)
+</script></section><section data-markdown><script type="text/template">
+# variables - ingredients
+
+- `httpd_port: 80` - white flour
+- `httpd_ssl_port: 443` - spelt flour
+</script></section><section data-markdown><script type="text/template">
+# playbooks - recipes
+
+- `webserver.yml` - [no knead bread](https://pinchofyum.com/no-knead-bread)
+</script></section></section><section  data-markdown><script type="text/template">
+# Baking bread
+
+1. Have a few tools - unit test
+2. Select a baking method - functional test
+3. Buy all ingredients
+4. Use some recipe - interation test
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

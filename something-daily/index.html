@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Something daily</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+# Something daily
+
+Follow along: http://robertdebock.nl/
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/something-daily/"/>
+</script></section><section  data-markdown><script type="text/template">
+# Do something everyday
+
+- Not for your boss.
+- Not for money.
+- Every day.
+</script></section><section  data-markdown><script type="text/template">
+# Requirements
+
+- Something creative.
+- Show it.
+</script></section><section ><section data-markdown><script type="text/template">
+# What will happen
+
+You'll **master** whatever you do daily.
+</script></section><section data-markdown><script type="text/template">
+# What will happen
+
+You'll hit into **motivation** walls.
+</script></section><section data-markdown><script type="text/template">
+# What will happen
+
+People will **see** what you do.
+</script></section></section><section  data-markdown><script type="text/template">
+# Ideas
+
+- Writing
+- Painting
+- Coding
+- Take a photo (365)
+
+Something needs to be left to see progress, the `present` or `artifact`.
+</script></section><section  data-markdown><script type="text/template">
+# My results
+
+1. I [won a price in 2017](https://www.urbanphotorace.com/upr-ams-17).
+2. I have a [toolbox of `Ansible roles`](https://robertdebock.nl/).
+3. I found a new job.
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

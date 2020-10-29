@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Maintaining many Ansible roles</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template">
+
+## Maintaining many Ansible roles
+
+Follow along: http://robertdebock.nl/
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/maintaining-many-ansible-roles/"/>
+</script></section><section data-markdown><script type="text/template">
+# Immortalize thyself
+
+- See an error, make a [pull request](https://github.com/robertdebock/presentations).
+- I'm collecting stars on GitHub.
+</script></section><section data-markdown><script type="text/template">
+# Who am I
+
+Robert de Bock
+
+- Work: [ING Bank](https://www.ing.nl/), Amsterdam.
+- Home: Married with [(3) children](https://www.flickr.com/photos/robertdebock/47537461081/). (boys, 4, 6 & 10)
+- Education: [Art school, Utecht](https://www.hku.nl/)
+- Passion: [Understandable automation](https://robertdebock.nl/my-manifesto.html) mostly for Linux infra.
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Many roles?
+
+Above 10 can already be a pain to maintain.
+</script></section><section data-markdown><script type="text/template">
+# What I maintain
+
+1. Over [100 Ansible roles](https://github.com/robertdebock?tab=repositories&q=ansible-role-&type=&language=).
+2. Some [14 Docker containers](https://github.com/robertdebock?tab=repositories&q=docker).
+3. [Three GitHub actions](https://github.com/robertdebock?tab=repositories&q=action).
+4. Script to [generate](https://github.com/robertdebock/ansible-generator), [probe](https://github.com/robertdebock/ansible-probe) and [test](https://github.com/robertdebock/ansible-tester) Ansible content.
+</script></section></section><section  data-markdown><script type="text/template">
+# Scaling issues
+
+1. What is the [status of my roles](https://robertdebock.nl/)?
+2. Are there [contributions that need attention](https://robertdebock.nl/contributions.html)?
+3. Many files can be [generated](https://github.com/robertdebock/ansible-generator).
+4. You can [probe](https://github.com/robertdebock/ansible-probe) to generate CI-files
+</script></section><section ><section data-markdown><script type="text/template">
+# Roles become data
+
+Take a step back after writing a few roles.
+
+What files are static, what unique and what can be generated?
+</script></section><section data-markdown><script type="text/template">
+# Static
+
+Files that every repository has, and does not need any changes.
+
+- [FUNDING.yml](https://github.com/robertdebock/ansible-generator/blob/master/files/FUNDING.yml)
+- [bug_report.md](https://github.com/robertdebock/ansible-generator/blob/master/files/bug_report.md)
+- [feature_request.md](https://github.com/robertdebock/ansible-generator/blob/master/files/feature_request.md)
+- [gitignore](https://github.com/robertdebock/ansible-generator/blob/master/files/gitignore)
+- [yamllint](https://github.com/robertdebock/ansible-generator/blob/master/files/yamllint)
+</script></section><section data-markdown><script type="text/template">
+# Unique per role
+
+- [meta/main.yml](https://github.com/robertdebock/ansible-role-bootstrap/blob/master/meta/main.yml)
+- [tasks/*](https://github.com/robertdebock/ansible-role-bootstrap/tree/master/tasks)
+- [defaults/main.yml](https://github.com/robertdebock/ansible-role-bootstrap/blob/master/defaults/main.yml)
+- [vars/main.yml](https://github.com/robertdebock/ansible-role-bootstrap/blob/master/vars/main.yml)
+- files/* and templates/*
+</script></section><section data-markdown><script type="text/template">
+# Generated
+
+Using [ansible-probe](https://github.com/robertdebock/ansible-generator) all static and generated files can be updated.
+</script></section><section data-markdown><script type="text/template">
+# Generated documents
+
+- [CONTRIBUTING.md.j2](https://github.com/robertdebock/ansible-generator/blob/master/templates/CONTRIBUTING.md.j2)
+- [LICENSE-2.0.txt.j2](https://github.com/robertdebock/ansible-generator/blob/master/templates/LICENSE-2.0.txt.j2)
+- [README.md.j2](https://github.com/robertdebock/ansible-generator/blob/master/templates/README.md.j2)
+- [SECURITY.md.j2](https://github.com/robertdebock/ansible-generator/blob/master/templates/SECURITY.md.j2)
+</script></section><section data-markdown><script type="text/template">
+# Generated tests
+
+- [ansible-lint.j2](https://github.com/robertdebock/ansible-generator/blob/master/templates/ansible-lint.j2)
+- [molecule.yml.j2](https://github.com/robertdebock/ansible-generator/blob/master/templates/molecule.yml.j2)
+- [settings.yml.j2](https://github.com/robertdebock/ansible-generator/blob/master/templates/settings.yml.j2)
+- [tox.ini.j2](https://github.com/robertdebock/ansible-generator/blob/master/templates/tox.ini.j2)
+</script></section><section data-markdown><script type="text/template">
+# Generated CI
+
+- [galaxy.yml.j2](https://github.com/robertdebock/ansible-generator/blob/master/templates/galaxy.yml.j2)
+- [molecule-action.yml.j2](https://github.com/robertdebock/ansible-generator/blob/master/templates/molecule-action.yml.j2)
+- [travis.yml.j2](https://github.com/robertdebock/ansible-generator/blob/master/templates/travis.yml.j2)
+</script></section></section><section  data-markdown><script type="text/template">
+# Conclusion
+
+1. Start small/manual.
+2. Try to see "labor-patterns".
+3. (Ab)Use test-on-commit.
+4. Have an occasional "retro".
+</script></section><section  data-markdown><script type="text/template">
+# Ideas
+
+Save them [somewhere](https://trello.com/b/K9EUrZL2/refactoring), treat them like user stories.
+</script></section><section ><section data-markdown><script type="text/template">
+# Dependencies
+
+As soon as you see code repeated, step back, consider making a role.
+</script></section><section data-markdown><script type="text/template">
+```
+digraph PhiloDilemma {
+  label = "Robert de Bock" ;
+  overlap=false
+  {
+    bootstrap [fillcolor=green style=filled]
+    "core_dependencies" [fillcolor=yellow style=filled]
+    dns [fillcolor=orange style=filled penwidth=3]
+  }
+  dns -> "core_dependencies"
+  "core_dependencies" -> bootstrap
+}
+```
+</script></section><section data-markdown><script type="text/template">
+![dependency image of ansible role dns](https://raw.githubusercontent.com/robertdebock/drawings/artifacts/dns.png)
+</script></section></section><section  data-markdown><script type="text/template">
+# Keep you shop clean
+
+Once you see one mistake, find all similar.
+
+- Empty directory
+- capitalization (custom lint rules)
+- Consistent name of variables
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

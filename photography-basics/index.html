@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>photography basics</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+# Photography
+
+Follow along: https://robertdebock.nl/
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=https://robertdebock.nl/presentations/photography-basics/"/>
+</script></section><section ><section data-markdown><script type="text/template">
+# ISO
+
+Sensitivity of the sensor/film.
+
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/iso.png"/>
+</script></section><section data-markdown><script type="text/template">
+# ISO Low
+
+- ISO 100, ISO 200.
+- A "clean" image.
+</script></section><section data-markdown><script type="text/template">
+# ISO High
+
+- ISO 3200, ISO 6400.
+- Useful in "dark" situations.
+</script></section><section data-markdown><script type="text/template">
+# ISO examples
+
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/iso.gif"/>
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Shutter
+
+Controls the time light exposes the sensor/film.
+
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/shutter.png"/>
+</script></section><section data-markdown><script type="text/template">
+# Fast shutter
+
+- 1/500, 1/1000.
+- Freezes the image.
+- Limits the amount of light.
+</script></section><section data-markdown><script type="text/template">
+# Slow shutter
+
+- 1/1, 1/2.
+- Displays motion as blur.
+- More light to the sensor.
+</script></section><section data-markdown><script type="text/template">
+# Shutter examples
+
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/shutter.gif"/>
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Aperture 
+
+The size of the opening in the lens.
+
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/aperture.png"/>
+</script></section><section data-markdown><script type="text/template">
+# Aperture small
+
+- f/22, f/16
+- Large depth of field.
+- Reduce the amount of light.
+</script></section><section data-markdown><script type="text/template">
+# Aperture large
+
+- f/1.4, f/2.8
+- Narrow depth of field.
+- Lets in loads of light.
+</script></section><section data-markdown><script type="text/template">
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/aperture.gif"/>
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Question
+
+My image is not sharp with these settings, what to do?
+
+- ISO: 200
+- f/11
+- 1/15
+</script></section><section data-markdown><script type="text/template">
+# Bonus question
+
+My image is not sharp with these settings, what to do?
+
+- ISO: 6400
+- f/2.0
+- 1/15
+</script></section></section><section  data-markdown><script type="text/template">
+## Scenarios
+- Portraits: Wide aperature (f/1.4)
+- Landscape: Small aperarure (f/11)
+- Sports: Fast shutter (1/1000)
+- Food: Depends
+</script></section><section ><section data-markdown><script type="text/template">
+# Food preference
+
+- ISO: as low as possible (ISO 200)
+- Shutter handheld: 1/60 - 1/125
+- Shutter tripod: As slow as necessary
+- Aperture flatlay: Around f/8
+- Aperture 45 degrees: quite open (f/2)
+</script></section><section data-markdown><script type="text/template">
+# Others
+
+- Whitebalance
+- RAW/jpeg
+- Focus settings
+- Lenses
+</script></section></section><section  data-markdown><script type="text/template">
+# Final hint
+
+Understand the settings, but above all:
+
+## Look at the result.
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

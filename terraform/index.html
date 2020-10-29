@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Terraform</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+# Terraform
+
+Follow along: http://robertdebock.nl/
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/terraform/"/>
+</script></section><section  data-markdown><script type="text/template">
+# What
+
+Infrastructure as code
+</script></section><section  data-markdown><script type="text/template">
+# Alternatives
+
+- CloudFormation (AWS)
+- Google Cloud Deployment Manager
+
+None can manage resources on *any* provider.
+</script></section><section  data-markdown><script type="text/template">
+# Why
+
+- Much quicker.
+- Repeatable.
+- Versionable & history.
+- Easy collaboration.
+- Teams can own their infra.
+</script></section><section ><section data-markdown><script type="text/template">
+# Examples
+
+Mostly stolen from the [Terraform documentation](https://www.terraform.io/docs/providers/do/).
+</script></section><section data-markdown><script type="text/template">
+# Define
+
+```hcl
+resource "digitalocean_droplet" "web-1" {
+  image  = "ubuntu-18-04-x64"
+  name   = "web-1"
+  region = "ams3"
+  size   = "s-1vcpu-1gb"
+}
+```
+</script></section><section data-markdown><script type="text/template">
+# Passing data
+
+```hcl
+resource "digitalocean_loadbalancer" "public" {
+  name   = "loadbalancer-1"
+  region = "ams3"
+
+  # (Non-relevant lines removed.)
+
+  droplet_ids = [digitalocean_droplet.web-1.id]
+}
+```
+</script></section></section><section  data-markdown><script type="text/template">
+# State
+
+Terraform keeps state, which allows:
+
+- Multiple repositories.
+- Determine differences.
+
+Nota bene; Don't loose the state...
+</script></section><section ><section data-markdown><script type="text/template">
+# Dry-run
+
+```bash
+terraform plan
+```
+</script></section><section data-markdown><script type="text/template">
+The most relevant lines:
+
+```
+  # digitalocean_droplet.web-1 will be created
+  + resource "digitalocean_droplet" "web-1" {
+      + ipv4_address         = (known after apply)
+      + name                 = "web-1"
+      + region               = "ams3"
+      + size                 = "s-1vcpu-1gb"
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+```
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Apply!
+
+```bash
+terraform apply
+```
+</script></section><section data-markdown><script type="text/template">
+![terraform apply output](images/terraform.gif)
+</script></section></section><section  data-markdown><script type="text/template">
+# Save money
+
+```bash
+terraform destroy
+```
+</script></section><section ><section data-markdown><script type="text/template">
+# Terraform & Ansible
+
+[Better together](https://www.hashicorp.com/resources/ansible-terraform-better-together/).
+</script></section><section data-markdown><script type="text/template">
+# Demo time
+
+[https://github.com/robertdebock/terraform-demo](https://github.com/robertdebock/terraform-demo)
+
+Three branches:
+- [master](https://github.com/robertdebock/terraform-demo): Start with this one.
+- [two](https://github.com/robertdebock/terraform-demo/two/three): A little more complex.
+- [three](https://github.com/robertdebock/terraform-demo/tree/three): Provisioning with Ansible.
+</script></section></section><section  data-markdown><script type="text/template">
+# Conclusion
+
+- Infrastructure components are just "resources".
+- Easy to read, learn and contribute.
+- Ansible is great. ;-)
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

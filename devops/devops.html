@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>DevOps</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+# DevOps
+
+A view on many variations.
+</script></section><section ><section data-markdown><script type="text/template">
+# Many variations
+</script></section><section data-markdown><script type="text/template">
+# "One Team"
+
+Developers and operators are in one team.
+
+```
++----------+
+| :-)  :-) |
+| DEV  OPS |
++----------+
+```
+</script></section><section data-markdown><script type="text/template">
+# "Scrummaster"
+
+Teams have a scrummaster.
+
+```
++----------------------+
+| :-|  :-|     :-)     |
+| ???  ??? SCRUMMASTER |
++----------------------+
+```
+</script></section><section data-markdown><script type="text/template">
+# "Split responsibilities"
+
+- Developers mananage "dev", "tst" & "acc".
+- Operators manage "prd".
+
+```
+  +-----+    +-----+
+  | :-| |    | :-| |
+  | DEV |    | OPS |
+  +-----+    +-----+
+     |         |
+dev,tst,acc   prod
+```
+</script></section><section data-markdown><script type="text/template">
+# "Completely split"
+
+There are teams called "Dev" and other teams called "Ops".
+
+```
+  +-DEV-+    +-OPS-+
+  | :-| |    | :-| |
+  | ??? |    | ??? |
+  +-----+    +-----+
+```
+</script></section><section data-markdown><script type="text/template">
+# "Modern tooling"
+
+We use Terraform & Ansible so we are DevOps.
+
+```
++-----------+
+| :-|  :-|  |
+| ???  ???  |
+| ANSIBLE   |
+| TERRAFORM |
++-----------+
+```
+</script></section><section data-markdown><script type="text/template">
+# "No handovers"
+
+A team can work on d, t, a & p.
+</script></section><section data-markdown><script type="text/template">
+# "No Ops please"
+
+I don't feel like operations, let's DevOps and never pickup the phone anymore.
+
+```
+         +-OPS-+   +-DEV-+
+WORK ->  | :-| |   | :-) |
+         +-----+   +-----+
+```
+</script></section><section data-markdown><script type="text/template">
+# "Dev" role and "Ops" role
+
+- Dev can create builds
+- Ops can release
+
+```
++-DEV-+   +-OPS-+
+| :-| |   | :-| |
++-----+   +-----+
+
+BUILD  ->  RELEASE
+</script></section></section><section  data-markdown><script type="text/template">
+# Agile VS DevOps
+</script></section><section  data-markdown><script type="text/template">
+# Agile
+
+We don't plan, it's Agile.
+
+```
++-----+ +-----+
+| MON | | TUE |
+|-----| |-----|
+| ??? | | ??? |
++-----+ +-----+
+```
+</script></section><section  data-markdown><script type="text/template">
+# Architects
+
+What is the role of an Architect in DevOps?
+</script></section><section  data-markdown><script type="text/template">
+# DevOps
+
+- Is culture
+- Have a single responsibility
+</script></section><section  data-markdown><script type="text/template">
+# ! DevOps
+
+- Infra as Code
+- To automate operations
+</script></section><section  data-markdown><script type="text/template">
+# Developers
+
+## Write code that's
+
+- shippable as bytecode
+- runs autonomously
+</script></section><section  data-markdown><script type="text/template">
+# Dev VS Ops
+
+1. Developers are nobel
+2. Operators clean up
+</script></section><section  data-markdown><script type="text/template">
+# DevOps at scale
+
+Is that even possible?
+
+- The hardware/datacenter department
+- The infra department
+</script></section><section  data-markdown><script type="text/template">
+# My conclusion
+
+In a true devops organization, everybody can contribute to all* code.
+
+## ALL
+- application
+- ci
+- deployment
+- maintenance
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

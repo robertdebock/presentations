@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Ansible Roles</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+# Ansible Roles
+
+Follow along: http://robertdebock.nl/
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/ansible-roles/"/>
+</script></section><section  data-markdown><script type="text/template">
+# Ansible?
+
+- Server provisioning tool
+- Ansible Roles are sharable
+</script></section><section  data-markdown><script type="text/template">
+# Testing? Why?
+
+- High quality roles are great
+- Easier to write roles
+- Easier to consume roles
+</script></section><section  data-markdown><script type="text/template">
+# An idea please
+
+[Inspiration](https://galaxy.ansible.com/)/suggestions:
+- ansible-role-httpd
+- ansible-role-browsers
+- ansible-role-devtools
+- ansible-role-opstools
+</script></section><section ><section data-markdown><script type="text/template">
+# httpd
+</script></section><section data-markdown><script type="text/template">
+# Docker
+
+```
+molecule init role \
+  --driver-name docker \
+  --verifier-name goss \
+  --role-name ansible-role-httpd
+```
+
+- No reboot or systemctl, but fast.
+</script></section><section data-markdown><script type="text/template">
+# Vagrant
+
+```
+molecule init role \
+  --driver-name vagrant \
+  --verifier-name goss \
+  --role-name ansible-role-httpd
+
+vi ansible-role-httpd/molecule/default/molecule.yml
+```
+
+<aside class="notes"><pre><code>    box: centos/7</code></pre>
+</aside></script></section><section data-markdown><script type="text/template">
+# Ansible tests
+
+```
+vi ansible-role-httpd/molecule/default/playbook.yml
+```
+
+<aside class="notes"><pre><code>- name: Converge
+  hosts: all
+  become: true
+
+  roles:
+    - role: ansible-role-httpd
+
+  tasks:
+    - name: test connection
+      wait_for:
+        port: 80</code></pre>
+</aside></script></section><section data-markdown><script type="text/template">
+# Goss tests
+
+```
+vi ansible-role-httpd/molecule/default/tests/test_default.yml
+```
+
+<aside class="notes"><pre><code>package:
+  httpd:
+    installed: true
+service:
+  httpd:
+    enabled: true
+    running: true
+process:
+  httpd:
+    running: true
+port:
+  tcp6:80
+    listening: true
+    ip:
+      - &#39;::&#39;</code></pre>
+</aside></script></section><section data-markdown><script type="text/template">
+# Write the role
+
+```
+vi ansible-role-httpd/tasks/main.yml
+```
+
+<aside class="notes"><pre><code># tasks file for ansible-role-httpd
+- name: install apache
+  package:
+    name: httpd
+
+- name: start apache
+  service:
+    name: httpd
+    state: started
+    enabled: true</code></pre>
+</aside></script></section></section><section ><section data-markdown><script type="text/template">
+# browsers
+</script></section><section data-markdown><script type="text/template">
+# Docker
+
+```
+molecule init role \
+  --driver-name docker \
+  --verifier-name goss \
+  --role-name ansible-role-browsers
+```
+
+- No reboot or systemctl, but fast.
+</script></section><section data-markdown><script type="text/template">
+# Vagrant
+
+```
+molecule init role \
+  --driver-name vagrant \
+  --verifier-name goss \
+  --role-name ansible-role-browsers
+
+vi ansible-role-browsers/molecule/default/molecule.yml
+```
+
+<aside class="notes"><pre><code>    box: centos/7</code></pre>
+</aside></script></section><section data-markdown><script type="text/template">
+# Ansible tests
+
+```
+vi ansible-role-browsers/molecule/default/playbook.yml
+```
+
+<aside class="notes"><pre><code>- name: Converge
+  hosts: all
+  become: true
+
+  roles:
+    - role: ansible-role-browsers
+
+  tasks:
+    - name: test browsers
+      command: &quot;{{ item.name }} {{ item.argument }}&quot;
+      changed_when: no
+      with_items:
+        - name: firefox
+          argument: -version
+        - name: chrome
+          argument: --version</code></pre>
+</aside></script></section><section data-markdown><script type="text/template">
+# Goss tests
+
+```
+vi ansible-role-browsers/molecule/default/tests/test_default.yml
+```
+
+<aside class="notes"><pre><code>package:
+  firefox:
+    installed: true
+package:
+  chrome:
+    installed: true</code></pre>
+</aside></script></section><section data-markdown><script type="text/template">
+# Write the role
+
+```
+vi ansible-role-browsers/tasks/main.yml
+```
+
+<aside class="notes"><pre><code># tasks file for ansible-role-browsers
+- name: install browser
+  package:
+    name: firefox
+  with_items:
+    - firefox
+    - chrome</code></pre>
+</aside></script></section></section><section ><section data-markdown><script type="text/template">
+# devtools
+</script></section><section data-markdown><script type="text/template">
+# Docker
+
+```
+molecule init role \
+  --driver-name docker \
+  --verifier-name goss \
+  --role-name ansible-role-devtools
+```
+
+- No reboot or systemctl, but fast.
+</script></section><section data-markdown><script type="text/template">
+# Vagrant
+
+```
+molecule init role \
+  --driver-name vagrant \
+  --verifier-name goss \
+  --role-name ansible-role-devtools
+
+vi ansible-role-devtools/molecule/default/molecule.yml
+```
+
+<aside class="notes"><pre><code>    box: centos/7</code></pre>
+</aside></script></section><section data-markdown><script type="text/template">
+# Ansible tests
+
+```
+vi ansible-role-devtools/molecule/default/playbook.yml
+```
+
+<aside class="notes"><pre><code>- name: Converge
+  hosts: all
+  become: true
+
+  roles:
+    - role: ansible-role-devtools
+
+  tasks:
+    - name: test software
+    command: &quot;{{ item.name }} {{ item.argument }}&quot;
+    changed_when: no
+      with_items:
+        - name: vim
+          argument: --version</code></pre>
+</aside></script></section><section data-markdown><script type="text/template">
+# Goss tests
+
+```
+vi ansible-role-devtools/molecule/default/tests/test_default.yml
+```
+
+<aside class="notes"><pre><code>package:
+  vim:
+    installed: true</code></pre>
+</aside></script></section><section data-markdown><script type="text/template">
+# Write the role
+
+```
+vi ansible-role-devtools/tasks/main.yml
+```
+
+<aside class="notes"><pre><code># tasks file for ansible-role-devtools
+- name: install devtool
+  package:
+    name: &quot;{{ item }}&quot;
+  with_items:
+     - vim</code></pre>
+</aside></script></section></section><section ><section data-markdown><script type="text/template">
+# opstools
+</script></section><section data-markdown><script type="text/template">
+# Docker
+
+```
+molecule init role \
+  --driver-name docker \
+  --verifier-name goss \
+  --role-name ansible-role-opstools
+```
+
+- No reboot or systemctl, but fast.
+</script></section><section data-markdown><script type="text/template">
+# Vagrant
+
+```
+molecule init role \
+  --driver-name vagrant \
+  --verifier-name goss \
+  --role-name ansible-role-opstools
+
+vi ansible-role-opstools/molecule/default/molecule.yml
+```
+
+<aside class="notes"><pre><code>    box: centos/7</code></pre>
+</aside></script></section><section data-markdown><script type="text/template">
+# Ansible tests
+
+```
+vi ansible-role-opstools/molecule/default/playbook.yml
+```
+
+<aside class="notes"><pre><code>- name: Converge
+  hosts: all
+  become: true
+
+  roles:
+    - role: ansible-role-opstools
+
+  tasks:
+    - name: test opstool
+      command: &quot;{{ item.name }} {{ item.argument }}&quot;
+      changed_when: no
+      with_items:
+        - name: tcpdump
+          argument: --version
+        - name: strace
+          argument: -V</code></pre>
+</aside></script></section><section data-markdown><script type="text/template">
+# Goss tests
+
+```
+vi ansible-role-opstools/molecule/default/tests/test_default.yml
+```
+
+<aside class="notes"><pre><code>package:
+  tcpdump:
+    installed: true
+package:
+  strace:
+    installed: true</code></pre>
+</aside></script></section><section data-markdown><script type="text/template">
+# Write the role
+
+```
+vi ansible-role-opstools/tasks/main.yml
+```
+
+<aside class="notes"><pre><code># tasks file for ansible-role-opstools
+- name: install opstool
+  package:
+    name: &quot;{{ item }}&quot;
+  with_items: &quot;{{ opstools_packages }}&quot;</code></pre>
+</aside></script></section><section data-markdown><script type="text/template">
+# Variables
+
+```
+vi ansible-role-opstools/vars/main.yml
+```
+
+```
+opstools_packages:
+  - tcpdump
+  - strace
+```
+</script></section></section><section  data-markdown><script type="text/template">
+# Ready? Test!
+
+```
+cd ansible-role-MYROLE/
+molecule test
+```
+</script></section><section  data-markdown><script type="text/template">
+# Publish
+
+Go to [GitHub](https://github.com/), create a repository.
+Go to [Travis CI](https://travis-ci.org/), enable builds.
+Go to [Galaxy](https://galaxy.ansible.com/) add your role.
+</script></section><section  data-markdown><script type="text/template">
+# World domination
+
+<img height="40%" width="40%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/evil.png"/>
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

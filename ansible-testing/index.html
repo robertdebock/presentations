@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Ansible testing</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+# Ansible testing
+
+Follow along: http://robertdebock.nl/
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/ansible-testing/"/>
+</script></section><section  data-markdown><script type="text/template">
+# Immortalize thyself
+
+- See an error, make a [pull request](https://github.com/robertdebock/presentations).
+- I'm collecting stars on GitHub.
+</script></section><section  data-markdown><script type="text/template">
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/containers.jpg"/>
+</script></section><section  data-markdown><script type="text/template">
+# Context
+
+- About [me](https://tookapic.com/robertdb)
+- About [work](https://github.com/robertdebock)
+</script></section><section ><section data-markdown><script type="text/template">
+# Ansible role
+
+tasks/main.yml
+```
+- name: install software
+  package:
+    name: software
+
+- name: start software
+  service
+    name: software
+    state: started
+    enabled: "{{ software_enabled }}"
+```
+</script></section><section data-markdown><script type="text/template">
+# Ansible playbook
+
+mywebserver.yml
+```
+- hosts: webservers
+  become: yes
+
+  roles:
+    - name: ansible-role-software
+      software_enabled: yes
+
+  tasks:
+    - name: do something specific
+      copy:
+        src: /some/file.txt
+        dest: /opt/software/file.txt
+```
+</script></section></section><section  data-markdown><script type="text/template">
+# Galaxy criteria
+
+https://galaxy.ansible.com/
+
+- Downloads
+- Stars
+- Watches
+- Build status*
+- Last commit
+- OS compatibility
+</script></section><section ><section data-markdown><script type="text/template">
+# Build status
+
+Developer determines quality
+
+<aside class="notes"><p>tests are optional, but really help.</p>
+</aside></script></section><section data-markdown><script type="text/template">
+# Not really a build
+
+The `artifact` (tested code) is published to Galaxy
+</script></section></section><section  data-markdown><script type="text/template">
+# Unit tests
+
+```text
++---- GitHub ----+    +-- Travis --+    +----- Playbook ----+
+| - .travis.yml  |    | - playbook |    |  - hosts: all     |
+| - playbook.yml | -> | - tests    |    |    become: yes    |
+| - molecule.yml |    +------------+    |                   |
++----------------+          |           |    roles:         |
+                            V           |      - httpd      |
+                      +-- Galaxy --+    |                   |
+                      | - roles    | <- |    tasks:         |
+                      +------------+    |      - name: test |
+                                        |        ping:      |
+                                        +-------------------+
+```
+
+I love [ASCII art](https://groups.google.com/forum/#!forum/alt.ascii-art)
+</script></section><section ><section data-markdown><script type="text/template">
+# Lets Go!
+
+```
+$ molecule init role \
+  --driver-name docker \
+  --verifier-name goss \
+  --role-name ansible-role-java
+```</script></section><section data-markdown><script type="text/template">
+# Write tests
+
+molecule/default/test_default.yml
+```
+file:
+  /usr/bin/java:
+    exists: true
+```
+
+See [GOSS documentation](https://github.com/aelsabbahy/goss/blob/master/docs/manual.md) for more information.
+</script></section><section data-markdown><script type="text/template">
+# Write the role
+
+tasks/main.yml
+```
+- name: install java (openjdk)
+  package:
+    - name: java-1.8.0-openjdk
+```
+
+There are [many variations](https://github.com/robertdebock/ansible-role-java) of java.
+</script></section><section data-markdown><script type="text/template">
+# Test it
+
+```
+$ molecule test
+```
+</script></section><section data-markdown><script type="text/template">
+# Test it deluxe
+
+molecule/default/molecule.yml
+```
+dependency:
+  name: galaxy
+  options:
+    role-file: requirements.yml
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: java-centos-6
+    image: centos:6
+  - name: java-centos-7
+    image: centos:7
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+scenario:
+  name: centos
+verifier:
+  name: goss
+  lint:
+    name: 'flake8'
+```
+</script></section><section data-markdown><script type="text/template">
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/molecule.gif"/>
+</script></section></section><section  data-markdown><script type="text/template">
+# Limitations
+
+- This just tests the role.
+- The developer determines the tests.
+</script></section><section ><section data-markdown><script type="text/template">
+# Integration tests
+
+```text
++--- GitHub --------+    +--- Travis ---+    +--- Dgtlcn  --+
+| - .travis.yml     | -> | - terraform  | -> | droplets:    |
+|   /ansible/       |    | - ansible    | -> |   - machine1 |
+|     - fnctn1.yml  |    +--------------+    |   - machine2 |
+|     - nvntr1      |          |             |   - machine3 |
+|     - rqrmnts.yml |          V             |   - machine4 |
+|   /terraform/     |    +--- GitHub ---+    |   - machine5 |
+|     - fnctn1.tf   |    | Report       |    |   - machine5 |
++-------------------+    +--------------+    +--------------+
+```
+</script></section><section data-markdown><script type="text/template">
+# Ansible 1/2
+
+```
+- name: configure items for application servers.
+  hosts: application-server
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - role: robertdebock.tomcat
+      tomcat_layout:
+        - name: sample
+          directory: /opt/sample
+          non_ssl_connector_port: 8080
+          ssl_connector_port: 8443
+          shutdown_port: 8005
+          ajp_port: 8009
+          wars:
+            - url: https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war
+```
+</script></section><section data-markdown><script type="text/template">
+# Ansible 2/2
+
+```
+- name: configure items for web servers.
+  hosts: web-server
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - role: robertdebock.httpd
+      httpd_applications:
+      - name: sample
+        location: /sample
+        backend_url: http://localhost:8080/sample
+```
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Setup
+
+Quite complex, but broken down into steps it's easier to understand
+</script></section><section data-markdown><script type="text/template">
+# Preparation
+
+.travis.yml
+```
+before_install:
+  - pip install --upgrade pip
+  - pip install ansible
+  - pip install ara
+  - wget https://releases.hashicorp.com/terraform/"${terraform_version}"/terraform_"${terraform_version}"_linux_amd64.zip
+  - mkdir bin
+  - unzip terraform_"${terraform_version}"_linux_amd64.zip -d bin
+  - chmod 750 bin/terraform
+```
+</script></section><section data-markdown><script type="text/template">
+# Create infra
+
+.travis.yml
+```
+install:
+  - cd terraform ; ssh-keygen -f id_rsa -N ""
+  - ../bin/terraform init
+  - ../bin/terraform apply -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
+  - cd ../ansible
+  - ansible-galaxy install -r mail-requirements.yml
+  - ansible-galaxy install -r infrastructure-requirements.yml
+  - ansible-galaxy install -r webapp-requirements.yml
+  - ansible-playbook wait.yml
+```
+</script></section><section data-markdown><script type="text/template">
+# Integration
+
+.travis.yml
+```
+  - ansible-playbook mail.yml
+  - ansible-playbook infrastructure.yml
+  - ansible-playbook webapp.yml
+  - cd ../terraform
+  - ../bin/terraform destroy -auto-approve -var="do_token=${do_token}" -var="cloudflare_email=${cloudflare_email}" -var="cloudflare_token=${cloudflare_token}"
+  - cd ../ansible
+  - ara generate html ../report
+  - cd ../
+```
+</script></section><section data-markdown><script type="text/template">
+# Save a report
+
+.travis.yml
+```
+deploy:
+  - provider: pages
+    repo: robertdebock/ansible-integration
+    target-branch: gh-pages
+    local-dir: "report"
+    skip-cleanup: true
+    github-token: "${github_token}"
+    keep-history: false
+    on:
+      branch: master
+```
+</script></section></section><section  data-markdown><script type="text/template">
+# ARA
+
+[Ansible Runtime Analysis](https://github.com/openstack/ara) or [ARA Records Ansible](https://github.com/openstack/ara).
+
+Used to save a report, useful to see [what happened](https://robertdebock.nl/ansible-integration/).
+</script></section><section ><section data-markdown><script type="text/template">
+# Loose ends
+</script></section><section data-markdown><script type="text/template">
+# Goss
+
+[Goss](https://github.com/aelsabbahy/goss) is great, but it's not easy to use variables.
+
+molecule/default/tests/test_default.yml
+```
+package:
+  httpd:
+    installed: true
+```
+
+- Alpine/Debian/Ubuntu: apache2
+- Archlinux: apache
+- CentOS/Fedora/OpenSUSE: httpd
+</script></section><section data-markdown><script type="text/template">
+# Travis
+
+Integration tests don't use the [Travis build matrix](https://docs.travis-ci.com/user/customizing-the-build#Build-Matrix)
+
+I could not figure out how to collect all artifacts (reports) and deploy them to GitHub Pages.
+</script></section><section data-markdown><script type="text/template">
+# Complexity
+
+It's difficult to draw a line with the integration tests.
+
+For example: A mail integration test can includes:
+- postfix
+- dovecot
+- spamassassin
+- clamav
+- roundcubemail
+</script></section><section data-markdown><script type="text/template">
+# When?
+
+I'm not sure if the integration test should run after each unit test.
+
+The unit tests take about 30 minutes, integration about 15 minutes and cost some $0.07.
+</script></section></section><section  data-markdown><script type="text/template">
+# Conclusion
+
+- It's easy to test roles.
+- Testing roles on multiple platforms is simple.
+- Integration tests help to run the roles against a more realistic environment.
+</script></section><section ><section data-markdown><script type="text/template">
+# Bonus 1/3
+
+A quick start: [Ansible Development Environment](https://github.com/robertdebock/ansible-development-environment)
+</script></section><section data-markdown><script type="text/template">
+# Bonus 2/3
+
+Start with a [skeleton role](https://github.com/robertdebock/ansible-role-skeleton).
+
+```
+git clone https://github.com/robertdebock/ansible-role-skeleton
+ansible-galaxy init --role-skeleton=ansible-role-skeleton my_role
+```
+
+Edit:
+- tasks/main.yml
+- vars/main.yml
+- default/main.tml
+- meta/main.yml 
+</script></section><section data-markdown><script type="text/template">
+# Bonus 3/3
+
+Generate README.md.
+
+```
+git clone https://github.com/robertdebock/ansible-tools
+cd my_role
+../ansible-tools/generate_readme.yml -e "pwd=$(pwd)"
+```
+
+[Example](https://galaxy.ansible.com/robertdebock/bootstrap)
+</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

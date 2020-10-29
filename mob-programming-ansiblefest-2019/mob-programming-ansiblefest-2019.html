@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Mob programming</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-title.png" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+
+Follow along: http://robertdebock.nl/
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/mob-programming/"/>
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-share.png" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+# What?
+
+Mob programming is a software development approach where the whole team works on the same thing, at the same time, in the same space, and at the same computer.
+
+Written on [wikipedia](https://en.wikipedia.org/wiki/Mob_programming), so it must be true.
+</script></section><section ><section data-markdown><script type="text/template">
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+# Rules
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+# Only one screen
+
+<aside class="notes"><p>No phones or extra laptops.</p>
+</aside></script></section><section data-markdown><script type="text/template">
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+# Three roles
+
+- One driver.
+- Multiple navigators.
+- Many observers.
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+# Driver changes every 3 minutes
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+# Behaviour
+
+- Have fun.
+- Respect each other.
+- More [growth than fixed mindset](https://www.mindsetworks.com/science/).
+</script></section></section><section ><section data-markdown><script type="text/template">
+<!--.slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+# Let's go!
+</script></section><section data-markdown><script type="text/template">
+```
+
++--------+      +--------------+      +--------+
+| Input  |      | Convert      |      | Output |
+| folder | ---> | - monochrome | ---> | folder |
++--------+      | - brightness |      +--------+
+                | - contrast   |
+                | - vignette   |
+                | - watermarks |
+                +--------------+
+```
+</script></section></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+# Why?
+
+1. Team spirit.
+2. [Getting things done](https://en.wikipedia.org/wiki/Getting_Things_Done).
+3. Learn.
+
+<aside class="notes"><p>Learn for beginners and experts.</p>
+</aside></script></section><section ><section data-markdown><script type="text/template">
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+# Types of work
+
+1. Coding.
+2. Deciding.
+3. Reading.
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+# Pitfalls
+
+- Requires respect from all.
+- Difficult for some cultural backgrounds.
+- Seems "expensive".
+- Not for well known tasks
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+# Observers can become navigators
+</script></section></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+# Hints
+
+1. Trust the process
+2. Find an isolated place
+3. Write down the end-goal
+4. Start with tests
+5. Being stuck is okay
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-background.png" -->
+# Contact
+
+- Dennis van Velzen [@velzend](https://github.com/velzend)
+- Robert de Bock [@robertdebock](https://github.com/robertdebock)
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/af-2019-thanks.png" -->
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

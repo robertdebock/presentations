@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Automation Journey</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+## Automation Journey
+
+Follow along: http://robertdebock.nl/
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/automation-journey/"/>
+</script></section><section  data-markdown><script type="text/template">
+# Who am I
+
+Robert de Bock
+</script></section><section  data-markdown><script type="text/template">
+## An automation tale
+</script></section><section ><section data-markdown><script type="text/template">
+# What to automate
+
+1. Make a list of job.
+2. Rate job for "frequency" and "automation effort".
+3. Decide.
+4. CODE!
+</script></section><section data-markdown><script type="text/template">
+# List of jobs
+
+Think of a few jobs that you'd like to automate.
+</script></section><section data-markdown><script type="text/template">
+## Suggestion of jobs
+
+- Applying patches.
+- Adding disks.
+- Install component x.
+- Update component x.
+</script></section><section data-markdown><script type="text/template">
+# Rate jobs
+
+- 1: not frequent, low effort.
+- 10: super frequent, high effort.
+</script></section><section data-markdown><script type="text/template">
+# Rated jobs
+
+|job           |frequency|automation effort|
+|--------------|---------|-----------------|
+|OS patches    |9        |3                |
+|Disk expansion|3        |9                |
+|Install X     |3        |4                |
+|Update X      |2        |3                |
+</script></section><section data-markdown><script type="text/template">
+# Decide
+
+OS patching: occurs all the time and seems easy to automate.
+
+When automated, you can focus on [better things](https://www.google.com/search?q=how+to+contribute+to+open+source).
+</script></section><section data-markdown><script type="text/template">
+# CODE!
+
+This heavily depends on the tooling available.
+
+(But you can also introduce new tools!)
+</script></section><section data-markdown><script type="text/template">
+# CRUD
+
+Almost all "jobs" should facilitate:
+
+1. Create.
+2. Read.
+3. Update.
+4. Delete.
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Ansible
+</script></section><section data-markdown><script type="text/template">
+# Reuse code
+
+[https://galaxy.ansible.com/](https://galaxy.ansible.com/search?keywords=update%20&order_by=-relevance&page=1&deprecated=false&type=role)
+</script></section><section data-markdown><script type="text/template">
+# Make a playbook
+
+```yaml
+- name: apply patches
+  hosts: all
+  become: yes
+  gather_facts: no
+
+  roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.update
+```
+</script></section><section data-markdown><script type="text/template">
+# Dry run
+
+```shell
+ansible-playbook update.yml \
+  --inventory 134.209.84.15, \
+  --user root \
+  --check
+```
+</script></section><section data-markdown><script type="text/template">
+![dry run](images/dryrun.gif)
+</script></section><section data-markdown><script type="text/template">
+# Try it
+
+```shell
+ansible-playbook update.yml \
+   --inventory 134.209.84.15,
+```
+</script></section><section data-markdown><script type="text/template">
+# Run it
+
+Fill the file `inventory` with all hosts.
+
+```shell
+ansible-playbook update.yml
+```
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Almost there
+
+Automation has saved you time, cool!
+
+PS: Not everybody loves the command line.
+</script></section><section data-markdown><script type="text/template">
+### How can you do even less?
+</script></section><section data-markdown><script type="text/template">
+## Scheduling automation
+
+For example `cron`, [awx](https://github.com/ansible/awx/) or [rundeck](https://www.rundeck.com/open-source).
+
+- Limitations?
+</script></section><section data-markdown><script type="text/template">
+## Let others do it. (&trade;)
+
+Much better, but what if your collegue is on a holiday?
+</script></section><section data-markdown><script type="text/template">
+# Do it yourself!
+</script></section><section data-markdown><script type="text/template">
+# AWX
+
+A webui and API that can run playbooks on hosts.
+</script></section><section data-markdown><script type="text/template">
+![awx](images/awx.gif)
+</script></section><section data-markdown><script type="text/template">
+![awx](images/awxapi.gif)
+</script></section><section data-markdown><script type="text/template">
+- URL: http://142.93.238.130/
+</script></section><section data-markdown><script type="text/template">
+# Have fun!
+
+- username: admin
+- password: robertdebock
+</script></section><section data-markdown><script type="text/template">
+# Ping and Update
+
+https://github.com/robertdebock/ansible
+</script></section></section><section ><section data-markdown><script type="text/template">
+# How to organize
+</script></section><section data-markdown><script type="text/template">
+## By product and service
+
+For example:
+
+- Operating system team
+- Backup & Restore team
+- Monitoring team
+- Compliance team
+- Orchestration
+</script></section></section><section ><section data-markdown><script type="text/template">
+# How to develop
+
+- Choose a language
+- Train people
+- Organize learning sessions
+- Invite people from another team
+</script></section><section data-markdown><script type="text/template">
+# Mindset
+
+All teams must offer an API to allow self-service capabilities for their product or service.
+</script></section></section><section  data-markdown><script type="text/template">
+# Caveats
+
+- Not "free".
+- Teams may isolate.
+- Dependency management.
+</script></section><section  data-markdown><script type="text/template">
+# Conclusion
+
+1. Automation allows scaling.
+2. Automation brings predictability.
+3. May require re-organizing teams.
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
