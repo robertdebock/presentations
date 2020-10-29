@@ -22,6 +22,12 @@ Introduce yourself!
 ---
 
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
+# Perfect?
+
+[Perfection is a state, variously, of completeness, flawlessness, or supreme excellence](https://en.wikipedia.org/wiki/Perfection).
+
+---
+<!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # The norm
 
 [Ansible Docker role by Jeff Geerling](https://galaxy.ansible.com/geerlingguy/docker)
@@ -53,7 +59,7 @@ Introduce yourself!
 
 ```yaml
 - yum: name="{{ item }}" state=present update_cache=no
-  with_items:
+  loop:
     - screen
 ```
 
@@ -104,9 +110,8 @@ Note: 5. Are there modules, are you describing state?
 
 1. Name every task carefully.
 2. Use YAML, and yamllint.
-3. Omit default values.
-4. Use `package` over [specific package manager](http://docs.ansible.com/ansible/latest/list_of_packaging_modules.html).
-5. Use `service` over [specific service manager](http://docs.ansible.com/ansible/latest/list_of_system_modules.html).
+3. Use `package` over [specific package manager](http://docs.ansible.com/ansible/latest/list_of_packaging_modules.html).
+4. Use `service` over [specific service manager](http://docs.ansible.com/ansible/latest/list_of_system_modules.html).
 
 Note: 1. Easier debugging, 3. `file: backup: no`.
 ----
@@ -257,7 +262,7 @@ _java_package:
   jre: java-{{ java_version }}-openjdk
   jdk: java-{{ java_version }}-openjdk-devel
 
-java_package: "{{ _java_package[java_type] }}
+java_package: "{{ _java_package[java_type] }}"
 ```
 
 ```yaml
@@ -293,8 +298,8 @@ _my_role_requirements:
 _my_role_requirements:
   RedHat: &rhel
     - some_package
-  Amazon: *rhel7
-  Suse: *rhel7
+  Amazon: *rhel
+  Suse: *rhel
   Debian:
     - some_other_package
 ```
@@ -312,12 +317,12 @@ These are called [YAML anchors and aliases](https://yaml.org/spec/1.2/spec.html#
     that:
       - variable is defined
       - variable_list is iterable
-      - variable_string in ["one", "two"
+      - variable_string in ["one", "two"]
       - variable_boolean | type_debug == "bool"
       - variable_integer | int
 ```
 
-Should [become standard soon](https://github.com/ansible/proposals/issues/39)
+Should [become standard soon](https://github.com/ansible/proposals/issues/39).
 
 ---
 
