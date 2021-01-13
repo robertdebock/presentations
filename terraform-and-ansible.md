@@ -126,9 +126,22 @@ Snippets stolen from [ansible-playbook-rancher](https://github.com/robertdebock/
 
 ----
 
+# Ansible runs
+
+```yaml
+- name: configure machines
+  hosts: all:!localhost
+  gather_facts: no
+
+  roles:
+    - role: robertdebock.bootstrap
+```
+
+----
+
 # Terraform provider Ansible
 
-There is a [provider for terraform](https://github.com/nbering/terraform-provider-ansible) that acts as a dynamic inventory.
+There is a community [provider for terraform](https://github.com/nbering/terraform-provider-ansible) that acts as a dynamic inventory.
 
 ---
 
