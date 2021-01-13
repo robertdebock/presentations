@@ -11,6 +11,14 @@ Follow along: http://robertdebock.nl/
 
 ---
 
+# Contribute
+
+Feel free to [correct mistakes](https://github.com/robertdebock/presentations/blob/master/terraform-and-ansible.md).
+
+![Mistakes have been made](https://i.imgur.com/8zerI4V.png "I can not be wrong.")
+
+---
+
 # Terraform
 
 Can spin up "resources" anywhere.
@@ -32,7 +40,7 @@ Can't really configure instances.
 
 # Ansible
 
-Does not have state, but has [great roles](https://robertdebock.nl/)!
+Is simple, used often and has [great roles](https://robertdebock.nl/), but no state.
 
 ---
 
@@ -94,3 +102,17 @@ Snippets stolen from [ansible-playbook-rancher](https://github.com/robertdebock/
           - rancher
       loop: "{{ terraform.outputs.name.value }}"
 ```
+
+---
+
+# Anti-patterns
+
+There are a few methods that will cause issues.
+
+1. No combination.
+2. Dynamic inventory.
+3. 
+
+---
+
+# Conclusion
