@@ -23,7 +23,7 @@ jobs:
       - name: install and build
         run: |
           npm install --no-optional reveal-md
-          for file in *.md ; do ./node_modules/.bin/reveal-md --preprocessor includes.js --css custom.css --static output/"${file%.*}" file.md
+          for file in *.md ; do ./node_modules/.bin/reveal-md --static output/"${file%.*}" file.md ; done
       - name: deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
