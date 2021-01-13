@@ -21,6 +21,21 @@ Follow along: http://robertdebock.nl/
 
 ![QR code to this presentation](https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/terraform-and-ansible/ "Don't worry, you're seeing the presentation already.")
 </script></section><section  data-markdown><script type="text/template">
+```
+                                **
+                                *******
+        @@@                     ********,**             ,,
+       @@#@@                    ********,******.    ,,,,,,
+      @@  #@@                      .****,******** ,,,,,,,,
+     @@    (@@         &                .******** ,,,,,,,,
+    @@ @@@  /@@                          ** ***** ,,,,,
+  .@@     @@@(@@                         ****** . .
+ .@@         @@@@                        ********
+                                         ********
+                                            *****
+                                                ,
+```
+</script></section><section  data-markdown><script type="text/template">
 # Who am I
 
 - [Robert de Bock](https://robertdebock.nl/).
@@ -55,7 +70,7 @@ Is simple, used often and has [great roles](https://robertdebock.nl/), but no st
 </script></section></section><section ><section data-markdown><script type="text/template">
 # Combining
 
-Terraform and Ansible can be combined using a couple of patterns.
+Terraform and Ansible can work together in a couple of ways.
 </script></section><section data-markdown><script type="text/template">
 # Terraform local-exec
 
@@ -66,6 +81,12 @@ Terraform and Ansible can be combined using a couple of patterns.
 ```
 
 Drawback: runs on a single host, no "neighbours", no clusters.
+</script></section><section data-markdown><script type="text/template">
+```
++----- Terraform ------+           +--- instance ---+
+| ansible-playbook ... | -> SSH -> |                |
++----------------------+           +----------------+
+```
 </script></section><section data-markdown><script type="text/template">
 # Terraform "local_file"
 
