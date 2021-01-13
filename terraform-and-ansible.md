@@ -7,7 +7,7 @@ title: Terraform and Ansible
 
 Follow along: http://robertdebock.nl/
 
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/terraform-and-ansible/"/>
+![QR code to this presentation](https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/terraform-and-ansible/ "Don't worry, you're seeing the presentation already.")
 
 ---
 
@@ -43,7 +43,7 @@ Can spin up "resources" anywhere.
 
 Can't really configure instances.
 
-([cloud-init](https://cloudinit.readthedocs.io/en/latest/) can be used.)
+([cloud-init](https://cloudinit.readthedocs.io/en/latest/), or [remote-exec](https://www.terraform.io/docs/provisioners/remote-exec.html) can be used, not configuration management though.)
 
 ----
 
@@ -86,7 +86,7 @@ resource "local_file" "inventory" {
 }
 ```
 
-Drawback: Running `terraform apply` does not run the playbook automatically.
+Drawback: Does not run the playbook automatically.
 
 ----
 
@@ -121,8 +121,6 @@ Snippets stolen from [ansible-playbook-rancher](https://github.com/robertdebock/
     - name: add terraform hosts to inventory
       add_host:
         name: "{{ item }}"
-        groups:
-          - rancher
       loop: "{{ terraform.outputs.name.value }}"
 ```
 
@@ -139,4 +137,6 @@ There are a few methods that will cause issues.
 
 # Conclusion
 
-There are ways to combine Terraform and Ansible, each approach has it's ~~unique characteristics~~.
+There are ways to combine Terraform and Ansible, each approach has it's *unique characteristics*.
+
+![Multiple forks, one is broken: Just because you are unique, does not mean you are useful.](https://3.bp.blogspot.com/-XX12ahOZHqY/WUg226Hd0UI/AAAAAAAAkjA/wzFWmJv-EL0DknBcCOi6EPPgQBnHe3AoQCLcBGAs/s1600/unique.jpg "Unique is not always good.")
