@@ -32,11 +32,21 @@ Can spin up "resources" anywhere.
 </script></section><section data-markdown><script type="text/template">
 # Terraform
 
-Can't really configurate of instances.
-</script></section><section data-markdown><script type="text/template">
-# Terraform
+Can't really configure instances.
 
-Can write an inventory file that Ansible can use.
+([cloud-init](https://cloudinit.readthedocs.io/en/latest/) can be used.)
+</script></section><section data-markdown><script type="text/template">
+# Ansible
+
+Does not have state, but has [great roles](https://robertdebock.nl/)!
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Combining 2
+
+Terraform and Ansible can be combined using a couple of patterns.
+</script></section><section data-markdown><script type="text/template">
+# Terraform inventory
+
+Terraform can write an inventory file that Ansible can use.
 
 ```
 # Now save the droplets into an Ansible inventory.
@@ -48,11 +58,38 @@ resource "local_file" "inventory" {
   EOT
 }
 ```
-</script></section></section><section  data-markdown><script type="text/template">
-# Ansible
+</script></section><section data-markdown><script type="text/template">
+# Ansible reads TF output
 
-Great fo managing the configuration of instances.
-</script></section></div>
+Ansible can run Terraform.
+
+Snippets stolen from [ansible-playbook-rancher](https://github.com/robertdebock/ansible-playbook-rancher/blob/master/playbook.yml).
+</script></section><section data-markdown><script type="text/template">
+# Ansible runs Terraform
+
+```yaml</script></section></section><section ><section data-markdown><script type="text/template">- name: create machines
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: apply terraform code
+      terraform:
+        project_path: ./terraform
+        state: present
+      register: terraform
+```
+</script></section><section data-markdown><script type="text/template">
+# Ansible adds hosts
+
+```yaml
+    - name: add terraform hosts to inventory
+      add_host:
+        name: "{{ item }}"
+        groups:
+          - rancher
+      loop: "{{ terraform.outputs.name.value }}"
+```
+</script></section></section></div>
     </div>
 
     <script src="./dist/reveal.js"></script>
