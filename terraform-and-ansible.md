@@ -124,6 +124,12 @@ Snippets stolen from [ansible-playbook-rancher](https://github.com/robertdebock/
       loop: "{{ terraform.outputs.name.value }}"
 ```
 
+----
+
+# Terraform provider Ansible
+
+There is a [provider for terraform](https://github.com/nbering/terraform-provider-ansible) that acts as a dynamic inventory.
+
 ---
 
 # Anti-patterns
