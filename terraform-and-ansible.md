@@ -11,6 +11,15 @@ Follow along: http://robertdebock.nl/
 
 ---
 
+# Who am I
+
+- [Robert de Bock](https://robertdebock.nl/).
+- Working for [Adfinis](https://adfinis.com/en/).
+- [Art-school](https://www.hku.nl/) drop out.
+- Loves Linux and open source.
+
+---
+
 # Contribute
 
 Feel free to [correct mistakes](https://github.com/robertdebock/presentations/blob/master/terraform-and-ansible.md).
@@ -50,7 +59,19 @@ Terraform and Ansible can be combined using a couple of patterns.
 
 ----
 
-# Terraform inventory
+# Terraform local-exec
+
+```
+  provisioner "local-exec" {
+    command = "ansible-playbook -i '${self.public_ip},' playbook.yml" 
+  }
+```
+
+Drawback: runs on a single host, no "neighbours", no clusters.
+
+----
+
+# Terraform "local_file"
 
 Terraform can write an Ansible inventory.
 
@@ -64,6 +85,8 @@ resource "local_file" "inventory" {
   EOT
 }
 ```
+
+Drawback: Running `terraform apply` does not run the playbook automatically.
 
 ----
 
@@ -86,7 +109,7 @@ Snippets stolen from [ansible-playbook-rancher](https://github.com/robertdebock/
     - name: apply terraform code
       terraform:
         project_path: ./terraform
-        state: present
+        state: "{{ terraform_state | default('present') }}"
       register: terraform
 ```
 
@@ -109,10 +132,11 @@ Snippets stolen from [ansible-playbook-rancher](https://github.com/robertdebock/
 
 There are a few methods that will cause issues.
 
-1. No combination.
-2. Dynamic inventory.
-3. 
+1. No combination manual inventory management.
+2. Dynamic inventory, too many hosts.
 
 ---
 
 # Conclusion
+
+There are ways to combine Terraform and Ansible, each approach has it's ~~unique characteristics~~.
