@@ -20,6 +20,12 @@
 Follow along: http://robertdebock.nl/
 
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/terraform-and-ansible/"/>
+</script></section><section  data-markdown><script type="text/template">
+# Contribute
+
+Feel free to [correct mistakes](https://github.com/robertdebock/presentations/blob/master/terraform-and-ansible.md).
+
+![Mistakes have been made](https://i.imgur.com/8zerI4V.png "I can not be wrong.")
 </script></section><section ><section data-markdown><script type="text/template">
 # Terraform
 
@@ -38,7 +44,7 @@ Can't really configure instances.
 </script></section><section data-markdown><script type="text/template">
 # Ansible
 
-Does not have state, but has [great roles](https://robertdebock.nl/)!
+Is simple, used often and has [great roles](https://robertdebock.nl/), but no state.
 </script></section></section><section ><section data-markdown><script type="text/template">
 # Combining
 
@@ -90,7 +96,17 @@ Snippets stolen from [ansible-playbook-rancher](https://github.com/robertdebock/
           - rancher
       loop: "{{ terraform.outputs.name.value }}"
 ```
-</script></section></section></div>
+</script></section></section><section  data-markdown><script type="text/template">
+# Anti-patterns
+
+There are a few methods that will cause issues.
+
+1. No combination.
+2. Dynamic inventory.
+3. 
+</script></section><section  data-markdown><script type="text/template">
+# Conclusion
+</script></section></div>
     </div>
 
     <script src="./dist/reveal.js"></script>
