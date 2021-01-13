@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
-      - name: cache node-modules 💽
+      - name: cache node-modules
         uses: actions/cache@v2
         env:
           cache-name: cache-node-modules
@@ -23,12 +23,10 @@ jobs:
       - name: install and build
         run: |
           npm install --no-optional reveal-md
-          mkdir build
-          cp -r img build/
           for file in *.md ; do ./node_modules/.bin/reveal-md --preprocessor includes.js --css custom.css --static output/"${file%.*}" file.md
       - name: deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: build
+          FOLDER: output
