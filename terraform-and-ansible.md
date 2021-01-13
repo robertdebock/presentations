@@ -11,6 +11,23 @@ Follow along: http://robertdebock.nl/
 
 ---
 
+```
+                                **
+                                *******
+        @@@                     ********,**             ,,
+       @@#@@                    ********,******.    ,,,,,,
+      @@  #@@                      .****,******** ,,,,,,,,
+     @@    (@@         &                .******** ,,,,,,,,
+    @@ @@@  /@@                          ** ***** ,,,,,
+  .@@     @@@(@@                         ****** . .
+ .@@         @@@@                        ********
+                                         ********
+                                            *****
+                                                ,
+```
+
+---
+
 # Who am I
 
 - [Robert de Bock](https://robertdebock.nl/).
@@ -55,7 +72,7 @@ Is simple, used often and has [great roles](https://robertdebock.nl/), but no st
 
 # Combining
 
-Terraform and Ansible can be combined using a couple of patterns.
+Terraform and Ansible can work together in a couple of ways.
 
 ----
 
@@ -68,6 +85,14 @@ Terraform and Ansible can be combined using a couple of patterns.
 ```
 
 Drawback: runs on a single host, no "neighbours", no clusters.
+
+----
+
+```
++----- Terraform ------+           +--- instance ---+
+| ansible-playbook ... | -> SSH -> |                |
++----------------------+           +----------------+
+```
 
 ----
 
