@@ -1,5 +1,5 @@
 ---
-title: Terraform and Ansible
+title: Terraform & Ansible
 
 ---
 
