@@ -24,13 +24,27 @@ Can spin up "resources" anywhere.
 
 # Terraform
 
-Can't really configurate of instances.
+Can't really configure instances.
+
+([cloud-init](https://cloudinit.readthedocs.io/en/latest/) can be used.)
 
 ----
 
-# Terraform
+# Ansible
 
-Can write an inventory file that Ansible can use.
+Does not have state, but has [great roles](https://robertdebock.nl/)!
+
+---
+
+# Combining 2
+
+Terraform and Ansible can be combined using a couple of patterns.
+
+----
+
+# Terraform inventory
+
+Terraform can write an inventory file that Ansible can use.
 
 ```
 # Now save the droplets into an Ansible inventory.
@@ -43,8 +57,41 @@ resource "local_file" "inventory" {
 }
 ```
 
+----
+
+# Ansible reads TF output
+
+Ansible can run Terraform.
+
+Snippets stolen from [ansible-playbook-rancher](https://github.com/robertdebock/ansible-playbook-rancher/blob/master/playbook.yml).
+
+----
+
+# Ansible runs Terraform
+
+```yaml
 ---
+- name: create machines
+  hosts: localhost
+  gather_facts: no
 
-# Ansible
+  tasks:
+    - name: apply terraform code
+      terraform:
+        project_path: ./terraform
+        state: present
+      register: terraform
+```
 
-Great fo managing the configuration of instances.
+----
+
+# Ansible adds hosts
+
+```yaml
+    - name: add terraform hosts to inventory
+      add_host:
+        name: "{{ item }}"
+        groups:
+          - rancher
+      loop: "{{ terraform.outputs.name.value }}"
+```
