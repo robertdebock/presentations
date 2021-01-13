@@ -36,7 +36,7 @@ Does not have state, but has [great roles](https://robertdebock.nl/)!
 
 ---
 
-# Combining 2
+# Combining
 
 Terraform and Ansible can be combined using a couple of patterns.
 
@@ -44,7 +44,7 @@ Terraform and Ansible can be combined using a couple of patterns.
 
 # Terraform inventory
 
-Terraform can write an inventory file that Ansible can use.
+Terraform can write an Ansible inventory.
 
 ```
 # Now save the droplets into an Ansible inventory.
@@ -59,7 +59,7 @@ resource "local_file" "inventory" {
 
 ----
 
-# Ansible reads TF output
+# Ansible reads Terraform output
 
 Ansible can run Terraform.
 
@@ -70,7 +70,6 @@ Snippets stolen from [ansible-playbook-rancher](https://github.com/robertdebock/
 # Ansible runs Terraform
 
 ```yaml
----
 - name: create machines
   hosts: localhost
   gather_facts: no
