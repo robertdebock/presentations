@@ -114,9 +114,20 @@ Snippets stolen from [ansible-playbook-rancher](https://github.com/robertdebock/
       loop: "{{ terraform.outputs.name.value }}"
 ```
 </script></section><section data-markdown><script type="text/template">
+# Ansible runs
+
+```yaml
+- name: configure machines
+  hosts: all:!localhost
+  gather_facts: no
+
+  roles:
+    - role: robertdebock.bootstrap
+```
+</script></section><section data-markdown><script type="text/template">
 # Terraform provider Ansible
 
-There is a [provider for terraform](https://github.com/nbering/terraform-provider-ansible) that acts as a dynamic inventory.
+There is a community [provider for terraform](https://github.com/nbering/terraform-provider-ansible) that acts as a dynamic inventory.
 </script></section></section><section  data-markdown><script type="text/template">
 # Anti-patterns
 
