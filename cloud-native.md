@@ -13,7 +13,7 @@ title: Cloud Native
 
 # Automation is key
 
-To work in a cloud-native way, *everything* needs to be automated:
+*Everything* needs to be automated:
 
 - Spinning up machines.
 - Configuring machines.
@@ -25,13 +25,13 @@ To work in a cloud-native way, *everything* needs to be automated:
 
 1. Some version control system.
 2. A API to a hyper visor or cloud provider.
-3. Knowledge.
+3. Knowledge and time.
 
 ---
 
 # Terraform
 
-Spinning up machines can be done using [HashiCorp Terraform](https://www.terraform.io/).
+Spinning up machines with [HashiCorp Terraform](https://www.terraform.io/).
 
 ----
 
@@ -64,7 +64,7 @@ Stolen from the [documentation](https://registry.terraform.io/providers/hashicor
 
 # Ansible
 
-Configuring machines can be done using [Red Hat Ansible](https://www.ansible.com/).
+Configuring machines with [Red Hat Ansible](https://www.ansible.com/).
 
 ----
 
@@ -88,7 +88,7 @@ Stolen from [GitHub](https://github.com/robertdebock/ansible-role-nginx/blob/mas
 
 # Vault
 
-Authenticating to resources can be done using [HashiCorp Vault](https://www.vaultproject.io/).
+Authenticating to resources with [HashiCorp Vault](https://www.vaultproject.io/).
 
 ----
 
@@ -106,7 +106,7 @@ vault kv delete secret/hello
 
 # Dynamic secret 1/4
 
-A on-the-spot-generated credential.
+An on-the-spot-generated credential.
 
 ```shell
 vault secrets enable -path=aws aws
