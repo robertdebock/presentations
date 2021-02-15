@@ -68,7 +68,7 @@ Configuring machines with [Red Hat Ansible](https://www.ansible.com/).
 
 ----
 
-# Configure machines
+# Configuring
 
 ```yaml
 - name: install nginx
