@@ -170,3 +170,8 @@ Success! Revoked lease: aws/creds/my-role/0bce0782-32aa-25ec-f61d-c026ff22106e
 ---
 
 # Conclusion
+
+1. To work "cloud native", automation is required.
+2. All tools exist and are mature.
+3. Only buying a tool is not sufficient.
+4. Ansible, Terraform & Vault combine well.
