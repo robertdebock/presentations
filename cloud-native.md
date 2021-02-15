@@ -24,7 +24,7 @@ title: Cloud Native
 # Required tools
 
 1. Some version control system.
-2. A API to a hyper visor or cloud provider.
+2. An API to a hyper visor or cloud provider.
 3. Knowledge and time.
 
 ---
