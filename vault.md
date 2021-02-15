@@ -19,17 +19,18 @@ A secrets store.
 
 # What more
 
-- CLI and API.
-- Multiple "engines".
+- CLI, UI and API.
+- Multiple "secret-engines".
+- Multiple "auth-methods".
 - Mutliple persistent storage backends.
 
 ---
 
 # Why?
 
-Shared secrets can be compromised.
-
+- Shared secrets can be compromised.
 - Un-intended usage of secrets.
+- Long lived secrets provide "god-mode".
 
 ---
 
