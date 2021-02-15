@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Cloud Native</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+# Cloud Native
+
+> Cloud native computing is an approach in software development that utilizes cloud computing to "build and run scalable applications in modern, dynamic environments such as public, private, and hybrid clouds"
+
+[source](https://en.wikipedia.org/wiki/Cloud_native_computing)
+</script></section><section  data-markdown><script type="text/template">
+# Automation is key
+
+To work in a cloud-native way, *everything* needs to be automated:
+
+- Spinning up machines.
+- Configuring machines.
+- Authenticating to resources.
+</script></section><section  data-markdown><script type="text/template">
+# Required tools
+
+1. Some version control system.
+2. A API to a hyper visor or cloud provider.
+3. Knowledge.
+</script></section><section ><section data-markdown><script type="text/template">
+# Terraform
+
+Spinning up machines can be done using [HashiCorp Terraform](https://www.terraform.io/).
+</script></section><section data-markdown><script type="text/template">
+# Define machines
+
+```hcl
+resource "vsphere_virtual_machine" "vm" {
+  name             = "terraform-test"
+  resource_pool_id = "${data.vsphere_compute_cluster.cluster.resource_pool_id}"
+  datastore_id     = "${data.vsphere_datastore.datastore.id}"
+
+  num_cpus = 2
+  memory   = 1024
+  guest_id = "other3xLinux64Guest"
+
+  network_interface {
+    network_id = "${data.vsphere_network.network.id}"
+  }
+
+  disk {
+    label = "disk0"
+    size  = 20
+  }
+}
+```
+
+Stolen from the [documentation](https://registry.terraform.io/providers/hashicorp/vsphere/latest/docs/resources/virtual_machine).
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Ansible
+
+Configuring machines can be done using [Red Hat Ansible](https://www.ansible.com/).
+</script></section><section data-markdown><script type="text/template">
+# Configure machines
+
+```yaml
+- name: install nginx
+  package:
+    name: nginx
+    state: present
+
+- name: start and enable nginx
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+```
+Stolen from [GitHub](https://github.com/robertdebock/ansible-role-nginx/blob/master/tasks/main.yml).
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Vault
+
+Authenticating to resources can be done using [HashiCorp Vault](https://www.vaultproject.io/).
+</script></section><section data-markdown><script type="text/template">
+# Secret
+
+A simple key-value store
+
+```shell
+vault kv put secret/hello foo=world
+vault kv get secret/hello
+vault kv delete secret/hello
+```
+</script></section><section data-markdown><script type="text/template">
+# Dynamic secret 1/4
+
+A on-the-spot-generated credential.
+
+```shell
+vault secrets enable -path=aws aws
+vault write aws/config/root \
+    access_key=AKIAI4SGLQPBX6CSENIQ \
+    secret_key=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 \
+    region=us-east-1
+```
+</script></section><section data-markdown><script type="text/template">
+# Dynamic secret 2/4
+
+```shell
+vault write aws/roles/my-role \
+        credential_type=iam_user \
+        policy_document=-<<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1426528957000",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:*"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}
+EOF
+```
+</script></section><section data-markdown><script type="text/template">
+# Dynamic secrets 3/4
+
+```shell
+vault read aws/creds/my-role
+Key                Value
+---                -----
+lease_id           aws/creds/my-role/0bce0782-32aa-25ec-f61d-c026ff22106e
+lease_duration     768h
+lease_renewable    true
+access_key         AKIAJELUDIANQGRXCTZQ
+secret_key         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
+security_token     <nil>
+```
+</script></section><section data-markdown><script type="text/template">
+# Dynamic secrets 4/4
+
+```
+vault lease revoke aws/creds/my-role/0bce0782-32aa-25ec-f61d-c026ff22106
+Success! Revoked lease: aws/creds/my-role/0bce0782-32aa-25ec-f61d-c026ff22106e
+```
+</script></section></section><section  data-markdown><script type="text/template">
+# Conclusion
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
