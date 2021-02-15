@@ -31,7 +31,7 @@ title: Cloud Native
 
 # Terraform
 
-Spinning up machines with [HashiCorp Terraform](https://www.terraform.io/).
+Spinning up resources with [HashiCorp Terraform](https://www.terraform.io/).
 
 ----
 
@@ -60,12 +60,23 @@ resource "vsphere_virtual_machine" "vm" {
 
 Stolen from the [documentation](https://registry.terraform.io/providers/hashicorp/vsphere/latest/docs/resources/virtual_machine).
 
+----
+
+# Create the environment
+
+```shell
+terraform plan
+terraform apply
+terraform destroy
+```
+
 ---
 
 # Ansible
 
 Configuring machines with [Red Hat Ansible](https://www.ansible.com/).
 
+Ansible is easy to read/write and there are many [modules](https://docs.ansible.com/ansible/2.8/modules/list_of_all_modules.html) and [roles](https://galaxy.ansible.com/search?keywords=&order_by=-relevance&deprecated=false&type=role&page=1) that can be used.  
 ----
 
 # Configuring
@@ -84,6 +95,9 @@ Configuring machines with [Red Hat Ansible](https://www.ansible.com/).
 ```
 Stolen from [GitHub](https://github.com/robertdebock/ansible-role-nginx/blob/master/tasks/main.yml).
 
+----
+
+[Ansible Tower](https://www.ansible.com/products/tower) or [AWX](https://github.com/ansible/awx) offers an API and can execute playbooks.
 ---
 
 # Vault
