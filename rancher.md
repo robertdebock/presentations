@@ -98,18 +98,40 @@ https://localhost/
 
 # Set the URL
 
+![Set the url for Rancher](images/rancher-set-url.png)
+
 ----
 
 # Add cloud credentials
+
+![DESCRIPTION](images/rancher-add-cloud-credential.png)
 
 ----
 
 # Add node template(s)
 
+![DESCRIPTION](images/rancher-add-node-template.png)
+
 ---
 
 # Add cluster
 
+![DESCRIPTION](images/rancher-add-cluster.png)
+
 ---
 
-# 7 years later
+# Wait for cluster
+
+![DESCRIPTION](images/rancher-provisioning-cluster.png)
+
+----
+
+# Wait for the nodes
+
+![DESCRIPTION](images/rancher-provisioning-nodes.png)
+
+---
+
+# Conclusion
+
+
