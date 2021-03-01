@@ -82,6 +82,8 @@ docker run \
   rancher/rancher
 ```
 
+N.B. Run this on a resolvable node...
+
 ----
 
 # Login to Rancher
@@ -112,13 +114,13 @@ https://localhost/
 
 ![DESCRIPTION](images/rancher-add-node-template.png)
 
----
+----
 
 # Add cluster
 
 ![DESCRIPTION](images/rancher-add-cluster.png)
 
----
+----
 
 # Wait for cluster
 
