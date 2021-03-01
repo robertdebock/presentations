@@ -27,16 +27,21 @@ Follow along: http://robertdebock.nl/
 
 ----
 
-# Adfinis managed clusters
+# Adfinis managed
 
-Rancher is used by Adfinis to deploy and manage Kubernetes clusters.
+Adfinis uses Rancher to manage Kubernetes clusters.
 
 ```text
-+--- Adfinis ---+    +--- Azure|DigitalOcean|AWS|GCP ---+    +--- Customer x ---+
-| Rancher       | -> | - Kubernetes cluster x  <- - - - | <- |                  |+
-+---------------+    | - Kubernetes cluster y           |    +------------------+|
-                     | - Kubernetes cluster z           |     +------------------+
-                     +----------------------------------+
++--- Adfinis ---+    +--- Azure|DigitalOcean|AWS|GCP ---+
+| Rancher       | -> | - Kubernetes cluster x  <---+    |
++---------------+    | - Kubernetes cluster y      |    |
+                     | - Kubernetes cluster z      |    |
+                     +-----------------------------+----+
+                                                   |
+                                                   |
+                                     +--- Customer x ---+
+                                     |                  |
+                                     +------------------+
 ```
 
 ----
@@ -89,7 +94,7 @@ https://localhost/
 
 ![Set the password for Rancher][rancher-set-password]
 
-[rancher-set-password]: images/rancher-set-password.png "Screenshot of setting the Rancher password"
+[rancher-set-password]: ../images/rancher-set-password.png "Screenshot of setting the Rancher password"
 
 ----
 
