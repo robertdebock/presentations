@@ -102,6 +102,8 @@ https://localhost/
 
 ![Set the url for Rancher](images/rancher-set-url.png)
 
+N.B. "All the nodes in your clusters will need to be able to reach this."
+
 ----
 
 # Add cloud credentials
