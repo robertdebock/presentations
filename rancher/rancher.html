@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Rancher</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+# Rancher
+
+Follow along: http://robertdebock.nl/
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/rancher/"/>
+</script></section><section ><section data-markdown><script type="text/template">
+# Introduction
+</script></section><section data-markdown><script type="text/template">
+# Adfinis
+</script></section><section data-markdown><script type="text/template">
+# Robert de Bock
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Rancher @adfinis
+</script></section><section data-markdown><script type="text/template">
+# Adfinis managed clusters
+
+Rancher is used by Adfinis to deploy and manage Kubernetes clusters.
+
+```text
++--- Adfinis ---+    +--- Azure|DigitalOcean|AWS|GCP ---+    +--- Customer x ---+
+| Rancher       | -> | - Kubernetes cluster x  <- - - - | <- |                  |+
++---------------+    | - Kubernetes cluster y           |    +------------------+|
+                     | - Kubernetes cluster z           |     +------------------+
+                     +----------------------------------+
+```
+</script></section><section data-markdown><script type="text/template">
+# Self-managed clusters
+
+Rancher is used by Adfinis' customers.
+
+```text
++--- Azure|DigitalOcean|AWS|GCP ---+    +--- Customer x ---+
+| - Kubernetes cluster x  <- - - - | <- | Rancher          |
++----------------------------------+    +------------------+
+```
+</script></section></section><section  data-markdown><script type="text/template">
+# Cloud readiness
+
+Make sure you're [ready](https://cloudy-with-containers.ch/) for the journey.
+</script></section><section ><section data-markdown><script type="text/template">
+# Demo
+</script></section><section data-markdown><script type="text/template">
+# Start Rancher container
+
+As ~~stolen~~ [described](https://rancher.com/quick-start/) by Rancher:
+
+```
+docker run \
+  --privileged \
+  --detach \
+  --restart=unless-stopped \
+  --publish 80:80 \
+  --publish 443:443 \
+  rancher/rancher
+```
+</script></section><section data-markdown><script type="text/template">
+# Login to Rancher
+
+https://localhost/
+</script></section><section data-markdown><script type="text/template">
+# Set the password
+
+![Set the password for Rancher][rancher-set-password]
+
+[rancher-set-password]: images/rancher-set-password.png "Screenshot of setting the Rancher password"
+</script></section><section data-markdown><script type="text/template">
+# Set the URL
+</script></section><section data-markdown><script type="text/template">
+# Add cloud credentials
+</script></section><section data-markdown><script type="text/template">
+# Add node template(s)
+</script></section></section><section  data-markdown><script type="text/template">
+# Add cluster
+</script></section><section  data-markdown><script type="text/template">
+# 7 years later
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
