@@ -92,9 +92,7 @@ https://localhost/
 
 # Set the password
 
-![Set the password for Rancher][rancher-set-password]
-
-[rancher-set-password]: ../images/rancher-set-password.png "Screenshot of setting the Rancher password"
+![Set the password for Rancher](images/rancher-set-password.png)
 
 ----
 
