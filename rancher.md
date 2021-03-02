@@ -88,8 +88,6 @@ N.B. Run this on a resolvable node...
 
 # Login to Rancher
 
-https://localhost/
-
 ----
 
 # Set the password
