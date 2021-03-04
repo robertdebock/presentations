@@ -317,9 +317,10 @@ These are called [YAML anchors and aliases](https://yaml.org/spec/1.2/spec.html#
     that:
       - variable is defined
       - variable_list is iterable
+      - variable_string is string
       - variable_string in ["one", "two"]
-      - variable_boolean | type_debug == "bool"
-      - variable_integer | int
+      - variable_boolean is bool
+      - variable_integer is number
 ```
 
 Should [become standard soon](https://github.com/ansible/proposals/issues/39).
