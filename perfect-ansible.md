@@ -89,7 +89,7 @@ httpd_ssl_enabled: yes
 2. Could you explain it to your partner?
 3. Do you feel an urge to [refactor it](https://www.google.com/search?q=unfinished+painting)?
 4. Was `shell` or `command` [used often](https://robertdebock.nl/2019/09/26/how-many-modules-do-you-need.html)?
-5. Is there repetition of [same `when`](https://github.com/dj-wasabi/ansible-zabbix-agent/blob/master/tasks/main.yml#L92)? ([Use blocks](https://github.com/robertdebock/ansible-role-postgres/blob/master/tasks/main.yml#L48).)
+5. Is there repetition of [same `when`](https://github.com/dj-wasabi/ansible-zabbix-agent/blob/master/tasks/main.yml#L92)? ([Use blocks](https://github.com/robertdebock/ansible-role-update/blob/master/tasks/main.yml).)
 6. Do you know why you did not use [defaults](https://docs.ansible.com/ansible/latest/modules/service_module.html)?
 7. Did you need `ignore_errors` or `failed_when: false`?
 
