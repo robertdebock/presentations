@@ -387,9 +387,9 @@ Graph-inspiration: [Sam Doran](https://github.com/samdoran)
 # Prevent bit-rot
 
 - Make small "units" (Ansible roles)
-- Build often (Molecule)
+- Test often (Molecule)
 - Integrate (DigitalOcean)
-- Periodic retests (Travis)
+- Periodic retests (GitHub, GitLab, Travis)
 
 ---
 
