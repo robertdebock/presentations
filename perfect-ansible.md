@@ -110,8 +110,8 @@ Note: 5. Are there modules, are you describing state?
 
 1. Name every task carefully.
 2. Use YAML, and yamllint.
-3. Use `package` over [specific package manager](http://docs.ansible.com/ansible/latest/list_of_packaging_modules.html).
-4. Use `service` over [specific service manager](http://docs.ansible.com/ansible/latest/list_of_system_modules.html).
+3. Use `package` over [specific package manager](https://docs.ansible.com/ansible/2.8/modules/list_of_packaging_modules.html#os).
+4. Use `service` over [specific service manager](https://docs.ansible.com/ansible/2.9/modules/list_of_system_modules.html#system-modules).
 
 Note: 1. Easier debugging, 3. `file: backup: no`.
 ----
@@ -159,7 +159,7 @@ apache_httpd_package: "{{ _apache_httpd_package[ansible_os_family] }}"
 <!-- .slide: data-background="https://raw.githubusercontent.com/robertdebock/presentations/master/images/creation.jpg" -->
 # Complexity levels
 
-- `defaults/main.yml` - [Super simple](https://www.volkskrant.nl/cultuur-media/reconstructie-het-bizarre-verhaal-van-who-s-afraid-of-red-yellow-and-blue-iii~b2bb8df2/)
+- `defaults/main.yml` - [Super simple](https://en.wikipedia.org/wiki/Who%27s_Afraid_of_Red,_Yellow_and_Blue)
 - `tasks/main.yml` - [Simple](https://en.wikipedia.org/wiki/De_Stijl)
 - `vars/main.yml` - [Not so simple](https://www.jackson-pollock.org/)
 
