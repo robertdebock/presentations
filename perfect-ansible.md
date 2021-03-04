@@ -101,7 +101,7 @@ Note: 5. Are there modules, are you describing state?
 
 ## [is always right](https://docs.ansible.com/ansible-lint/rules/default_rules.html)
 
-[some](https://github.com/ansible/ansible-lint/blob/master/lib/ansiblelint/rules/CommandHasChangesCheckRule.py) are [difficult](https://github.com/ansible/ansible-lint/blob/master/lib/ansiblelint/rules/LineTooLongRule.py)
+[some](https://github.com/ansible-community/ansible-lint/blob/master/src/ansiblelint/rules/CommandsInsteadOfModulesRule.py) are [difficult](https://github.com/ansible-community/ansible-lint/blob/master/src/ansiblelint/rules/CommandHasChangesCheckRule.py)
 
 ----
 
