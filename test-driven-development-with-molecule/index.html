@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Test driven development with Molecule (TDD)</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+# Test driven development with Molecule (TDD)
+
+Follow along: http://robertdebock.nl/
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/test-driven-development-with-molecule/"/>
+</script></section><section  data-markdown><script type="text/template">
+# TDD, what?
+
+[Wikipedia](https://en.wikipedia.org/wiki/Test-driven_development): Test-driven development (TDD) is a software development process relying on software requirements being converted to test cases before software is fully developed, and tracking all software development by repeatedly testing the software against all test cases. This is as opposed to software being developed first and test cases created later.
+
+Fits nicely into a peer programming or [mob programming](https://robertdebock.nl/presentations/mob-programming/#/).
+</script></section><section ><section data-markdown><script type="text/template">
+# How to test Ansible code?
+</script></section><section data-markdown><script type="text/template">
+# Static tests
+
+- [yamllint](http://www.yamllint.com/).
+- [ansible-lint](https://ansible-lint.readthedocs.io/).
+</script></section></section><section  data-markdown><script type="text/template">
+# Dynamic tests
+
+- [molecule](https://molecule.readthedocs.io/).
+</script></section><section ><section data-markdown><script type="text/template">
+# Molecule
+
+Molecule is a tool to test Ansible code. Typically roles. There are a couple of (important) stages:
+
+- `prepare` - Prepare a system by running Ansible code.
+- `converge` - Run the code in the repository.
+- `verify` - Run steps to ensure everything is working.
+</script></section><section data-markdown><script type="text/template">
+# Example stages
+
+- `prepare` - Install `python`, `sudo` and `ca_certificates`.
+- `converge` - Install Zabbix repositories.
+- `verify` - Ensure that a Zabbix package can be installed.
+
+Basically, you create a chain:
+
+1. Install requirements
+2. Run the current role
+3. Ensure that either a) follow-up roles will work or b) the system functions as expected.
+</script></section><section data-markdown><script type="text/template">
+# Molecule prepare
+
+```yaml</script></section></section><section ><section data-markdown><script type="text/template">- name: Prepare
+  hosts: all
+  gather_facts: no
+  become: yes
+
+  roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.ca_certificates
+```
+</script></section><section data-markdown><script type="text/template">
+# Molecule converge
+
+```yaml</script></section></section><section ><section data-markdown><script type="text/template">- name: Converge
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - role: ansible-role-zabbix_repository
+```
+
+What actually happens here is run the Ansible code in `tasks/main.yml`.
+</script></section><section data-markdown><script type="text/template">
+# Molecule verify
+
+```yaml</script></section></section><section  data-markdown><script type="text/template">- name: Verify
+  hosts: all
+  become: yes
+  gather_facts: no
+
+  tasks:
+    - name: install a zabbix package
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - zabbix-get
+        - zabbix-server-mysql
+        - zabbix-frontend-php
+        - zabbix-apache-conf
+        - zabbix-agent
+        - zabbix-proxy
+```
+</script></section><section ><section data-markdown><script type="text/template">
+# CI/CD
+
+Wouldn't it be great to automatically run this code an a `push`?
+</script></section><section data-markdown><script type="text/template">
+# GitHub
+
+```yaml
+name: Ansible Molecule
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: false
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          path: "${{ github.repository }}"
+      - name: molecule
+        uses: robertdebock/molecule-action@2.6.16
+```
+</script></section><section data-markdown><script type="text/template">
+# GitLab
+
+```yaml
+image: robertdebock/github-action-molecule:3.0.6
+
+services:
+  - docker:dind
+
+variables:
+  DOCKER_HOST: "tcp://docker:2375"
+  PY_COLORS: 1
+
+molecule:
+  script:
+    - molecule test
+  rules:
+    - if: $CI_COMMIT_REF_NAME == "master"
+```
+</script></section></section><section  data-markdown><script type="text/template">
+Sources:
+
+- [zabbix-repository role](https://github.com/robertdebock/ansible-role-zabbix_repository).
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

@@ -64,7 +64,8 @@ molecule init role \
 vi ansible-role-httpd/molecule/default/molecule.yml
 ```
 
-<aside class="notes"><pre><code>    box: centos/7</code></pre>
+<aside class="notes"><pre><code>    box: centos/7
+</code></pre>
 </aside></script></section><section data-markdown><script type="text/template">
 # Ansible tests
 
@@ -82,7 +83,8 @@ vi ansible-role-httpd/molecule/default/playbook.yml
   tasks:
     - name: test connection
       wait_for:
-        port: 80</code></pre>
+        port: 80
+</code></pre>
 </aside></script></section><section data-markdown><script type="text/template">
 # Goss tests
 
@@ -104,7 +106,8 @@ port:
   tcp6:80
     listening: true
     ip:
-      - &#39;::&#39;</code></pre>
+      - &#39;::&#39;
+</code></pre>
 </aside></script></section><section data-markdown><script type="text/template">
 # Write the role
 
@@ -121,7 +124,8 @@ vi ansible-role-httpd/tasks/main.yml
   service:
     name: httpd
     state: started
-    enabled: true</code></pre>
+    enabled: true
+</code></pre>
 </aside></script></section></section><section ><section data-markdown><script type="text/template">
 # browsers
 </script></section><section data-markdown><script type="text/template">
@@ -147,7 +151,8 @@ molecule init role \
 vi ansible-role-browsers/molecule/default/molecule.yml
 ```
 
-<aside class="notes"><pre><code>    box: centos/7</code></pre>
+<aside class="notes"><pre><code>    box: centos/7
+</code></pre>
 </aside></script></section><section data-markdown><script type="text/template">
 # Ansible tests
 
@@ -170,7 +175,8 @@ vi ansible-role-browsers/molecule/default/playbook.yml
         - name: firefox
           argument: -version
         - name: chrome
-          argument: --version</code></pre>
+          argument: --version
+</code></pre>
 </aside></script></section><section data-markdown><script type="text/template">
 # Goss tests
 
@@ -183,7 +189,8 @@ vi ansible-role-browsers/molecule/default/tests/test_default.yml
     installed: true
 package:
   chrome:
-    installed: true</code></pre>
+    installed: true
+</code></pre>
 </aside></script></section><section data-markdown><script type="text/template">
 # Write the role
 
@@ -197,7 +204,8 @@ vi ansible-role-browsers/tasks/main.yml
     name: firefox
   with_items:
     - firefox
-    - chrome</code></pre>
+    - chrome
+</code></pre>
 </aside></script></section></section><section ><section data-markdown><script type="text/template">
 # devtools
 </script></section><section data-markdown><script type="text/template">
@@ -223,7 +231,8 @@ molecule init role \
 vi ansible-role-devtools/molecule/default/molecule.yml
 ```
 
-<aside class="notes"><pre><code>    box: centos/7</code></pre>
+<aside class="notes"><pre><code>    box: centos/7
+</code></pre>
 </aside></script></section><section data-markdown><script type="text/template">
 # Ansible tests
 
@@ -244,7 +253,8 @@ vi ansible-role-devtools/molecule/default/playbook.yml
     changed_when: no
       with_items:
         - name: vim
-          argument: --version</code></pre>
+          argument: --version
+</code></pre>
 </aside></script></section><section data-markdown><script type="text/template">
 # Goss tests
 
@@ -254,7 +264,8 @@ vi ansible-role-devtools/molecule/default/tests/test_default.yml
 
 <aside class="notes"><pre><code>package:
   vim:
-    installed: true</code></pre>
+    installed: true
+</code></pre>
 </aside></script></section><section data-markdown><script type="text/template">
 # Write the role
 
@@ -267,7 +278,8 @@ vi ansible-role-devtools/tasks/main.yml
   package:
     name: &quot;{{ item }}&quot;
   with_items:
-     - vim</code></pre>
+     - vim
+</code></pre>
 </aside></script></section></section><section ><section data-markdown><script type="text/template">
 # opstools
 </script></section><section data-markdown><script type="text/template">
@@ -293,7 +305,8 @@ molecule init role \
 vi ansible-role-opstools/molecule/default/molecule.yml
 ```
 
-<aside class="notes"><pre><code>    box: centos/7</code></pre>
+<aside class="notes"><pre><code>    box: centos/7
+</code></pre>
 </aside></script></section><section data-markdown><script type="text/template">
 # Ansible tests
 
@@ -316,7 +329,8 @@ vi ansible-role-opstools/molecule/default/playbook.yml
         - name: tcpdump
           argument: --version
         - name: strace
-          argument: -V</code></pre>
+          argument: -V
+</code></pre>
 </aside></script></section><section data-markdown><script type="text/template">
 # Goss tests
 
@@ -329,7 +343,8 @@ vi ansible-role-opstools/molecule/default/tests/test_default.yml
     installed: true
 package:
   strace:
-    installed: true</code></pre>
+    installed: true
+</code></pre>
 </aside></script></section><section data-markdown><script type="text/template">
 # Write the role
 
@@ -341,7 +356,8 @@ vi ansible-role-opstools/tasks/main.yml
 - name: install opstool
   package:
     name: &quot;{{ item }}&quot;
-  with_items: &quot;{{ opstools_packages }}&quot;</code></pre>
+  with_items: &quot;{{ opstools_packages }}&quot;
+</code></pre>
 </aside></script></section><section data-markdown><script type="text/template">
 # Variables
 
