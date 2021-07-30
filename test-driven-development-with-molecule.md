@@ -11,6 +11,15 @@ Follow along: http://robertdebock.nl/
 
 ---
 
+# Who am I?
+
+- Robert de Bock, working for Adfinis.
+- Father of 3 children, husband of [Lucie](https://mylucie.com/).
+- Working in Linux infrastructure engineering since +- 2000.
+- Working with Ansible since +- 2017
+
+---
+
 # TDD, what?
 
 [Wikipedia](https://en.wikipedia.org/wiki/Test-driven_development): Test-driven development (TDD) is a software development process relying on software requirements being converted to test cases before software is fully developed, and tracking all software development by repeatedly testing the software against all test cases. This is as opposed to software being developed first and test cases created later.
@@ -52,6 +61,8 @@ Molecule is a tool to test Ansible code. Typically roles. There are a couple of 
 - `converge` - Install Zabbix repositories.
 - `verify` - Ensure that a Zabbix package can be installed.
 
+----
+
 Basically, you create a chain:
 
 1. Install requirements
@@ -63,7 +74,6 @@ Basically, you create a chain:
 # Molecule prepare
 
 ```yaml
----
 - name: Prepare
   hosts: all
   gather_facts: no
@@ -79,7 +89,6 @@ Basically, you create a chain:
 # Molecule converge
 
 ```yaml
----
 - name: Converge
   hosts: all
   become: yes
@@ -96,7 +105,6 @@ What actually happens here is run the Ansible code in `tasks/main.yml`.
 # Molecule verify
 
 ```yaml
----
 - name: Verify
   hosts: all
   become: yes
