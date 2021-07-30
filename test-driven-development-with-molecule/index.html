@@ -21,6 +21,13 @@ Follow along: http://robertdebock.nl/
 
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/test-driven-development-with-molecule/"/>
 </script></section><section  data-markdown><script type="text/template">
+# Who am I?
+
+- Robert de Bock, working for Adfinis.
+- Father of 3 children, husband of [Lucie](https://mylucie.com/).
+- Working in Linux infrastructure engineering since +- 2000.
+- Working with Ansible since +- 2017
+</script></section><section  data-markdown><script type="text/template">
 # TDD, what?
 
 [Wikipedia](https://en.wikipedia.org/wiki/Test-driven_development): Test-driven development (TDD) is a software development process relying on software requirements being converted to test cases before software is fully developed, and tracking all software development by repeatedly testing the software against all test cases. This is as opposed to software being developed first and test cases created later.
@@ -51,7 +58,7 @@ Molecule is a tool to test Ansible code. Typically roles. There are a couple of 
 - `prepare` - Install `python`, `sudo` and `ca_certificates`.
 - `converge` - Install Zabbix repositories.
 - `verify` - Ensure that a Zabbix package can be installed.
-
+</script></section><section data-markdown><script type="text/template">
 Basically, you create a chain:
 
 1. Install requirements
@@ -60,7 +67,8 @@ Basically, you create a chain:
 </script></section><section data-markdown><script type="text/template">
 # Molecule prepare
 
-```yaml</script></section></section><section ><section data-markdown><script type="text/template">- name: Prepare
+```yaml
+- name: Prepare
   hosts: all
   gather_facts: no
   become: yes
@@ -72,7 +80,8 @@ Basically, you create a chain:
 </script></section><section data-markdown><script type="text/template">
 # Molecule converge
 
-```yaml</script></section></section><section ><section data-markdown><script type="text/template">- name: Converge
+```yaml
+- name: Converge
   hosts: all
   become: yes
   gather_facts: yes
@@ -85,7 +94,8 @@ What actually happens here is run the Ansible code in `tasks/main.yml`.
 </script></section><section data-markdown><script type="text/template">
 # Molecule verify
 
-```yaml</script></section></section><section  data-markdown><script type="text/template">- name: Verify
+```yaml
+- name: Verify
   hosts: all
   become: yes
   gather_facts: no
@@ -103,7 +113,7 @@ What actually happens here is run the Ansible code in `tasks/main.yml`.
         - zabbix-agent
         - zabbix-proxy
 ```
-</script></section><section ><section data-markdown><script type="text/template">
+</script></section></section><section ><section data-markdown><script type="text/template">
 # CI/CD
 
 Wouldn't it be great to automatically run this code an a `push`?
