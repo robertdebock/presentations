@@ -13,7 +13,7 @@ Follow along: http://robertdebock.nl/
 
 # Who am I?
 
-- Robert de Bock, working for Adfinis.
+- Robert de Bock, working for [Adfinis](https://adfinis.com/en/).
 - Father of 3 children, husband of [Lucie](https://mylucie.com/).
 - Working in Linux infrastructure engineering since +- 2000.
 - Working with Ansible since +- 2017
@@ -63,11 +63,30 @@ Molecule is a tool to test Ansible code. Typically roles. There are a couple of 
 
 ----
 
-Basically, you create a chain:
+# Basically, you create a chain:
 
 1. Install requirements
 2. Run the current role
 3. Ensure that either a) follow-up roles will work or b) the system functions as expected.
+
+----
+
+# The train
+
+```text
++--- prepare -----+    +--- converge ------+    +--- verify ---+
+| python          | -> | zabbix-repository | -> | zabbix-agent |
+| sudo            |    +-------------------+    +--------------+
+| ca_certificates |
++-----------------+
+
++--- prepare --------+    +--- converge ---+    +--- verify -----+
+| python             | -> | zabbix-agent   | -> | port 10050/tcp |
+| sudo               |    +----------------+    +----------------+
+| ca_certificates    |
+| zabbix-repositrory |
++--------------------+
+```
 
 ----
 
