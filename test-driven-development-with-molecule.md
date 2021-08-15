@@ -26,6 +26,15 @@ Follow along: http://robertdebock.nl/
 
 Fits nicely into a peer programming or [mob programming](https://robertdebock.nl/presentations/mob-programming/#/).
 
+----
+
+# TDD, why?
+
+- Starting with the tests make the scope clear.
+- You'll save time (and discussions).
+- You can refine a story by defining the tests first.
+- It's easier to contribute.
+
 ---
 
 # How to test Ansible code?
@@ -211,6 +220,11 @@ molecule:
 ```
 
 ---
+
+# Conclusion
+
+- TDD is just another rythm to develop code.
+- Molecule (`verify.yml` + CI) make TDD simple.
 
 Sources:
 
