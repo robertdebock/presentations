@@ -49,9 +49,9 @@ Fits nicely into a peer programming or [mob programming](https://robertdebock.nl
 
 Molecule is a tool to test Ansible code. Typically roles. There are a couple of (important) stages:
 
-- `prepare` - Prepare a system by running Ansible code.
+- `prepare` - Prepare a system.
 - `converge` - Run the code in the repository.
-- `verify` - Run steps to ensure everything is working.
+- `verify` - Run steps to test the result.
 </script></section><section data-markdown><script type="text/template">
 # Example stages
 
@@ -63,23 +63,37 @@ Molecule is a tool to test Ansible code. Typically roles. There are a couple of 
 
 1. Install requirements
 2. Run the current role
-3. Ensure that either a) follow-up roles will work or b) the system functions as expected.
+3. Ensure that either a) follow-up tasks will work or b) the system functions as expected.
 </script></section><section data-markdown><script type="text/template">
-# The train
+# The trains
+
+
+bootstrap
 
 ```text
-+--- prepare -----+    +--- converge ------+    +--- verify ---+
-| python          | -> | zabbix-repository | -> | zabbix-agent |
-| sudo            |    +-------------------+    +--------------+
-| ca_certificates |
-+-----------------+
++--- prepare ---+    +--- converge ---+    +--- verify ---+
+| (empty)       | -> | python         | -> | zabbix-repo  |
++---------------+    | sudo           |    +--------------+
+                     +----------------+
+```
 
-+--- prepare --------+    +--- converge ---+    +--- verify -----+
-| python             | -> | zabbix-agent   | -> | port 10050/tcp |
-| sudo               |    +----------------+    +----------------+
-| ca_certificates    |
-| zabbix-repositrory |
-+--------------------+
+zabbix-repo
+
+```text
++--- prepare ---+    +--- converge ---+    +--- verify ---+
+| python        | -> | zabbix-repo    | -> | zabbix-agent |
+| sudo          |    +----------------+    +--------------+
++---------------+
+```
+
+zabbix-agent
+
+```text
++--- prepare ---+    +--- converge ---+    +--- verify -----+
+| python        | -> | zabbix-agent   | -> | port 10050/tcp |
+| sudo          |    +----------------+    +----------------+
+| zabbix-repo   |
++---------------+
 ```
 </script></section><section data-markdown><script type="text/template">
 # Molecule prepare
