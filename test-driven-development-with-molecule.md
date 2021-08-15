@@ -114,7 +114,6 @@ zabbix-agent
 
   roles:
     - role: robertdebock.bootstrap
-    - role: robertdebock.ca_certificates
 ```
 
 ----
@@ -131,7 +130,7 @@ zabbix-agent
     - role: ansible-role-zabbix_repository
 ```
 
-What actually happens here is run the Ansible code in `tasks/main.yml`.
+What actually happens here is run the Ansible role using `tasks/main.yml`.
 
 ----
 
@@ -162,6 +161,8 @@ What actually happens here is run the Ansible code in `tasks/main.yml`.
 # CI/CD
 
 Wouldn't it be great to automatically run this code an a `push`?
+
+In test driven development, this step is curcial and comes quite early.
 
 ----
 
