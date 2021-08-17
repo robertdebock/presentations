@@ -167,6 +167,77 @@ What actually happens here is run the Ansible role using `tasks/main.yml`.
 
 ---
 
+# Input validation
+
+Besides the function, you can also test "user input" (variables).
+
+There are two ways.
+
+----
+
+# Input validation OLD
+
+Benefits:
+
+- Works on any version of Ansible.
+- Very fine-grained control, like ranges, combinations, etc.
+
+Drawbacks:
+
+- A lot of coding.
+- Takes a while to run.
+- Lots of output, not pretty.
+
+----
+
+# Input validation OLD
+
+```yaml
+- name: test input variable my_var
+  ansible.builtin.assert:
+    that:
+      - my_var is defined
+      - my_var is number
+      - my_var > 0
+      - my_var <= 1024
+    quiet: yes
+```
+
+----
+
+# Input validation NEW
+
+Only on [Ansible 2.11 and up].
+
+Benefits:
+
+- Native to Ansible. (2.11+)
+- Quick and clean to run.
+- Prepared for automatic documentation.
+
+Drawbacks:
+
+- Testing input is not possible. (just `choices`.)
+
+----
+
+# Input validation NEW
+
+```yaml
+argument_specs:
+  main:
+    short_description: "My role."
+    description: "My super role."
+    author: Robert de Bock
+    options:
+      my_var:
+        type: "int"
+        default: 123
+        description: "My variable, a number between 0 and 1024."
+```
+
+---
+
 # CI/CD
 
 Wouldn't it be great to automatically run this code an a `push`?
