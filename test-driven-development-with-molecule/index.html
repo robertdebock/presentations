@@ -23,7 +23,7 @@ Follow along: https://robertdebock.nl/
 
 - Robert de Bock, working for [Adfinis](https://adfinis.com/en/).
 - Father of 3 children, husband of [Lucie](https://mylucie.com/).
-- Working with infrastructure engineering since +- 2000.
+- Infrastructure engineering since +- 2000.
 - Working with Ansible since +- 2017
 </script></section><section ><section data-markdown><script type="text/template">
 # TDD, what?
@@ -45,11 +45,11 @@ Fits nicely into a peer programming or [mob programming](https://robertdebock.nl
 
 - [yamllint](http://www.yamllint.com/).
 - [ansible-lint](https://ansible-lint.readthedocs.io/).
-</script></section></section><section  data-markdown><script type="text/template">
+</script></section><section data-markdown><script type="text/template">
 # Dynamic tests
 
 - [molecule](https://molecule.readthedocs.io/).
-</script></section><section ><section data-markdown><script type="text/template">
+</script></section><section data-markdown><script type="text/template">
 # Molecule
 
 Molecule is a tool to test Ansible code. Typically roles. There are a couple of (important) stages:
@@ -66,8 +66,8 @@ Molecule is a tool to test Ansible code. Typically roles. There are a couple of 
 </script></section><section data-markdown><script type="text/template">
 # Basically, you create a chain:
 
-1. Install requirements
-2. Run the current role
+1. Install requirements.
+2. Run the current role.
 3. Test the purpose of the role.
 </script></section><section data-markdown><script type="text/template">
 # The trains
@@ -127,8 +127,6 @@ On [GitHub](https://github.com/robertdebock/ansible-role-zabbix_repository/blob/
   roles:
     - role: ansible-role-zabbix_repository
 ```
-
-What actually happens here is run the Ansible role using `tasks/main.yml`.
 
 On [GitHub](https://github.com/robertdebock/ansible-role-zabbix_repository/blob/master/molecule/default/converge.yml).
 </script></section><section data-markdown><script type="text/template">
@@ -191,13 +189,12 @@ Drawbacks:
 - A lot of coding.
 - Takes a while to run.
 - Lots of output, not pretty.
-# Input validation NEW
 </script></section><section data-markdown><script type="text/template">
 # The NEW way
 
 Using [`meta/argument_specs.yml`](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html#role-argument-validation).
 
-Only on [Ansible 2.11 and up].
+Only on Ansible 2.11 and up.
 </script></section><section data-markdown><script type="text/template">
 # The NEW way
 
