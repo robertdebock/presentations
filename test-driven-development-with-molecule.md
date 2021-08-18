@@ -5,7 +5,7 @@ title: Test driven development with Molecule (TDD)
 
 # Test driven development with Molecule (TDD)
 
-Follow along: http://robertdebock.nl/
+Follow along: https://robertdebock.nl/
 
 ---
 
