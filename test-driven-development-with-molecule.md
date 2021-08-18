@@ -7,8 +7,6 @@ title: Test driven development with Molecule (TDD)
 
 Follow along: http://robertdebock.nl/
 
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/test-driven-development-with-molecule/"/>
-
 ---
 
 # Who am I?
