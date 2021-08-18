@@ -60,20 +60,21 @@ Molecule is a tool to test Ansible code. Typically roles. There are a couple of 
 </script></section><section data-markdown><script type="text/template">
 # Example stages
 
-- `prepare` - Install `python`, `sudo` and `ca_certificates`.
+- `prepare` - Install `python` & `sudo`.
 - `converge` - Install Zabbix repositories.
-- `verify` - Ensure that a Zabbix package can be installed.
+- `verify` - Install a Zabbix package.
 </script></section><section data-markdown><script type="text/template">
 # Basically, you create a chain:
 
 1. Install requirements
 2. Run the current role
-3. Ensure that either a) follow-up tasks will work or b) the system functions as expected.
+3. Test the purpose of the role.
 </script></section><section data-markdown><script type="text/template">
 # The trains
 
-
-bootstrap
+A sequence of dependencies.
+</script></section><section data-markdown><script type="text/template">
+[bootstrap](https://galaxy.ansible.com/robertdebock/bootstrap)
 
 ```text
 +--- prepare ---+    +--- converge ---+    +--- verify ---+
@@ -81,8 +82,8 @@ bootstrap
 +---------------+    | sudo           |    +--------------+
                      +----------------+
 ```
-
-zabbix-repo
+</script></section><section data-markdown><script type="text/template">
+[zabbix-repo](https://galaxy.ansible.com/robertdebock/zabbix_repository)
 
 ```text
 +--- prepare ---+    +--- converge ---+    +--- verify ---+
@@ -90,8 +91,8 @@ zabbix-repo
 | sudo          |    +----------------+    +--------------+
 +---------------+
 ```
-
-zabbix-agent
+</script></section><section data-markdown><script type="text/template">
+[zabbix-agent](https://galaxy.ansible.com/robertdebock/zabbix_agent)
 
 ```text
 +--- prepare ---+    +--- converge ---+    +--- verify -----+
@@ -112,6 +113,8 @@ zabbix-agent
   roles:
     - role: robertdebock.bootstrap
 ```
+
+On [GitHub](https://github.com/robertdebock/ansible-role-zabbix_repository/blob/master/molecule/default/prepare.yml).
 </script></section><section data-markdown><script type="text/template">
 # Molecule converge
 
@@ -126,6 +129,8 @@ zabbix-agent
 ```
 
 What actually happens here is run the Ansible role using `tasks/main.yml`.
+
+On [GitHub](https://github.com/robertdebock/ansible-role-zabbix_repository/blob/master/molecule/default/converge.yml).
 </script></section><section data-markdown><script type="text/template">
 # Molecule verify
 
@@ -143,32 +148,23 @@ What actually happens here is run the Ansible role using `tasks/main.yml`.
       loop:
         - zabbix-get
         - zabbix-server-mysql
-        - zabbix-frontend-php
         - zabbix-apache-conf
         - zabbix-agent
-        - zabbix-proxy
 ```
+
+On [GitHub](https://github.com/robertdebock/ansible-role-zabbix_repository/blob/master/molecule/default/verify.yml).
 </script></section></section><section ><section data-markdown><script type="text/template">
 # Input validation
 
-Besides the function, you can also test "user input" (variables).
+You can also test "user input" (variables).
 
 There are two ways.
 </script></section><section data-markdown><script type="text/template">
-# Input validation OLD
+# The OLD way
 
-Benefits:
-
-- Works on any version of Ansible.
-- Very fine-grained control, like ranges, combinations, etc.
-
-Drawbacks:
-
-- A lot of coding.
-- Takes a while to run.
-- Lots of output, not pretty.
+Using [`assert`](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/assert_module.html).
 </script></section><section data-markdown><script type="text/template">
-# Input validation OLD
+# The OLD way
 
 ```yaml
 - name: test input variable my_var
@@ -181,21 +177,43 @@ Drawbacks:
     quiet: yes
 ```
 </script></section><section data-markdown><script type="text/template">
+# The OLD way
+
+Benefits:
+
+- Works on any version of Ansible.
+- Very fine-grained control, like ranges, combinations, etc.
+</script></section><section data-markdown><script type="text/template">
+# The OLD way
+
+Drawbacks:
+
+- A lot of coding.
+- Takes a while to run.
+- Lots of output, not pretty.
 # Input validation NEW
+</script></section><section data-markdown><script type="text/template">
+# The NEW way
+
+Using [`meta/argument_specs.yml`](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html#role-argument-validation).
 
 Only on [Ansible 2.11 and up].
+</script></section><section data-markdown><script type="text/template">
+# The NEW way
 
 Benefits:
 
 - Native to Ansible. (2.11+)
 - Quick and clean to run.
 - Prepared for automatic documentation.
+</script></section><section data-markdown><script type="text/template">
+# The NEW way
 
 Drawbacks:
 
 - Testing input is not possible. (just `choices`.)
 </script></section><section data-markdown><script type="text/template">
-# Input validation NEW
+# The NEW way
 
 ```yaml
 argument_specs:
@@ -212,9 +230,9 @@ argument_specs:
 </script></section></section><section ><section data-markdown><script type="text/template">
 # CI/CD
 
-Wouldn't it be great to automatically run this code an a `push`?
+Test code on push/merge.
 
-In test driven development, this step is curcial and comes quite early.
+Focus on CI/CD quite early.
 </script></section><section data-markdown><script type="text/template">
 # GitHub
 
@@ -238,6 +256,8 @@ jobs:
       - name: molecule
         uses: robertdebock/molecule-action@2.6.16
 ```
+
+On [GitHub](https://github.com/robertdebock/ansible-role-zabbix_repository/blob/master/.github/workflows/molecule.yml).
 </script></section><section data-markdown><script type="text/template">
 # GitLab
 
@@ -257,6 +277,8 @@ molecule:
   rules:
     - if: $CI_COMMIT_REF_NAME == "master"
 ```
+
+On [GitLab](https://gitlab.com/robertdebock/ansible-role-zabbix_repository/-/blob/master/.gitlab-ci.yml).
 </script></section></section><section  data-markdown><script type="text/template">
 # Conclusion
 
@@ -266,6 +288,7 @@ molecule:
 Sources:
 
 - [zabbix-repository role](https://github.com/robertdebock/ansible-role-zabbix_repository).
+- Any [other role](https://robertdebock.nl/) I wrote.
 </script></section></div>
     </div>
 
