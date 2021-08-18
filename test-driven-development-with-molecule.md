@@ -64,9 +64,9 @@ Molecule is a tool to test Ansible code. Typically roles. There are a couple of 
 
 # Example stages
 
-- `prepare` - Install `python`, `sudo` and `ca_certificates`.
+- `prepare` - Install `python` & `sudo`.
 - `converge` - Install Zabbix repositories.
-- `verify` - Ensure that a Zabbix package can be installed.
+- `verify` - Install a Zabbix package.
 
 ----
 
@@ -74,14 +74,17 @@ Molecule is a tool to test Ansible code. Typically roles. There are a couple of 
 
 1. Install requirements
 2. Run the current role
-3. Ensure that either a) follow-up tasks will work or b) the system functions as expected.
+3. Test the purpose of the role.
 
 ----
 
 # The trains
 
+A sequence of dependencies.
 
-bootstrap
+----
+
+[bootstrap](https://galaxy.ansible.com/robertdebock/bootstrap)
 
 ```text
 +--- prepare ---+    +--- converge ---+    +--- verify ---+
@@ -90,7 +93,9 @@ bootstrap
                      +----------------+
 ```
 
-zabbix-repo
+----
+
+[zabbix-repo](https://galaxy.ansible.com/robertdebock/zabbix_repository)
 
 ```text
 +--- prepare ---+    +--- converge ---+    +--- verify ---+
@@ -99,7 +104,9 @@ zabbix-repo
 +---------------+
 ```
 
-zabbix-agent
+----
+
+[zabbix-agent](https://galaxy.ansible.com/robertdebock/zabbix_agent)
 
 ```text
 +--- prepare ---+    +--- converge ---+    +--- verify -----+
@@ -123,6 +130,8 @@ zabbix-agent
     - role: robertdebock.bootstrap
 ```
 
+On [GitHub](https://github.com/robertdebock/ansible-role-zabbix_repository/blob/master/molecule/default/prepare.yml).
+
 ----
 
 # Molecule converge
@@ -138,6 +147,8 @@ zabbix-agent
 ```
 
 What actually happens here is run the Ansible role using `tasks/main.yml`.
+
+On [GitHub](https://github.com/robertdebock/ansible-role-zabbix_repository/blob/master/molecule/default/converge.yml).
 
 ----
 
@@ -157,38 +168,29 @@ What actually happens here is run the Ansible role using `tasks/main.yml`.
       loop:
         - zabbix-get
         - zabbix-server-mysql
-        - zabbix-frontend-php
         - zabbix-apache-conf
         - zabbix-agent
-        - zabbix-proxy
 ```
+
+On [GitHub](https://github.com/robertdebock/ansible-role-zabbix_repository/blob/master/molecule/default/verify.yml).
 
 ---
 
 # Input validation
 
-Besides the function, you can also test "user input" (variables).
+You can also test "user input" (variables).
 
 There are two ways.
 
 ----
 
-# Input validation OLD
+# The OLD way
 
-Benefits:
-
-- Works on any version of Ansible.
-- Very fine-grained control, like ranges, combinations, etc.
-
-Drawbacks:
-
-- A lot of coding.
-- Takes a while to run.
-- Lots of output, not pretty.
+Using [`assert`](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/assert_module.html).
 
 ----
 
-# Input validation OLD
+# The OLD way
 
 ```yaml
 - name: test input variable my_var
@@ -203,9 +205,35 @@ Drawbacks:
 
 ----
 
+# The OLD way
+
+Benefits:
+
+- Works on any version of Ansible.
+- Very fine-grained control, like ranges, combinations, etc.
+
+----
+
+# The OLD way
+
+Drawbacks:
+
+- A lot of coding.
+- Takes a while to run.
+- Lots of output, not pretty.
 # Input validation NEW
 
+----
+
+# The NEW way
+
+Using [`meta/argument_specs.yml`](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html#role-argument-validation).
+
 Only on [Ansible 2.11 and up].
+
+----
+
+# The NEW way
 
 Benefits:
 
@@ -213,13 +241,17 @@ Benefits:
 - Quick and clean to run.
 - Prepared for automatic documentation.
 
+----
+
+# The NEW way
+
 Drawbacks:
 
 - Testing input is not possible. (just `choices`.)
 
 ----
 
-# Input validation NEW
+# The NEW way
 
 ```yaml
 argument_specs:
@@ -238,9 +270,9 @@ argument_specs:
 
 # CI/CD
 
-Wouldn't it be great to automatically run this code an a `push`?
+Test code on push/merge.
 
-In test driven development, this step is curcial and comes quite early.
+Focus on CI/CD quite early.
 
 ----
 
@@ -267,6 +299,8 @@ jobs:
         uses: robertdebock/molecule-action@2.6.16
 ```
 
+On [GitHub](https://github.com/robertdebock/ansible-role-zabbix_repository/blob/master/.github/workflows/molecule.yml).
+
 ----
 
 # GitLab
@@ -288,6 +322,8 @@ molecule:
     - if: $CI_COMMIT_REF_NAME == "master"
 ```
 
+On [GitLab](https://gitlab.com/robertdebock/ansible-role-zabbix_repository/-/blob/master/.gitlab-ci.yml).
+
 ---
 
 # Conclusion
@@ -298,3 +334,4 @@ molecule:
 Sources:
 
 - [zabbix-repository role](https://github.com/robertdebock/ansible-role-zabbix_repository).
+- Any [other role](https://robertdebock.nl/) I wrote.
