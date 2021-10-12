@@ -23,7 +23,7 @@ Follow along: http://robertdebock.nl/
 - Creative background
 - Open Source fan
 - [Love coding](https://github.com/robertdebock).
-- Husband of [Lucie](https://mylucie.com/), father of [3](images/3.jpg)
+- Husband of [Lucie](https://mylucie.com/), father of [3](https://raw.githubusercontent.com/robertdebock/presentations/master/images/3.jpg)
 
 ---
 
@@ -32,6 +32,7 @@ Follow along: http://robertdebock.nl/
 - Prove that your code is working.
 - Easier collaboration.
 - Examples that _consumers_ can use.
+- Prevent [scope creep](https://en.wikipedia.org/wiki/Scope_creep).
 
 ---
 
@@ -47,9 +48,11 @@ Follow along: http://robertdebock.nl/
 
 # pre-commit
 
-Prevent stupid mistakes by trying a few things before you commit.
+Prevent silly mistakes by trying a few things before commits.
 
 Should be quick, likely static code tests.
+
+Easy to [roll your own](https://github.com/robertdebock/pre-commit).
 
 ----
 
@@ -59,6 +62,8 @@ Check if the format is [YAML](https://yaml.org/).
 
 Does not understand what _Ansible_ is, just YAML.
 
+Easy to [set your preferences](https://github.com/robertdebock/ansible-role-haproxy/blob/master/.yamllint).
+
 ----
 
 # ansible-lint
@@ -67,11 +72,15 @@ Give advice on how to better use Ansible.
 
 > "ansible-lint is always right."
 
+Is [configurable](https://github.com/robertdebock/ansible-role-haproxy/blob/master/.ansible-lint).
+
 ----
 
 # ansible-later
 
 Very new, bit unstable. Futher hints on how to improve your code.
+
+Likely needs [help on what's right](https://github.com/robertdebock/ansible-role-haproxy/blob/master/.later.yml).
 
 ----
 
