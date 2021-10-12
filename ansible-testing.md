@@ -52,7 +52,7 @@ Prevent silly mistakes by trying a few things before commits.
 
 Should be quick, likely static code tests.
 
-Easy to [roll your own](https://github.com/robertdebock/pre-commit).
+Easy to [roll your own](https://github.com/robertdebock/pre-commit) and [add to your repository](https://github.com/robertdebock/ansible-role-haproxy/blob/master/.pre-commit-config.yaml).
 
 ----
 
@@ -72,7 +72,7 @@ Give advice on how to better use Ansible.
 
 > "ansible-lint is always right."
 
-Is [configurable](https://github.com/robertdebock/ansible-role-haproxy/blob/master/.ansible-lint).
+`Always` is [configurable](https://github.com/robertdebock/ansible-role-haproxy/blob/master/.ansible-lint).
 
 ----
 
@@ -97,6 +97,14 @@ Dynamic code analysis; actually run your (Ansible) code and verify if it works.
 3. [CI for GitHub](https://github.com/robertdebock/ansible-role-haproxy/blob/master/.github/workflows/molecule.yml) ([Results](https://github.com/robertdebock/ansible-role-haproxy/actions)).
 4. [CI for GitLab](https://github.com/robertdebock/ansible-role-haproxy/blob/master/.gitlab-ci.yml) ([Results](https://gitlab.com/robertdebock/ansible-role-haproxy/-/pipelines)).
 
+----
+
+# Molecule flow
+
+1. [prepare.yml](https://github.com/robertdebock/ansible-role-haproxy/blob/master/molecule/default/prepare.yml)
+2. [converge.yml](https://github.com/robertdebock/ansible-role-haproxy/blob/master/molecule/default/converge.yml)
+3. [verify.yml](https://github.com/robertdebock/ansible-role-haproxy/blob/master/molecule/default/verify.yml)
+
 ---
 
 # Conclusion
@@ -105,3 +113,7 @@ Dynamic code analysis; actually run your (Ansible) code and verify if it works.
 - No CI? It probably does not work.
 
 It's (reasonably) easy to add CI, solves a lot of problems.
+
+---
+
+# THANKS!
