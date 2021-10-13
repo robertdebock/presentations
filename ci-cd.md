@@ -11,13 +11,15 @@ Follow along: http://robertdebock.nl/
 
 ---
 
-# Journey: code -> service
+# Journey
 
-How does code go from a developer to a service or product?
+## code -> service
+
+How does code go from a developer to a service?
 
 ---
 
-# Code for components
+# Components
 
 ```yaml
 - name: install haproxy
@@ -28,7 +30,7 @@ How does code go from a developer to a service or product?
 
 ----
 
-# Code for components
+# Components
 
 Code in itself is not so interesting, it needs to be:
 
@@ -49,7 +51,7 @@ Code in itself is not so interesting, it needs to be:
 
 ----
 
-# Code components conclusion
+# Conclusion
 
 GitLab helps component maintainers simplify development. The only interface required is (git and) GitLab.
 
@@ -62,7 +64,7 @@ Components typically are not sufficient to build a full service. Typically _many
 ```yaml
 - name: install my service
   vars_files:
-    my_configuration.yml
+    - my_configuration.yml
 
   roles:
     - x
@@ -97,25 +99,36 @@ The closer to the code the better.
 
 RedHat OpenShift is a feature-rich product that can deploy (Helm) code automatically.
 
-Benefits:
+----
+
+# OpenShift
+
+## Benefits
 
 - Stay in the RedHat eco-system.
 - One product to solve multiple challenges.
 
-Drawbacks:
+----
+
+# OpenShift
+
+## Drawbacks
 
 - You would still need a tool for all other development work.
+- It's not the same thing.
 
 ----
 
 # GitHub
 
-Benefits:
+## Benefits
 
 - Older (2008, GitLab 2011).
 - Bigger (69m, GitLab 0.5m).
 
-Drawbacks:
+----
+
+# Drawbacks
 
 - More expensive.
 - Less features.
