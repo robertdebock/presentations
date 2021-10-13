@@ -77,6 +77,16 @@ Components typically are not sufficient to build a full service. Typically _many
 
 # Running a service
 
+Many technologies required, all fit well in GitLab:
+
+- Terraform (Native integration)
+- Rancher
+- Ansible
+
+----
+
+# Running a service
+
 Product owners and stakeholders typically focus on the service, not the component.
 
 Issues, roadmaps and milestones help structure work.
@@ -115,7 +125,8 @@ RedHat OpenShift is a feature-rich product that can deploy (Helm) code automatic
 ## Drawbacks
 
 - You would still need a tool for all other development work.
-- It's not the same thing.
+
+It's not comparable to GitLab.
 
 ----
 
@@ -139,4 +150,4 @@ RedHat OpenShift is a feature-rich product that can deploy (Helm) code automatic
 Sources:
 
 - [GitLab vs GitHub](https://usersnap.com/blog/gitlab-github/).
-- [GitLab vs GitHub)[https://kinsta.com/blog/gitlab-vs-github/).
+- [GitLab vs GitHub](https://kinsta.com/blog/gitlab-vs-github/).
