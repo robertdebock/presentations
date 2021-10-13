@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>CI/CD</title>
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+# CI/CD
+
+Follow along: http://robertdebock.nl/
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/ci-cd/"/>
+</script></section><section  data-markdown><script type="text/template">
+# Journey: code -> service
+
+How does code go from a developer to a service or product?
+</script></section><section ><section data-markdown><script type="text/template">
+# Code for components
+
+```yaml
+- name: install haproxy
+  package:
+    name: haproxy
+    state: present
+```
+</script></section><section data-markdown><script type="text/template">
+# Code for components
+
+Code in itself is not so interesting, it needs to be:
+
+- Tested.
+- Documented.
+- Versioned.
+- Packaged.
+- Released.
+</script></section><section data-markdown><script type="text/template">
+# GitLab can:
+
+- Do the [tests](https://gitlab.com/robertdebock/ansible-role-haproxy/-/pipelines).
+- Provide a [documentation area](https://gitlab.com/robertdebock/ansible-role-haproxy#haproxy).
+- Release [versions](https://gitlab.com/robertdebock/ansible-role-haproxy/-/releases).
+- Provide [packages](https://gitlab.com/robertdebock/ansible-role-haproxy/-/packages).
+</script></section><section data-markdown><script type="text/template">
+# Code components conclusion
+
+GitLab helps component maintainers simplify development. The only interface required is (git and) GitLab.
+
+Components typically are not sufficient to build a full service. Typically _many_ components make up a service.
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Running a service
+
+```yaml
+- name: install my service
+  vars_files:
+    my_configuration.yml
+
+  roles:
+    - x
+    - y
+    - haproxy
+    - z
+```
+</script></section><section data-markdown><script type="text/template">
+# Running a service
+
+Product owners and stakeholders typically focus on the service, not the component.
+
+Issues, roadmaps and milestones help structure work.
+</script></section><section data-markdown><script type="text/template">
+# Running a service
+
+Developers (and operators) hate [context switching](https://en.wikipedia.org/wiki/Context_switch). One interface helps people get into a "flow".
+
+The closer to the code the better.
+</script></section></section><section ><section data-markdown><script type="text/template">
+# Competitors
+</script></section><section data-markdown><script type="text/template">
+# OpenShift
+
+RedHat OpenShift is a feature-rich product that can deploy (Helm) code automatically.
+
+Benefits:
+
+- Stay in the RedHat eco-system.
+- One product to solve multiple challenges.
+
+Drawbacks:
+
+- You would still need a tool for all other development work.
+</script></section><section data-markdown><script type="text/template">
+# GitHub
+
+Benefits:
+
+- Older (2008, GitLab 2011).
+- Bigger (69m, GitLab 0.5m).
+
+Drawbacks:
+
+- More expensive.
+- Less features.
+- Slower CI.
+</script></section><section data-markdown><script type="text/template">
+Sources:
+
+- [GitLab vs GitHub](https://usersnap.com/blog/gitlab-github/).
+- [GitLab vs GitHub)[https://kinsta.com/blog/gitlab-vs-github/).
+</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
