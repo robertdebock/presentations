@@ -21,11 +21,13 @@ Follow along: http://robertdebock.nl/
 
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/ci-cd/"/>
 </script></section><section  data-markdown><script type="text/template">
-# Journey: code -> service
+# Journey
 
-How does code go from a developer to a service or product?
+## code -> service
+
+How does code go from a developer to a service?
 </script></section><section ><section data-markdown><script type="text/template">
-# Code for components
+# Components
 
 ```yaml
 - name: install haproxy
@@ -34,7 +36,7 @@ How does code go from a developer to a service or product?
     state: present
 ```
 </script></section><section data-markdown><script type="text/template">
-# Code for components
+# Components
 
 Code in itself is not so interesting, it needs to be:
 
@@ -51,7 +53,7 @@ Code in itself is not so interesting, it needs to be:
 - Release [versions](https://gitlab.com/robertdebock/ansible-role-haproxy/-/releases).
 - Provide [packages](https://gitlab.com/robertdebock/ansible-role-haproxy/-/packages).
 </script></section><section data-markdown><script type="text/template">
-# Code components conclusion
+# Conclusion
 
 GitLab helps component maintainers simplify development. The only interface required is (git and) GitLab.
 
@@ -62,7 +64,7 @@ Components typically are not sufficient to build a full service. Typically _many
 ```yaml
 - name: install my service
   vars_files:
-    my_configuration.yml
+    - my_configuration.yml
 
   roles:
     - x
@@ -88,24 +90,29 @@ The closer to the code the better.
 # OpenShift
 
 RedHat OpenShift is a feature-rich product that can deploy (Helm) code automatically.
+</script></section><section data-markdown><script type="text/template">
+# OpenShift
 
-Benefits:
+## Benefits
 
 - Stay in the RedHat eco-system.
 - One product to solve multiple challenges.
+</script></section><section data-markdown><script type="text/template">
+# OpenShift
 
-Drawbacks:
+## Drawbacks
 
 - You would still need a tool for all other development work.
+- It's not the same thing.
 </script></section><section data-markdown><script type="text/template">
 # GitHub
 
-Benefits:
+## Benefits
 
 - Older (2008, GitLab 2011).
 - Bigger (69m, GitLab 0.5m).
-
-Drawbacks:
+</script></section><section data-markdown><script type="text/template">
+# Drawbacks
 
 - More expensive.
 - Less features.
