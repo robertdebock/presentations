@@ -72,7 +72,7 @@ Give advice on how to better use Ansible.
 
 > "ansible-lint is always right."
 
-`Always` is [configurable](https://github.com/robertdebock/ansible-role-haproxy/blob/master/.ansible-lint).
+"Always" is [configurable](https://github.com/robertdebock/ansible-role-haproxy/blob/master/.ansible-lint).
 
 ----
 
