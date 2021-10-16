@@ -78,7 +78,7 @@ _Always_ is [configurable](https://github.com/robertdebock/ansible-role-haproxy/
 
 # ansible-later
 
-Very new, bit unstable. Futher hints on how to improve your code.
+NEW. Futher hints on how to improve your code.
 
 Likely needs [help on what's right](https://github.com/robertdebock/ansible-role-haproxy/blob/master/.later.yml).
 
