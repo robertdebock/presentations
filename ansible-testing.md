@@ -48,7 +48,7 @@ Follow along: http://robertdebock.nl/
 
 # pre-commit
 
-Prevent silly mistakes by trying a few things before commits.
+Prevent typos by trying a few things before commits.
 
 Should be quick, likely static code tests.
 
