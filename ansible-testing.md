@@ -20,10 +20,10 @@ Follow along: http://robertdebock.nl/
 
 # Me
 
-- Creative background
-- Open Source fan
+- Creative background.
+- Open Source fan.
 - [Love coding](https://github.com/robertdebock).
-- Husband of [Lucie](https://mylucie.com/), father of [3](https://raw.githubusercontent.com/robertdebock/presentations/master/images/3.jpg)
+- Husband of [Lucie](https://mylucie.com/), father of [3](https://raw.githubusercontent.com/robertdebock/presentations/master/images/3.jpg).
 
 ---
 
