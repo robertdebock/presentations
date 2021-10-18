@@ -164,7 +164,7 @@ N.B. Run this on a resolvable node...
 
 # Your turn!
 
-Go to http://rancher.meinit.nl/
+Go to https://rancher.meinit.nl/
 
 (Use "Adfinis!")
 
