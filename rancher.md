@@ -96,43 +96,77 @@ N.B. Run this on a resolvable node...
 
 ----
 
+# Get the password
+
 ![Get the password](images/rancher-bootstrap-password.png)
 
 ----
 
-# Set the URL
+# Set the password
 
-![Set the url for Rancher](images/rancher-set-url.png)
+![Set the password](images/rancher-set-password.png)
 
 ----
 
 # Add cloud credentials
 
-![DESCRIPTION](images/rancher-add-cloud-credential.png)
+![Add cloud credentials](images/rancher-add-cloud-credentials-1.png)
 
 ----
 
-# Add node template(s)
-
-![DESCRIPTION](images/rancher-add-node-template.png)
+![Add cloud credentials](images/rancher-add-cloud-credentials-2.png)
 
 ----
 
-# Add cluster
-
-![DESCRIPTION](images/rancher-add-cluster.png)
+![Add cloud credentials](images/rancher-add-cloud-credentials-3.png)
 
 ----
 
-# Wait for cluster
-
-![DESCRIPTION](images/rancher-provisioning-cluster.png)
+![Add cloud credentials](images/rancher-add-cloud-credentials-4.png)
 
 ----
 
-# Wait for the nodes
+# Create node template(s)
 
-![DESCRIPTION](images/rancher-provisioning-nodes.png)
+![Add node templates](images/rancher-create-node-template-1.png)
+
+----
+
+![Add node templates](images/rancher-create-node-template-2.png)
+
+----
+
+![Add node templates](images/rancher-create-node-template-3.png)
+
+----
+
+![Add node templates](images/rancher-create-node-template-4.png)
+
+----
+
+# Create cluster
+
+![Create cluster](images/rancher-create-cluster-1.png)
+
+----
+
+![Create cluster](images/rancher-create-cluster-2.png)
+
+----
+
+![Create cluster](images/rancher-create-cluster-3.png)
+
+----
+
+![Create cluster](images/rancher-create-cluster-4.png)
+
+---
+
+# Your turn!
+
+Go to http://rancher.meinit.nl/
+
+(Use "Adfinis!")
 
 ---
 
