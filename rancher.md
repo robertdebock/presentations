@@ -90,17 +90,19 @@ N.B. Run this on a resolvable node...
 
 ----
 
-# Set the password
+# Welcome
 
-![Set the password for Rancher](images/rancher-set-password.png)
+![Welcome screen for Rancher](images/rancher-welcome.png)
+
+----
+
+![Get the password](images/rancher-bootstrap-password.png)
 
 ----
 
 # Set the URL
 
 ![Set the url for Rancher](images/rancher-set-url.png)
-
-N.B. "All the nodes in your clusters will need to be able to reach this."
 
 ----
 
