@@ -15,16 +15,17 @@ Follow along: http://robertdebock.nl/
 
 Infrastructure as code
 
----
+----
 
 # Alternatives
 
 - CloudFormation (AWS)
 - Google Cloud Deployment Manager
+- Azure Resource Manager
 
 None can manage resources on *any* provider.
 
----
+----
 
 # Why
 
