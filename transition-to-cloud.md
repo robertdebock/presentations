@@ -90,8 +90,6 @@ Generally; keep development efforts close to the code.
 
 ----
 
-# Infrastructure as Code (IaC)
-
 > "Infrastructure as code (IaC) is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools"
 
 - [Source](https://en.wikipedia.org/wiki/Infrastructure_as_code).
@@ -124,6 +122,7 @@ resource "aws_instance" "web" {
 - Supports [many providers](https://registry.terraform.io/browse/providers).
 - [Modules available](https://registry.terraform.io/browse/modules).
 - Rather easy to learn.
+- Not just "forward".
 
 ----
 
