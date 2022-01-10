@@ -35,9 +35,11 @@ title: Transition to Cloud
 
 # Why?
 
-- Talent.
 - Speed.
+- Talent.
 - Growth.
+- Compliance.
+- Repeatability.
 
 ----
 
@@ -51,7 +53,7 @@ A few key ingredients are required:
 
 ---
 
-# Version Control System
+# VCS
 
 - Stores code for both Dev and Ops.
 - Runs tests and audits (automated).
@@ -137,7 +139,7 @@ resource "aws_instance" "web" {
 
 Can provision and manage K8s clusters.
 
-Alternatives:
+## Alternatives:
 
 - Managed K8s: AKS, EKS, GKE, etc.
 
@@ -168,7 +170,9 @@ Authentication using:
 
 ---
 
-# Secrets management for:
+# HashiCorp Vault
+
+Secrets for:
 
 - Active Directory.
 - AWS, Azure, GCP.
@@ -180,8 +184,7 @@ Authentication using:
 
 # The beauty!
 
-Dynamic Secrets
-
+[Dynamic Secrets](https://learn.hashicorp.com/tutorials/vault/database-secrets#solution).
 
 ----
 
