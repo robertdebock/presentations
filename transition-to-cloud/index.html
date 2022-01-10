@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Transition to Cloud</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section ><section data-markdown><script type="text/template">
+
+# Transition to Cloud
+</script></section><section data-markdown><script type="text/template">
+# Introduction
+
+- Adfinis
+- Robert de Bock
+</script></section><section data-markdown><script type="text/template">
+# Agenda
+
+1. What
+2. Why
+3. How
+</script></section><section data-markdown><script type="text/template">
+# What?
+
+| Traditional                | Cloud                            |
+|----------------------------|----------------------------------|
+| Typically on-prem          | Typically on-somebody-elses-prem |
+| Considered "in control"    | Considered "exposed"             |
+| Teams service a technology | Self-service                     |
+| ITSM, Prince2, waterfall   | DevOps, Agile                    |
+</script></section><section data-markdown><script type="text/template">
+# Why?
+
+- Talent.
+- Speed.
+- Growth.
+</script></section><section data-markdown><script type="text/template">
+# How?
+
+A few key ingredients are required:
+
+- A version control system.
+- Tooling to support "IaC".
+- Tooling for secret management.
+</script></section></section><section  data-markdown><script type="text/template">
+# Version Control System
+
+- Stores code for both Dev and Ops.
+- Runs tests and audits (automated).
+- Stores artefacts.
+
+Generally; keep development efforts close to the code.
+</script></section><section  data-markdown><script type="text/template">
+# GitLab
+
+- On-prem, on-somebody-elses-prem or SaaS.
+- OpenSource (Free, Premium and Ultimate).
+- Supported (Premium and Ultimate).
+- Very [feature rich](https://about.gitlab.com/features/).
+</script></section><section  data-markdown><script type="text/template">
+# Demo
+
+[gitlab.meinit.nl](https://gitlab.meinit.nl/)
+
+- username: root
+- password: Demo-123!
+</script></section><section ><section data-markdown><script type="text/template">
+# Competitors
+
+- GitHub
+- BitBucket
+- Gitea
+- ... (many more)
+</script></section><section data-markdown><script type="text/template">
+# Infrastructure as Code (IaC)
+
+> "Infrastructure as code (IaC) is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools"
+
+- [Source](https://en.wikipedia.org/wiki/Infrastructure_as_code).
+</script></section></section><section  data-markdown><script type="text/template">
+# Example tools
+
+- Terraform.
+- Ansible, Chef, Puppet, Salt, etc.
+</script></section><section  data-markdown><script type="text/template">
+# Terraform
+
+Describe (compute) resources in a fairly readable way:
+
+```hcl
+resource "aws_instance" "web" {
+  ami           = "ami-005e54dee72cc1d00"
+  instance_type = "t3.micro"
+}
+```
+</script></section><section ><section data-markdown><script type="text/template">
+# Benefits of Terraform
+
+- Broadly adopted.
+- Supports [many providers](https://registry.terraform.io/browse/providers).
+- [Modules available](https://registry.terraform.io/browse/modules).
+- Rather easy to learn.
+</script></section><section data-markdown><script type="text/template">
+# Container orchestration platform
+
+- Containers need to be orchestrated.
+- Kubernetes (K8s) is widely used.
+- It's not easy to manage K8s clusters. (manually)
+</script></section></section><section  data-markdown><script type="text/template">
+# Rancher
+
+Can provision and manage K8s clusters.
+
+Alternatives:
+
+- Managed K8s: AKS, EKS, GKE, etc.
+</script></section><section ><section data-markdown><script type="text/template">
+# Hands-on!
+
+[rancher.meinit.nl](https://rancher.meinit.nl/)
+</script></section><section data-markdown><script type="text/template">
+# Secret management
+
+- More instances = more secrets.
+- Cloud = not trusted (zero-trust).
+</script></section></section><section  data-markdown><script type="text/template">
+# HashiCorp Vault
+
+Authentication using:
+
+- Kerberos.
+- Amazon AWS.
+- MicroSoft Azure.
+- Google Cloud.
+- [many others](https://www.vaultproject.io/docs/auth).
+</script></section><section  data-markdown><script type="text/template">
+# Secrets management for:
+
+- Active Directory.
+- AWS, Azure, GCP.
+- Static secrets.
+- Certificates.
+- [many others](https://www.vaultproject.io/docs/secrets).
+</script></section><section ><section data-markdown><script type="text/template">
+# The beauty!
+
+Dynamic Secrets
+
+</script></section><section data-markdown><script type="text/template">
+# Conclusion
+
+IaC requires:
+- Changes to the organization.
+- Some tools.
+- Some skills.
+- Different way of thinking.
+</script></section><section data-markdown><script type="text/template">
+# Questions?
+
+Thanks!
+</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
