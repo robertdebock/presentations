@@ -24,12 +24,12 @@ title: Transition to Cloud
 
 # What?
 
-| Traditional                | Cloud                            |
-|----------------------------|----------------------------------|
-| Typically on-prem          | Typically on-somebody-elses-prem |
-| Considered "in control"    | Considered "exposed"             |
-| Teams service a technology | Self-service                     |
-| ITSM, Prince2, waterfall   | DevOps, Agile                    |
+| Traditional   | Cloud                  |
+|---------------|------------------------|
+| on-prem       | on-somebody-elses-prem |
+| "in control"  | "exposed"              |
+| Teams-service | Self-service           |
+| ITSM, Prince2 | DevOps, Agile          |
 
 ----
 
