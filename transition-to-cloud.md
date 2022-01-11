@@ -116,10 +116,10 @@ resource "aws_instance" "web" {
 
 # Benefits of Terraform
 
-- Broadly adopted.
+- [Broadly](https://trends.google.com/trends/explore?geo=NL&q=%2Fg%2F11g6bg27fp,cloud%20formation,azure%20resource%20manager) adopted.
 - Supports [many providers](https://registry.terraform.io/browse/providers).
 - [Modules available](https://registry.terraform.io/browse/modules).
-- Rather easy to learn.
+- Rather easy to [learn](https://robertdebock.nl/learn-terraform/).
 - Not just "forward".
 
 ----
@@ -184,10 +184,10 @@ Secrets for:
 
 # Hands-on!
 
-[vault.meinit.nl:8200](https://vault.meinit.nl:8200/ui)
-
-Method: Token
-Token: s.yeq2J1U0DoxvxJgxoKopWQWd
+[vault.meinit.nl:8200](https://vault.robertdebock.nl:8200/ui)
+ 
+- Method: Token
+- Token: s.yeq2J1U0DoxvxJgxoKopWQWd
 
 ---
 
