@@ -83,10 +83,8 @@ Generally; keep development efforts close to the code.
 
 # Competitors
 
-- GitHub
-- BitBucket
-- Gitea
-- ... (many more)
+- GitHub, BitBucket, Gitea, ...
+- Jenkins, Artifactory, Jira, ...
 
 ----
 
