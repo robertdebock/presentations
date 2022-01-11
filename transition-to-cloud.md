@@ -72,7 +72,7 @@ Generally; keep development efforts close to the code.
 
 ---
 
-# Demo
+# Hands-on!
 
 [gitlab.meinit.nl](https://gitlab.meinit.nl/)
 
@@ -181,6 +181,15 @@ Secrets for:
 - Static secrets.
 - Certificates.
 - [many others](https://www.vaultproject.io/docs/secrets).
+
+---
+
+# Hands-on!
+
+[vault.meinit.nl:8200](https://vault.meinit.nl:8200/ui)
+
+Method: Token
+Token: s.yeq2J1U0DoxvxJgxoKopWQWd
 
 ---
 
