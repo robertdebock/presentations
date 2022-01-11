@@ -148,6 +148,9 @@ Can provision and manage K8s clusters.
 
 [rancher.meinit.nl](https://rancher.meinit.nl/)
 
+- username: admin
+- password: Demo-1234.demo
+
 ----
 
 # Secret management
