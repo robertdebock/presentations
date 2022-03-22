@@ -13,14 +13,16 @@ Follow along: http://robertdebock.nl/
 
 # Welcome! (back?)
 
-My first physical Meetup since 2019, right on time for new t-shirts.
+My first physical Meetup since 2019.
+
+Right on time for new t-shirts.
 
 ---
 
 # About me
 
-- Father of [3](https://raw.githubusercontent.com/robertdebock/presentations/master/images/3.jpg).
-- Wife on [1](https://mylucie.com).
+- Father of [3 children](https://raw.githubusercontent.com/robertdebock/presentations/master/images/3.jpg).
+- Husband on [1 wife](https://mylucie.com).
 - Love to [tinker](https://robertdebock.nl/).
 - Specialized in infrastructure.
 
@@ -35,7 +37,7 @@ My first physical Meetup since 2019, right on time for new t-shirts.
 # How?
 
 - Ask questions, get swag.
-- Code: https://gitlab.com/robertdebock/gitlab-demo/-/pipelines
+- Code: https://gitlab.com/robertdebock/gitlab-demo/
 - Pseudo-code in presentation.
 ----
 
@@ -137,7 +139,7 @@ Used to:
 
 ----
 
-# Fetch initial_root_password
+# Fetch password
 
 ```yaml
 post_tasks:
