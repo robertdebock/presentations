@@ -37,7 +37,7 @@ Right on time for new t-shirts.
 # How?
 
 - Ask questions, get swag.
-- Code: https://gitlab.com/robertdebock/gitlab-demo/
+- https://gitlab.com/robertdebock/gitlab-demo/
 - Pseudo-code in presentation.
 ----
 
@@ -217,6 +217,7 @@ play:
 # Improvements
 
 - Store sensitive information in [Vault](https://www.vaultproject.io).
+- Do not use Ansible at all, just Terraform.
 
 ---
 
