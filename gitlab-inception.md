@@ -214,6 +214,12 @@ play:
 
 ---
 
+# Improvements
+
+- Store sensitive information in [Vault](https://www.vaultproject.io).
+
+---
+
 # Bonus
 
 Shared state in GitLab.
