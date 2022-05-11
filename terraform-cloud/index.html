@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Terraform Cloud</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+# Terraform Cloud
+</script></section><section ><section data-markdown><script type="text/template">
+# What
+
+A managed runtime for Terraform.
+
+- Users/teams
+- Variables
+- State
+- Sentinel
+- Registry
+- Environments/workspaces
+</script></section><section data-markdown><script type="text/template">
+# Why?
+
+- Easy/easier CI.
+- Policy-as-code. (Sentinel)
+- Cost estimation.
+- Host modules locally.
+- Sharing remote state.
+</script></section></section><section ><section data-markdown><script type="text/template">
+# How
+
+- [VCS workflow](https://www.terraform.io/cloud-docs/run/ui).
+- [CLI workflow](https://www.terraform.io/cloud-docs/run/cli).
+- [API workflow](https://www.terraform.io/cloud-docs/run/api).
+</script></section><section data-markdown><script type="text/template">
+# VCS
+
+Trigger a plan on commits/pushes.
+
+- GitHub
+- GitLab
+- BitBucket
+- Azure Devlops
+</script></section></section><section  data-markdown><script type="text/template">
+# VCS Demo
+
+1. Commit [here](https://github.com/robertdebock/git-terraform-demo).
+2. Review [Terraform Cloud](https://app.terraform.io/app/robertdebock/workspaces/git-terraform-demo/runs/).
+3. Plan is automatic, apply manual. (Can be automatic.)
+</script></section><section ><section data-markdown><script type="text/template">
+# Alternatives
+</script></section><section data-markdown><script type="text/template">
+# Alternative State
+
+- GitLab.
+- (AWS S3|(Azure|GCP) Storage).
+- Locally.
+</script></section><section data-markdown><script type="text/template">
+# Alternative Registry
+
+- GitLab. (!)
+- Terraform Enterprise.
+- A manual index of modules.
+</script></section></section><section  data-markdown><script type="text/template">
+# Alternative Sentinel
+
+- [Open Policy Agent](https://www.openpolicyagent.org/docs/latest/terraform/).
+- Hyper scaler policies.
+</script></section><section ><section data-markdown><script type="text/template">
+# Alternative cost-estimation
+
+- [Infracost](https://www.infracost.io).
+- [Terraform cost estimation](https://github.com/antonbabenko/terraform-cost-estimation). (!)
+</script></section><section data-markdown><script type="text/template">
+# Conclusion
+
+Terraform Cloud can offer value, it's an easy-to-use SaaS offering. Terraform Enterprise is an alternative for an on-premise solution.
+</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
