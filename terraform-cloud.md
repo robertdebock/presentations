@@ -36,9 +36,19 @@ A Terraform modules catalogue.
 
 ---
 
-# Example
+# Example 1/3
 
 This [repository](https://github.com/robertdebock/terraform-azurerm-scale-set/) meets the requirements.
+
+---
+
+# Example 2/3
+
+1. [Connect a VCS](https://app.terraform.io/app/robertdebock/settings/version-control).
+
+---
+
+# Example 3/3
 
 1. Visit [Terraform Cloud](https://app.terraform.io/app/robertdebock/registry/private/providers)
 2. Publish -> Module -> GitHub
@@ -74,7 +84,7 @@ Trigger a plan on commits/pushes.
 - GitHub
 - GitLab
 - BitBucket
-- Azure Devlops
+- Azure DevOps
 
 ---
 
@@ -83,6 +93,17 @@ Trigger a plan on commits/pushes.
 1. Commit [here](https://github.com/robertdebock/git-terraform-demo).
 2. Review [Terraform Cloud](https://app.terraform.io/app/robertdebock/workspaces/git-terraform-demo/runs/).
 3. Plan is automatic, apply manual. (Can be automatic.)
+
+----
+
+# Product offerings
+
+1. Terraform - no cloud/enterprise/business
+2. Terraform - Cloud
+3. Terraform - Cloud for business
+4. Terraform - Enterprise
+
+[Source](https://cloud.hashicorp.com/products/terraform/pricing).
 
 ----
 
