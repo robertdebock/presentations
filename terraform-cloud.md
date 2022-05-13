@@ -14,21 +14,51 @@ A managed runtime for Terraform.
 - Variables
 - State
 - Sentinel
-- Registry
+- **Registry**
 - Environments/workspaces
 
 ----
 
-# Why?
+# Registry
 
-- Easy/easier CI.
-- Policy-as-code. (Sentinel)
-- Cost estimation.
-- Host modules locally.
-- Sharing remote state.
+A Terraform modules catalogue.
 
 ---
 
+# Requirements
+
+- [Supported VCS provider](https://www.terraform.io/cloud-docs/vcs#supported-vcs-providers)
+- Repository name: terraform-{{ provider }}-{{ name }}
+- [Correct module structure](https://www.terraform.io/language/modules/develop/structure).
+- Tagged ([SEM-versioning](https://semver.org).)
+
+[Source](https://www.terraform.io/cloud-docs/registry/publish-modules#preparing-a-module-repository)
+
+---
+
+# Example
+
+This [repository](https://github.com/robertdebock/terraform-azurerm-scale-set/) meets the requirements.
+
+1. Visit [Terraform Cloud](https://app.terraform.io/app/robertdebock/registry/private/providers)
+2. Publish -> Module -> GitHub
+3. Select the repository -> Publish module
+
+---
+
+# Modules
+
+- Great to help teams up to speed.
+- Good to abstract functionality.
+- Not for policies.
+
+----
+
+# Terraform runtime
+
+Terraform cloud instead of "your laptop".
+
+---
 # How
 
 - [VCS workflow](https://www.terraform.io/cloud-docs/run/ui).
@@ -54,11 +84,11 @@ Trigger a plan on commits/pushes.
 2. Review [Terraform Cloud](https://app.terraform.io/app/robertdebock/workspaces/git-terraform-demo/runs/).
 3. Plan is automatic, apply manual. (Can be automatic.)
 
----
+----
 
 # Alternatives
 
-----
+---
 
 # Alternative State
 
@@ -66,7 +96,7 @@ Trigger a plan on commits/pushes.
 - (AWS S3|(Azure|GCP) Storage).
 - Locally.
 
-----
+---
 
 # Alternative Registry
 
