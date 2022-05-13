@@ -17,13 +17,13 @@ A managed runtime for Terraform.
 - **Registry**
 - Environments/workspaces
 
-----
+---
 
 # Registry
 
 A Terraform modules catalogue.
 
----
+----
 
 # Requirements
 
@@ -34,19 +34,19 @@ A Terraform modules catalogue.
 
 [Source](https://www.terraform.io/cloud-docs/registry/publish-modules#preparing-a-module-repository)
 
----
+----
 
 # Example 1/3
 
 This [repository](https://github.com/robertdebock/terraform-azurerm-scale-set/) meets the requirements.
 
----
+----
 
 # Example 2/3
 
 1. [Connect a VCS](https://app.terraform.io/app/robertdebock/settings/version-control).
 
----
+----
 
 # Example 3/3
 
@@ -54,7 +54,7 @@ This [repository](https://github.com/robertdebock/terraform-azurerm-scale-set/) 
 2. Publish -> Module -> GitHub
 3. Select the repository -> Publish module
 
----
+----
 
 # Modules
 
@@ -62,13 +62,13 @@ This [repository](https://github.com/robertdebock/terraform-azurerm-scale-set/) 
 - Good to abstract functionality.
 - Not for policies.
 
-----
+---
 
 # Terraform runtime
 
 Terraform cloud instead of "your laptop".
 
----
+----
 
 # How
 
@@ -76,7 +76,7 @@ Terraform cloud instead of "your laptop".
 - [CLI workflow](https://www.terraform.io/cloud-docs/run/cli).
 - [API workflow](https://www.terraform.io/cloud-docs/run/api).
 
----
+----
 
 # VCS
 
@@ -87,7 +87,7 @@ Trigger a plan on commits/pushes.
 - BitBucket
 - Azure DevOps
 
----
+----
 
 # VCS Demo
 
