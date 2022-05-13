@@ -97,6 +97,19 @@ Trigger a plan on commits/pushes.
 
 ---
 
+# Sentinel
+
+Policy as code
+
+----
+
+# Some frameworks supported
+
+- [Blog post](https://www.hashicorp.com/blog/announcing-terraform-foundational-policy-library-preview).
+- [Policy code](https://github.com/hashicorp/terraform-foundational-policies-library/tree/master/cis).
+
+---
+
 # Product offerings
 
 1. Terraform - no cloud/enterprise/business
