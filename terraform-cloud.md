@@ -88,6 +88,8 @@ Trigger a plan on commits/pushes.
 
 # Alternatives
 
+Terraform Cloud is complete, easy to use and supported. There are alternatives.
+
 ---
 
 # Alternative State
