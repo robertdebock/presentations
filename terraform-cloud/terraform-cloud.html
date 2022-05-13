@@ -27,18 +27,40 @@ A managed runtime for Terraform.
 - Variables
 - State
 - Sentinel
-- Registry
+- **Registry**
 - Environments/workspaces
 </script></section><section data-markdown><script type="text/template">
-# Why?
+# Registry
 
-- Easy/easier CI.
-- Policy-as-code. (Sentinel)
-- Cost estimation.
-- Host modules locally.
-- Sharing remote state.
-</script></section></section><section ><section data-markdown><script type="text/template">
-# How
+A Terraform modules catalogue.
+</script></section></section><section  data-markdown><script type="text/template">
+# Requirements
+
+- [Supported VCS provider](https://www.terraform.io/cloud-docs/vcs#supported-vcs-providers)
+- Repository name: terraform-{{ provider }}-{{ name }}
+- [Correct module structure](https://www.terraform.io/language/modules/develop/structure).
+- Tagged ([SEM-versioning](https://semver.org).)
+
+[Source](https://www.terraform.io/cloud-docs/registry/publish-modules#preparing-a-module-repository)
+</script></section><section  data-markdown><script type="text/template">
+# Example
+
+This [repository](https://github.com/robertdebock/terraform-azurerm-scale-set/) meets the requirements.
+
+1. Visit [Terraform Cloud](https://app.terraform.io/app/robertdebock/registry/private/providers)
+2. Publish -> Module -> GitHub
+3. Select the repository -> Publish module
+</script></section><section ><section data-markdown><script type="text/template">
+# Modules
+
+- Great to help teams up to speed.
+- Good to abstract functionality.
+- Not for policies.
+</script></section><section data-markdown><script type="text/template">
+# Terraform runtime
+
+Terraform cloud instead of "your laptop".
+</script></section></section><section ><section data-markdown><script type="text/template"># How
 
 - [VCS workflow](https://www.terraform.io/cloud-docs/run/ui).
 - [CLI workflow](https://www.terraform.io/cloud-docs/run/cli).
@@ -52,27 +74,27 @@ Trigger a plan on commits/pushes.
 - GitLab
 - BitBucket
 - Azure Devlops
-</script></section></section><section  data-markdown><script type="text/template">
+</script></section></section><section ><section data-markdown><script type="text/template">
 # VCS Demo
 
 1. Commit [here](https://github.com/robertdebock/git-terraform-demo).
 2. Review [Terraform Cloud](https://app.terraform.io/app/robertdebock/workspaces/git-terraform-demo/runs/).
 3. Plan is automatic, apply manual. (Can be automatic.)
-</script></section><section ><section data-markdown><script type="text/template">
-# Alternatives
 </script></section><section data-markdown><script type="text/template">
+# Alternatives
+</script></section></section><section  data-markdown><script type="text/template">
 # Alternative State
 
 - GitLab.
 - (AWS S3|(Azure|GCP) Storage).
 - Locally.
-</script></section><section data-markdown><script type="text/template">
+</script></section><section  data-markdown><script type="text/template">
 # Alternative Registry
 
 - GitLab. (!)
 - Terraform Enterprise.
 - A manual index of modules.
-</script></section></section><section  data-markdown><script type="text/template">
+</script></section><section  data-markdown><script type="text/template">
 # Alternative Sentinel
 
 - [Open Policy Agent](https://www.openpolicyagent.org/docs/latest/terraform/).
