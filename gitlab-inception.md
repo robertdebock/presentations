@@ -22,7 +22,7 @@ Right on time for new t-shirts.
 # About me
 
 - Father of [3 children](https://raw.githubusercontent.com/robertdebock/presentations/master/images/3.jpg).
-- Husband on [1 wife](https://mylucie.com).
+- Husband of [1 wife](https://mylucie.com).
 - Love to [tinker](https://robertdebock.nl/).
 - Specialized in infrastructure.
 
