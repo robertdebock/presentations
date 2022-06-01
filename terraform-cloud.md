@@ -21,7 +21,7 @@ A managed runtime for Terraform.
 
 # Registry
 
-A Terraform modules catalogue.
+A Terraform module catalogue.
 
 ----
 
@@ -97,6 +97,12 @@ Trigger a plan on commits/pushes.
 
 ---
 
+# Terraform Cloud Agents
+
+You can [bring your own](https://www.terraform.io/cloud-docs/agents) instances.
+
+---
+
 # Sentinel
 
 Policy as code
@@ -113,9 +119,10 @@ Policy as code
 # Product offerings
 
 1. Terraform - no cloud/enterprise/business
-2. Terraform - Cloud
-3. Terraform - Cloud for business
-4. Terraform - Enterprise
+2. Terraform - Cloud Free
+3. Terraform - Cloud Team & governance
+4. Terraform - Cloud Business
+5. Terraform - Enterprise
 
 [Source](https://cloud.hashicorp.com/products/terraform/pricing).
 
