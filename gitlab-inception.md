@@ -11,14 +11,6 @@ Follow along: http://robertdebock.nl/
 
 ---
 
-# Welcome! (back?)
-
-My first physical Meetup since 2019.
-
-Right on time for new t-shirts.
-
----
-
 # About me
 
 - Father of [3 children](https://raw.githubusercontent.com/robertdebock/presentations/master/images/3.jpg).
@@ -52,6 +44,12 @@ Used to:
 
 ----
 
+# Demo Terraform
+
+https://gitlab.com/robertdebock/gitlab-demo/-/pipelines
+
+----
+
 # GitLab instance
 
 ```hcl
@@ -71,9 +69,9 @@ resource "aws_instance" "gitlab" {
 
 ```hcl
 resource "aws_instance" "runner" {
-  count           = 1
-  ami             = data.aws_ami.default.id
-  instance_type   = "t2.medium"
+  count         = 1
+  ami           = data.aws_ami.default.id
+  instance_type = "t2.medium"
 }
 ```
 
@@ -120,6 +118,11 @@ Used to:
 2. Fetch "initial_root_password".
 3. Install GitLab Runner.
 
+----
+
+# Demo Ansible
+
+https://gitlab.com/robertdebock/gitlab-demo/-/pipelines
 
 ----
 
@@ -136,6 +139,14 @@ Used to:
     - role: robertdebock.cron
     - role: robertdebock.gitlab
 ```
+
+----
+
+# Ansible role details
+
+- [Users](https://github.com/robertdebock/ansible-role-users)
+- [Cron](https://github.com/robertdebock/ansible-role-cron)
+- [GitLab](https://github.com/robertdebock/ansible-role-gitlab)
 
 ----
 
@@ -162,6 +173,12 @@ post_tasks:
   roles:
     - role: robertdebock.gitlab_runner
 ```
+
+----
+
+# Ansible role details
+
+- [GitLab runner](https://github.com/robertdebock/ansible-role-gitlab_runner)
 
 ---
 
@@ -225,12 +242,12 @@ play:
 
 Shared state in GitLab.
 
-<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/gitlab-state.png"/>
+[<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/gitlab-state.png"/>](https://gitlab.com/robertdebock/gitlab-demo/-/terraform).
 
 ---
 
 # Conclusion
 
 - 3 tools, 3 qualities.
-- Everything is code.
+- [Everything](https://github.com/robertdebock/presentations) is code.
 - Physical meetups = drinks!
