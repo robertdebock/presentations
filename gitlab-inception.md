@@ -235,6 +235,8 @@ play:
 
 - Store sensitive information in [Vault](https://www.vaultproject.io).
 - Do not use Ansible at all, just Terraform.
+- Store the runner token securly.
+- CI should cache inventory files.
 
 ---
 
