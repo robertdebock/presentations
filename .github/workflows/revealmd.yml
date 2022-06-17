@@ -23,7 +23,7 @@ jobs:
       #     key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
       - name: install and build
         run: |
-          npm install --no-optional reveal-md
+          npm install --include=optional reveal-md
           for file in *.md ; do ./node_modules/.bin/reveal-md --static output/"${file%.*}" "${file}" ; done
       - name: deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
