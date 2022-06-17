@@ -17,7 +17,9 @@ jobs:
       - name: install and build
         run: |
           npm update
-          npm install --include=optional reveal-md
+          npm list --global
+          npm install --include=optional --global reveal-md
+          npm list --global
           for file in *.md ; do ./node_modules/.bin/reveal-md --static output/"${file%.*}" "${file}" ; done
       - name: deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
