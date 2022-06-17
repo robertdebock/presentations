@@ -16,6 +16,7 @@ jobs:
       - uses: actions/setup-node@v3
       - name: install and build
         run: |
+          npm update
           npm install --include=optional reveal-md
           for file in *.md ; do ./node_modules/.bin/reveal-md --static output/"${file%.*}" "${file}" ; done
       - name: deploy
