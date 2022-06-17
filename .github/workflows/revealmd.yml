@@ -20,8 +20,8 @@ jobs:
           npm list --location=global
           npm install --include=optional --location=global reveal-md
           npm list --location=global
-          find /usr/local/lib | grep reveal
-          for file in *.md ; do /usr/local/lib/reveal-md --static output/"${file%.*}" "${file}" ; done
+          find /usr/local/bin
+          for file in *.md ; do /usr/local/bin/reveal-md --static output/"${file%.*}" "${file}" ; done
       - name: deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
