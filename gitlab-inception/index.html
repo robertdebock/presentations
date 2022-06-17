@@ -23,16 +23,10 @@ Follow along: http://robertdebock.nl/
 
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/gitlab-inception/"/>
 </script></section><section  data-markdown><script type="text/template">
-# Welcome! (back?)
-
-My first physical Meetup since 2019.
-
-Right on time for new t-shirts.
-</script></section><section  data-markdown><script type="text/template">
 # About me
 
 - Father of [3 children](https://raw.githubusercontent.com/robertdebock/presentations/master/images/3.jpg).
-- Husband on [1 wife](https://mylucie.com).
+- Husband of [1 wife](https://mylucie.com).
 - Love to [tinker](https://robertdebock.nl/).
 - Specialized in infrastructure.
 </script></section><section ><section data-markdown><script type="text/template">
@@ -54,6 +48,10 @@ Used to:
 3. Sets A-record to the instances.
 4. Drop inventory for Ansible to pickup.
 </script></section><section data-markdown><script type="text/template">
+# Demo Terraform
+
+https://gitlab.com/robertdebock/gitlab-demo/-/pipelines
+</script></section><section data-markdown><script type="text/template">
 # GitLab instance
 
 ```hcl
@@ -71,9 +69,9 @@ resource "aws_instance" "gitlab" {
 
 ```hcl
 resource "aws_instance" "runner" {
-  count           = 1
-  ami             = data.aws_ami.default.id
-  instance_type   = "t2.medium"
+  count         = 1
+  ami           = data.aws_ami.default.id
+  instance_type = "t2.medium"
 }
 ```
 </script></section><section data-markdown><script type="text/template">
@@ -113,7 +111,10 @@ Used to:
 1. Install GitLab.
 2. Fetch "initial_root_password".
 3. Install GitLab Runner.
+</script></section><section data-markdown><script type="text/template">
+# Demo Ansible
 
+https://gitlab.com/robertdebock/gitlab-demo/-/pipelines
 </script></section><section data-markdown><script type="text/template">
 # Install GitLab
 
@@ -128,6 +129,12 @@ Used to:
     - role: robertdebock.cron
     - role: robertdebock.gitlab
 ```
+</script></section><section data-markdown><script type="text/template">
+# Ansible role details
+
+- [Users](https://github.com/robertdebock/ansible-role-users)
+- [Cron](https://github.com/robertdebock/ansible-role-cron)
+- [GitLab](https://github.com/robertdebock/ansible-role-gitlab)
 </script></section><section data-markdown><script type="text/template">
 # Fetch password
 
@@ -150,6 +157,10 @@ post_tasks:
   roles:
     - role: robertdebock.gitlab_runner
 ```
+</script></section><section data-markdown><script type="text/template">
+# Ansible role details
+
+- [GitLab runner](https://github.com/robertdebock/ansible-role-gitlab_runner)
 </script></section></section><section ><section data-markdown><script type="text/template">
 # GitLab
 
@@ -196,17 +207,19 @@ play:
 
 - Store sensitive information in [Vault](https://www.vaultproject.io).
 - Do not use Ansible at all, just Terraform.
+- Store the runner token securly.
+- CI should cache inventory files.
 </script></section><section  data-markdown><script type="text/template">
 # Bonus
 
 Shared state in GitLab.
 
-<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/gitlab-state.png"/>
+[<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/gitlab-state.png"/>](https://gitlab.com/robertdebock/gitlab-demo/-/terraform).
 </script></section><section  data-markdown><script type="text/template">
 # Conclusion
 
 - 3 tools, 3 qualities.
-- Everything is code.
+- [Everything](https://github.com/robertdebock/presentations) is code.
 - Physical meetups = drinks!
 </script></section></div>
     </div>
