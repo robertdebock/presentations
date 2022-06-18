@@ -38,7 +38,7 @@ A Terraform module catalogue.
 
 # Example 1/3
 
-This [repository](https://github.com/robertdebock/terraform-azurerm-scale-set/) meets the requirements.
+This [repository](https://github.com/robertdebock/terraform-azurerm-scale-set/) and this [repository](https://github.com/robertdebock/terraform-vault-snapshot) meet the requirements.
 
 ----
 
@@ -50,7 +50,7 @@ This [repository](https://github.com/robertdebock/terraform-azurerm-scale-set/) 
 
 # Example 3/3
 
-1. Visit [Terraform Cloud](https://app.terraform.io/app/robertdebock/registry/private/providers)
+1. Visit [Terraform Cloud](https://app.terraform.io/app/robertdebock/registry/private/modules)
 2. Publish -> Module -> GitHub
 3. Select the repository -> Publish module
 
