@@ -54,6 +54,8 @@ This [repository](https://github.com/robertdebock/terraform-azurerm-scale-set/) 
 2. Publish -> Module -> GitHub
 3. Select the repository -> Publish module
 
+[offline demo](https://raw.githubusercontent.com/robertdebock/presentations/master/images/TF-Cloud-modules.gif)
+
 ----
 
 # Modules
