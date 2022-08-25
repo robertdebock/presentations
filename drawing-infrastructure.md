@@ -61,15 +61,15 @@ Here are a few shapes that you can use.
 
 # Document
 
-<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/document.png"/>
+<img hight="50%" width="50%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/document.png"/>
 
 ----
 
 # Instance
 
-----
 
-<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/single.png"/>
+
+<img hight="60%" width="60%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/single.png"/>
 
 ----
 
@@ -77,3 +77,9 @@ Here are a few shapes that you can use.
 
 <img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/redundant.png"/>
 
+---
+
+# Hints
+
+1. Keep it simple.
+2. Drawing multiple
