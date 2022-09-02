@@ -3,7 +3,7 @@ title: Drawing infrastructure
 
 ---
 
-# Drawing infrastructure
+## Drawing infrastructure
 
 Follow along: http://robertdebock.nl/
 
@@ -11,7 +11,7 @@ Follow along: http://robertdebock.nl/
 
 ---
 
-# Why?
+## Why?
 
 - Easy to explain to sales-people.
 - Good input for refactoring.
@@ -20,7 +20,7 @@ Follow along: http://robertdebock.nl/
 
 ---
 
-# How?
+## How?
 
 | Component      | Material            |
 |----------------|---------------------|
@@ -41,31 +41,31 @@ In general; Make drawing light-weight.
 
 ---
 
-# Shapes
+## Shapes
 
 Here are a few shapes that you can use.
 
 ----
 
-# Person(s)
+## Person(s)
 
 <img hight="50%" width="50%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/people.png"/>
 
 ----
 
-# Website
+## Website
 
 <img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/website.png"/>
 
 ----
 
-# Document
+## Document
 
 <img hight="50%" width="50%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/document.png"/>
 
 ----
 
-# Instance
+## Instance
 
 
 
@@ -73,13 +73,13 @@ Here are a few shapes that you can use.
 
 ----
 
-# Instances
+## Instances
 
 <img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/redundant.png"/>
 
 ---
 
-# Hints
+## Hints
 
 1. Keep it simple.
 2. Drawing multiple
