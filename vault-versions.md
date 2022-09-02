@@ -9,19 +9,11 @@ title: Vault version
 
 ## Versions
 
-There are [multiple version or types](https://www.hashicorp.com/products/vault/pricing) of HashiCorp Vault available.
+There are [multiple version or types](https://www.hashicorp.com/products/vault/pricing) of HashiCorp Vault.
 
 - [Open Source](https://github.com/hashicorp/vault) (aka: `oss`)
 - [Cloud](https://cloud.hashicorp.com/products/vault/pricing) (aka: `hcp`)
-- Enterprise (aka: `ent`)
-
----
-
-## Enterprise feature sets
-
-- Standard
-- Plus
-- Premium
+- [Enterprise](https://www.vaultproject.io/docs/enterprise) (aka: `ent`)
 
 ---
 
@@ -35,13 +27,15 @@ All types support:
 
 ## Feature comparison
 
-|type|high availability |disaster recovery |namespaces        |(auto) snapshots  |
-|----|------------------|------------------|------------------|------------------|
-|oss |:heavy_check_mark:|                  |                  |                  |
-|hcp |:heavy_check_mark:|                  |:heavy_check_mark:|:heavy_check_mark:|
-|ent |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+|type|H.A.|D.R.|N.S.|S.S.|
+|----|----|----|----|----|
+|oss |Yes |    |    |    |
+|hcp |Yes |    |Yes |Yes |
+|ent |Yes |Yes |Yes |Yes |
 
 [Source](https://cloud.hashicorp.com/docs/vault#feature-parity)
+
+H.A. = High availabilty. D.R. = Disaster Recovery, N.S. = Namespacing, S.S. = SnapShot
 
 ---
 
