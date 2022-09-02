@@ -15,7 +15,7 @@ Follow along: http://robertdebock.nl/
 
 - Easy to explain to sales-people.
 - Good input for refactoring.
-- Drawing is easy!
+- Drawing is easy and fun!
 - Different perspective.
 
 ---
@@ -77,9 +77,36 @@ Here are a few shapes that you can use.
 
 <img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/redundant.png"/>
 
+## Banner
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/banner.png"/>
+
+
+----
+
+## Opproval stamp
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/okay.png"/>
+
+---
+
+## Fancy banner
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/fancy.png"/>
+
+---
+
+## Assignment
+
+Pick one or two:
+
+- Draw how you got here.
+- Draw your deparment in the company.
+- Draw how your computer accesses "gitlab.com"
+
 ---
 
 ## Hints
 
 1. Keep it simple.
-2. Drawing multiple
+2. Drawing multiple.
