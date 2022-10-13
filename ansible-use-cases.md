@@ -55,7 +55,7 @@ Benefit over shell-scripts:
 Tools that I use.
 
 - [ansible-generator]()
-- [gitlab-settigns]()
+- [gitlab-settings]()
 
 ---
 
@@ -66,6 +66,12 @@ Tools that I use.
 - Terraform for IaC
 - Ansible instance configuration
 - Ansible for orchestration
+
+
+----
+
+- [Ansible drops an inventory]
+- [Ansible calls Terraform]
 
 ---
 
