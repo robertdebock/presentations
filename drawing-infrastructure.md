@@ -96,6 +96,12 @@ Here are a few shapes that you can use.
 
 ---
 
+## Chronologic
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/order.png"/>
+
+---
+
 ## Assignment
 
 Pick one or two:
