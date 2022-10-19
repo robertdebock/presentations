@@ -25,13 +25,13 @@ Can be used in a `variable` object.
 ----
 
 ```hcl
-variable "vault_name" {
-  description = "The name of the vault cluster."
+variable "cluster_name" {
+  description = "The name of the cluster."
   type        = string
   default     = "unset"
   validation {
-    condition     = length(var.vault_name) >= 3 && length(var.vault_name) <= 5 && var.vault_name != "default"
-    error_message = "Please use a minimum of 3 and a maximum of 5 characters. \"default\" is reserved."
+    condition     = var.vault_name != "default"
+    error_message = "The name \"default\" is reserved, please use another name."
   }
 }
 ```
@@ -45,22 +45,35 @@ variable "vault_name" {
 
 To check if a resource meets the requirements to be usable.
 
-(Pretty close to validation)
-
 Can be used in a `resource`, `data` and `output` object.
 
 ----
 
+First, read the availability zones that can be deployed to.
+
 ```hcl
-...
+# Read the availability zones.
+data "aws_availability_zones" "default" {
+  state = "available"
+}
+```
+
+---
+
+Next, make subnets if there are sufficient availability zones.
+
+```hcl
+resource "aws_subnet" "private" {
+  count             = length(data.aws_availability_zones.default.names)
+  availability_zone = data.aws_availability_zones.default.names[count.index]
+  ...
   lifecycle {
     precondition {
-      condition     = length(var.vault_name) >= 3 && length(var.vault_name) <= 5 && var.vault_name != "default"
-      error_message = "Please use a minimum of 3 and a maximum of 5 characters. \"default\" is reserved."
+      condition     = length(data.aws_availability_zones.default.names) < 3
+      error_message = "There are less than 3 availability zones, need 3 or more."
     }
   }
-...
-
+}
 ```
 
 ----
@@ -88,7 +101,40 @@ data "aws_internet_gateway" "default" {
 }
 ```
 ---
-
 # Terraform 1.3.0 (2022)
 
 ---
+
+# Optional attributes
+
+In variables that are objects, the attributes can now be marked as optional.
+
+```hcl
+variable "some_variable" {
+  type = object({
+    name = string
+    type = optional(string)
+    size = optional(number, 23)
+  })
+  default {
+    name = "Robert"
+  }
+}
+```
+
+----
+
+```hcl
+output "here" {
+  value = var.some_variable
+}
+```
+
+Renders to:
+```
+some_variable = {
+  name = "Robert"
+  type = null
+  size = 23
+}
+```
