@@ -45,7 +45,7 @@ variable "cluster_name" {
 
 # Precondition
 
-Check if a resource meets the requirements to be usable.
+Check if a resource meets the requirements.
 
 Can be used in these objects:
 
@@ -115,9 +115,9 @@ data "aws_internet_gateway" "default" {
 
 ---
 
-# Optional attributes
+# Optionals
 
-Variables that are objects, attributes can be marked optional.
+Object variables: attributes can be marked optional.
 
 ```hcl
 variable "some_variable" {
