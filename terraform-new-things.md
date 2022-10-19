@@ -14,6 +14,8 @@ New features in Terraform.
 
 # Terraform 0.13 (2020)
 
+- `validation`
+
 ----
 
 # Validation
@@ -40,6 +42,9 @@ variable "cluster_name" {
 ---
 
 # Terraform 1.2.0 (2022)
+
+- `precondition`
+- `postcondition`
 
 ----
 
@@ -82,7 +87,7 @@ resource "aws_subnet" "private" {
 }
 ```
 
----
+----
 
 # Postcondition
 
@@ -113,7 +118,9 @@ data "aws_internet_gateway" "default" {
 ---
 # Terraform 1.3.0 (2022)
 
----
+- `optional`
+
+----
 
 # Optionals
 
