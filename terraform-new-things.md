@@ -135,14 +135,14 @@ variable "some_variable" {
 ----
 
 ```hcl
-output "here" {
+output "some_output" {
   value = var.some_variable
 }
 ```
 
 Renders to:
 ```
-some_variable = {
+some_output = {
   name = "Robert"
   type = null
   size = 23
