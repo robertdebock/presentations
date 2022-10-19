@@ -20,7 +20,9 @@ New features in Terraform.
 
 Verify if an input variable meets expectations.
 
-Can be used in a `variable` object.
+Can be used in this object:
+
+- `variable`
 
 ----
 
@@ -43,13 +45,17 @@ variable "cluster_name" {
 
 # Precondition
 
-To check if a resource meets the requirements to be usable.
+Check if a resource meets the requirements to be usable.
 
-Can be used in a `resource`, `data` and `output` object.
+Can be used in these objects:
+
+- `resource`
+- `data`
+- `output`
 
 ----
 
-First, read the availability zones that can be deployed to.
+Read the availability zones that can be deployed to.
 
 ```hcl
 # Read the availability zones.
@@ -60,7 +66,7 @@ data "aws_availability_zones" "default" {
 
 ----
 
-Next, make subnets if there are sufficient availability zones.
+Make subnets if there are sufficient AZs.
 
 ```hcl
 resource "aws_subnet" "private" {
@@ -80,9 +86,13 @@ resource "aws_subnet" "private" {
 
 # Postcondition
 
-To check if an existing resource meets the requirements.
+Check if an existing resource meets the requirements.
 
-Can be used in a `resource`, `data` and `output` object.
+Can be used in these objects:
+
+- `resource`
+- `data`
+- `output`
 
 ----
 
@@ -107,7 +117,7 @@ data "aws_internet_gateway" "default" {
 
 # Optional attributes
 
-In variables that are objects, the attributes can now be marked as optional.
+Variables that are objects, attributes can be marked optional.
 
 ```hcl
 variable "some_variable" {
