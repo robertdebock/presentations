@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Terraform new things</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+# Terraform new things
+</script></section><section  data-markdown><script type="text/template">
+# What
+
+New features in Terraform.
+</script></section><section ><section data-markdown><script type="text/template">
+# Terraform 0.13 (2020)
+</script></section><section data-markdown><script type="text/template">
+# Validation
+
+Verify if an input variable meets expectations.
+
+Can be used in a `variable` object.
+</script></section><section data-markdown><script type="text/template">
+```hcl
+variable "vault_name" {
+  description = "The name of the vault cluster."
+  type        = string
+  default     = "unset"
+  validation {
+    condition     = length(var.vault_name) >= 3 && length(var.vault_name) <= 5 && var.vault_name != "default"
+    error_message = "Please use a minimum of 3 and a maximum of 5 characters. \"default\" is reserved."
+  }
+}
+```</script></section></section><section ><section data-markdown><script type="text/template">
+# Terraform 1.2.0 (2022)
+</script></section><section data-markdown><script type="text/template">
+# Precondition
+
+To check if a resource meets the requirements to be usable.
+
+(Pretty close to validation)
+
+Can be used in a `resource`, `data` and `output` object.
+</script></section><section data-markdown><script type="text/template">
+```hcl
+...
+  lifecycle {
+    precondition {
+      condition     = length(var.vault_name) >= 3 && length(var.vault_name) <= 5 && var.vault_name != "default"
+      error_message = "Please use a minimum of 3 and a maximum of 5 characters. \"default\" is reserved."
+    }
+  }
+...
+
+```
+</script></section><section data-markdown><script type="text/template">
+# Postcondition
+
+To check if an existing resource meets the requirements.
+
+Can be used in a `resource`, `data` and `output` object.
+</script></section><section data-markdown><script type="text/template">
+```hcl
+data "aws_internet_gateway" "default" {
+  filter {
+    name   = "attachment.vpc-id"
+    values = [var.vpc_id]
+  }
+  lifecycle {
+    postcondition {
+      condition     = length(self) != 1
+      error_message = "No Internet Gateway was found in the VPC."
+    }
+  }
+}
+```</script></section></section><section  data-markdown><script type="text/template">
+# Terraform 1.3.0 (2022)
+</script></section><section  data-markdown><script type="text/template"></script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
