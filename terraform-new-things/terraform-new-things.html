@@ -29,7 +29,9 @@ New features in Terraform.
 
 Verify if an input variable meets expectations.
 
-Can be used in a `variable` object.
+Can be used in this object:
+
+- `variable`
 </script></section><section data-markdown><script type="text/template">
 ```hcl
 variable "cluster_name" {
@@ -46,11 +48,15 @@ variable "cluster_name" {
 </script></section><section data-markdown><script type="text/template">
 # Precondition
 
-To check if a resource meets the requirements to be usable.
+Check if a resource meets the requirements to be usable.
 
-Can be used in a `resource`, `data` and `output` object.
+Can be used in these objects:
+
+- `resource`
+- `data`
+- `output`
 </script></section><section data-markdown><script type="text/template">
-First, read the availability zones that can be deployed to.
+Read the availability zones that can be deployed to.
 
 ```hcl
 # Read the availability zones.
@@ -59,7 +65,7 @@ data "aws_availability_zones" "default" {
 }
 ```
 </script></section><section data-markdown><script type="text/template">
-Next, make subnets if there are sufficient availability zones.
+Make subnets if there are sufficient AZs.
 
 ```hcl
 resource "aws_subnet" "private" {
@@ -77,9 +83,13 @@ resource "aws_subnet" "private" {
 </script></section></section><section ><section data-markdown><script type="text/template">
 # Postcondition
 
-To check if an existing resource meets the requirements.
+Check if an existing resource meets the requirements.
 
-Can be used in a `resource`, `data` and `output` object.
+Can be used in these objects:
+
+- `resource`
+- `data`
+- `output`
 </script></section><section data-markdown><script type="text/template">
 ```hcl
 data "aws_internet_gateway" "default" {
@@ -98,7 +108,7 @@ data "aws_internet_gateway" "default" {
 </script></section><section ><section data-markdown><script type="text/template">
 # Optional attributes
 
-In variables that are objects, the attributes can now be marked as optional.
+Variables that are objects, attributes can be marked optional.
 
 ```hcl
 variable "some_variable" {
