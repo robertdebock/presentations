@@ -111,6 +111,11 @@ Sometimes you want to tell a story in images. In movies/film this technique is u
 
 ----
 
+## Example
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nKD30jCDBzI?start=17" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+----
 ## Long shot
 
 <img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/long-shot.png"/>
