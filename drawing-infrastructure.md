@@ -67,8 +67,6 @@ Here are a few shapes that you can use.
 
 ## Instance
 
-
-
 <img hight="60%" width="60%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/single.png"/>
 
 ----
@@ -80,7 +78,6 @@ Here are a few shapes that you can use.
 ## Banner
 
 <img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/banner.png"/>
-
 
 ----
 
@@ -99,6 +96,36 @@ Here are a few shapes that you can use.
 ## Chronologic
 
 <img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/order.png"/>
+
+---
+
+## Story telling
+
+Sometimes you want to tell a story in images. In movies/film this technique is used:
+
+- Long/wide shot - A wide overview.
+- Medium shot - More specific, showing a subject.
+- Closeup/narrow shot - Details on the subject.
+
+[Source](https://www.atomiclearning.com/video-storytelling-guide/shot-basics)
+
+----
+
+## Long shot
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/long-shot.png"/>
+
+----
+
+## Medium shot
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/medium-shot.png"/>
+
+----
+
+## Closeup shot
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/closeup-shot.png"/>
 
 ---
 
