@@ -58,7 +58,7 @@ data "aws_availability_zones" "default" {
 }
 ```
 
----
+----
 
 Next, make subnets if there are sufficient availability zones.
 
@@ -76,7 +76,7 @@ resource "aws_subnet" "private" {
 }
 ```
 
-----
+---
 
 # Postcondition
 
