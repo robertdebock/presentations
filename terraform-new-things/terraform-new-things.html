@@ -58,7 +58,7 @@ data "aws_availability_zones" "default" {
   state = "available"
 }
 ```
-</script></section></section><section ><section data-markdown><script type="text/template">
+</script></section><section data-markdown><script type="text/template">
 Next, make subnets if there are sufficient availability zones.
 
 ```hcl
@@ -74,7 +74,7 @@ resource "aws_subnet" "private" {
   }
 }
 ```
-</script></section><section data-markdown><script type="text/template">
+</script></section></section><section ><section data-markdown><script type="text/template">
 # Postcondition
 
 To check if an existing resource meets the requirements.
