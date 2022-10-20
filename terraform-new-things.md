@@ -39,6 +39,13 @@ variable "cluster_name" {
   }
 }
 ```
+
+----
+
+# Limitations
+
+- The `condition` can only use the variable described.
+
 ---
 
 # Terraform 1.2.0 (2022)
