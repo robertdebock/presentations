@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Drawing infrastructure</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+## Drawing infrastructure
+
+Follow along: http://robertdebock.nl/
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/drawing-infrastructure/"/>
+</script></section><section  data-markdown><script type="text/template">
+## A typical drawing
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/drawing.gif"/>
+</script></section><section  data-markdown><script type="text/template">
+## Why?
+
+- Easy to explain to sales-people.
+- Good input for refactoring.
+- Drawing is easy and fun!
+- Different perspective.
+</script></section><section ><section data-markdown><script type="text/template">
+## How?
+
+| Component      | Material            |
+|----------------|---------------------|
+| Background     | Paper or whiteboard |
+| Components     | Post-IT &copy;      |
+| Lines and text | Marker              |
+| Shadow         | Grey marker         |
+</script></section><section data-markdown><script type="text/template">
+There is a philosofy for these choises:
+
+- Paper or whiteboard: easy to replace or wipe.
+- Post-IT &copy;: easy to move or replace.
+- Marker: Thick lines allow little detail.
+
+In general; Make drawing light-weight.
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Shapes
+
+Here are a few shapes that you can use.
+</script></section><section data-markdown><script type="text/template">
+## Person(s)
+
+<img hight="50%" width="50%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/people.png"/>
+</script></section><section data-markdown><script type="text/template">
+## Website
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/website.png"/>
+</script></section><section data-markdown><script type="text/template">
+## Document
+
+<img hight="50%" width="50%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/document.png"/>
+</script></section><section data-markdown><script type="text/template">
+## Instance
+
+<img hight="60%" width="60%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/single.png"/>
+</script></section><section data-markdown><script type="text/template">
+## Instances
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/redundant.png"/>
+
+## Banner
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/banner.png"/>
+</script></section><section data-markdown><script type="text/template">
+## Opproval stamp
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/okay.png"/>
+</script></section></section><section  data-markdown><script type="text/template">
+## Fancy banner
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/fancy.png"/>
+</script></section><section  data-markdown><script type="text/template">
+## Chronologic
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/order.png"/>
+</script></section><section ><section data-markdown><script type="text/template">
+## Story telling
+
+Sometimes you want to tell a story in images. In movies/film this technique is used:
+
+- Long/wide shot - A wide overview.
+- Medium shot - More specific, showing a subject.
+- Closeup/narrow shot - Details on the subject.
+
+[Source](https://www.atomiclearning.com/video-storytelling-guide/shot-basics)
+</script></section><section data-markdown><script type="text/template">
+## Example
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nKD30jCDBzI?start=17" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</script></section><section data-markdown><script type="text/template">## Long shot
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/long-shot.png"/>
+</script></section><section data-markdown><script type="text/template">
+## Medium shot
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/medium-shot.png"/>
+</script></section><section data-markdown><script type="text/template">
+## Closeup shot
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/closeup-shot.png"/>
+</script></section></section><section  data-markdown><script type="text/template">
+## Assignment
+
+Pick one or two:
+
+- Draw how you got here.
+- Draw your deparment in the company.
+- Draw how your computer accesses "gitlab.com"
+</script></section><section  data-markdown><script type="text/template">
+## Hints
+
+1. Keep it simple.
+2. Drawing multiple.
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

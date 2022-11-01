@@ -41,7 +41,7 @@ variable "cluster_name" {
   type        = string
   default     = "unset"
   validation {
-    condition     = var.vault_name != "default"
+    condition     = var.cluster_name != "default"
     error_message = "The name \"default\" is reserved, please use another name."
   }
 }
@@ -49,7 +49,7 @@ variable "cluster_name" {
 </script></section><section data-markdown><script type="text/template">
 # Limitations
 
-- The `condition` can only use the variable described.
+- The `condition` can only test the variable described.
 </script></section></section><section ><section data-markdown><script type="text/template">
 # Terraform 1.2.0 (2022)
 
