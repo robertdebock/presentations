@@ -197,3 +197,11 @@ some_output = {
   size = 23
 }
 ```
+
+---
+
+# Conclusion
+
+- The Terraform framework is quite stable, new features are 'nice to haves'.
+- Checking the [changelog](https://github.com/hashicorp/terraform/blob/main/CHANGELOG.md) can pay off.
+- Experiments should be considered experimental.
