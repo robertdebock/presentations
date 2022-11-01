@@ -34,7 +34,7 @@ variable "cluster_name" {
   type        = string
   default     = "unset"
   validation {
-    condition     = var.vault_name != "default"
+    condition     = var.cluster_name != "default"
     error_message = "The name \"default\" is reserved, please use another name."
   }
 }
@@ -44,7 +44,7 @@ variable "cluster_name" {
 
 # Limitations
 
-- The `condition` can only use the variable described.
+- The `condition` can only test the variable described.
 
 ---
 
