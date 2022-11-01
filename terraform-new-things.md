@@ -48,6 +48,41 @@ variable "cluster_name" {
 
 ---
 
+# Terraform 0.15 (2021)
+
+- Module testing
+
+----
+
+# Module testing
+
+Still an experiment.
+
+You can add test to your module, to see if the module deployed what it should.
+
+----
+
+# Use cases
+
+- For a webserver: Is port 80 open?
+- For a cluster: Does the loadbalancer return content.
+
+----
+
+# Examples
+
+Let's go [here](https://github.com/robertdebock/terraform-testing).
+
+----
+
+# Limitations
+
+- It's an [experiment](https://developer.hashicorp.com/terraform/language/modules/testing-experiment).
+- Can't pass variables to the module.
+- Can't get it to work stably.
+
+---
+
 # Terraform 1.2.0 (2022)
 
 - `precondition`
