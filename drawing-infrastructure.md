@@ -11,6 +11,12 @@ Follow along: http://robertdebock.nl/
 
 ---
 
+## A typical drawing
+
+<img hight="50%" width="50%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/drawing.gif"/>
+
+---
+
 ## Why?
 
 - Easy to explain to sales-people.
