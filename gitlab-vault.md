@@ -34,4 +34,17 @@ Vault has two engines that can be used here:
 
 ## Demo prerequisites 
 
-- A [Vault] instance.
+- A [Vault](https://registry.terraform.io/modules/robertdebock/vault/aws/latest) instance.
+
+In this case I'll spin it up [here](https://github.com/robertdebock/terraform-gitlab-vault/tree/master/vault).
+
+---
+
+## Demo
+
+Set variables described in [README](https://github.com/robertdebock/terraform-gitlab-vault/blob/master/README.md#setup).
+
+`terraform apply` to:
+
+- Configure Vault
+- Create a GitLab repository
