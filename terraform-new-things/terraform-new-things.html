@@ -51,6 +51,31 @@ variable "cluster_name" {
 
 - The `condition` can only test the variable described.
 </script></section></section><section ><section data-markdown><script type="text/template">
+# Terraform 0.15 (2021)
+
+- Module testing
+</script></section><section data-markdown><script type="text/template">
+# Module testing
+
+Still an experiment.
+
+You can add test to your module, to see if the module deployed what it should.
+</script></section><section data-markdown><script type="text/template">
+# Use cases
+
+- For a webserver: Is port 80 open?
+- For a cluster: Does the loadbalancer return content.
+</script></section><section data-markdown><script type="text/template">
+# Examples
+
+Let's go [here](https://github.com/robertdebock/terraform-testing).
+</script></section><section data-markdown><script type="text/template">
+# Limitations
+
+- It's an [experiment](https://developer.hashicorp.com/terraform/language/modules/testing-experiment).
+- Can't pass variables to the module.
+- Can't get it to work stably.
+</script></section></section><section ><section data-markdown><script type="text/template">
 # Terraform 1.2.0 (2022)
 
 - `precondition`

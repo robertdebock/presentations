@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <title>Drawing infrastructure</title>
+    <title>GitLab - Vault</title>
     <link rel="shortcut icon" href="./favicon.ico" />
     <link rel="stylesheet" href="./dist/reset.css" />
     <link rel="stylesheet" href="./dist/reveal.css" />
@@ -17,117 +17,30 @@
     <div class="reveal">
       <div class="slides"><section  data-markdown><script type="text/template">
 
-## Drawing infrastructure
+# GitLab - Vault
 
 Follow along: http://robertdebock.nl/
 
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/drawing-infrastructure/"/>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/gitlab-vault/"/>
 </script></section><section  data-markdown><script type="text/template">
-## A typical drawing
+## What?
 
-<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/drawing.gif"/>
+GitLab pipelines can use Vault to get secrets, like an AWS account.
 </script></section><section  data-markdown><script type="text/template">
 ## Why?
 
-- Easy to explain to sales-people.
-- Good input for refactoring.
-- Drawing is easy and fun!
-- Different perspective.
-</script></section><section ><section data-markdown><script type="text/template">
+As a developer you don't need AWS credentials.
+</script></section><section  data-markdown><script type="text/template">
 ## How?
 
-| Component      | Material            |
-|----------------|---------------------|
-| Background     | Paper or whiteboard |
-| Components     | Post-IT &copy;      |
-| Lines and text | Marker              |
-| Shadow         | Grey marker         |
-</script></section><section data-markdown><script type="text/template">
-There is a philosofy for these choises:
+Vault has two engines that can be used here:
 
-- Paper or whiteboard: easy to replace or wipe.
-- Post-IT &copy;: easy to move or replace.
-- Marker: Thick lines allow little detail.
-
-In general; Make drawing light-weight.
-</script></section></section><section ><section data-markdown><script type="text/template">
-## Shapes
-
-Here are a few shapes that you can use.
-</script></section><section data-markdown><script type="text/template">
-## Person(s)
-
-<img hight="50%" width="50%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/people.png"/>
-</script></section><section data-markdown><script type="text/template">
-## Website
-
-<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/website.png"/>
-</script></section><section data-markdown><script type="text/template">
-## Document
-
-<img hight="50%" width="50%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/document.png"/>
-</script></section><section data-markdown><script type="text/template">
-## Instance
-
-<img hight="60%" width="60%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/single.png"/>
-</script></section><section data-markdown><script type="text/template">
-## Instances
-
-<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/redundant.png"/>
-
-## Banner
-
-<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/banner.png"/>
-</script></section><section data-markdown><script type="text/template">
-## Opproval stamp
-
-<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/okay.png"/>
-</script></section></section><section  data-markdown><script type="text/template">
-## Fancy banner
-
-<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/fancy.png"/>
+- [JWT](https://developer.hashicorp.com/vault/docs/auth/jwt) authentication engine.
+- [AWS](https://developer.hashicorp.com/vault/docs/secrets/aws) secrets engine.
 </script></section><section  data-markdown><script type="text/template">
-## Chronologic
+## Demo prerequisites 
 
-<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/order.png"/>
-</script></section><section ><section data-markdown><script type="text/template">
-## Story telling
-
-Sometimes you want to tell a story in images. In movies/film this technique is used:
-
-- Long/wide shot - A wide overview.
-- Medium shot - More specific, showing a subject.
-- Closeup/narrow shot - Details on the subject.
-
-[Source](https://www.atomiclearning.com/video-storytelling-guide/shot-basics)
-</script></section><section data-markdown><script type="text/template">
-## Example
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nKD30jCDBzI?start=17" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</script></section><section data-markdown><script type="text/template">## Long shot
-
-<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/long-shot.png"/>
-</script></section><section data-markdown><script type="text/template">
-## Medium shot
-
-<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/medium-shot.png"/>
-</script></section><section data-markdown><script type="text/template">
-## Closeup shot
-
-<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/closeup-shot.png"/>
-</script></section></section><section  data-markdown><script type="text/template">
-## Assignment
-
-Pick one or two:
-
-- Draw how you got here.
-- Draw your deparment in the company.
-- Draw how your computer accesses "gitlab.com"
-</script></section><section  data-markdown><script type="text/template">
-## Hints
-
-1. Keep it simple.
-2. Drawing multiple.
+- A [Vault] instance.
 </script></section></div>
     </div>
 
