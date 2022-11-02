@@ -54,8 +54,8 @@ Benefit over shell-scripts:
 
 Tools that I use.
 
-- [ansible-generator]()
-- [gitlab-settings]()
+- [ansible-generator](https://github.com/robertdebock/ansible-generator/blob/master/generate.yml)
+- [gitlab-settings](https://github.com/robertdebock/ansible-generator/blob/master/generate.yml)
 
 ---
 
@@ -67,11 +67,10 @@ Tools that I use.
 - Ansible instance configuration
 - Ansible for orchestration
 
-
 ----
 
-- [Ansible drops an inventory]
-- [Ansible calls Terraform]
+- Ansible drops an inventory
+- [Ansible calls Terraform](https://github.com/robertdebock/ansible-playbook-cloudtop/blob/master/ansible/playbook.yml#L14)
 
 ---
 
