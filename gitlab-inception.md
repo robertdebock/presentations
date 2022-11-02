@@ -80,18 +80,17 @@ resource "aws_instance" "runner" {
 # A-records
 
 ```hcl
-data "cloudflare_zones" "default" {
-  filter {
-    name = "meinit.nl"
-  }
+data "aws_route53_zone" "default" {
+  name         = "aws.adfinis.cloud"
+  private_zone = false
 }
 
-resource "cloudflare_record" "gitlab" {
-  zone_id = data.cloudflare_zones.default.zones[0].id
-  name    = "gitlab"
-  value   = aws_instance.gitlab.public_ip
+resource "aws_route53_record" "gitlab" {
+  zone_id = data.aws_route53_zone.default.id
+  name    = "gitlab.aws.adfinis.cloud"
   type    = "A"
   ttl     = 300
+  records = [aws_instance.gitlab.public_ip]
 }
 ```
 
@@ -101,7 +100,7 @@ resource "cloudflare_record" "gitlab" {
 
 ```hcl
 resource "local_file" "gitlab" {
-  content              = templatefile("templates/gitlab.tpl", { hosts = [cloudflare_record.gitlab.hostname] })
+  content              = templatefile("templates/gitlab.tpl", { hosts = [aws_route53_record.gitlab.fqdn] })
   filename             = "${path.module}/../ansible/inventory/gitlab"
   directory_permission = "0755"
   file_permission      = "0644"
@@ -130,7 +129,7 @@ https://gitlab.com/robertdebock/gitlab-demo/-/pipelines
 
 ```yaml
 - name: provision gitlab
-  hosts: gitlab.meinit.nl
+  hosts: gitlab
   become: yes
   gather_facts: no
 
@@ -166,7 +165,7 @@ post_tasks:
 
 ```yaml
 - name: provision runner
-  hosts: runner-*.meinit.nl
+  hosts: runners
   become: yes
   gather_facts: no
 
