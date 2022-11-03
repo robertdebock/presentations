@@ -69,7 +69,7 @@ Tools that I use.
 
 ----
 
-- Ansible drops an inventory
+- [Ansible drops an inventory](https://gitlab.com/robertdebock/gitlab-demo/-/blob/master/terraform/main.tf#L155)
 - [Ansible calls Terraform](https://github.com/robertdebock/ansible-playbook-cloudtop/blob/master/ansible/playbook.yml#L14)
 
 ---
