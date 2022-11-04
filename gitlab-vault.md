@@ -3,6 +3,9 @@ title: GitLab - Vault
 
 ---
 
+# About me
+
+---
 # GitLab - Vault
 
 Follow along: http://robertdebock.nl/
@@ -13,7 +16,9 @@ Follow along: http://robertdebock.nl/
 
 ## What?
 
-GitLab pipelines can use Vault to get secrets, like an AWS account.
+GitLab pipelines uses Vault to authenticate to AWS
+
+<img height="70%" width="70%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/gitlab-state.png"/>
 
 ---
 
