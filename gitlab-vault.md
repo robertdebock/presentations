@@ -9,6 +9,8 @@ Deploy to AWS without knowing AWS credentials
 
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/gitlab-vault/"/>
 
+---
+
 # About me
 
 - Father of [3 children](https://raw.githubusercontent.com/robertdebock/presentations/master/images/3.jpg).
