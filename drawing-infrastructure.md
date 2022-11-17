@@ -89,9 +89,9 @@ Here are a few shapes that you can use.
 
 ----
 
-## Opproval stamp
+## Approval stamp
 
-<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/okay.png"/>
+<img hight="50%" width="50%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/okay.png"/>
 
 ---
 
