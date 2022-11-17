@@ -34,7 +34,7 @@ Deploy to AWS without knowing AWS credentials
 
 - .ch, .nl & .au
 - Nerd culture, focus on open source solutions.
-- Partners of HashiCorp, GitLab, Red Hat, Suse and others.
+- Partners: HashiCorp, GitLab, Red Hat, Suse, ...
 </script></section><section  data-markdown><script type="text/template">
 # What?
 
@@ -59,13 +59,13 @@ GitLab pipelines using Vault to authenticate to AWS.
 
 - Mostly pseudo code in presentation.
 </script></section></section><section ><section data-markdown><script type="text/template">
-# Create a Vault instance
+## Create a Vault instance
 
 - A [Vault](https://registry.terraform.io/modules/robertdebock/vault/aws/latest) instance.
 
 In this case I'll spin it up [here](https://github.com/robertdebock/terraform-gitlab-vault/tree/master/vault).
 </script></section><section data-markdown><script type="text/template">
-# Vault instance details.
+## Vault instance details.
 
 - A highly available cluster (3-5)
 - Automatically unsealed
@@ -79,7 +79,7 @@ Vault has two engines that can be used here:
 - [JWT](https://developer.hashicorp.com/vault/docs/auth/jwt) authentication engine.
 - [AWS](https://developer.hashicorp.com/vault/docs/secrets/aws) secrets engine.
 </script></section><section data-markdown><script type="text/template">
-# Terraform to configure Vault
+## Terraform configures Vault
 
 ```hcl
 resource "vault_aws_secret_backend" "default" {
