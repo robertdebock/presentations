@@ -32,7 +32,7 @@ Deploy to AWS without knowing AWS credentials
 </script></section><section  data-markdown><script type="text/template">
 # About Adfinis
 
-- .ch: +- 85 people, .nl: +- 6 people, .au: +- 4 people
+- .ch, .nl & .au
 - Nerd culture, focus on open source solutions.
 - Partners of HashiCorp, GitLab, Red Hat, Suse and others.
 </script></section><section  data-markdown><script type="text/template">
@@ -107,7 +107,7 @@ resource "gitlab_project" "default" {
   depends_on             = [vault_jwt_auth_backend.default]
 }
 ```
-</script></section><section  data-markdown><script type="text/template"># Add Terraform files
+</script></section><section  data-markdown><script type="text/template"># Add files
 
 In this case using Terraform. Normally for developers.
 
@@ -123,7 +123,7 @@ resource "gitlab_repository_file" "maintf" {
   commit_message = "Add main.tf."
 }
 ```
-</script></section><section  data-markdown><script type="text/template"># Have GitLab deploy
+</script></section><section  data-markdown><script type="text/template"># GitLab deploys
 
 GitLab pipeline is authenticated to deploy.
 </script></section><section  data-markdown><script type="text/template">
