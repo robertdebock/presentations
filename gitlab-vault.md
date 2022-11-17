@@ -22,7 +22,7 @@ Deploy to AWS without knowing AWS credentials
 
 # About Adfinis
 
-- .ch: +- 85 people, .nl: +- 6 people, .au: +- 4 people
+- .ch, .nl & .au
 - Nerd culture, focus on open source solutions.
 - Partners of HashiCorp, GitLab, Red Hat, Suse and others.
 
@@ -117,7 +117,7 @@ resource "gitlab_project" "default" {
 ```
 
 ---
-# Add Terraform files
+# Add files
 
 In this case using Terraform. Normally for developers.
 
@@ -135,7 +135,7 @@ resource "gitlab_repository_file" "maintf" {
 ```
 
 ---
-# Have GitLab deploy
+# GitLab deploys
 
 GitLab pipeline is authenticated to deploy.
 
