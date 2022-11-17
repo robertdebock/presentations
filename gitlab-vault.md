@@ -20,6 +20,14 @@ Deploy to AWS without knowing AWS credentials
 
 ---
 
+# About Adfinis
+
+- .ch: +- 85 people, .nl: +- 6 people, .au: +- 4 people
+- Nerd culture, focus on open source solutions.
+- Partners of HashiCorp, GitLab, Red Hat, Suse and others.
+
+---
+
 # What?
 
 GitLab pipelines using Vault to authenticate to AWS.
