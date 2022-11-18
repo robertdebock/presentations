@@ -30,6 +30,20 @@ Follow along: http://robertdebock.nl/
 
 ---
 
+## Use-cases
+
+- Study / learn
+- Collaboration
+- Clients
+
+---
+
+## Example
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/shell-stages.png"/>
+
+---
+
 ## How?
 
 | Component      | Material            |
@@ -41,7 +55,7 @@ Follow along: http://robertdebock.nl/
 
 ----
 
-There is a philosofy for these choises:
+There is a philosofy for these choices:
 
 - Paper or whiteboard: easy to replace or wipe.
 - Post-IT &copy;: easy to move or replace.
