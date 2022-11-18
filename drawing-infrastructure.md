@@ -11,6 +11,10 @@ Follow along: http://robertdebock.nl/
 
 ---
 
+<img hight="100%" width="100%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/richard-intro.png"/>
+
+---
+
 ## A typical drawing
 
 <img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/drawing.gif"/>
