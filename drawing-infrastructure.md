@@ -69,43 +69,43 @@ In general; Make drawing light-weight.
 
 Here are a few shapes that you can use.
 
-----
+---
 
 ## Person(s)
 
 <img hight="50%" width="50%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/people.png"/>
 
-----
+---
 
 ## Website
 
 <img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/website.png"/>
 
-----
+---
 
 ## Document
 
 <img hight="50%" width="50%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/document.png"/>
 
-----
+---
 
 ## Instance
 
 <img hight="60%" width="60%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/single.png"/>
 
-----
+---
 
 ## Instances
 
 <img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/redundant.png"/>
 
-----
+---
 
 ## Banner
 
 <img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/banner.png"/>
 
-----
+---
 
 ## Approval stamp
 
