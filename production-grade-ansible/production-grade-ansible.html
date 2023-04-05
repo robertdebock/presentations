@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Production grade Ansible</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+## Production grade Ansible
+
+- Follow along: [robertdebock.nl](https://robertdebock.nl/)
+
+![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/production-grade-ansible/" "QR Code")
+</script></section><section  data-markdown><script type="text/template">
+## About me
+
+- Robert de Bock
+- [robertdebock.nl](https://robertdebock.nl/)
+- Github: [robertdebock](https://github.com/robertdebock)
+</script></section><section ><section data-markdown><script type="text/template">
+## Production grade?
+
+What makes great Ansible code?
+</script></section><section data-markdown><script type="text/template">
+## Great Ansible code
+
+- Easy to read. (`default`, `tasks` & `handlers`.)
+- Documented. (`README.md`)
+- Input checked. (`meta/argument_specs.yml` or `tasks/assert.yml`)
+- Tested. (`molecule`)
+- Verified. (`molecule/*/verify.yml`)
+- Cleaned-up. (No empty directories or files)
+
+Let's go over each topic in more detail.
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Easy to read
+</script></section><section data-markdown><script type="text/template">
+[![CodeAethetic](https://img.youtube.com/vi/-J3wNP6u5YU/0.jpg)](https://www.youtube.com/watch?v=-J3wNP6u5YU)
+</script></section><section data-markdown><script type="text/template">
+- Use understandable (variable) names.
+
+```yaml
+# Difficult to relate to:
+i_n: abcde
+
+# Easier to relate to:
+instance_name: abcde
+```
+</script></section><section data-markdown><script type="text/template">
+- Spread code vertically.
+
+```yaml
+- name: Horizontal
+  ansible.builtin.debug: msg="Hello world!"
+
+- name: Vertical
+  ansible.builtin.debug:
+    msg: "Hello world!"
+```
+</script></section></section><section ><section data-markdown><script type="text/template">
+- Keep `defaults`, `tasks` & `handlers` easy to read.
+- Hide complexity in `vars`
+
+```yaml
+# A variable, normally in `defaults/main.yml`.
+country_code: nl
+
+# A map, normally in `vars/main.yml`.
+_country_code_to_country_map:
+  nl: Netherlands
+  ch: Switzerland
+
+# A lookup, normally in `vars/main.yml`
+country: "{{ _country_code_to_country_map[country_code] }}
+```
+</script></section><section data-markdown><script type="text/template">
+```text
+             +---------------------------------+
+             |                                 |
+             | Shitty code with a good facade  |
+             |        is better than           |
+             | good code with a shitty facade. |
+             |                                 |
+             +---------------------------------+
+```
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Documented
+</script></section><section data-markdown><script type="text/template">
+- Have a [generated](https://github.com/robertdebock/ansible-generator) README.md.
+- Use [properly](https://ansible-lint.readthedocs.io/rules/name/) named tasks.
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Input checked
+</script></section><section data-markdown><script type="text/template">
+If your code uses variables, you may want to test the input.
+</script></section><section data-markdown><script type="text/template">
+## tasks/main.yml
+
+```yaml
+- name: Configure TCP port
+  ansible.builtin.lineinfile:
+    path: /some/config.txt
+    line: "port {{ tcp_port }}
+```
+</script></section><section data-markdown><script type="text/template">
+## tasks/assert.yml
+
+```yaml
+- name: Check if tcp_port variable is set correctly
+  assert:
+    that:
+      - tcp_port is defined
+      - tcp_port is number
+      - tcp_port > 0
+      - tcp_port < 65536
+```
+</script></section><section data-markdown><script type="text/template">
+## meta/argument_specs.yml
+
+```yaml</script></section></section><section ><section data-markdown><script type="text/template">
+argument_specs:
+  main:
+    short_description: A short description.
+    description: A long description.
+    author: Robert de Bock
+    options:
+      tcp_port:
+        type: "int"
+        default: 443
+        description: The port to bind on.
+```
+</script></section><section data-markdown><script type="text/template">
+## Argument specs
+
+- An [example](https://github.com/robertdebock/ansible-role-ntp/blob/master/meta/argument_specs.yml)
+- More [documentation](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_reuse_roles.html#role-argument-validation).
+
+Fast, though not very complete.
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Tested
+
+Prove that your code is working, using [molecule](https://molecule.readthedocs.io/en/latest/).
+</script></section><section data-markdown><script type="text/template">
+[Describe the infrastructure](https://github.com/robertdebock/ansible-role-ntp/blob/master/molecule/default/converge.yml).
+</script></section><section data-markdown><script type="text/template">
+[Describe what should be done to the target(s)](https://github.com/robertdebock/ansible-role-ntp/blob/master/molecule/default/prepare.yml).
+</script></section><section data-markdown><script type="text/template">
+[Describe how to run the role](https://github.com/robertdebock/ansible-role-ntp/blob/master/molecule/default/converge.yml).
+</script></section></section><section  data-markdown><script type="text/template">
+## Verified
+
+[Describe how to test the target(s)](https://github.com/robertdebock/ansible-role-ntp/blob/master/molecule/default/verify.yml).
+</script></section><section  data-markdown><script type="text/template">
+Let's review the [most popular role on Galaxy](https://github.com/geerlingguy/ansible-role-java).
+</script></section><section  data-markdown><script type="text/template"></script></section><section ><section data-markdown><script type="text/template">
+## Conculsion
+
+```text
++--- default ---+      +--- assert ---+
+|               | ---> |              |
++---------------+      +--------------+
+                              |
+       +----------------------+
+       |
+       V
++--- tasks ---+      +--- verify ---+
+|             | ---> |              |
++-------------+      +--------------+
+```
+
+# Testing
+
+Let's take a role and review how it's setup.
+</script></section><section data-markdown><script type="text/template">
+# Reasons
+
+- Prove that your [code works](https://github.com/robertdebock/ansible-role-vault_configuration/actions).
+- Have [working examples](https://github.com/robertdebock/ansible-role-vault_configuration/blob/master/molecule/default/converge.yml).
+- Helps limit [scope creep](https://github.com/robertdebock/ansible-role-vault_configuration/blob/master/molecule/default/verify.yml)
+
+Quite personal.
+</script></section></section><section  data-markdown><script type="text/template">
+## Best practices
+
+1. Scope roles. Smaller is almost always better.
+2. Never use `ignore_errors`.
+3. Use `command`, `shell` and `raw` only when necessary.
+4. Use `ansible.builtin` instead of short module names.
+5. `ansible-lint` is always right.
+6. Use `molecule` to test your code.
+7. Set sane default values for variables.
+8. Use `meta/argument_specs.yml` to validate input.
+9. Use `meta/main.yml` to describe your role.
+10. Use `README.md` to describe your role.
+11. Use `tasks/assert.yml` to validate input.
+</script></section><section ><section data-markdown><script type="text/template">
+## Role scoping
+
+How to scope a role?
+
+- Smaller is better. (*)
+- Describe what the role does first. (`README.md`)
+- Repetetive code calls for splitting a role.
+</script></section><section data-markdown><script type="text/template">
+## Artifical Intelligence
+
+Great tool for writing code faster. Can procduce non-working code.
+</script></section></section><section  data-markdown><script type="text/template">
+Idea; use a background image displaying famous art. Gamify by asking the audience to guess the artist.
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
