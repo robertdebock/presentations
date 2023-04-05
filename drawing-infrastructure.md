@@ -11,6 +11,10 @@ Follow along: http://robertdebock.nl/
 
 ---
 
+<img hight="100%" width="100%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/richard-intro.png"/>
+
+---
+
 ## A typical drawing
 
 <img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/drawing.gif"/>
@@ -26,6 +30,20 @@ Follow along: http://robertdebock.nl/
 
 ---
 
+## Use-cases
+
+- Study / learn
+- Collaboration
+- Clients
+
+---
+
+## Example
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/shell-stages.png"/>
+
+---
+
 ## How?
 
 | Component      | Material            |
@@ -37,7 +55,7 @@ Follow along: http://robertdebock.nl/
 
 ----
 
-There is a philosofy for these choises:
+There is a philosofy for these choices:
 
 - Paper or whiteboard: easy to replace or wipe.
 - Post-IT &copy;: easy to move or replace.
@@ -51,47 +69,47 @@ In general; Make drawing light-weight.
 
 Here are a few shapes that you can use.
 
-----
+---
 
 ## Person(s)
 
 <img hight="50%" width="50%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/people.png"/>
 
-----
+---
 
 ## Website
 
 <img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/website.png"/>
 
-----
+---
 
 ## Document
 
 <img hight="50%" width="50%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/document.png"/>
 
-----
+---
+
+## Cogwheel
+
+<img hight="50%" width="50%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/cogwheel.png"/>
+
+---
 
 ## Instance
 
 <img hight="60%" width="60%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/single.png"/>
 
-----
+---
 
 ## Instances
 
 <img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/redundant.png"/>
 
-----
+---
 
 ## Banner
 
 <img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/banner.png"/>
-
-----
-
-## Approval stamp
-
-<img hight="50%" width="50%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/okay.png"/>
 
 ---
 
@@ -103,7 +121,14 @@ Here are a few shapes that you can use.
 
 ## Chronologic
 
-<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/order.png"/>
+<!-- <img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/order.png"/> -->
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/chronology_2.png"/>
+
+---
+
+## get "inspired"
+
+<img hight="100%" width="100%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/icons.png"/>
 
 ---
 
@@ -117,24 +142,24 @@ Sometimes you want to tell a story in images. In movies/film this technique is u
 
 [Source](https://www.atomiclearning.com/video-storytelling-guide/shot-basics)
 
-----
+---
 
 ## Example
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nKD30jCDBzI?start=17" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-----
+---
 ## Long shot
 
 <img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/long-shot.png"/>
 
-----
+---
 
 ## Medium shot
 
 <img hight="50%" width="50%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/medium-shot.png"/>
 
-----
+---
 
 ## Closeup shot
 
