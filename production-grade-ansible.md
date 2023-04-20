@@ -199,6 +199,96 @@ Let's review the [most popular role on Galaxy](https://github.com/geerlingguy/an
 
 ---
 
+## Different ways
+
+There are quite some methods to accomodate different needs. Let's take distribution differences for the Apache HTTPD package.
+
+| distribution | package |
+| ------------ | ------- |
+| Debian       | apache2 |
+| RedHat       | httpd   |
+
+----
+
+## Solution "when"
+
+```yaml
+- name: Install Apache HTTPD Debian
+  ansible.builtin.package:
+    name: apache2
+  when:
+    - ansible_distribution == "Debian"
+
+- name: Install Apache HTTPD RedHat
+  ansible.builtin.package:
+    name: httpd
+  when:
+    - ansible_distribution == "RedHat"
+```
+
+----
+
+## Solution "include_tasks"
+
+```yaml
+- name: Install Apache HTTPD
+  ansible.builtin.include_tasks:
+    file: install_{{ ansible_distribution | lower }}.yml
+```
+
+```yaml
+# install_debian.yml
+- name: Install Apache HTTPD
+  ansible.builtin.package:
+    name: apache2
+```
+
+```yaml
+# install_redhat.yml
+- name: Install Apache HTTPD
+  ansible.builtin.package:
+    name: httpd
+```
+
+----
+
+## Solution "include_vars"
+
+```yaml
+- name: Install Apache HTTPD
+  ansible.builtin.include_vars:
+    file: "{{ ansible_distribution | lower }}.yml"
+```
+
+```yaml
+# debian.yml
+apache_httpd_package: apache2
+```
+
+```yaml
+# redhat.yml
+apache_httpd_package: httpd
+```
+
+----
+
+## Solution "lookup"
+
+```yaml
+- name: Install Apache HTTPD
+  ansible.builtin.package:
+    name: "{{ apache_package }}"
+```
+
+```yaml
+# vars/main.yml
+_apache_packages:
+  Debian: apache2
+  RedHat: httpd
+
+apache_package: "{{ _apache_packages[ansible_distribution] }}"
+```
+
 ---
 
 ## Conculsion
