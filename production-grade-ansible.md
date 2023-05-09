@@ -19,6 +19,14 @@ title: Production grade Ansible
 
 ---
 
+# Game on!
+
+Guess the title or artist of the image.
+
+![Me](https://live.staticflickr.com/2861/33925744335_2327cf2a37_k.jpg)
+
+---
+
 ## Production grade?
 
 What makes great Ansible code?
@@ -35,6 +43,10 @@ What makes great Ansible code?
 - Cleaned-up. (No empty directories or files)
 
 Let's go over each topic in more detail.
+
+---
+
+~[Mona Lisa - Leonardo Davinci](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/1280px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg)
 
 ---
 
@@ -90,6 +102,10 @@ password_policy:
 
 ---
 
+![Melk meisje - Johannes Vermeer](https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg/1920px-Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg)
+
+---
+
 - Keep `defaults`, `tasks` & `handlers` easy to read.
 - Hide complexity in `vars`
 
@@ -120,6 +136,9 @@ country: "{{ _country_code_to_country_map[country_code] }}
 
 ---
 
+![Piss Christ - Andres Serrano](https://upload.wikimedia.org/wikipedia/en/d/de/Piss_Christ_by_Serrano_Andres_%281987%29.jpg)
+---
+
 ## Documented
 
 ----
@@ -129,12 +148,15 @@ country: "{{ _country_code_to_country_map[country_code] }}
 
 ---
 
+![Caravaggio - Judith beheading Holofernes](https://upload.wikimedia.org/wikipedia/commons/b/b2/Caravaggio_Judith_Beheading_Holofernes.jpg)
+
+---
+
 ## Input checked
 
 ----
 
-If your code uses variables,
-you may want to test the input.
+If your code uses variables, test the input.
 
 ----
 
@@ -153,7 +175,7 @@ you may want to test the input.
 
 ```yaml
 - name: Check if tcp_port variable is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - tcp_port is defined
       - tcp_port is number
@@ -189,6 +211,10 @@ Fast, though not very complete.
 
 ---
 
+![Sally Mann - Listening to Madonna](https://fabian-claude-walter.com/fcw/wp-content/uploads/Sally-Man_-Listening-to-Madonna-by-the-Tadpole-Jar.jpg)
+
+---
+
 ## Tested
 
 Prove that your code is working, using [molecule](https://molecule.readthedocs.io/).
@@ -207,13 +233,25 @@ Prove that your code is working, using [molecule](https://molecule.readthedocs.i
 
 ---
 
+![Gerrit Rietveld - Stoel](https://upload.wikimedia.org/wikipedia/commons/0/00/Rietveld_chair_1.JPG)
+
+---
+
 ## Verified
 
 [Describe how to test the target(s)](https://github.com/robertdebock/ansible-role-ntp/blob/master/molecule/default/verify.yml).
 
 ---
 
+[Jackson Pollock - Convergence](https://www.jackson-pollock.org/images/paintings/convergence.jpg)
+
+---
+
 Let's review the [most popular role on Galaxy](https://github.com/geerlingguy/ansible-role-java).
+
+---
+
+![Rene Margeritte](https://upload.wikimedia.org/wikipedia/en/b/b9/MagrittePipe.jpg)
 
 ---
 
@@ -309,6 +347,10 @@ apache_package: "{{ _apache_packages[ansible_distribution] }}"
 
 ---
 
+![Panorama Mesdag - Hendrik Willem Mesdag](https://upload.wikimedia.org/wikipedia/commons/d/d0/Panorama_mesdag.PNG)
+
+---
+
 ## Conculsion
 
 ```text
@@ -336,6 +378,10 @@ Quite personal.
 
 ---
 
+![Rembrandt van Rijn - Nachtwacht](https://upload.wikimedia.org/wikipedia/commons/3/3a/La_ronda_de_noche%2C_por_Rembrandt_van_Rijn.jpg)
+
+---
+
 ## Best practices (1/2)
 
 1. Scope roles. Smaller is almost always better.
@@ -345,7 +391,7 @@ Quite personal.
 5. `ansible-lint` is always right.
 6. Use `molecule` to test your code.
 
----
+----
 
 ## Best practices (2/2)
 
@@ -369,8 +415,8 @@ How to scope a role?
 
 ## Artifical Intelligence
 
-Great tool for writing code faster. Can procduce non-working code.
+Great tool for writing code faster. Can produce convincing, but non-working code.
 
 ---
 
-Idea; use a background image displaying famous art. Gamify by asking the audience to guess the artist.
+## That's all folks!
