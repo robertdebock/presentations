@@ -7,7 +7,7 @@ title: Production grade Ansible
 
 - Follow along: [robertdebock.nl](https://robertdebock.nl/)
 
-![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/production-grade-ansible/" "QR Code")
+![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/production-grade-ansible/ "QR Code")
 
 ---
 
