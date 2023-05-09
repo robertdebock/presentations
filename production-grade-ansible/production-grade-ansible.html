@@ -38,7 +38,7 @@ What makes great Ansible code?
 - Easy to read. (`default`, `tasks` & `handlers`.)
 - Documented. (`README.md`)
 - Input checked. (`meta/argument_specs.yml` or `tasks/assert.yml`)
-- Tested. (`molecule`)
+- Tested (in CI). (`molecule`)
 - Verified. (`molecule/*/verify.yml`)
 - Cleaned-up. (No empty directories or files)
 
@@ -56,6 +56,23 @@ i_n: abcde
 
 # Easier to relate to:
 instance_name: abcde
+```
+</script></section><section data-markdown><script type="text/template">
+Think about "string", "list" or "dict":
+
+```yaml
+default_shell: /bin/bash
+
+users:
+  - name: robert
+  - name: kees
+    group: kees
+    groups:
+      - docker
+
+password_policy:
+  minimum_length: 8
+  maximum_length: 16
 ```
 </script></section><section data-markdown><script type="text/template">
 - Spread code vertically.
@@ -102,7 +119,8 @@ country: "{{ _country_code_to_country_map[country_code] }}
 </script></section></section><section ><section data-markdown><script type="text/template">
 ## Input checked
 </script></section><section data-markdown><script type="text/template">
-If your code uses variables, you may want to test the input.
+If your code uses variables,
+you may want to test the input.
 </script></section><section data-markdown><script type="text/template">
 ## tasks/main.yml
 
@@ -127,7 +145,7 @@ If your code uses variables, you may want to test the input.
 </script></section><section data-markdown><script type="text/template">
 ## meta/argument_specs.yml
 
-```yaml</script></section></section><section ><section data-markdown><script type="text/template">
+```yaml
 argument_specs:
   main:
     short_description: A short description.
@@ -149,9 +167,9 @@ Fast, though not very complete.
 </script></section></section><section ><section data-markdown><script type="text/template">
 ## Tested
 
-Prove that your code is working, using [molecule](https://molecule.readthedocs.io/en/latest/).
+Prove that your code is working, using [molecule](https://molecule.readthedocs.io/).
 </script></section><section data-markdown><script type="text/template">
-[Describe the infrastructure](https://github.com/robertdebock/ansible-role-ntp/blob/master/molecule/default/converge.yml).
+[Describe the infrastructure](https://github.com/robertdebock/ansible-role-ntp/blob/master/molecule/default/molecule.yml).
 </script></section><section data-markdown><script type="text/template">
 [Describe what should be done to the target(s)](https://github.com/robertdebock/ansible-role-ntp/blob/master/molecule/default/prepare.yml).
 </script></section><section data-markdown><script type="text/template">
@@ -259,10 +277,6 @@ apache_package: "{{ _apache_packages[ansible_distribution] }}"
 |             | ---> |              |
 +-------------+      +--------------+
 ```
-
-# Testing
-
-Let's take a role and review how it's setup.
 </script></section><section data-markdown><script type="text/template">
 # Reasons
 
@@ -272,7 +286,7 @@ Let's take a role and review how it's setup.
 
 Quite personal.
 </script></section></section><section  data-markdown><script type="text/template">
-## Best practices
+## Best practices (1/2)
 
 1. Scope roles. Smaller is almost always better.
 2. Never use `ignore_errors`.
@@ -280,6 +294,9 @@ Quite personal.
 4. Use `ansible.builtin` instead of short module names.
 5. `ansible-lint` is always right.
 6. Use `molecule` to test your code.
+</script></section><section  data-markdown><script type="text/template">
+## Best practices (2/2)
+
 7. Set sane default values for variables.
 8. Use `meta/argument_specs.yml` to validate input.
 9. Use `meta/main.yml` to describe your role.
