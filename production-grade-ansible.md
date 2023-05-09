@@ -191,11 +191,11 @@ Fast, though not very complete.
 
 ## Tested
 
-Prove that your code is working, using [molecule](https://molecule.readthedocs.io/en/latest/).
+Prove that your code is working, using [molecule](https://molecule.readthedocs.io/).
 
 ----
 
-[Describe the infrastructure](https://github.com/robertdebock/ansible-role-ntp/blob/master/molecule/default/converge.yml).
+[Describe the infrastructure](https://github.com/robertdebock/ansible-role-ntp/blob/master/molecule/default/molecule.yml).
 
 ----
 
@@ -324,10 +324,6 @@ apache_package: "{{ _apache_packages[ansible_distribution] }}"
 +-------------+      +--------------+
 ```
 
-# Testing
-
-Let's take a role and review how it's setup.
-
 ----
 
 # Reasons
@@ -340,7 +336,7 @@ Quite personal.
 
 ---
 
-## Best practices
+## Best practices (1/2)
 
 1. Scope roles. Smaller is almost always better.
 2. Never use `ignore_errors`.
@@ -348,6 +344,11 @@ Quite personal.
 4. Use `ansible.builtin` instead of short module names.
 5. `ansible-lint` is always right.
 6. Use `molecule` to test your code.
+
+---
+
+## Best practices (2/2)
+
 7. Set sane default values for variables.
 8. Use `meta/argument_specs.yml` to validate input.
 9. Use `meta/main.yml` to describe your role.
