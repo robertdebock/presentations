@@ -23,7 +23,7 @@ title: Production grade Ansible
 
 Guess the title or artist of the image.
 
-![Me](https://live.staticflickr.com/2861/33925744335_2327cf2a37_k.jpg)
+<img src="https://live.staticflickr.com/2861/33925744335_2327cf2a37_k.jpg" width="40%" height="40%">
 
 ---
 
@@ -46,7 +46,7 @@ Let's go over each topic in more detail.
 
 ---
 
-~[Mona Lisa - Leonardo Davinci](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/1280px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg)
+![Mona Lisa - Leonardo Davinci](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/1280px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg)
 
 ---
 
