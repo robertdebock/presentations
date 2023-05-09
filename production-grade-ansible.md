@@ -7,7 +7,7 @@ title: Production grade Ansible
 
 - Follow along: [robertdebock.nl](https://robertdebock.nl/)
 
-![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/production-grade-ansible/ "QR Code.")
+![QR Code](https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/production-grade-ansible/ "QR Code")
 
 ---
 
@@ -22,6 +22,8 @@ title: Production grade Ansible
 # Game on!
 
 Guess the title or artist of the image.
+
+---
 
 <img src="https://live.staticflickr.com/2861/33925744335_2327cf2a37_k.jpg" width="40%" height="40%">
 
@@ -46,7 +48,7 @@ Let's go over each topic in more detail.
 
 ---
 
-![Mona Lisa - Leonardo Davinci](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/1280px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg)
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/1280px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" alt="Mona Lisa - Leonardo Davinci" height="40%" width="40%">
 
 ---
 
@@ -102,7 +104,7 @@ password_policy:
 
 ---
 
-![Melk meisje - Johannes Vermeer](https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg/1920px-Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg)
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg/1920px-Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg" alt="Melk meisje - Johannes Vermeer" height="40%" width="40%">
 
 ---
 
@@ -136,7 +138,7 @@ country: "{{ _country_code_to_country_map[country_code] }}
 
 ---
 
-![Piss Christ - Andres Serrano](https://upload.wikimedia.org/wikipedia/en/d/de/Piss_Christ_by_Serrano_Andres_%281987%29.jpg)
+<img src="https://upload.wikimedia.org/wikipedia/en/d/de/Piss_Christ_by_Serrano_Andres_%281987%29.jpg" alt="Piss Christ - Andres Serrano" height="40%" width="40%">
 ---
 
 ## Documented
@@ -148,7 +150,7 @@ country: "{{ _country_code_to_country_map[country_code] }}
 
 ---
 
-![Caravaggio - Judith beheading Holofernes](https://upload.wikimedia.org/wikipedia/commons/b/b2/Caravaggio_Judith_Beheading_Holofernes.jpg)
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Caravaggio_Judith_Beheading_Holofernes.jpg" alt="Caravaggio - Judith beheading Holofernes" height="40%" width="40%">
 
 ---
 
@@ -211,7 +213,7 @@ Fast, though not very complete.
 
 ---
 
-![Sally Mann - Listening to Madonna](https://fabian-claude-walter.com/fcw/wp-content/uploads/Sally-Man_-Listening-to-Madonna-by-the-Tadpole-Jar.jpg)
+<img src="https://fabian-claude-walter.com/fcw/wp-content/uploads/Sally-Man_-Listening-to-Madonna-by-the-Tadpole-Jar.jpg" alt="Sally Mann - Listening to Madonna" height="40%" width="40%">
 
 ---
 
@@ -233,7 +235,7 @@ Prove that your code is working, using [molecule](https://molecule.readthedocs.i
 
 ---
 
-![Gerrit Rietveld - Stoel](https://upload.wikimedia.org/wikipedia/commons/0/00/Rietveld_chair_1.JPG)
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Rietveld_chair_1.JPG" alt="Gerrit Rietveld - Stoel" height="40%" width="40%">
 
 ---
 
@@ -243,7 +245,7 @@ Prove that your code is working, using [molecule](https://molecule.readthedocs.i
 
 ---
 
-[Jackson Pollock - Convergence](https://www.jackson-pollock.org/images/paintings/convergence.jpg)
+<img src="https://www.jackson-pollock.org/images/paintings/convergence.jpg" alt="Jackson Pollock - Convergence" height="40%" width="40%">
 
 ---
 
@@ -251,7 +253,7 @@ Let's review the [most popular role on Galaxy](https://github.com/geerlingguy/an
 
 ---
 
-![Rene Margeritte](https://upload.wikimedia.org/wikipedia/en/b/b9/MagrittePipe.jpg)
+<img src="https://upload.wikimedia.org/wikipedia/en/b/b9/MagrittePipe.jpg" alt="Rene Margeritte" height="40%" width="40%">
 
 ---
 
@@ -347,7 +349,7 @@ apache_package: "{{ _apache_packages[ansible_distribution] }}"
 
 ---
 
-![Panorama Mesdag - Hendrik Willem Mesdag](https://upload.wikimedia.org/wikipedia/commons/d/d0/Panorama_mesdag.PNG)
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Panorama_mesdag.PNG" alt="Panorama Mesdag - Hendrik Willem Mesdag" height="40%" width="40%">
 
 ---
 
@@ -378,7 +380,7 @@ Quite personal.
 
 ---
 
-![Rembrandt van Rijn - Nachtwacht](https://upload.wikimedia.org/wikipedia/commons/3/3a/La_ronda_de_noche%2C_por_Rembrandt_van_Rijn.jpg)
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/La_ronda_de_noche%2C_por_Rembrandt_van_Rijn.jpg" alt="Rembrandt van Rijn - Nachtwacht" height="40%" width="40%">
 
 ---
 
