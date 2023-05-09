@@ -30,7 +30,7 @@ What makes great Ansible code?
 - Easy to read. (`default`, `tasks` & `handlers`.)
 - Documented. (`README.md`)
 - Input checked. (`meta/argument_specs.yml` or `tasks/assert.yml`)
-- Tested. (`molecule`)
+- Tested (in CI). (`molecule`)
 - Verified. (`molecule/*/verify.yml`)
 - Cleaned-up. (No empty directories or files)
 
@@ -54,6 +54,25 @@ i_n: abcde
 
 # Easier to relate to:
 instance_name: abcde
+```
+
+----
+
+Think about "string", "list" or "dict":
+
+```yaml
+default_shell: /bin/bash
+
+users:
+  - name: robert
+  - name: kees
+    group: kees
+    groups:
+      - docker
+
+password_policy:
+  minimum_length: 8
+  maximum_length: 16
 ```
 
 ----
@@ -114,7 +133,8 @@ country: "{{ _country_code_to_country_map[country_code] }}
 
 ----
 
-If your code uses variables, you may want to test the input.
+If your code uses variables,
+you may want to test the input.
 
 ----
 
@@ -146,8 +166,6 @@ If your code uses variables, you may want to test the input.
 ## meta/argument_specs.yml
 
 ```yaml
----
-
 argument_specs:
   main:
     short_description: A short description.
