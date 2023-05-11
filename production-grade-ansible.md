@@ -118,10 +118,11 @@ country_code: nl
 # A map, normally in `vars/main.yml`.
 _country_code_to_country_map:
   nl: Netherlands
+  no: Norway # Interesting, a boolean...
   ch: Switzerland
 
 # A lookup, normally in `vars/main.yml`
-country: "{{ _country_code_to_country_map[country_code] }}
+country: "{{ _country_code_to_country_map[country_code] }}"
 ```
 
 ----
@@ -139,6 +140,7 @@ country: "{{ _country_code_to_country_map[country_code] }}
 ---
 
 <img src="https://upload.wikimedia.org/wikipedia/en/d/de/Piss_Christ_by_Serrano_Andres_%281987%29.jpg" alt="Piss Christ - Andres Serrano" height="40%" width="40%">
+
 ---
 
 ## Documented
@@ -353,7 +355,7 @@ apache_package: "{{ _apache_packages[ansible_distribution] }}"
 
 ---
 
-## Conculsion
+## Conclusion
 
 ```text
 +--- default ---+      +--- assert ---+
