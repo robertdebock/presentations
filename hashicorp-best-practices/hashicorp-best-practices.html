@@ -21,7 +21,7 @@
 </script></section><section  data-markdown><script type="text/template">
 ## Adfinis
 </script></section><section  data-markdown><script type="text/template">
-## Introduction
+## Me
 </script></section><section ><section data-markdown><script type="text/template">
 ## Vault
 
@@ -29,7 +29,28 @@ A secrets management tool.
 </script></section><section data-markdown><script type="text/template">
 ## Deploying Vault
 </script></section><section data-markdown><script type="text/template">
-## Configure Vaukt
+## Deploying Vault method
+
+- Everything as code: precise deployment.
+</script></section><section data-markdown><script type="text/template">
+## Sizing Vault
+
+- CPU: 2, 4 or 8+ cores.
+- Memory: 8, 16, 32 or 64 GB.
+- disk: 100 GB or 200+ GB.
+- Disk speed: 3k IOPS - 10k+ IOPS
+</script></section><section data-markdown><script type="text/template">
+## Architecture
+
+- Invest time, use the [reference architecture](https://developer.hashicorp.com/vault/tutorials/day-one-raft/raft-reference-architecture).
+- Think of [multi-cluster](https://developer.hashicorp.com/vault/tutorials/day-one-raft/multi-cluster-architecture).
+- Maintain a [hardened](https://developer.hashicorp.com/vault/tutorials/day-one-raft/production-hardening) deployment.
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Auto unseal
+
+Unsealing Vault manually is a human-involved process. (Error prone) Auto unsealing simplifies this process.
+</script></section><section data-markdown><script type="text/template">
+## Configure Vault
 
 - Replication
 - Auto snapshot
@@ -39,6 +60,18 @@ A secrets management tool.
 ## Using Vault
 </script></section><section data-markdown><script type="text/template">
 ## Operating Vault
+</script></section><section data-markdown><script type="text/template">
+## Montoring
+</script></section><section data-markdown><script type="text/template">
+## Procedures
+
+Create hostname/ip specific runbooks for scernarios:
+
+- Quorum loss
+- Region/DC loss
+- Emergency sealing
+- Upgrades
+- ...
 </script></section></section><section ><section data-markdown><script type="text/template">
 ## Terraform
 
