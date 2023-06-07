@@ -36,7 +36,7 @@ A secrets management tool.
 - CPU: 2, 4 or 8+ cores.
 - Memory: 8, 16, 32 or 64 GB.
 - disk: 100 GB or 200+ GB.
-- Disk speed: 3k IOPS - 10k+ IOPS
+- Disk speed: 3k IOPS - 10k+ IOPS.
 
 ----
 
@@ -58,6 +58,7 @@ Unsealing Vault manually is a human-involved process. (Error prone) Auto unseali
 
 - Replication
 - Auto snapshot
+- Autopilot
 - Namespaces
 - Selfservice
 
@@ -67,17 +68,44 @@ Unsealing Vault manually is a human-involved process. (Error prone) Auto unseali
 
 ----
 
+## Initialize
+
+- How many people have a part of the (recovery or unseal) key?
+- How many parts are required to access data?
+
+----
+
+## Authentication
+
+- Use an external system like LDAP.
+- Revoke the root token.
+- Leases consume memory.
+
+----
+
+## Secrets
+
+- Dynamic secrets engines provide short-lived-secrets.
+- PKI or EaaS are CPU intensive.
+
+----
+
 ## Operating Vault
 
 ----
 
 ## Montoring
 
+- Use [telemetry](https://developer.hashicorp.com/vault/tutorials/monitoring/monitor-telemetry-grafana-prometheus).
+- Write functional tests.
+- Measure response speeds.
+- Lack of memory will kill Vault.
+
 ----
 
 ## Procedures
 
-Create hostname/ip specific runbooks for scernarios:
+Create hostname/ip specific runbooks for scenarios:
 
 - Quorum loss
 - Region/DC loss
