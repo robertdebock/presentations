@@ -9,9 +9,83 @@ title: HashiCorp best practices
 
 ## Adfinis
 
----
+----
 
 ## Me
+
+---
+
+## Terraform
+
+- CLI
+- Enterprise/Cloud
+
+----
+
+## Terraform CLI
+
+- Write reusable modules.
+- Use a (private) registry.
+- Test the module using `examples/*`.
+- Version pin everything.
+- [...](https://robertdebock.nl/learn-terraform/ADVANCED/best-practices)
+
+----
+
+## Terraform Enterprise/Cloud
+
+----
+
+## Deployment
+
+Use the [reference architecture](https://developer.hashicorp.com/terraform/enterprise/reference-architecture).
+
+- Stand-alone, simple.
+- Active-active, scalable, redundant.
+- Mixed, stand-alone, external data.
+
+> Chicken-egg problem.
+
+----
+
+## Ways of working
+
+- State storage.
+- Watching a Git repo.
+- API driven.
+
+Mix and match.
+
+----
+
+## Terraform Private registry
+
+----
+
+## Development
+
+How to prevent duplicate code?
+
+----
+
+## Terraform workspaces
+
+How to organize workspaces:
+
+- Per team
+- Per product/service
+
+----
+
+## Terraform Projects
+
+A collection of workspaces, shared by users/groups.
+
+----
+
+## Operating Terraform
+
+Monitoring, logging & backup
 
 ---
 
@@ -114,73 +188,6 @@ Create hostname/ip specific runbooks for scenarios:
 - ...
 
 ---
-
-## Terraform
-
-- CLI
-- Cloud
-- Enterprise
-
-----
-
-## Terraform CLI
-
-----
-
-## Terraform Enterprise
-
-----
-
-## Deployment
-
-Use the reference architecture.
-
-- Stand-alone, simple.
-- Active-active, scalable, redundant.
-- Mixed, stand-alone, external data.
-
-Chicken-egg problem.
-
-----
-
-## Ways of working
-
-- For state storage.
-- Monitoring a Git repo.
-- API driven.
-
-Mix and match.
-
-----
-
-## Terraform Private registry
-
-----
-
-## Development
-
-How to prevent duplicate code?
-
-----
-
-## Terraform workspaces
-
-How to organize workspaces:
-
-- Per team
-- Per product/service
-
-----
-
-## Terraform Projects
-
-A collection of workspaces, shared by users/groups.
-
-----
-
-## Operating Terraform
-
-Monitoring, logging & backup
 
 ---
 
