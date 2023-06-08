@@ -17,21 +17,10 @@ title: HashiCorp best practices
 
 ## Terraform
 
-- CLI
 - Enterprise/Cloud
+- CLI
 
 ----
-
-## Terraform CLI
-
-- Write [reusable modules](https://registry.terraform.io/modules/robertdebock/vault/aws/latest).
-- Use a (private) [registry](https://registry.terraform.io).
-- Test the module using [`examples/*`](https://github.com/robertdebock/terraform-aws-vault/tree/master/examples).
-- Version [pin everything](https://github.com/robertdebock/terraform-aws-vault/blob/master/versions.tf).
-- [...](https://robertdebock.nl/learn-terraform/ADVANCED/best-practices)
-
-----
-
 ## Terraform Enterprise/Cloud
 
 ----
@@ -61,6 +50,17 @@ Mix and match.
 ## Development
 
 How to prevent duplicate code?
+
+- Write [reusable modules](https://registry.terraform.io/modules/robertdebock/vault/aws/latest).
+
+----
+
+## Terraform CLI
+
+- Use a (private) [registry](https://registry.terraform.io).
+- Test the module using [`examples/*`](https://github.com/robertdebock/terraform-aws-vault/tree/master/examples).
+- Version [pin everything](https://github.com/robertdebock/terraform-aws-vault/blob/master/versions.tf).
+- [...](https://robertdebock.nl/learn-terraform/ADVANCED/best-practices)
 
 ----
 
