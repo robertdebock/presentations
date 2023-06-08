@@ -127,19 +127,60 @@ Create hostname/ip specific runbooks for scenarios:
 
 ----
 
-## Terraform Cloud
+## Terraform Enterprise
 
 ----
 
-## Terraform Enterprise
+## Deployment
+
+Use the reference architecture.
+
+- Stand-alone, simple.
+- Active-active, scalable, redundant.
+- Mixed, stand-alone, external data.
+
+Chicken-egg problem.
+
+----
+
+## Ways of working
+
+- For state storage.
+- Monitoring a Git repo.
+- API driven.
+
+Mix and match.
+
+----
+
+## Terraform Private registry
+
+----
+
+## Development
+
+How to prevent duplicate code?
 
 ----
 
 ## Terraform workspaces
 
+How to organize workspaces:
+
+- Per team
+- Per product/service
+
+----
+
+## Terraform Projects
+
+A collection of workspaces, shared by users/groups.
+
 ----
 
 ## Operating Terraform
+
+Monitoring, logging & backup
 
 ---
 
