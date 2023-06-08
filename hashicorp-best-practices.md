@@ -120,7 +120,7 @@ A secrets management tool.
 - Think of [multi-cluster](https://developer.hashicorp.com/vault/tutorials/day-one-raft/multi-cluster-architecture).
 - Maintain a [hardened](https://developer.hashicorp.com/vault/tutorials/day-one-raft/production-hardening) deployment.
 
----
+----
 
 ## Auto unseal
 
@@ -186,8 +186,6 @@ Create hostname/ip specific runbooks for scenarios:
 - Emergency sealing
 - Upgrades
 - ...
-
----
 
 ---
 
