@@ -24,10 +24,10 @@ title: HashiCorp best practices
 
 ## Terraform CLI
 
-- Write reusable modules.
-- Use a (private) registry.
-- Test the module using `examples/*`.
-- Version pin everything.
+- Write [reusable modules](https://registry.terraform.io/modules/robertdebock/vault/aws/latest).
+- Use a (private) [registry](https://registry.terraform.io).
+- Test the module using [`examples/*`](https://github.com/robertdebock/terraform-aws-vault/tree/master/examples).
+- Version [pin everything](https://github.com/robertdebock/terraform-aws-vault/blob/master/versions.tf).
 - [...](https://robertdebock.nl/learn-terraform/ADVANCED/best-practices)
 
 ----
@@ -38,7 +38,7 @@ title: HashiCorp best practices
 
 ## Deployment
 
-Use the [reference architecture](https://developer.hashicorp.com/terraform/enterprise/reference-architecture).
+Use the [reference architecture](https://developer.hashicorp.com/terraform/enterprise/reference-architecture) to deploy an [operational mode](https://developer.hashicorp.com/terraform/enterprise/operational-modes#operational-modes):
 
 - Stand-alone, simple.
 - Active-active, scalable, redundant.
@@ -50,15 +50,11 @@ Use the [reference architecture](https://developer.hashicorp.com/terraform/enter
 
 ## Ways of working
 
-- State storage.
-- Watching a Git repo.
-- API driven.
+- [State](https://developer.hashicorp.com/terraform/language/settings/backends/configuration) storage.
+- [Watching](https://developer.hashicorp.com/terraform/cloud-docs/vcs) a Git repo.
+- [API](https://developer.hashicorp.com/terraform/enterprise/api-docs) driven.
 
 Mix and match.
-
-----
-
-## Terraform Private registry
 
 ----
 
@@ -70,7 +66,7 @@ How to prevent duplicate code?
 
 ## Terraform workspaces
 
-How to organize workspaces:
+How to [organize workspaces](https://robertdebock.nl/learn-terraform/ADVANCED/terraform-cloud-workspace-design.html):
 
 - Per team
 - Per product/service
@@ -79,13 +75,15 @@ How to organize workspaces:
 
 ## Terraform Projects
 
-A collection of workspaces, shared by users/groups.
+[NEW](https://www.hashicorp.com/blog/terraform-cloud-adds-projects-to-organize-workspaces-at-scale): A collection of workspaces, shared by users/groups.
 
 ----
 
 ## Operating Terraform
 
-Monitoring, logging & backup
+- [Monitoring](https://developer.hashicorp.com/terraform/enterprise/admin/infrastructure/monitoring).
+- [Logging](https://developer.hashicorp.com/terraform/enterprise/admin/infrastructure/logging).
+- [Backup](https://developer.hashicorp.com/terraform/enterprise/admin/infrastructure/backup-restore).
 
 ---
 
