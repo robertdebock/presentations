@@ -122,17 +122,20 @@ A secrets management tool.
 
 ## Auto unseal
 
-Unsealing Vault manually is a human-involved process. (Error prone) Auto unsealing simplifies this process.
+Unsealing Vault manually is a [human-involved process](https://developer.hashicorp.com/vault/tutorials/recommended-patterns/pattern-unseal#operator-overhead). (Error prone) Auto unsealing simplifies this process.
+
+> Auto unseal is a feature of any Vault type.
 
 ----
 
 ## Configure Vault
 
-- Replication
-- Auto snapshot
-- Autopilot
-- Namespaces
-- Selfservice
+- **[Replication](https://developer.hashicorp.com/vault/docs/enterprise/replication#architecture)**.
+- **[Auto snapshot](https://developer.hashicorp.com/vault/docs/enterprise/automated-integrated-storage-snapshots)**.
+- Autopilot.
+- **Namespaces**.
+
+> Most organization strive for a self-service solution.
 
 ----
 
@@ -142,22 +145,22 @@ Unsealing Vault manually is a human-involved process. (Error prone) Auto unseali
 
 ## Initialize
 
-- How many people have a part of the (recovery or unseal) key?
-- How many parts are required to access data?
+- How many people have a part of the (recovery or [unseal](https://developer.hashicorp.com/vault/docs/concepts/seal)) key?
+- [How many parts](https://developer.hashicorp.com/vault/docs/concepts/seal#shamir-seals) are required to access data?
 
 ----
 
 ## Authentication
 
-- Use an external system like LDAP.
-- Revoke the root token.
-- Leases consume memory.
+- Use an external system like [LDAP](https://developer.hashicorp.com/vault/docs/auth/ldap).
+- Revoke the [root token](https://developer.hashicorp.com/vault/docs/concepts/tokens#root-tokens).
+- Leases and tokens consume memory.
 
 ----
 
 ## Secrets
 
-- Dynamic secrets engines provide short-lived-secrets.
+- [Dynamic secrets engines](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-dynamic-secrets) provide short-lived-secrets.
 - PKI or EaaS are CPU intensive.
 
 ----
@@ -170,14 +173,14 @@ Unsealing Vault manually is a human-involved process. (Error prone) Auto unseali
 
 - Use [telemetry](https://developer.hashicorp.com/vault/tutorials/monitoring/monitor-telemetry-grafana-prometheus).
 - Write functional tests.
-- Measure response speeds.
+- Measure response speeds for reference.
 - Lack of memory will kill Vault.
 
 ----
 
 ## Procedures
 
-Create hostname/ip specific runbooks for scenarios:
+Create hostname/ip specific [runbooks](https://developer.hashicorp.com/vault/tutorials/standard-procedures) for scenarios:
 
 - Quorum loss
 - Region/DC loss
@@ -188,3 +191,5 @@ Create hostname/ip specific runbooks for scenarios:
 ---
 
 ## Conclusion
+
+HashiCorp products have grown up, they are enterprise ready and require knowledge and effort to operate.
