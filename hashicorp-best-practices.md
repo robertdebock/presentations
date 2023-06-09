@@ -37,6 +37,14 @@ Use the [reference architecture](https://developer.hashicorp.com/terraform/enter
 
 ----
 
+## Sizing Terraform Enterprise
+
+- CPU: 4 or 8 cores.
+- Memory: 16 or 32 GB.
+- disk: 40 GB.
+
+----
+
 ## Ways of working
 
 - [State](https://developer.hashicorp.com/terraform/language/settings/backends/configuration) storage.
