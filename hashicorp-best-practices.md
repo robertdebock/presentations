@@ -47,23 +47,6 @@ Mix and match.
 
 ----
 
-## Development
-
-How to prevent duplicate code?
-
-- Write [reusable modules](https://registry.terraform.io/modules/robertdebock/vault/aws/latest).
-
-----
-
-## Terraform CLI
-
-- Use a (private) [registry](https://registry.terraform.io).
-- Test the module using [`examples/*`](https://github.com/robertdebock/terraform-aws-vault/tree/master/examples).
-- Version [pin everything](https://github.com/robertdebock/terraform-aws-vault/blob/master/versions.tf).
-- [...](https://robertdebock.nl/learn-terraform/ADVANCED/best-practices)
-
-----
-
 ## Terraform workspaces
 
 How to [organize workspaces](https://robertdebock.nl/learn-terraform/ADVANCED/terraform-cloud-workspace-design.html):
@@ -84,6 +67,23 @@ How to [organize workspaces](https://robertdebock.nl/learn-terraform/ADVANCED/te
 - [Monitoring](https://developer.hashicorp.com/terraform/enterprise/admin/infrastructure/monitoring).
 - [Logging](https://developer.hashicorp.com/terraform/enterprise/admin/infrastructure/logging).
 - [Backup](https://developer.hashicorp.com/terraform/enterprise/admin/infrastructure/backup-restore).
+
+----
+
+## Development
+
+How to prevent duplicate code?
+
+- Write [reusable modules](https://registry.terraform.io/modules/robertdebock/vault/aws/latest).
+
+----
+
+## Terraform CLI
+
+- Use a (private) [registry](https://registry.terraform.io).
+- Test the module using [`examples/*`](https://github.com/robertdebock/terraform-aws-vault/tree/master/examples).
+- Version [pin everything](https://github.com/robertdebock/terraform-aws-vault/blob/master/versions.tf).
+- [...](https://robertdebock.nl/learn-terraform/ADVANCED/best-practices)
 
 ---
 
