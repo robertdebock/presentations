@@ -23,6 +23,7 @@ This presentation guides you through the Vault operations you may need to do to 
 ----
 
 ## Topics 
+
 - Disaster Recovery
 - Performance Replication
 - Architecture
@@ -196,3 +197,77 @@ HashiCorp advices this [sizing](https://developer.hashicorp.com/vault/tutorials/
 What `small` and `large` is, is not very explicit.
 
 > Note: Smaller instances can certainly work, but if a Vault instance runs out of memory, the Vault cluster may become unstable. This situation can be difficult to fix.
+
+---
+
+## Initializing
+
+Any Vault node or cluster needs to be initialized. Initializing created an encrypted storage backend and returns the "unseal keys" or "recovery keys" and root-token. (for automatically unsealed instances) **ONCE**.
+
+Unseal/recovery keys can be PGP can be used to prevent plain-text (shared) keys to be displayed.
+
+It's adviced to carefully run this procedure. Although it's done once.
+
+----
+
+## Initializing
+
+The "root-token" or "root-key" is the initial key that allows all actions on Vault.
+
+This token should be revoked as early as possible, after personal users have "high privileged" access to Vault.
+
+> Note: Most Vault installations have the root-token **NOT** revoked, which is a serurity issue.
+
+---
+
+## Unsealing
+
+Every time Vault starts, it needs to be unseal. These are typical situations when unsealing is required:
+
+- Reboot
+- Restart
+- Crash and start
+- Stop, update, start
+
+----
+
+## Unsealing
+
+Manual unsealing requires unsealing as many times as the amount of `key-threshold` set when initializing Vault. The default value for `key-threshold` is `3` out of the `5` `key-shares`.
+
+This means at least 3 people need to enter an unseal key on **each Vault instance**. A typical installation of Vault has  10 to 20 nodes. That would mean 30 to 60 unseal commands.
+
+As you understand, manaul unsealing is not preferred.
+
+---
+
+## Unsealing
+
+You can have Vault unseal automatically in a few way.
+
+- AWS KMS
+- Azure Key Vault
+- GCP Cloud KMS
+- HSM
+- Transit
+
+----
+
+## Unsealing
+
+AWS KMS, Azure Key Vault and GCP Cloud KMS use a key on a cloud provider to unseal. Access to such a key becomes critical for availability and sensitive.
+
+You can unseal a non-cloud Vault instance using cloud keys.
+
+----
+
+## Unsealing
+
+An HSM can be used to unseal Vault. This does introduce a dependency on an HSM, but greatly reduces the administrative work required for unsealing.
+
+`Transit` can also be used to unseal Vault. This mechanism unseals Vault using another Vault. This means there is a dependency on that other Vault and the initial Vault needs to be unsealed as well, likely manual.
+
+---
+
+## Disaster Recovery
+
