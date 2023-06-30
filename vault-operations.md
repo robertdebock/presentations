@@ -28,7 +28,7 @@ This presentation guides you through the Vault operations you may need to do to 
 - Performance Replication
 - Architecture
 - Monitoring
-- Audit & operational logs
+- Logging
 - Backing up and restore
 
 ---
@@ -101,7 +101,7 @@ Simply replace the binary or package. To prevent unnecessary outages, use this o
 3. Followers of the replication primary/primaries.
 4. Leader of the replication primary/primaries.
 
-> Note: You can technically update in any order, but may experience minor outages when a new leader is elected.
+NOTE: You can technically update in any order, but may experience minor outages when a new leader is elected.
 
 ----
 
@@ -109,7 +109,7 @@ Simply replace the binary or package. To prevent unnecessary outages, use this o
 
 As updating is required somewhat frequently, is specific and critical; automating this using for example Ansible will prove valuable.
 
-> Note: Please have a non-production environment prepared to exercise the update.
+NOTE: Please have a non-production environment prepared to exercise the update.
 
 ---
 
@@ -117,7 +117,7 @@ As updating is required somewhat frequently, is specific and critical; automatin
 
 You can create a cluster of Vault instances, which can offer redundancy.
 
-> Note: Vault write actions will always be handled by the leader, to performance is not typically improved by more than one machine.
+NOTE: Vault write actions will always be handled by the leader, to performance is not typically improved by more than one machine.
 
 ----
 
@@ -129,7 +129,7 @@ You can manually create a cluster:
 vault operator raft join http://127.0.0.2:8200
 ```
 
-> Note: Automatic joining is preferred to reduce administrative burden.
+NOTE: Automatic joining is preferred to reduce administrative burden.
 
 ----
 
@@ -174,7 +174,7 @@ Automatically joining uses [`go discovery`](https://github.com/hashicorp/go-disc
 - Azure
 - vSphere
 
-> Note: "auto join" and "auto unseal" are often confused. They are different concepts.
+NOTE: "auto join" and "auto unseal" are often confused. They are different concepts.
 
 ---
 
@@ -186,7 +186,7 @@ A Vault cluster needs an odd number of instances, either `3` and `5`. (`5` is re
 
 You can scale both up and down, from `3` to `5` and back from `5` to `3`.
 
-> Note: Scaling down required auto-pilot to be configured to cleanup ["dead servers"](https://developer.hashicorp.com/vault/docs/concepts/integrated-storage/autopilot#dead-server-cleanup). If this configuration is skipped, quorum may be lost.
+NOTE: Scaling down required auto-pilot to be configured to cleanup ["dead servers"](https://developer.hashicorp.com/vault/docs/concepts/integrated-storage/autopilot#dead-server-cleanup). If this configuration is skipped, quorum may be lost.
 
 ----
 
@@ -201,7 +201,7 @@ HashiCorp advices this [sizing](https://developer.hashicorp.com/vault/tutorials/
 
 What `small` and `large` are, is not very explicit.
 
-> Note: Smaller instances can certainly work, but if a Vault instance runs out of memory, the Vault cluster may become unstable. This situation can be difficult to fix.
+NOTE: Smaller instances can certainly work, but if a Vault instance runs out of memory, the Vault cluster may become unstable. This situation can be difficult to fix.
 
 ---
 
@@ -221,7 +221,7 @@ The "root-token" or "root-key" is the initial key that allows all actions on Vau
 
 This token should be revoked as early as possible, after personal users have "high privileged" access to Vault.
 
-> Note: Most Vault installations have the root-token **NOT** revoked, which is a serurity issue.
+NOTE: Most Vault installations have the root-token **NOT** revoked, which is a serurity issue.
 
 ---
 
@@ -262,7 +262,7 @@ You can have Vault unseal automatically in a few way.
 
 AWS KMS, Azure Key Vault and GCP Cloud KMS use a key on a cloud provider to unseal. Access to such a key becomes critical for availability and sensitive.
 
-> Note You can unseal a non-cloud Vault instance using cloud keys.
+NOTE: You can unseal a non-cloud Vault instance using cloud keys.
 
 ----
 
@@ -380,7 +380,6 @@ Here are a few architecture examples.
 +-----------------------+          +-----------------------+
             |                                  |
             V                                  V
-
 +--- Vault-cluster-1 ---+          +--- Vault-cluster-2 ---+
 |                       | -> PR -> |                       |
 +-----------------------+          +-----------------------+
@@ -416,3 +415,42 @@ Here are a few architecture examples.
 |                       |          |                       |
 +-----------------------+          +-----------------------+
 ```
+
+----
+
+## Architecture resolution
+
+If PR is used, a dynamic DNS record can be served, based on:
+
+- Originating IP address(es).
+- Health checks.
+
+---
+
+## Monitoring
+
+1. Lack of memory breaks a Vault instance, rendering the cluster unstable.
+2. Service checks (availability and response time) help determine the current and future health.
+3. Vault telemetry can be used to scrap metrics.
+
+---
+
+## Logging
+
+Operational logs (`journalctl`) help understand the past and current state of Vault.
+
+Audit logs can be required and help determine usage of Vault.
+
+----
+
+## Logging
+
+Audit logs can be stored or sent to
+
+- Disk
+- Syslog
+- Socket
+
+NOTE: Audit logs need rotation.
+
+---
