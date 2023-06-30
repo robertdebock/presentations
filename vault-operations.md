@@ -30,6 +30,7 @@ This presentation guides you through the Vault operations you may need to do to 
 - Monitoring
 - Logging
 - Backing up and restore
+- Others
 
 ---
 
@@ -454,3 +455,43 @@ Audit logs can be stored or sent to
 NOTE: Audit logs need rotation.
 
 ---
+
+## Backup and restore
+
+This is your last resort and can be for forensics.
+
+- Backup is a snapshot of the data, not configuration.
+- A restore, restores **ALL** data, not per namespace of secret engine.
+
+----
+
+## Backup and restore
+
+You can store to:
+
+- Disk (`local`).
+- AWS (`aws-s3`).
+- Azure (`azure-blob`).
+- GCP (`google-gcs`).
+
+----
+
+## Backup and restore
+
+Typically configured with `interval` and `retain`:
+
+- `interval`: `1h`, `retain`: `24` -> 24 hours of backups.
+- `interval`: `1d`, `retain`: `7` -> 7 days of backups.
+- `interval`: `1w`, `retain`: `4` -> 4 weeks of backups.
+- `interval`: `1m`, `retain`: `12` -> 12 months of backups.
+
+NOTE: Vault takes care of cleaning up old backups.
+
+---
+
+## Others
+
+- Configuring Vault (`audit`, `autopilot` and `snapshot`) using Terraform works perfectly.
+- Vault is a "cloud native" tool. You can (if desired) never login to the instance.
+- When using namespaces, who managed the root-namespace?
+- Client counting can be enabled.
