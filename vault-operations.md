@@ -11,6 +11,13 @@ This presentation guides you through the Vault operations you may need to do to 
 
 ---
 
+## Installation
+
+- Who am I?
+- Who/what is Adfinis?
+- Who are you?
+
+---
 ## Topics
 
 - Installing
@@ -495,3 +502,11 @@ NOTE: Vault takes care of cleaning up old backups.
 - Vault is a "cloud native" tool. You can (if desired) never login to the instance.
 - When using namespaces, who managed the root-namespace?
 - Client counting can be enabled.
+
+---
+
+## Questions?
+
+---
+
+## Thanks!
