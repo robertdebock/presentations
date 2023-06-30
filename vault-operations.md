@@ -106,3 +106,89 @@ As updating is required somewhat frequently and is specific; automating this usi
 
 > Note: Please have a non-production environment prepared to exercise the update.
 
+---
+
+## Clustering (HA)
+
+You can create a cluster of Vault instances, which can offer redundancy.
+
+> Note: Vault write actions will always be handled by the leader, to performance is not typically improved by more than one machine.
+
+----
+
+## Clustering (HA)
+
+You can manually create a cluster:
+
+```shell
+vault operator raft join http://127.0.0.2:8200
+```
+
+> Note: Automatic joining is preferred to reduce administrative burden.
+
+----
+
+## Clustering (HA)
+
+Interesting to know:
+
+1. When a Vault instance joins a cluster, a "bootstrap" sequence is started. This happens on port `:tcp/8200` (by default)
+2. Cluster communication will happen on port `:tcp:8201` (by default).
+3. Both ports should be available to all members of a cluster.
+4. Port `:tcp/8200` uses `HTTPS`. The nodes should trust each others certificates. This is typically done by haveing a single certificate for all nodes, having either a wildcard (`*.examples.com`) or a specific Subject Alternate Name ("SAN"). For "SAN", node names need to be known.
+
+----
+
+## Clustering (HA)
+
+Automatic joining is preferred over manual joining. It allows instance replacements to occur without human intervention.
+
+```hcl
+  storage "raft" {
+  path    = "/vault/vault"
+  node_id = "vault_x"
+  retry_join {
+    auto_join = "provider=aws addr_type=public_v4 tag_key=auto_join tag_value=my_raft_instances region=us-east-1"
+    auto_join_scheme = "http"
+  }
+}
+```
+
+----
+
+## Clustering (HA)
+
+Automatically joining uses [`go discovery`](https://github.com/hashicorp/go-discover), which has many "providers", including:
+
+- AWS
+- Azure
+- vSphere
+
+> Note: "auto join" and "auto unseal" are often confused. They are different concepts.
+
+---
+
+## Scaling
+
+Vault can be scaled. This is done for availability, not for performance.
+
+A Vault cluster needs an odd number of instances, either `3` and `5`. (`5` is recommended, but `3` can be used when no more than `3` "zones" or "lanes" are available.)
+
+You can scale both up and down, from `3` to `5` and back from `5` to `3`.
+
+> Note: Scaling down required auto-pilot to be configured to cleanup ["dead servers"](https://developer.hashicorp.com/vault/docs/concepts/integrated-storage/autopilot#dead-server-cleanup). If this configuration is skipped, quorum may be lost.
+
+----
+
+## Scaling
+
+HashiCorp advices this [sizing](https://developer.hashicorp.com/vault/tutorials/day-one-raft/raft-reference-architecture#hardware-sizing-for-vault-servers) for individual Vault nodes:
+
+| Size  | CPU | Memory (GB) | Disk (GB) Disk IO (IOPS) | Disk thoughput (MB/s) |
+| ----- | --- | ----------- | ------------------------ | --------------------- |
+| small | 2-4 | 8-16        | 100+                     | 75+                   |
+| large | 4-8 | 32-64       | 200+                     | 250+                  |
+
+What `small` and `large` is, is not very explicit.
+
+> Note: Smaller instances can certainly work, but if a Vault instance runs out of memory, the Vault cluster may become unstable. This situation can be difficult to fix.
