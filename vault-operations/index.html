@@ -38,6 +38,7 @@ This presentation guides you through the Vault operations you may need to do to 
 - Monitoring
 - Logging
 - Backing up and restore
+- Others
 </script></section></section><section ><section data-markdown><script type="text/template">
 ## Installing
 
@@ -390,7 +391,41 @@ Audit logs can be stored or sent to
 - Socket
 
 <aside class="notes"><p>Audit logs need rotation.</p>
-</aside></script></section></section><section  data-markdown><script type="text/template"></script></section></div>
+</aside></script></section></section><section ><section data-markdown><script type="text/template">
+## Backup and restore
+
+This is your last resort and can be for forensics.
+
+- Backup is a snapshot of the data, not configuration.
+- A restore, restores **ALL** data, not per namespace of secret engine.
+</script></section><section data-markdown><script type="text/template">
+## Backup and restore
+
+You can store to:
+
+- Disk (`local`).
+- AWS (`aws-s3`).
+- Azure (`azure-blob`).
+- GCP (`google-gcs`).
+</script></section><section data-markdown><script type="text/template">
+## Backup and restore
+
+Typically configured with `interval` and `retain`:
+
+- `interval`: `1h`, `retain`: `24` -> 24 hours of backups.
+- `interval`: `1d`, `retain`: `7` -> 7 days of backups.
+- `interval`: `1w`, `retain`: `4` -> 4 weeks of backups.
+- `interval`: `1m`, `retain`: `12` -> 12 months of backups.
+
+<aside class="notes"><p>Vault takes care of cleaning up old backups.</p>
+</aside></script></section></section><section  data-markdown><script type="text/template">
+## Others
+
+- Configuring Vault (`audit`, `autopilot` and `snapshot`) using Terraform works perfectly.
+- Vault is a "cloud native" tool. You can (if desired) never login to the instance.
+- When using namespaces, who managed the root-namespace?
+- Client counting can be enabled.
+</script></section></div>
     </div>
 
     <script src="./dist/reveal.js"></script>
