@@ -139,6 +139,11 @@ Interesting to know:
 
 1. When a Vault instance joins a cluster, a "bootstrap" sequence is started. This happens on port `:tcp/8200` (by default)
 2. Cluster communication will happen on port `:tcp:8201` (by default).
+
+----
+
+## Clustering (HA)
+
 3. Both ports should be available to all members of a cluster.
 4. Port `:tcp/8200` uses `HTTPS`. The nodes should trust each others certificates. This is typically done by haveing a single certificate for all nodes, having either a wildcard (`*.examples.com`) or a specific Subject Alternate Name ("SAN"). For "SAN", node names need to be known.
 
@@ -194,7 +199,7 @@ HashiCorp advices this [sizing](https://developer.hashicorp.com/vault/tutorials/
 | small | 2-4 | 8-16        | 100+                     | 75+                   |
 | large | 4-8 | 32-64       | 200+                     | 250+                  |
 
-What `small` and `large` is, is not very explicit.
+What `small` and `large` are, is not very explicit.
 
 > Note: Smaller instances can certainly work, but if a Vault instance runs out of memory, the Vault cluster may become unstable. This situation can be difficult to fix.
 
@@ -257,7 +262,7 @@ You can have Vault unseal automatically in a few way.
 
 AWS KMS, Azure Key Vault and GCP Cloud KMS use a key on a cloud provider to unseal. Access to such a key becomes critical for availability and sensitive.
 
-You can unseal a non-cloud Vault instance using cloud keys.
+> Note You can unseal a non-cloud Vault instance using cloud keys.
 
 ----
 
@@ -271,3 +276,144 @@ An HSM can be used to unseal Vault. This does introduce a dependency on an HSM, 
 
 ## Disaster Recovery
 
+Vault clusters (or instances) can be related in a "disaster recovery" replication setup.
+
+Disaster Recovery:
+
+- Syncronizes all data.
+- Has a primary and secondary
+- Secondary can be promoted.
+- Secondary does not provide service until promoted.
+- Is an Enterprise feature.
+
+----
+
+## Disaster Recovery
+
+The size of a "cluster" (`1`, `3` or `5`) has no impact on DR, you can mix any size.
+
+Disaster Recovery can also be used to migrate from one cluster to another.
+
+---
+
+## Performance Replication
+
+Vault clusters can syncronize (selected) data in a "performance replication" setup.
+
+Performance Replication:
+
+- Syncronizes selected data.
+- Has a primary and secondary
+- Secondary can be promoted.
+- Secondary does provide service.
+- Is an Enterprise feature.
+
+---
+
+## Architecture
+
+Here are a few architecture examples.
+
+----
+
+## Architecture single node
+
+```text
++--- Vault-1 ---+
+|               |
++---------------+
+```
+
+----
+
+## Architecture multiple nodes
+
+```text
+                +--- Load balancer ---+
+                |                     |
+                +---------------------+
+                  /        |         \
+                 /         |          \
++--- Vault-1 ---+  +--- Vault-2 ---+   +--- Vault-3 ---+
+|               |  |               |   |               |
++---------------+  +---------------+   +---------------+
+```
+
+- Low latency connection.
+- Different availability zones.
+
+----
+
+## Architecture multiple clusters DR
+
+```text
+                  +--- load balancer ---+
+                  |                     |
+                  +---------------------+
+                    /                   \
+                   /                     \
++---- load balancer ----+          +---- load balancer ----+
+|                       |          |                       |
++-----------------------+          +-----------------------+
+            |                                  |
+            V                                  V
++--- Vault-cluster-1 ---+          +--- Vault-cluster-2 ---+
+|                       | -> DR -> |                       |
++-----------------------+          +-----------------------+
+```
+
+- Connection quite forgiving.
+- Different regions.
+
+----
+
+## Architecture multiple clusters PR
+
+```text
+                  +--- load balancer ---+
+                  |                     |
+                  +---------------------+
+                    /                   \
+                   /                     \
++---- load balancer ----+          +---- load balancer ----+
+|                       |          |                       |
++-----------------------+          +-----------------------+
+            |                                  |
+            V                                  V
+
++--- Vault-cluster-1 ---+          +--- Vault-cluster-2 ---+
+|                       | -> PR -> |                       |
++-----------------------+          +-----------------------+
+```
+
+- Connection quite forgiving.
+- Different regions.
+
+----
+
+## Architecture multiple clusters DR and PR
+
+```text
++---- load balancer ----+          +---- load balancer ----+
+|                       |          |                       |<--------------+
++-----------------------+          +-----------------------+               |
+            |                                  |                           |
+            V                                  V                           |
++--- Vault-cluster-1 ---+          +--- Vault-cluster-2 ---+               |
+|                       | -> PR -> |                       |               |
++-----------------------+          +-----------------------+               |
+           |                                  |                            |
+           V                                  V                 +--- load balancer ---+
+          DR                                  DR                | Also on other side. |
+           |                                  |                 +---------------------+
+           V                                  V                            |
++--- Vault-cluster-3 ---+          +--- Vault-cluster-4 ---+               |
+|                       |          |                       |               |
++-----------------------+          +-----------------------+               |
+           ^                                  ^                            |
+           |                                  |                            |
++---- load balancer ----+          +---- load balancer ----+               |
+|                       |          |                       |<--------------+
++-----------------------+          +-----------------------+
+```
+```
