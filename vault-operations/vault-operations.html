@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Vault operations</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+# Vault operations
+</script></section><section  data-markdown><script type="text/template">
+This presentation guides you through the Vault operations you may need to do to properly setup Vault.
+</script></section><section  data-markdown><script type="text/template">
+## Topics:
+
+- Installing
+- Updating
+- Clustering (HA)
+- Scaling
+- Initializing
+- Unsealing
+- Disaster Recovery
+- Performance Replication
+- Architecture
+- Monitoring
+- Audit & operational logs
+- Backing up and restore
+</script></section><section ><section data-markdown><script type="text/template">
+## Installing
+
+Vault is a single binary in a couple of version.
+
+- Open Source
+- Enterprise
+- Enterprise + HSM
+- Enterprise FIPS
+- Enterprise FIPS + HSM
+</script></section><section data-markdown><script type="text/template">
+## Installing
+
+There are binaries available for many platforms:
+
+- Darwin
+- FreeBSD
+- Linux
+- NetBSD
+- OpenBSD
+- Solaris
+- Windows
+
+The supported architectures are arm, arm64, 386 and amd64.
+</script></section><section data-markdown><script type="text/template">
+## Installing
+
+When using a binary, there are a few thinks that need to be done to a system:
+
+- Create directories
+- Create a configuration
+- Create a group
+- Create a user
+- Create a startup method (SystemV or systemd)
+</script></section><section data-markdown><script type="text/template">
+## Installing
+
+Rather than a binary, a package can also be installed:
+
+- Debian-like: https://apt.releases.hashicorp.com
+- RedHat-like: https://rpm.releases.hashicorp.com
+
+More [detail](https://www.hashicorp.com/blog/announcing-the-hashicorp-linux-repository).
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Updating
+
+Every 2 weeks a new version is [released](https://releases.hashicorp.com/vault/).
+
+Some update contain security fixes and may require a quick installation.
+</script></section><section data-markdown><script type="text/template">
+## Updating
+
+Simply replace the binary or package. To prevent unnecessary outages, keep this order:
+
+1. Followers of replication secondary/secondaries.
+2. Leader of the replication secondary/secondaries.
+3. Followers of the replication primary/primaries.
+4. Leader of the replication primary/primaries.
+
+> <aside class="notes"><p>You can technically update in any order, but may experience minor outages when a new leader is elected.</p>
+</aside></script></section><section data-markdown><script type="text/template">
+## Updating
+
+As updating is required somewhat frequently and is specific; automating this using for example Ansible will prove valuable.
+
+> <aside class="notes"><p>Please have a non-production environment prepared to exercise the update.</p>
+</aside></script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
