@@ -11,7 +11,7 @@ This presentation guides you through the Vault operations you may need to do to 
 
 ---
 
-## Topics:
+## Topics
 
 - Installing
 - Updating
@@ -19,6 +19,10 @@ This presentation guides you through the Vault operations you may need to do to 
 - Scaling
 - Initializing
 - Unsealing
+
+----
+
+## Topics 
 - Disaster Recovery
 - Performance Replication
 - Architecture
@@ -52,7 +56,7 @@ There are binaries available for many platforms:
 - Solaris
 - Windows
 
-The supported architectures are arm, arm64, 386 and amd64.
+Supported architectures: `arm`, `arm64`, `386` and `amd64` .
 
 ----
 
@@ -83,13 +87,13 @@ More [detail](https://www.hashicorp.com/blog/announcing-the-hashicorp-linux-repo
 
 Every 2 weeks a new version is [released](https://releases.hashicorp.com/vault/).
 
-Some update contain security fixes and may require a quick installation.
+Some updates contain security fixes and may require a quick installation.
 
 ----
 
 ## Updating
 
-Simply replace the binary or package. To prevent unnecessary outages, keep this order:
+Simply replace the binary or package. To prevent unnecessary outages, use this order:
 
 1. Followers of replication secondary/secondaries.
 2. Leader of the replication secondary/secondaries.
@@ -102,7 +106,7 @@ Simply replace the binary or package. To prevent unnecessary outages, keep this 
 
 ## Updating
 
-As updating is required somewhat frequently and is specific; automating this using for example Ansible will prove valuable.
+As updating is required somewhat frequently, is specific and critical; automating this using for example Ansible will prove valuable.
 
 > Note: Please have a non-production environment prepared to exercise the update.
 
