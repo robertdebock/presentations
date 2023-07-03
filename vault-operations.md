@@ -36,7 +36,7 @@ This presentation guides you through the Vault operations you may need to do to 
 - Architecture
 - Monitoring
 - Logging
-- Backing up and restore
+- Backup and restore
 - Others
 
 ---
@@ -502,6 +502,7 @@ NOTE: Vault takes care of cleaning up old backups.
 - Vault is a "cloud native" tool. You can (if desired) never login to the instance.
 - When using namespaces, who managed the root-namespace?
 - Client counting can be enabled.
+- Vault typically requires a small team to run.
 
 ---
 
