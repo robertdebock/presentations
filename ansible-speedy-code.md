@@ -18,6 +18,12 @@ Follow along: http://robertdebock.nl/
 
 ---
 
+# About this
+
+A presentation to explain different coding scenarios and the impact to speed in Ansible. Mostly coding practices.
+
+---
+
 # Defaults
 
 - "Ansible is slow!"
@@ -36,17 +42,42 @@ forks = 50
 
 # Strategy
 
+## 24% to be gained.
+
+| Strategy | Time(s) | Improvement(%) |
+| -------- | ------- | -------------- |
+| linear   | 0.854   | 0 (baseline)   |
+| free     | 0.643   | 24             |
+
+----
+
 ```yaml
 - name: Do something
   hosts: all
   strategy: free
 ```
 
-[code](https://github.com/robertdebock/ansible-speedy-code/blob/master/strategy.yml)
+- [code free](https://github.com/robertdebock/ansible-speedy-code/blob/master/strategy-free.yml)
+- [code linear](https://github.com/robertdebock/ansible-speedy-code/blob/master/strategy-linear.yml)
+
+----
+
+# Strategy limitations
+
+- `free` can't be used when depending tasks.
 
 ---
 
 # Serial
+
+## -15% to be gained.
+
+| Serial | Time(s) | Improvement(%) |
+| ------ | ------- | -------------- |
+| 100%   | 0.658   | 0 (baseline)   |
+| 50%    | 0.759   | -15            |
+
+----
 
 ```yaml
 - name: Do something
@@ -54,7 +85,8 @@ forks = 50
   serial: 50%
 ```
 
-[code](https://github.com/robertdebock/ansible-speedy-code/blob/master/serial.yml)
+[code 100%](https://github.com/robertdebock/ansible-speedy-code/blob/master/serial-1.yml)
+[code 50%](https://github.com/robertdebock/ansible-speedy-code/blob/master/serial-2.yml)
 
 ---
 
