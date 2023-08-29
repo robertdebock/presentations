@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Ansible speedy code</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+# Ansible speedy code
+
+Follow along: http://robertdebock.nl/
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/ansible-speed/"/>
+</script></section><section  data-markdown><script type="text/template">
+# About me
+
+- Love to [tinker](https://robertdebock.nl/).
+- Specialized in infrastructure as code.
+</script></section><section  data-markdown><script type="text/template">
+# Defaults
+
+- "Ansible is slow!"
+- "Ansible does not scale!"
+</script></section><section  data-markdown><script type="text/template">
+# ansible.cfg
+
+```cfg
+[defaults]
+forks = 50
+```
+</script></section><section  data-markdown><script type="text/template">
+# Strategy
+
+```yaml
+- name: Do something
+  hosts: all
+  strategy: free
+```
+
+[code](https://github.com/robertdebock/ansible-speedy-code/blob/master/strategy.yml)
+</script></section><section  data-markdown><script type="text/template">
+# Serial
+
+```yaml
+- name: Do something
+  hosts: all
+  serial: 50%
+```
+
+[code](https://github.com/robertdebock/ansible-speedy-code/blob/master/serial.yml)
+</script></section><section ><section data-markdown><script type="text/template">
+# Conditions
+
+```yaml
+- name: Do something
+  ansible.builtin.debug:
+    msg: "Hello RedHat"
+  when:
+    - ansible_os_family == "RedHat"
+
+- name: Do some other thing
+  ansible.builtin.debug:
+    msg: "Hello Debian!"
+  when:
+    - ansible_os_family == "Debian"
+```
+
+[code](https://github.com/robertdebock/ansible-speedy-code/blob/master/conditions-1.yml)
+</script></section><section data-markdown><script type="text/template">
+# Faster, with limitations
+
+```
+- name: Do something
+  ansible.builtin.debug:
+    msg: "Hello {{ ansible_os_family }}!"
+```
+
+[code](https://github.com/robertdebock/ansible-speedy-code/blob/master/conditions-2.yml)
+</script></section><section data-markdown><script type="text/template">
+# Faster without limitations (1/2)
+
+vars/main.yml:
+
+```
+_message:
+  Debian: "Linux is a way of living."
+  RedHat: "Linux is my profession."
+message: "{{ _message[ansible_os_family] }}"
+```
+</script></section><section data-markdown><script type="text/template">
+# Faster without limitations (2/2)
+
+tasks/main.yml:
+
+```yaml
+- name: Display message
+  ansible.builtin.message:
+   debug:
+     - msg: "{{ message }}"
+```
+
+[code](https://github.com/robertdebock/ansible-speedy-code/blob/master/conditions-3.yml)
+</script></section></section><section  data-markdown><script type="text/template">
+# Faster without limitations benefits
+
+- It's faster, 1 task instead of 2.
+- The "data"/"config" (`vars/main.yml`) is in 1 file.
+- The "logic" (`tasks/main.yml`) is easier to read.
+</script></section><section ><section data-markdown><script type="text/template">
+# Block and include
+
+Which is faster?
+</script></section><section data-markdown><script type="text/template">
+Tasks in a `block` with  shared condition:
+
+```yaml
+- name: Do something
+  when:
+    - ansible_os_family == "RedHat"
+  block:
+    - name: Show first
+      ansible.builtin.debug:
+        msg: "One"
+
+    - name: Show second
+      ansible.builtin.debug:
+        msg: "Two"
+```
+
+[code](https://github.com/robertdebock/ansible-speedy-code/blob/master/block.yml)
+</script></section><section data-markdown><script type="text/template">
+Tasks conditionally included:
+
+```yaml
+- name: Include RedHat tasks
+  ansible.builtin.include_tasks: RedHat.yml
+  when:
+    - ansible_os_family == "RedHat"
+
+- name: Include Debian tasks
+  ansible.builtin.include_tasks: Debian.yml
+  when:
+    - ansible_os_family == "Debian"
+```
+
+[code](https://github.com/robertdebock/ansible-speedy-code/blob/master/include-1.yml)
+</script></section><section data-markdown><script type="text/template">
+# Better:
+
+```yaml
+- name: Include OS specific tasks
+  ansible.builtin.include_tasks: "{{ ansible_os_family }}.yml"
+```
+
+[code](https://github.com/robertdebock/ansible-speedy-code/blob/master/include-2.yml)
+</script></section></section><section  data-markdown><script type="text/template">
+# Gathering facts
+
+Facts are quite expensive to have.
+Yes or no
+Subsets
+</script></section><section  data-markdown><script type="text/template">
+# Conclusion
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
