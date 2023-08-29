@@ -28,6 +28,10 @@ Follow along: http://robertdebock.nl/
 - Love to [tinker](https://robertdebock.nl/).
 - Specialized in infrastructure as code.
 </script></section><section  data-markdown><script type="text/template">
+# About this
+
+A presentation to explain different coding scenarios and the impact to speed in Ansible. Mostly coding practices.
+</script></section><section  data-markdown><script type="text/template">
 # Defaults
 
 - "Ansible is slow!"
@@ -39,27 +43,47 @@ Follow along: http://robertdebock.nl/
 [defaults]
 forks = 50
 ```
-</script></section><section  data-markdown><script type="text/template">
+</script></section><section ><section data-markdown><script type="text/template">
 # Strategy
 
+## 24% to be gained.
+
+| Strategy | Time(s) | Improvement(%) |
+| -------- | ------- | -------------- |
+| linear   | 0.854   | 0 (baseline)   |
+| free     | 0.643   | 24             |
+</script></section><section data-markdown><script type="text/template">
 ```yaml
 - name: Do something
   hosts: all
   strategy: free
 ```
 
-[code](https://github.com/robertdebock/ansible-speedy-code/blob/master/strategy.yml)
-</script></section><section  data-markdown><script type="text/template">
+- [code free](https://github.com/robertdebock/ansible-speedy-code/blob/master/strategy-free.yml)
+- [code linear](https://github.com/robertdebock/ansible-speedy-code/blob/master/strategy-linear.yml)
+</script></section><section data-markdown><script type="text/template">
+# Strategy limitations
+
+- `free` can't be used when depending tasks.
+</script></section></section><section ><section data-markdown><script type="text/template">
 # Serial
 
+## -15% to be gained.
+
+| Serial | Time(s) | Improvement(%) |
+| ------ | ------- | -------------- |
+| 100%   | 0.658   | 0 (baseline)   |
+| 50%    | 0.759   | -15            |
+</script></section><section data-markdown><script type="text/template">
 ```yaml
 - name: Do something
   hosts: all
   serial: 50%
 ```
 
-[code](https://github.com/robertdebock/ansible-speedy-code/blob/master/serial.yml)
-</script></section><section ><section data-markdown><script type="text/template">
+[code 100%](https://github.com/robertdebock/ansible-speedy-code/blob/master/serial-1.yml)
+[code 50%](https://github.com/robertdebock/ansible-speedy-code/blob/master/serial-2.yml)
+</script></section></section><section ><section data-markdown><script type="text/template">
 # Conditions
 
 ```yaml
