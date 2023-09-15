@@ -1,9 +1,9 @@
 ---
-title: Consuming Terraform modules
+title: Consuming TF modules
 
 ---
 
-# Consuming Terraform modules
+# Consuming TF modules
 
 Follow along: http://robertdebock.nl/
 
