@@ -7,7 +7,7 @@ title: Terraform modules
 
 Follow along: http://robertdebock.nl/
 
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://robertdebock.nl/presentations/consuming-terraform-modules/"/>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://robertdebock.nl/presentations/terraform-modules/"/>
 
 ---
 
