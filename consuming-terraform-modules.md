@@ -20,7 +20,10 @@ Follow along: http://robertdebock.nl/
 
 # What
 
-Terraform, with "think yourself" or "consume somthing".
+Terraform:
+
+- "think yourself"
+- "consume somthing".
 
 ---
 
