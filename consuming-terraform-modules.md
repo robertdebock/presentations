@@ -22,12 +22,12 @@ Follow along: http://robertdebock.nl/
 
 Terraform:
 
-- "think yourself"
-- "consume something".
+- "Think yourself"
+- "Consume something".
 
 ---
 
-# Benefits "Think yourself"
+# Benefits "Think"
 
 - You'll learn a lot.
 - You'll understand what you're doing.
@@ -36,23 +36,23 @@ Terraform:
 
 ----
 
-# Drawbacks "Think yourself"
+# Drawbacks "Think"
 
 - Can be difficult/time consuming.
 - Many edge-cases.
 
 ---
 
-# Benefits "Consume something"
+# Benefits "Consume"
 
 - Just use something.
 - No need to understand everything.
 
 ----
 
-# Drawbacks "Consume something"
+# Drawbacks "Consume"
 
-- You many want something a little diffent.
+- You many want something a little different.
 - Maybe your general approach differs.
 
 ---
@@ -61,7 +61,7 @@ Terraform:
 
 ----
 
-# Think yourself
+# Think
 
 ```hcl
 CODE HERE
@@ -69,7 +69,7 @@ CODE HERE
 
 ----
 
-# Consume something
+# Consume
 
 ```hcl
 CODE HERE
