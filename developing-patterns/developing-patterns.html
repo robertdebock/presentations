@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Developing patterns</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+## Developing patterns
+
+Follow along: http://robertdebock.nl/
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=http://robertdebock.nl/presentations/developing-patterns/"/>
+</script></section><section  data-markdown><script type="text/template">
+## Who am I
+
+```yaml
+name: Robert de Bock
+technologies:
+  - Linux
+  - Ansible
+  - Terraform
+```
+</script></section><section  data-markdown><script type="text/template">
+## Intent
+
+When developing, it's useful to recognize these levels/phases. It tells you something about:
+
+- Where you are as an engineer.
+- I what phase the project is.
+- Where time or help is required.
+</script></section><section  data-markdown><script type="text/template">
+## Levels
+
+0. Learning
+1. Manual
+2. Automated
+3. Consumable
+4. ?
+</script></section><section  data-markdown><script type="text/template">
+## Progress
+
+Typically you step "up" in the levels, but you can also step back "down". Stepping down typically improves:
+
+- Your undestanding of a technology.
+- The code.
+- "consumability".
+</script></section><section  data-markdown><script type="text/template">
+## Timescale
+
+| level      | career      | technology |
+| ---------- | ----------- | ---------- |
+| learning   | 1-5 years   | some days  |
+| manual     | 2-7 years   | some days  |
+| automated  | 3-10 years  | 1-2 weeks  |
+| consumable | 5-20 years  | 2-3 weeks  |
+
+> Fruit takes time to ripe, don't rush it!
+</script></section><section ><section data-markdown><script type="text/template">
+## Level 0: learning
+
+This phase is almost always where you start in your career on on a new technology. It's a fruststrating phase, but:
+
+> Frustration helps you get to the next phase!
+</script></section><section data-markdown><script type="text/template">
+## Learning: feelings
+
+Your feelings:
+
+- Unsure.
+- Annoyed.
+- Slow.
+- Confused.
+</script></section><section data-markdown><script type="text/template">
+## Learning: expressions
+
+- "I need to read more."
+- "I don't know when it's done."
+- "It's complicated."
+- "I'm not talented."
+
+Generally: You don't have a feeling of control. This phase is required.
+</script></section><section data-markdown><script type="text/template">
+## Learning: overcome
+
+> Everybody needed to learn to bike/ski/code.
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Level 1: manual
+</script></section><section data-markdown><script type="text/template">
+At this moment you are able to do something manual and you can repeat the process.
+</script></section><section data-markdown><script type="text/template">
+## Manual: feelings
+
+- Slow.
+- Complicated.
+- Uncertain how to automate.
+- I'm starting to master this!
+</script></section><section data-markdown><script type="text/template">
+## Manual: expressions
+
+- "I am able to show something."
+- "A new environment/deployment... That will take a while.
+- "It's done, right?"
+
+> Mind the [Dunning Kruger effect](https://en.wikipedia.org/wiki/Dunning–Kruger_effect).
+</script></section><section data-markdown><script type="text/template">
+## Manual: overcome
+
+> Be lazy, automate it!
+
+This phase typically comes naturally because of time/budget limitations.
+</script></section></section><section  data-markdown><script type="text/template">
+## Level 2: automated
+</script></section><section ><section data-markdown><script type="text/template">
+At this level you are speeding up, because of automation. This requires you to master multiple automation technologies. Having 2 or more languages to automate in helps dramatically. Maybe a few "failed attempts" to master a language are required.
+</script></section><section data-markdown><script type="text/template">
+## Automated: feelings
+
+- Not proud.
+- Urge to refactor.
+- Hack-job.
+</script></section><section data-markdown><script type="text/template">
+## Automated: expressions
+
+- "It works in my environment."
+- "I don't want to publish this code."
+- "I'll just show the outcome."
+- "Nothing left to do." (WARNING)
+</script></section><section data-markdown><script type="text/template">
+## Automated: overcome
+
+> It's done when it's shippable.
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Level 4: consumable
+
+IMAGE: Matrix
+</script></section><section data-markdown><script type="text/template">
+In this phase you are starting to see how your code may work in different environments. Your code may have test to prove different scenarios.
+</script></section><section data-markdown><script type="text/template">
+## Consumable: feelings
+
+- Satisfied.
+- Certain.
+- (Over?) confident.
+</script></section><section data-markdown><script type="text/template">
+## Consumable: expressions
+
+- "From now on it's only goldplating."
+- "I can't justify to spend more hours on this."
+- "Where are my Git(Hub|Lab) stars?"
+- "It works, I'm sure!" (WARNING)
+
+## Consumable: overcome
+
+This is the place to be in my opinion, but I may not be able to see the next...
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Hacks
+
+Once you can work in these different levels (learning, manual, automated, consumable), you can start on an upper level.
+
+1. I nearly always skip "manual", immediately automate it.
+2. I focus on making something consumable very early.
+</script></section><section data-markdown><script type="text/template">
+## Hack example
+
+> Request: "I want to automatically detect and remediate CVE-2023-12345".
+
+```yaml
+cve_2023_12345_detect: yes
+cve_2023_12345_remediate: no
+```
+</script></section></section><section  data-markdown><script type="text/template">
+## Conclusion
+
+- There are stages a person or project can be in.
+- You can't see beyond the level you master.
+- Use your feelings and expressions to estimate progress.
+</script></section><section  data-markdown><script type="text/template">
+## Inspiration
+
+- Beat Rubischon - Work organisation (2021)
+- Rafaela Hunodor - Understanding your system (2022)
+</script></section><section  data-markdown><script type="text/template">
+## Thanks
+</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
