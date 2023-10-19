@@ -51,6 +51,8 @@ Typically you step "up" in the levels, but you can also step back "down". Steppi
 - The code.
 - "consumability".
 
+Try to enjoy each stage to the fullest.
+
 ---
 
 ## Timescale
@@ -82,6 +84,7 @@ Your feelings:
 - Annoyed.
 - Slow.
 - Confused.
+- Magical.
 
 ----
 
