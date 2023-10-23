@@ -3,7 +3,7 @@ title: Terraform modules
 
 ---
 
-# Terraform modules
+## Terraform modules
 
 Follow along: http://robertdebock.nl/
 
@@ -126,7 +126,8 @@ A [place](https://registry.terraform.io) to find (and publish) modules.
 
 ## Inner sourcing
 
-[Terraform Enterprise](https://www.hashicorp.com/products/terraform/pricing) offers a place to host modules on-premise. It can also apply your Terraform code.
+- [Terraform Enterprise](https://www.hashicorp.com/products/terraform/pricing) offers a place to host modules on-premise. It can also apply your Terraform code.
+- [Terraform Cloud](https://www.hashicorp.com/products/terraform) can also be used as a SaaS solution.
 
 ---
 
@@ -144,4 +145,4 @@ Microsoft has a [Cloud Adoption Framework](https://registry.terraform.io/modules
 
 ---
 
-## THANKS!
+## THANKS
