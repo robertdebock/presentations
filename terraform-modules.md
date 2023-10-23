@@ -88,6 +88,8 @@ module "hcloud_ssh_key" {
 }
 ```
 
+[Source](https://github.com/dhoppeIT/terraform-hcloud-ssh_key).
+
 ---
 
 ## The Registry
