@@ -20,9 +20,13 @@ Follow along: http://robertdebock.nl/
 
 ## What
 
-Terraform:
+A Terraform module is a collection of Terraform code that can be used to create resources.
 
-- "Think yourself"
+---
+
+Terraform coding options:
+
+- "Think yourself".
 - "Consume something".
 
 ---
@@ -94,12 +98,12 @@ A [place](https://registry.terraform.io) to find (and publish) modules.
 
 ## How to select
 
-- Version
-- Downloads
-- Publish date
-- Managed by
-- Examples
-- CI/tests
+- Version.
+- Downloads.
+- Publication date.
+- Managed by.
+- Examples.
+- CI/tests.
 
 ----
 
