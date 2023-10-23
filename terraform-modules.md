@@ -70,8 +70,7 @@ Terraform coding options:
 ```hcl
 # Upload an SSH key.
 resource "hcloud_ssh_key" "default" {
-  count      = var.ssh_key_name == "" ? 1 : 0
-  name       = var.name
+  name       = "my_key"
   public_key = file("~/.ssh/id_rsa.pub")
 }
 ```
@@ -86,7 +85,8 @@ module "hcloud_ssh_key" {
   version = "~> 0.2"
   name       = "my_key"
   public_key = "~/.ssh/id_rsa.pub"
-}```
+}
+```
 
 ---
 
@@ -118,6 +118,7 @@ A [place](https://registry.terraform.io) to find (and publish) modules.
 
 - The name of a module must include the cloud provider.
 - There are modules that do not create resources. ([Example](https://registry.terraform.io/modules/cloudposse/label/null/latest)).
+- Modules are not for policies.
 
 ----
 
