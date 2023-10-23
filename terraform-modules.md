@@ -64,7 +64,12 @@ Terraform:
 ## Think
 
 ```hcl
-CODE HERE
+# Upload an SSH key.
+resource "hcloud_ssh_key" "default" {
+  count      = var.ssh_key_name == "" ? 1 : 0
+  name       = var.name
+  public_key = file("~/.ssh/id_rsa.pub")
+}
 ```
 
 ----
@@ -72,20 +77,55 @@ CODE HERE
 ## Consume
 
 ```hcl
-CODE HERE
-```
+module "hcloud_ssh_key" {
+  source  = "dhoppeIT/ssh_key/hcloud"
+  version = "~> 0.2"
+  name       = "my_key"
+  public_key = "~/.ssh/id_rsa.pub"
+}```
 
 ---
 
-## The registry
+## The Registry
+
+A [place](https://registry.terraform.io) to find (and publish) modules.
+
+----
+
+## How to select
+
+- Version
+- Downloads
+- Publish date
+- Managed by
+- Examples
+- CI/tests
+
+----
+
+## What modules do
+
+- Resouce specific. ([AWS VPC](https://github.com/terraform-aws-modules/terraform-aws-vpc))
+- Solution specific. ([HashiCorp Vault on AWS](https://registry.terraform.io/modules/robertdebock/vault/aws/latest))
+
+----
+
+## Interesting
+
+- The name of a module must include the cloud provider.
+- There are modules that do not create resources. ([Example](https://registry.terraform.io/modules/cloudposse/label/null/latest)).
 
 ----
 
 ## Inner sourcing
 
+[Terraform Enterprise](https://www.hashicorp.com/products/terraform/pricing) offers a place to host modules on-premise. It can also apply your Terraform code.
+
 ---
 
 ## CAF
+
+Microsoft has a [Cloud Adoption Framework](https://registry.terraform.io/modules/aztfmod/caf/azurerm/latest), a "super-module" that can deploy a lot of things.
 
 ---
 
