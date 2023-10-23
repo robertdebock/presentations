@@ -11,14 +11,14 @@ Follow along: http://robertdebock.nl/
 
 ---
 
-# About me
+## About me
 
 - Love to [tinker](https://robertdebock.nl/).
 - Specialized in IaC, Terraform and Ansible.
 
 ---
 
-# What
+## What
 
 Terraform:
 
@@ -27,7 +27,7 @@ Terraform:
 
 ---
 
-# Benefits "Think"
+## Benefits "Think"
 
 - You'll learn a lot.
 - You'll understand what you're doing.
@@ -36,32 +36,32 @@ Terraform:
 
 ----
 
-# Drawbacks "Think"
+## Drawbacks "Think"
 
 - Can be difficult/time consuming.
 - Many edge-cases.
 
 ---
 
-# Benefits "Consume"
+## Benefits "Consume"
 
 - Just use something.
 - No need to understand everything.
 
 ----
 
-# Drawbacks "Consume"
+## Drawbacks "Consume"
 
 - You many want something a little different.
 - Maybe your general approach differs.
 
 ---
 
-# Let's see some code!
+## Let's see some code!
 
 ----
 
-# Think
+## Think
 
 ```hcl
 CODE HERE
@@ -69,7 +69,7 @@ CODE HERE
 
 ----
 
-# Consume
+## Consume
 
 ```hcl
 CODE HERE
@@ -77,24 +77,24 @@ CODE HERE
 
 ---
 
-# The registry
+## The registry
 
 ----
 
-# Inner sourcing
+## Inner sourcing
 
 ---
 
-# CAF
+## CAF
 
 ---
 
-# Conclusion
+## Conclusion
 
 ---
 
-# Questions?
+## Questions?
 
 ---
 
-# THANKS!
+## THANKS!
