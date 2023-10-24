@@ -26,7 +26,6 @@ A Terraform module is a collection of Terraform code that can be used to create 
 
 <img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/terraform-module.png"/>
 
-
 ---
 
 Terraform coding options:
@@ -38,7 +37,7 @@ Terraform coding options:
 
 ## Think
 
-<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/terraform-module-diy.png"/>
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/terraform-module-think.png"/>
 
 ----
 
@@ -57,6 +56,12 @@ Terraform coding options:
 - Many edge-cases.
 
 ---
+
+## Consume
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/terraform-module-consume.png"/>
+
+----
 
 ## Benefits "Consume"
 
