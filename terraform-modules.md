@@ -22,6 +22,11 @@ Follow along: http://robertdebock.nl/
 
 A Terraform module is a collection of Terraform code that can be used to create resources.
 
+----
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/terraform-module.png"/>
+
+
 ---
 
 Terraform coding options:
