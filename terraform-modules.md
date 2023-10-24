@@ -36,6 +36,12 @@ Terraform coding options:
 
 ---
 
+## Think
+
+<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/terraform-module-diy.png"/>
+
+----
+
 ## Benefits "Think"
 
 - You'll learn a lot.
