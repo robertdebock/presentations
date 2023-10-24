@@ -91,7 +91,7 @@ resource "hcloud_ssh_key" "default" {
 }
 ```
 
-[Source](https://registry.terraform.io/providers/hetznercloud/hcloud/latest/docs/resources/ssh_key)
+[Source](https://registry.terraform.io/providers/hetznercloud/hcloud/latest/docs/resources/ssh_key).
 
 ----
 
