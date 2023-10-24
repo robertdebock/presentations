@@ -24,7 +24,7 @@ A Terraform module is a collection of Terraform code that can be used to create 
 
 ----
 
-<img hight="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/terraform-module.png"/>
+<img height="75%" width="75%" src="https://raw.githubusercontent.com/robertdebock/presentations/master/images/terraform-module.png"/>
 
 ---
 
@@ -72,7 +72,7 @@ Terraform coding options:
 
 ## Drawbacks "Consume"
 
-- You many want something a little different.
+- You may want something a little different.
 - Maybe your general approach differs.
 
 ---
@@ -129,7 +129,7 @@ A [place](https://registry.terraform.io) to find (and publish) modules.
 
 ## What modules do
 
-- Resouce specific. ([AWS VPC](https://github.com/terraform-aws-modules/terraform-aws-vpc))
+- Resource specific. ([AWS VPC](https://github.com/terraform-aws-modules/terraform-aws-vpc))
 - Solution specific. ([HashiCorp Vault on AWS](https://registry.terraform.io/modules/robertdebock/vault/aws/latest))
 
 ----
