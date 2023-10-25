@@ -18,6 +18,15 @@ Follow along: http://robertdebock.nl/
 
 ---
 
+## About Adfinis
+
+- [Adfinis](https://adfinis.com) has a focus on open source integrations.
+- Six (6) offices around the world.
+- 100+ employees.
+- Partners of HashiCorp, Red Hat, GitLab, SUSE, and others.
+
+---
+
 ## What
 
 A Terraform module is a collection of Terraform code that can be used to create resources.
@@ -127,6 +136,10 @@ A [place](https://registry.terraform.io) to find (and publish) modules.
 
 ----
 
+Let's have a [look](https://registry.terraform.io/browse/modules).
+
+----
+
 ## What modules do
 
 - Resource specific. ([AWS VPC](https://github.com/terraform-aws-modules/terraform-aws-vpc))
@@ -146,6 +159,7 @@ A [place](https://registry.terraform.io) to find (and publish) modules.
 
 - [Terraform Enterprise](https://www.hashicorp.com/products/terraform/pricing) offers a place to host modules on-premise. It can also apply your Terraform code.
 - [Terraform Cloud](https://www.hashicorp.com/products/terraform) can also be used as a SaaS solution.
+- Just put it on a Wiki + Git(Lab|Hub).
 
 ---
 
