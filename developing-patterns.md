@@ -224,6 +224,8 @@ In this phase you are starting to see how your code may work in different enviro
 - "Where are my Git(Hub|Lab) stars?"
 - "It works, I'm sure!" (WARNING)
 
+----
+
 ## Consumable: overcome
 
 This is the place to be in my opinion, but I may not be able to see the next...
