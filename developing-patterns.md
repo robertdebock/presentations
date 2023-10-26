@@ -32,7 +32,7 @@ When developing, it's useful to recognize these levels/phases. It tells you some
 - I what phase the project is.
 - Where time or help is required.
 
----
+----
 
 ## Inspiration
 
@@ -169,7 +169,7 @@ This phase typically comes naturally because of time/budget limitations.
 
 ![Automated](images/automated.png "Automated")
 
----
+----
 
 At this level you are speeding up, because of automation. This requires you to master multiple automation technologies. Having 2 or more languages to automate in helps dramatically. Maybe a few "failed attempts" to master a language are required.
 
