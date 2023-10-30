@@ -3,7 +3,7 @@ title: HashiCorp best practices
 
 ---
 
-# HashiCorp best practices
+## HashiCorp best practices
 
 ---
 
@@ -21,6 +21,7 @@ title: HashiCorp best practices
 - CLI
 
 ----
+
 ## Terraform Enterprise/Cloud
 
 ----
@@ -39,9 +40,22 @@ Use the [reference architecture](https://developer.hashicorp.com/terraform/enter
 
 ## Sizing Terraform Enterprise
 
-- CPU: 4 or 8 cores.
-- Memory: 16 or 32 GB.
-- disk: 40 GB.
+- CPU: 4+ cores.
+- Memory: 8+ GB.
+- disk: 10 GB (OS) + 40 GB /var/lib/docker
+
+----
+
+## Requirements
+
+Listed [here]:
+
+- Debian 10/11
+- Ubuntu 18.04/20.04
+- RHEL 7/8
+- CentOS 7/8
+- Amazon Linux 2.0
+- Oracle Linux 7/8
 
 ----
 
@@ -196,8 +210,18 @@ Create hostname/ip specific [runbooks](https://developer.hashicorp.com/vault/tut
 - Upgrades
 - ...
 
+----
+
+## Namepaces
+
+A namespace is a "virtual Vault" within a Vault cluster. Namespaces are isolated from each other and can be used by different teams.
+
+- A namespace per product/service.
+- Use [policies](https://developer.hashicorp.com/vault/tutorials/identity/policies) to control access.
+- Monitor client count.
+
 ---
 
 ## Conclusion
 
-HashiCorp products have grown up, they are enterprise ready and require knowledge and effort to operate.
+HashiCorp products are mature, they are enterprise ready and require knowledge and effort to operate.
