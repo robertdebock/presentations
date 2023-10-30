@@ -51,6 +51,8 @@ When developing, it's useful to recognize these levels/phases. It tells you some
 
 Relate to [stages of mastery](http://www.edpsycinteractive.org/edpsyc/stgmstry.html). (Novice, Advanced Beginner, Competence, Proficient & Expert.)
 
+Adfinis: Junior, Professional, Senior and Expert
+
 ---
 
 ## Progress
