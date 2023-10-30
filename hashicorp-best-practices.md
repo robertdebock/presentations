@@ -22,7 +22,7 @@ title: HashiCorp best practices
 
 ----
 
-## Terraform Enterprise/Cloud
+## Terraform Enterprise
 
 ----
 
@@ -137,7 +137,7 @@ A secrets management tool.
 
 - CPU: 2, 4 or 8+ cores.
 - Memory: 8, 16, 32 or 64 GB.
-- disk: 100 GB or 200+ GB.
+- Disk size: 100 GB or 200+ GB.
 - Disk speed: 3k IOPS - 10k+ IOPS.
 
 ----
