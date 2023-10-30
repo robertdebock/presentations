@@ -17,7 +17,7 @@
     <div class="reveal">
       <div class="slides"><section  data-markdown><script type="text/template">
 
-# HashiCorp best practices
+## HashiCorp best practices
 </script></section><section ><section data-markdown><script type="text/template">
 ## Adfinis
 </script></section><section data-markdown><script type="text/template">
@@ -27,7 +27,8 @@
 
 - Enterprise/Cloud
 - CLI
-</script></section><section data-markdown><script type="text/template">## Terraform Enterprise/Cloud
+</script></section><section data-markdown><script type="text/template">
+## Terraform Enterprise/Cloud
 </script></section><section data-markdown><script type="text/template">
 ## Deployment
 
@@ -41,9 +42,20 @@ Use the [reference architecture](https://developer.hashicorp.com/terraform/enter
 </script></section><section data-markdown><script type="text/template">
 ## Sizing Terraform Enterprise
 
-- CPU: 4 or 8 cores.
-- Memory: 16 or 32 GB.
-- disk: 40 GB.
+- CPU: 4+ cores.
+- Memory: 8+ GB.
+- disk: 10 GB (OS) + 40 GB /var/lib/docker
+</script></section><section data-markdown><script type="text/template">
+## Requirements
+
+Listed [here]:
+
+- Debian 10/11
+- Ubuntu 18.04/20.04
+- RHEL 7/8
+- CentOS 7/8
+- Amazon Linux 2.0
+- Oracle Linux 7/8
 </script></section><section data-markdown><script type="text/template">
 ## Ways of working
 
@@ -157,10 +169,18 @@ Create hostname/ip specific [runbooks](https://developer.hashicorp.com/vault/tut
 - Emergency sealing
 - Upgrades
 - ...
+</script></section><section data-markdown><script type="text/template">
+## Namepaces
+
+A namespace is a "virtual Vault" within a Vault cluster. Namespaces are isolated from each other and can be used by different teams.
+
+- A namespace per product/service.
+- Use [policies](https://developer.hashicorp.com/vault/tutorials/identity/policies) to control access.
+- Monitor client count.
 </script></section></section><section  data-markdown><script type="text/template">
 ## Conclusion
 
-HashiCorp products have grown up, they are enterprise ready and require knowledge and effort to operate.
+HashiCorp products are mature, they are enterprise ready and require knowledge and effort to operate.
 </script></section></div>
     </div>
 
