@@ -28,13 +28,22 @@ title: HashiCorp best practices
 
 ## Deployment
 
-Use the [reference architecture](https://developer.hashicorp.com/terraform/enterprise/reference-architecture) to deploy an [operational mode](https://developer.hashicorp.com/terraform/enterprise/operational-modes#operational-modes):
+Use the [reference architecture](https://developer.hashicorp.com/terraform/enterprise/reference-architecture).
 
-- Stand-alone, simple.
-- Active-active, scalable, redundant.
-- Mixed, stand-alone, external data.
+- VMs: "Replicated depoyment".
+- Containers: "Flexible deployment".
 
-> Chicken-egg problem.
+----
+
+## Scoping
+
+[Operational mode](https://developer.hashicorp.com/terraform/enterprise/operational-modes#operational-modes):
+
+1. Mounted on disk, simple.
+2. Mixed, stand-alone, external data. (db + objects)
+3. Active-active, scalable, redundant, complex!
+
+> External services need to be available.
 
 ----
 
@@ -67,6 +76,8 @@ Listed [here]:
 
 Mix and match.
 
+> Set per workspace.
+
 ----
 
 ## Terraform workspaces
@@ -81,6 +92,14 @@ How to [organize workspaces](https://robertdebock.nl/learn-terraform/ADVANCED/te
 ## Terraform Projects
 
 [NEW](https://www.hashicorp.com/blog/terraform-cloud-adds-projects-to-organize-workspaces-at-scale): A collection of workspaces, shared by users/groups.
+
+----
+
+## Terraform Organizations
+
+An organization contains projects and workspaces.
+
+Users and teams are members of an organization.
 
 ----
 
