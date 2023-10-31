@@ -116,6 +116,7 @@ Users and teams are members of an organization.
 How to prevent duplicate code?
 
 - Write [reusable modules](https://registry.terraform.io/modules/robertdebock/vault/aws/latest).
+- Publish. (public or private)
 
 ----
 
@@ -193,15 +194,31 @@ Unsealing Vault manually is a [human-involved process](https://developer.hashico
 
 ## Authentication
 
+1. Machine based (approle, jwt, token, etc.)
+2. Human based (userpass, ldap, github, etc.)
+
+----
+
+## Auth hints
+
 - Use an external system like [LDAP](https://developer.hashicorp.com/vault/docs/auth/ldap).
 - Revoke the [root token](https://developer.hashicorp.com/vault/docs/concepts/tokens#root-tokens).
-- Leases and tokens consume memory.
+
+----
+
+## Leases
+
+Leases consume memory, the default lease time is 30 days.
+
+- Humans: 16 hours or so.
+- Machines: 1 hour or so.
 
 ----
 
 ## Secrets
 
 - [Dynamic secrets engines](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-dynamic-secrets) provide short-lived-secrets.
+- KeyValue is most popular.
 - PKI or EaaS are CPU intensive.
 
 ----
@@ -210,11 +227,19 @@ Unsealing Vault manually is a [human-involved process](https://developer.hashico
 
 ----
 
-## Montoring
+## Montoring 1/2
 
 - Use [telemetry](https://developer.hashicorp.com/vault/tutorials/monitoring/monitor-telemetry-grafana-prometheus).
 - Write functional tests.
 - Measure response speeds for reference.
+- Check usage (trending) and plan for growth.
+
+----
+
+## Monitoring 2/2
+
+- Send audit logs to a SIEM.
+- Send service logs somewhere.
 - Lack of memory will kill Vault.
 
 ----
@@ -238,6 +263,7 @@ A namespace is a "virtual Vault" within a Vault cluster. Namespaces are isolated
 - A namespace per product/service.
 - Use [policies](https://developer.hashicorp.com/vault/tutorials/identity/policies) to control access.
 - Monitor client count.
+- Keep is flat.
 
 ---
 
