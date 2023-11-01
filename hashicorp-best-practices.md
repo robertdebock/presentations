@@ -26,6 +26,16 @@ title: HashiCorp best practices
 
 ----
 
+```text
+                +--- TF ENT ---+    +--- Providers ---+
+ \0/   +---+    | - registry   | -> | - AWS, GCP, ... |
+  | -> | C | -> | - runtime    | <- | - VSphere       |
+ / \   +---+    | - state      |    | - ...           |
+                +--------------+    +-----------------+
+```
+
+----
+
 ## Deployment
 
 Use the [reference architecture](https://developer.hashicorp.com/terraform/enterprise/reference-architecture).
@@ -132,6 +142,19 @@ How to prevent duplicate code?
 ## Vault
 
 A secrets management tool.
+
+----
+
+```text
+\0/    +--- Authentication ----+    +--- Policies ---+    +---- Secrets ----+
+ |  -> | - userpass, ldap, ... | -> |                | -> | - key value     |
+/ \    +-----------------------+    +----------------+    | - ldap, db, ... |
+                ^                                         +-----------------+
+                |                                                  |
+ |===|          |                                         +--- External ----+
+ |===| ---------+                                         |                 |
+ |===|                                                    +-----------------+
+```
 
 ----
 
