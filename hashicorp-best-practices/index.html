@@ -30,6 +30,14 @@
 </script></section><section data-markdown><script type="text/template">
 ## Terraform Enterprise
 </script></section><section data-markdown><script type="text/template">
+```text
+                +--- TF ENT ---+    +--- Providers ---+
+ \0/   +---+    | - registry   | -> | - AWS, GCP, ... |
+  | -> | C | -> | - runtime    | <- | - VSphere       |
+ / \   +---+    | - state      |    | - ...           |
+                +--------------+    +-----------------+
+```
+</script></section><section data-markdown><script type="text/template">
 ## Deployment
 
 Use the [reference architecture](https://developer.hashicorp.com/terraform/enterprise/reference-architecture).
@@ -114,6 +122,17 @@ How to prevent duplicate code?
 ## Vault
 
 A secrets management tool.
+</script></section><section data-markdown><script type="text/template">
+```text
+\0/    +--- Authentication ----+    +--- Policies ---+    +---- Secrets ----+
+ |  -> | - userpass, ldap, ... | -> |                | -> | - key value     |
+/ \    +-----------------------+    +----------------+    | - ldap, db, ... |
+                ^                                         +-----------------+
+                |                                                  |
+ |===|          |                                         +--- External ----+
+ |===| ---------+                                         |                 |
+ |===|                                                    +-----------------+
+```
 </script></section><section data-markdown><script type="text/template">
 ## Deploying Vault
 </script></section><section data-markdown><script type="text/template">
