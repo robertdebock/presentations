@@ -124,14 +124,15 @@ How to prevent duplicate code?
 A secrets management tool.
 </script></section><section data-markdown><script type="text/template">
 ```text
-\0/    +--- Authentication ----+    +--- Policies ---+    +---- Secrets ----+
- |  -> | - userpass, ldap, ... | -> |                | -> | - key value     |
-/ \    +-----------------------+    +----------------+    | - ldap, db, ... |
-                ^                                         +-----------------+
-                |                                                  |
- |===|          |                                         +--- External ----+
- |===| ---------+                                         |                 |
- |===|                                                    +-----------------+
+\0/    +--- Authentication ----+    +--- Policies ---+
+ |  -> | - userpass, ldap, ... | -> |                |
+/ \    +-----------------------+    +----------------+
+                ^                           |
+                |                           V
+ |===|          |                    +--- Secrets ---+
+ |===| ---------+                    | - key value   |
+ |===|                               | - ldap, db    |
+                                     +---------------+
 ```
 </script></section><section data-markdown><script type="text/template">
 ## Deploying Vault
