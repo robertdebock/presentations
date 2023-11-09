@@ -131,3 +131,15 @@ Secrets are obtained from a generic provider.
 4. Leaking secrets is less relevant. (*)
 
 - * = Only when using just-in-time-credentials.
+
+---
+
+## Conclusion
+
+- More applications, more secrets.
+- More secrets, more complexity (management).
+- Specific providers solve a partial problem.
+
+---
+
+## Thanks
