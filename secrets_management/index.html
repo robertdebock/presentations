@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Secrets management</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+# Secrets management
+
+A general discussion on how to manage secrets.
+</script></section><section  data-markdown><script type="text/template">
+## What are secrets?
+
+Secrets are sensitive data:
+
+- Credentials (passwords, tokens, keys)
+</script></section><section ><section data-markdown><script type="text/template">
+## How it was
+
+Secrets are (statically) stored in a configuration file.
+
+```text
++--- application ---+    +--- backend ---+
+| - application.cnf | -> | - user + pass |
++-------------------+    +---------------+
+```
+</script></section><section data-markdown><script type="text/template">
+## Issues with how it was
+
+1. A person would have to know the credentials.
+2. Changing the credentials would require careful coordination.
+3. The credentials can be stored in a repository/image.
+4. Who has access to the credentials is vague.
+5. A leaked secret can cause a lot of damage.
+</script></section></section><section ><section data-markdown><script type="text/template">
+## How it is
+
+Secrets are obtained from specific providers.
+
+- AWS Secrets Manager.
+- Azure Key Vault.
+- Google Cloud KMS.
+- Kubernetes Secrets.
+- Gitlab Secrets.
+- GitHub Secrets.
+</script></section><section data-markdown><script type="text/template">
+```text
++--- AWS ----+   +--- Azure ---+   +--- GCP ----+
+| KMS        |   | Key Vault   |   | KMS        |
+| (policies) |   | (policies)  |   | (policies) |
++------------+   +-------------+   +------------+
+
++--- K8s ---+   +--- Gitlab ---+  +--- GitHub ---+
+| Secrets   |   | Secrets      |  | Secrets      |
+| (policies)|   | (policies)   |  | (policies)   |
++-----------+   +--------------+  +--------------+
+```
+</script></section><section data-markdown><script type="text/template">
+## Issues with how it is
+
+1. Secrets management is specific to a provider.
+2. Policies are specific to a provider.
+3. Secrets can be exfiltrated.
+4. A leaked secret can cause a lot of damage.
+</script></section></section><section ><section data-markdown><script type="text/template">
+## How is can be
+
+Secrets are obtained from a generic provider.
+
+- Hashicorp Vault.
+- CyberArk Conjur.
+- AKeyless.
+</script></section><section data-markdown><script type="text/template">
+## Benefits of how it can be
+
+1. Secrets management is generic.
+2. Policies are generic.
+4. Leaking secrets is less relevant. (*)
+
+- * = Only when using just-in-time-credentials.
+</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":false}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
