@@ -9,6 +9,22 @@ A general discussion on how to manage secrets.
 
 ---
 
+## Adfinis
+
+---
+
+## Me
+
+---
+
+## Today
+
+- Feel free to start a discussion.
+- Feel free to ask questions.
+- A short session.
+
+---
+
 ## What are secrets?
 
 Secrets are sensitive data:
