@@ -44,6 +44,7 @@ Secrets are (statically) stored in a configuration file.
         \0/                     \0/
          | <---> user/pass <---> |
         / \                     / \
+        OPS                     DB
 ```
 
 ----
@@ -81,7 +82,7 @@ Secrets are obtained from specific providers.
                       \0/ > MAY DAY!
                        |
                       / \
-
+                      IAM
 +--- K8s ---+   +--- Gitlab ---+  +--- GitHub ---+
 | Secrets   |   | Secrets      |  | Secrets      |
 | (policies)|   | (policies)   |  | (policies)   |
@@ -107,6 +108,20 @@ Secrets are obtained from a generic provider.
 - CyberArk Conjur.
 - AKeyless.
 
+---
+            ===     \0/
+            ===      |
+            ===     / \
+             |       |
+             V       V
++------ Generic Security Manager ------+   \0/
+| (policies)                           | <- |
++--------------------------------------+   / \
+      |                |               |     IAM
+      V                V               V
++--- AWS ----+   +--- Azure ---+   +--- GCP ----+
+| KMS        |   | Key Vault   |   | KMS        |
++------------+   +-------------+   +------------+
 ----
 
 ## Benefits of how it can be
