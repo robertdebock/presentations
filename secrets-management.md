@@ -56,7 +56,7 @@ Secrets are (statically) stored in a configuration file.
 3. The credentials can be stored in a repository/image.
 4. Who has access to the credentials is vague.
 5. A leaked secret can cause a lot of damage.
-6. Application share the same credentials.
+6. Applications share the same credentials.
 
 ---
 
