@@ -111,15 +111,15 @@ Secrets are obtained from a generic provider.
 ---
 
 ```text
-            ===     \0/
-            ===      |
-            ===     / \
-             |       |
-             V       V
+              ===     \0/
+              ===      |
+              ===     / \
+               |       |
+               V       V
 +------ Generic Security Manager ------+   \0/
 | (policies)                           | <- |
 +--------------------------------------+   / \
-      |                |               |     IAM
+      |                |               |   IAM
       V                V               V
 +--- AWS ----+   +--- Azure ---+   +--- GCP ----+
 | KMS        |   | Key Vault   |   | KMS        |
