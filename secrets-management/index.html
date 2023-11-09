@@ -48,6 +48,7 @@ Secrets are (statically) stored in a configuration file.
         \0/                     \0/
          | <---> user/pass <---> |
         / \                     / \
+        OPS                     DB
 ```
 </script></section><section data-markdown><script type="text/template">
 ## Issues with how it was
@@ -79,7 +80,7 @@ Secrets are obtained from specific providers.
                       \0/ > MAY DAY!
                        |
                       / \
-
+                      IAM
 +--- K8s ---+   +--- Gitlab ---+  +--- GitHub ---+
 | Secrets   |   | Secrets      |  | Secrets      |
 | (policies)|   | (policies)   |  | (policies)   |
@@ -92,7 +93,7 @@ Secrets are obtained from specific providers.
 2. Policies are specific to a provider.
 3. Secrets can be exfiltrated.
 4. A leaked secret can cause a lot of damage.
-</script></section></section><section ><section data-markdown><script type="text/template">
+</script></section></section><section  data-markdown><script type="text/template">
 ## How is can be
 
 Secrets are obtained from a generic provider.
@@ -100,7 +101,19 @@ Secrets are obtained from a generic provider.
 - Hashicorp Vault.
 - CyberArk Conjur.
 - AKeyless.
-</script></section><section data-markdown><script type="text/template">
+</script></section><section ><section data-markdown><script type="text/template">            ===     \0/
+            ===      |
+            ===     / \
+             |       |
+             V       V
++------ Generic Security Manager ------+   \0/
+| (policies)                           | <- |
++--------------------------------------+   / \
+      |                |               |     IAM
+      V                V               V
++--- AWS ----+   +--- Azure ---+   +--- GCP ----+
+| KMS        |   | Key Vault   |   | KMS        |
++------------+   +-------------+   +------------+</script></section><section data-markdown><script type="text/template">
 ## Benefits of how it can be
 
 1. Secrets management is generic.
