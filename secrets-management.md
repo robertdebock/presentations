@@ -109,6 +109,8 @@ Secrets are obtained from a generic provider.
 - AKeyless.
 
 ---
+
+```text
             ===     \0/
             ===      |
             ===     / \
@@ -122,6 +124,8 @@ Secrets are obtained from a generic provider.
 +--- AWS ----+   +--- Azure ---+   +--- GCP ----+
 | KMS        |   | Key Vault   |   | KMS        |
 +------------+   +-------------+   +------------+
+```
+
 ----
 
 ## Benefits of how it can be
