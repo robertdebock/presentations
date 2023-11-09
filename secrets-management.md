@@ -41,6 +41,9 @@ Secrets are (statically) stored in a configuration file.
 +--- application ---+    +--- backend ---+
 | - application.cnf | -> | - user + pass |
 +-------------------+    +---------------+
+        \0/                     \0/
+         | <---> user/pass <---> |
+        / \                     / \
 ```
 
 ----
@@ -74,6 +77,10 @@ Secrets are obtained from specific providers.
 | KMS        |   | Key Vault   |   | KMS        |
 | (policies) |   | (policies)  |   | (policies) |
 +------------+   +-------------+   +------------+
+
+                      \0/ > MAY DAY!
+                       |
+                      / \
 
 +--- K8s ---+   +--- Gitlab ---+  +--- GitHub ---+
 | Secrets   |   | Secrets      |  | Secrets      |
