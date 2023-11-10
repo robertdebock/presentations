@@ -108,7 +108,7 @@ Secrets are obtained from a generic provider.
 - CyberArk Conjur.
 - AKeyless.
 
----
+----
 
 ```text
               ===     \0/
