@@ -146,4 +146,74 @@ Secrets are obtained from a generic provider.
 
 ---
 
-## Thanks
+## Questionaire
+
+---
+
+## Today
+
+Questions: I'll write down your responses.
+
+Goal: Understand what requirements you have around secrets management.
+
+---
+
+## Question 1
+
+Can you please tell us how you see the presentation's aspects affecting our daily business?
+
+---
+
+## Question 2
+
+How are you currently managing your passwords?
+
+---
+
+## Question 3
+
+How do you see the things just presented to you in your team?
+
+---
+
+## Question 4
+
+What current issues would a central secrets management tool solve for you?
+
+---
+
+## Question 5
+
+What do you consider to be the drawbacks of a secrets solution?
+
+---
+
+## Question 6
+
+What platforms (Cloud/On-prem/etc) are you using?
+
+---
+
+## Question 7
+
+How do you prevent access to inactive resources.
+
+For example, an account on a database system.
+
+---
+
+## Question 8
+
+Are there applications that share the same secret to access a resource?
+
+For example, multiple application servers using the same account to connect to a backend.
+
+---
+
+## Question 9
+
+What technology or tool would benefit the most for a central secrets management tool.
+
+---
+
+## Thanks for your interaction and responses!
