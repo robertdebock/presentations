@@ -13,7 +13,7 @@ A general discussion on how to manage secrets.
 
 ---
 
-## Me
+## Me/you
 
 ---
 
@@ -56,7 +56,7 @@ Secrets are (statically) stored in a configuration file.
 3. The credentials can be stored in a repository/image.
 4. Who has access to the credentials is vague.
 5. A leaked secret can cause a lot of damage.
-6. Applications share the same credentials.
+6. Applications share the same credentials. (Secret sprawl)
 
 ---
 
@@ -83,6 +83,7 @@ Secrets are obtained from specific providers.
                        |
                       / \
                       IAM
+
 +--- K8s ---+   +--- Gitlab ---+  +--- GitHub ---+
 | Secrets   |   | Secrets      |  | Secrets      |
 | (policies)|   | (policies)   |  | (policies)   |
@@ -106,13 +107,13 @@ Secrets are obtained from a generic provider.
 
 - Hashicorp Vault.
 - CyberArk Conjur.
-- AKeyless.
+- AKeyless Vaultless platform.
 
 ----
 
 ```text
-              ===     \0/
-              ===      |
+Ansible Tower ===     \0/
+GitLab CI     ===      |
               ===     / \
                |       |
                V       V
@@ -121,9 +122,9 @@ Secrets are obtained from a generic provider.
 +--------------------------------------+   / \
       |                |               |   IAM
       V                V               V
-+--- AWS ----+   +--- Azure ---+   +--- GCP ----+
-| KMS        |   | Key Vault   |   | KMS        |
-+------------+   +-------------+   +------------+
++--- K/V ----+   +--- Azure ---+   +--- AD ---+
+| key:value  |   | Key Vault   |   | creds    |
++------------+   +-------------+   +----------+
 ```
 
 ----
@@ -143,6 +144,7 @@ Secrets are obtained from a generic provider.
 - More applications, more secrets.
 - More secrets, more complexity (management).
 - Specific providers solve a partial problem.
+- Auditing become crucial.
 
 ---
 
