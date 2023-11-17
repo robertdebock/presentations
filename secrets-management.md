@@ -152,7 +152,7 @@ Secrets are obtained from a generic provider.
 
 ## Today
 
-Questions: I'll write down your responses.
+Questions: We'll write down your responses.
 
 Goal: Understand what requirements you have around secrets management.
 
@@ -160,19 +160,19 @@ Goal: Understand what requirements you have around secrets management.
 
 ## Question 1
 
-Can you please tell us how you see the presentation's aspects affecting our daily business?
+For what technologies or tools would you require secret managements
 
 ---
 
 ## Question 2
 
-How are you currently managing your passwords?
+Please tell us how a secret management solution affects your business
 
 ---
 
 ## Question 3
 
-How do you see the things just presented to you in your team?
+How are you currently managing your application secrets?
 
 ---
 
@@ -184,17 +184,11 @@ What current issues would a central secrets management tool solve for you?
 
 ## Question 5
 
-What do you consider to be the drawbacks of a secrets solution?
+Would there be drawbacks to a secrets solution?
 
 ---
 
 ## Question 6
-
-What platforms (Cloud/On-prem/etc) are you using?
-
----
-
-## Question 7
 
 How do you prevent access to inactive resources.
 
@@ -202,7 +196,7 @@ For example, an account on a database system.
 
 ---
 
-## Question 8
+## Question 7
 
 Are there applications that share the same secret to access a resource?
 
@@ -210,9 +204,15 @@ For example, multiple application servers using the same account to connect to a
 
 ---
 
-## Question 9
+## Question 8
 
 What technology or tool would benefit the most for a central secrets management tool.
+
+---
+
+## What's next?
+
+We will document your responses, find shared pain point and shared gains.
 
 ---
 
