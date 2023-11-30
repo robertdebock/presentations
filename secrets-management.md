@@ -25,6 +25,17 @@ A general discussion on how to manage secrets.
 
 ---
 
+## Prep questions
+
+1. What is your technology domain?
+2. Which authentication methods do you use?
+3. What do you currently use specifically for non-human authentication?
+4. What are your thoughts on using a Secret Management Solution?
+5. What mechanisms are in place to prevent secrets from being re-uses.
+6. Please explain how encryption/decryption of data works within your technology domain.
+
+---
+
 ## What are secrets?
 
 Secrets are sensitive data:
