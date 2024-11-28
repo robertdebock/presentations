@@ -121,7 +121,7 @@ Bijvoorbeeld:
 
 - Een 8 jarige
 - Een gedicht wedstrijd
-- Een ketrs sfeer.
+- Een kerst sfeer.
 
 ---
 
