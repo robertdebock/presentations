@@ -29,22 +29,22 @@ Ga naar https://chatgpt.com en maak een account aan.
 
 ## Vraag
 
-Stel ChatGPT een vraag. Wat ideeen:
+Stel ChatGPT een vraag. Wat ideeën:
 
-- "Als je een superkracht zou kunnen hebben, welke zou dat dan zijn?"
+- "Welke superkracht zou je willen hebben?"
 - "Wat is jouw favoriete fictieve wereld en waarom?"
-- "Als je een hobby zou kunnen kiezen, wat zou dat dan zijn?"
-- "Is er zoiets als vrije wil, of zijn we allemaal voorbestemd?"
+- "Welke hobby zou jij kiezen?"
+- "Vrije wil of voorbestemd?"
 - "Wat maakt iets mooi of waardevol?"
 
 ---
 
-# Creativiteit en spiritualiteit met AI
+## Creativiteit en spiritualiteit met AI
 
 AI kan je helpen:
 
-- **Creatief**: Ideeën voor kunst, muziek, of verhalen bedenken.
-- **Spiritueel**: Teksten of plaatjes genereren, vragen stellen.
+- **Creatief**: Ideeën voor kunst, muziek, of verhalen.
+- **Spiritueel**: Teksten of plaatjes genereren.
 
 🌟 Denk aan AI als een assistent die jouw visie aanvult.
 
@@ -54,9 +54,7 @@ AI kan je helpen:
 
 De "root-prompt" geeft context aan elke vraag die je vervolgens stelt.
 
-Bijvoorbeeld:
-
-"Ik ben [beroep] en wil altijd uitleg bij een antwoord. Mijn focus ligt op "[focus]" en mijn doel in het leven is [doel]."
+> "Ik ben [beroep] en wil altijd uitleg bij een antwoord. Mijn focus ligt op "[focus]" en mijn doel in het leven is [doel]."
 
 ----
 
@@ -74,6 +72,9 @@ Opdracht: Stel je root prompt in
 ChatGPT heeft "geheugen".
 
 > "Onthoud dat ik vegetarisch ben."
+
+of
+
 > "Vergeet dat ik vegetarisch ben."
 
 ----
@@ -86,6 +87,14 @@ Vertel ChatGPT wat details van je leven. Bijvoorbeeld:
 - Je liefdes-situatie.
 - Je interesses.
 - Je muziek voorkeur.
+
+----
+
+## Leuk!
+
+Wanneer je ChatGPT een tijdje gebruikt:
+
+> "Maak een plaatje met de details die je van mij weet."
 
 ---
 
@@ -122,6 +131,12 @@ Bijvoorbeeld:
 
 ---
 
+## Handig
+
+ChatGPT is heel handig met "data". Bijvoorbeeld XLS, PDF.
+
+---
+
 ## Meer dan ChatGPT
 
 - [Claude](https://claude.ai/)
@@ -142,19 +157,39 @@ Agents.
 AI heeft kracht, maar ook risico’s:
 
 - **Te overtuigend?** AI kan foutieve informatie geven.
-- **Afhankelijkheid:** Creativiteit en intuïtie blijven belangrijk.
+- **Afhankelijkheid:** Jouw creativiteit en intuïtie.
 - **Privacy:** Wees bewust van wat je deelt.
 - **Te `glad`:** Soms zijn antwoorden te gelikt.
 
 > Gebruik AI bewust en kritisch, als een hulpmiddel, niet als vervanging.
 
+----
+
+## Problemen
+
+> Rangschik deze kleuren: geel, blauw, groen, rood en oranje.
+
+- Groen
+- Blauw
+- Geel
+- Oranje
+- Rood
+
+----
+
+## Problemen
+
+> Hoeveel "e"'s staan er in "Hallo Wereld!"
+
+In "Hallo Wereld!" staan er 3 e's: twee in "Wereld" en één in het uitroepteken "!".
+
 ---
 
-# Conclusie: AI als Partner
+# Conclusie
 
-- AI ondersteunt jouw creatieve en spirituele reis.
+- AI ondersteunt jouw creatieve en spiritueliteit.
 - Experimenteer en ontdek wat werkt voor jou.
-- Jouw vraag stuurt het resultaat: wees nieuwsgierig en specifiek.
+- Jouw vraag bepaalt het resultaat.
 
 🌟 "AI is jouw assistent, maar jouw visie blijft leidend."
 
@@ -163,4 +198,3 @@ AI heeft kracht, maar ook risico’s:
 # Vragen & Discussie
 
 🤔 Stel je vragen!  
-💡 Wil je live een prompt proberen?  
