@@ -128,9 +128,16 @@ Bijvoorbeeld:
 - [Google Gemini](https://gemini.google.com/)
 - [Perplexity](https://www.perplexity.ai/)
 - [Modellen ranking](https://openrouter.ai/rankings)
+
 ---
 
-# Kritisch Kijken naar AI
+## Toekomst
+
+Agents.
+
+---
+
+## Kritisch Kijken naar AI
 
 AI heeft kracht, maar ook risico’s:
 
