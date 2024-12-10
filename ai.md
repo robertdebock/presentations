@@ -139,8 +139,6 @@ ChatGPT is heel handig met "data". Bijvoorbeeld XLS, PDF.
 
 ## Plaatjes genereren
 
-----
-
 - [ChatGPT](https://chatgpt.com/)
 - [Adobe Firefly](https://firefly.adobe.com/)
 
@@ -213,7 +211,7 @@ In "Hallo Wereld!" staan er 3 e's: twee in "Wereld" en één in het uitroepteken
 
 ## Advies
 
-> "Jij bedenkt **wat**, AI bedenkt **hoe**.
+> "Jij bedenkt **wat**, AI bedenkt **hoe**."
 
 - Bedenk steeds dat AI je kan helpen
 - Gebruik het vaak en veel.
